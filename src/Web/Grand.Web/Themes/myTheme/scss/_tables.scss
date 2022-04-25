@@ -1,0 +1,84 @@
+﻿
+table tr.order_summary td.label {
+    text-align: right;
+}
+
+table {
+    margin-bottom: 20px;
+}
+
+table th {
+    font-weight: 700;
+    text-align: left;
+}
+
+#order_details,
+#customer_orders table {
+    width: 100%;
+}
+
+#order_details th,
+#customer_orders table th {
+    background: #F9F9F9;
+}
+
+#order_details th,
+#order_details td,
+#customer_orders table th,
+#customer_orders table td {
+    padding: 4px;
+    border-right: 1px solid #DCDCDC;
+}
+
+#order_details th:first-child,
+#order_details td:first-child,
+#customer_orders table th:first-child,
+#customer_orders table td:first-child {
+    border-left: 1px solid gainsboro;
+}
+
+#order_details tr,
+#customer_orders table tr {
+    border-bottom: 1px solid #DCDCDC;
+}
+
+#order_details tr:first-child,
+#customer_orders table tr:first-child {
+    border-top: 1px solid #DCDCDC;
+}
+
+#order_details .em,
+#customer_orders table .em {
+    font-weight: 700;
+}
+
+table {
+    width: 100%;
+}
+
+table th {
+    background: #F9F9F9;
+}
+
+table th,
+table td {
+    padding: 4px;
+    border-right: 1px solid #DCDCDC;
+}
+
+table th:first-child,
+table td:first-child {
+    border-left: 1px solid gainsboro;
+}
+
+table tr {
+    border-bottom: 1px solid #DCDCDC;
+}
+
+table tr:first-child {
+    border-top: 1px solid #DCDCDC;
+}
+
+table .em {
+    font-weight: 700;
+}

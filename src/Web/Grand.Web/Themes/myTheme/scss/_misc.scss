@@ -1,0 +1,179 @@
+﻿
+.allow-clickthrough {
+    pointer-events: none !important;
+}
+
+.hidden {
+    display: none;
+}
+
+@media only screen and (max-width: 480px) {
+    .hidden--mobile {
+        display: none;
+    }
+}
+
+.remove {
+    color: #333333;
+}
+
+.relative {
+    position: relative;
+}
+
+.half-bottom {
+    margin-bottom: 10px !important;
+}
+
+.add-bottom {
+    margin-bottom: 20px !important;
+}
+
+.right {
+    float: right;
+    position: relative;
+}
+
+.left {
+    float: left;
+}
+
+.inline {
+    display: inline;
+}
+
+.center {
+    text-align: center;
+}
+
+.relative {
+    position: relative;
+}
+
+.align_right {
+    text-align: right;
+}
+
+.align_left {
+    text-align: left;
+}
+
+.text-align--center {
+    text-align: center;
+}
+
+.text-align--left {
+    text-align: left;
+}
+
+.text-align--right {
+    text-align: right;
+}
+
+p.warning {
+    text-align: center;
+    font-weight: bold;
+}
+
+.warning--quantity {
+    clear: both;
+    display: inline-block;
+    margin-top: 15px;
+    width: auto;
+    text-align: left;
+}
+
+@media only screen and (min-width: 799px) {
+    .large--right {
+        float: right;
+        position: relative;
+    }
+}
+
+.visuallyhidden {
+    position: absolute !important;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.mini-cart__item p.warning {
+    margin-top: 5px;
+    text-align: left;
+}
+
+.container div.mobile_only, span.mobile_only, .mobile_only {
+    display: none;
+}
+
+.no_border {
+    border: none !important;
+}
+
+.extra_padding {
+    padding-top: 4px;
+}
+
+div.hidden {
+    display: none;
+}
+
+div.is-absolute {
+    position: absolute !important;
+    top: 0;
+    margin-top: 0;
+}
+
+.full-width-image {
+    width: 100%;
+}
+
+#instantclick-bar {
+    background: #1dadeb;
+    z-index: 100000;
+    height: 4px;
+}
+
+#grid .column,
+#grid .columns {
+    background: #ddd;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #555;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+#grid .column:hover,
+#grid .columns:hover {
+    background: #bbb;
+    color: #333;
+}
+
+#grid .example-grid {
+    overflow: hidden;
+}
+
+.items_left {
+    margin: 0 0 15px;
+    line-height: 1.6em;
+    font-size: normal;
+    font-style: italic;
+    color: #8c8b8b;
+}
+
+.cart .paypal-button + .paypal-button {
+    display: none;
+}
+
+.shopify-reviews.reviewsVisibility--false {
+    display: none;
+}

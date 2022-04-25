@@ -1,0 +1,120 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <Import Project="..\..\Build\Grand.Common.props" />
+  <PropertyGroup>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>a2091e37-94a0-4446-8a5d-1d5c0835333a</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Grand.Domain\Grand.Domain.csproj" />
+    <ProjectReference Include="..\..\Core\Grand.Infrastructure\Grand.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Core\Grand.SharedKernel\Grand.SharedKernel.csproj" />
+    <ProjectReference Include="..\..\Business\Grand.Business.Authentication\Grand.Business.Authentication.csproj" />
+    <ProjectReference Include="..\..\Business\Grand.Business.Catalog\Grand.Business.Catalog.csproj" />
+    <ProjectReference Include="..\..\Business\Grand.Business.Checkout\Grand.Business.Checkout.csproj" />
+    <ProjectReference Include="..\..\Business\Grand.Business.Cms\Grand.Business.Cms.csproj" />
+    <ProjectReference Include="..\..\Business\Grand.Business.Common\Grand.Business.Common.csproj" />
+    <ProjectReference Include="..\..\Business\Grand.Business.Customers\Grand.Business.Customers.csproj" />
+    <ProjectReference Include="..\..\Business\Grand.Business.Marketing\Grand.Business.Marketing.csproj" />
+    <ProjectReference Include="..\..\Business\Grand.Business.Messages\Grand.Business.Messages.csproj" />
+    <ProjectReference Include="..\..\Business\Grand.Business.Storage\Grand.Business.Storage.csproj" />
+    <ProjectReference Include="..\..\Business\Grand.Business.System\Grand.Business.System.csproj" />
+    <ProjectReference Include="..\Grand.Web.Admin\Grand.Web.Admin.csproj" />
+
+    <ProjectReference Include="..\Grand.Web.Common\Grand.Web.Common.csproj" />
+    
+    <ProjectReference Include="..\..\API\Grand.Api\Grand.Api.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+    <PackageReference Include="BuildWebCompiler2022" Version="1.14.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\**" CopyToPublishDirectory="PreserveNewest" Exclude="App_Data\appsettings.json;App_Data\DataProtectionKeys\*.xml;" />   
+    <Content Include="Themes\**" CopyToPublishDirectory="PreserveNewest" Exclude="Themes\**\*.cfg;Themes\**\*.cshtml" />
+    <Content Include="Roslyn\**" CopyToPublishDirectory="PreserveNewest" Exclude="Roslyn\**\*.dll" />
+    <Content Include="logs\**" CopyToPublishDirectory="PreserveNewest" />
+    <Content Remove="wwwroot\assets\images\thumbs\*.jpeg;wwwroot\assets\images\thumbs\*.jpg;wwwroot\assets\images\thumbs\*.png" />
+  </ItemGroup>
+  <Target Name="PublishViews" BeforeTargets="PrepareForPublish">
+    <ItemGroup>
+      <ThemeViews Include="Themes/**/*" />
+      <PluginFiles Include="Plugins/**/*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ThemeViews)" DestinationFolder="$(PublishDir)/Themes/%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(PluginFiles)" DestinationFolder="$(PublishDir)/Plugins/%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <!--<PropertyGroup>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+  </PropertyGroup>-->
+  <ItemGroup>
+    <Content Remove="Plugins\**" />
+    <Compile Remove="Plugins\**" />
+    <EmbeddedResource Remove="Plugins\**" />
+    <None Remove="Plugins\**" />
+    <None Remove="Themes\myTheme\asset\jquery.min.js" />
+    <None Remove="Themes\myTheme\js\app.js" />
+    <None Remove="Themes\myTheme\js\sections.js" />
+    <None Remove="Themes\myTheme\js\shopify.js" />
+    <None Remove="Themes\myTheme\js\utilities.js" />
+    <None Remove="Themes\myTheme\js\vendors.js" />
+    <None Remove="Themes\myTheme\scss\myTheme.scss" />
+    <None Remove="Themes\myTheme\scss\_accordions.scss" />
+    <None Remove="Themes\myTheme\scss\_basic_styles.scss" />
+    <None Remove="Themes\myTheme\scss\_blog.scss" />
+    <None Remove="Themes\myTheme\scss\_buttons.scss" />
+    <None Remove="Themes\myTheme\scss\_contact_form.scss" />
+    <None Remove="Themes\myTheme\scss\_custom_styles.scss" />
+    <None Remove="Themes\myTheme\scss\_direction_helper.scss" />
+    <None Remove="Themes\myTheme\scss\_flickity.scss" />
+    <None Remove="Themes\myTheme\scss\_fonts.scss" />
+    <None Remove="Themes\myTheme\scss\_forms.scss" />
+    <None Remove="Themes\myTheme\scss\_header.scss" />
+    <None Remove="Themes\myTheme\scss\_images.scss" />
+    <None Remove="Themes\myTheme\scss\_layout.scss" />
+    <None Remove="Themes\myTheme\scss\_links.scss" />
+    <None Remove="Themes\myTheme\scss\_lists.scss" />
+    <None Remove="Themes\myTheme\scss\_ltr.scss" />
+    <None Remove="Themes\myTheme\scss\_menu.scss" />
+    <None Remove="Themes\myTheme\scss\_misc.scss" />
+    <None Remove="Themes\myTheme\scss\_newsletter.scss" />
+    <None Remove="Themes\myTheme\scss\_placeholders.scss" />
+    <None Remove="Themes\myTheme\scss\_reset_basic.scss" />
+    <None Remove="Themes\myTheme\css\header\header.css" />
+    <None Remove="Themes\myTheme\css\header\header.rtl.css" />
+    <None Remove="Themes\myTheme\scss\_rtl.scss" />
+    <None Remove="Themes\myTheme\scss\_site_style.scss" />
+    <None Remove="Themes\myTheme\scss\_tables.scss" />
+    <None Remove="Themes\myTheme\scss\_tabs.scss" />
+    <None Remove="Themes\myTheme\scss\_typography.scss" />
+    <None Remove="Themes\myTheme\scss\_videos.scss" />
+    <None Remove="Themes\Popl\preview.jpg" />
+    <Content Update="Plugins\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Rotativa\Linux\wkhtmltopdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Rotativa\Mac\wkhtmltopdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Rotativa\Windows\wkhtmltopdf.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Themes\myTheme\css\header\header.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Themes\myTheme\css\header\header.rtl.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\myTheme\bundles\" />
+  </ItemGroup>
+</Project>

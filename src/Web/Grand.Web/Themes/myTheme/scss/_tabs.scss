@@ -1,0 +1,89 @@
+﻿
+ul.tabs {
+    display: block;
+    margin: 25px 0;
+    border-bottom: solid 1px #cccccc;
+    border-top: 0;
+    list-style: none outside;
+    margin-left: 0;
+    text-transform: uppercase;
+    padding-left: 0;
+}
+
+ul.tabs li {
+    display: block;
+    width: auto;
+    height: 30px;
+    padding: 0;
+    float: left;
+    margin-bottom: 0;
+    border: 0;
+    list-style: none outside;
+    margin-left: 0;
+    cursor: pointer;
+}
+
+ul.tabs li a {
+    display: block;
+    text-decoration: none;
+    width: auto;
+    height: 29px;
+    line-height: 30px;
+    margin-right: 60px;
+    font-size: 13px;
+    outline: none;
+}
+
+@media (max-width: 960px) {
+    ul.tabs li a {
+        margin-right: 30px;
+    }
+}
+
+@media only screen and (max-width: 798px) {
+    ul.tabs li a {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    ul.tabs li a {
+        margin-right: 20px;
+    }
+}
+
+ul.tabs li a.active {
+    border-bottom: solid 3px #cccccc;
+    background-color: #ffffff;
+    border-bottom: solid 3px #aaaaaa;
+    height: 31px;
+    position: relative;
+    border-right-width: 1px;
+    color: #333333;
+}
+
+ul.tabs li:last-child a {
+    margin: 0;
+}
+
+ul.tabs-content {
+    margin: 0;
+    display: block;
+    border: 0;
+    padding-left: 0;
+}
+
+ul.tabs-content > li {
+    display: none;
+    border: 0;
+}
+
+ul.tabs-content > li.active {
+    display: block;
+    border: 0;
+    padding-left: 0px;
+}
+
+ul.tabs-content ul {
+    padding-left: 0;
+}

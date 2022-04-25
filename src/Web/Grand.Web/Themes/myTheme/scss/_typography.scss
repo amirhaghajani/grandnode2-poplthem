@@ -1,0 +1,492 @@
+﻿
+.logo {
+    font-family: Oswald, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    text-transform: none;
+    line-height: 1.2em;
+}
+
+/*  Headings  */
+h1 {
+    font-family: "DM Sans", sans-serif;
+    /*Oswald, sans-serif;*/
+    font-weight: bold;
+    /*300;*/
+    font-style: normal;
+    font-size: 41px;
+    text-transform: none;
+    line-height: 1.5;
+    color: #000000;
+    display: block;
+    letter-spacing: 0px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 auto 15px;
+    clear: both;
+    font-weight: 300;
+    padding-top: 4px;
+}
+
+@media only screen and (max-width: 798px) {
+    h1 {
+        font-size: 32px;
+    }
+}
+
+h1 a:link, h1 a:visited {
+    font-weight: inherit;
+    color: #000000;
+}
+
+h1 a:hover, h1 a:active {
+    color: #1dadeb;
+}
+
+h1.collection_title_tags {
+    padding-right: 25px;
+    border-right: solid 1px #cccccc;
+}
+
+h2, .h2, h2.title {
+    font-family: "DM Sans", sans-serif;
+    /*Oswald, sans-serif;*/
+    font-weight: bold;
+    /*300;*/
+    font-style: normal;
+    font-size: 36px;
+    text-transform: none;
+    line-height: 1.5;
+    color: #000000;
+    display: block;
+    letter-spacing: 0px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 0.75em;
+}
+
+@media only screen and (max-width: 798px) {
+    h2, .h2, h2.title {
+        font-size: 28px;
+    }
+}
+
+h2 a, .h2 a, h2.title a {
+    font-weight: inherit;
+}
+
+h2.collection_title, .h2.collection_title, h2.title.collection_title {
+    margin-bottom: 0;
+    display: inline;
+}
+
+h2.product_name a, .h2.product_name a, h2.title.product_name a {
+    color: #000000;
+}
+
+.cart h2 {
+    margin-top: 0;
+}
+
+h3, .h3 {
+    font-family: "DM Sans", sans-serif;
+    /*Oswald, sans-serif;*/
+    font-weight: bold;
+    /*300;*/
+    font-style: normal;
+    font-size: 32px;
+    text-transform: none;
+    line-height: 1.5;
+    color: #000000;
+    display: block;
+    letter-spacing: 0px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 auto 15px 0;
+}
+
+@media only screen and (max-width: 798px) {
+    h3, .h3 {
+        font-size: 25px;
+    }
+}
+
+h3 a, h3 a:visited, .h3 a, .h3 a:visited {
+    font-weight: inherit;
+    color: #000000;
+}
+
+h3.title, .h3.title {
+    line-height: 1.25;
+    margin: 0 auto 15px;
+    clear: both;
+    padding-top: 4px;
+}
+
+h3.title a, h3.title a:visited, .h3.title a, .h3.title a:visited {
+    color: #000000;
+}
+
+h3.sub_title, .h3.sub_title {
+    padding: 5px 0;
+    color: #000000;
+}
+
+h3.sub_title a, .h3.sub_title a {
+    color: #000000;
+}
+
+h4, .h4 {
+    font-family: "DM Sans", sans-serif;
+    /*Oswald, sans-serif;*/
+    font-weight: bold;
+    /*300;*/
+    font-style: normal;
+    font-size: 28px;
+    text-transform: none;
+    line-height: 1.5;
+    color: #000000;
+    display: block;
+    letter-spacing: 0px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 0 0.5em 0;
+    padding: 7px 0;
+}
+
+@media only screen and (max-width: 798px) {
+    h4, .h4 {
+        font-size: 22px;
+    }
+}
+
+h4 a, .h4 a {
+    font-weight: inherit;
+}
+
+h4.title a, .h4.title a {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+h5, .h5 {
+    font-family: "DM Sans", sans-serif;
+    /*Oswald, sans-serif;*/
+    font-weight: bold;
+    /*300;*/
+    font-style: normal;
+    font-size: 26px;
+    text-transform: none;
+    line-height: 1.5;
+    color: #000000;
+    display: block;
+    letter-spacing: 0px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 0 0.5em 0;
+    padding: 7px 0;
+}
+
+@media only screen and (max-width: 798px) {
+    h5, .h5 {
+        font-size: 20px;
+    }
+}
+
+h5 a, .h5 a {
+    font-weight: inherit;
+}
+
+h5.sub_title, .h5.sub_title {
+    padding: 5px 0;
+    color: #000000;
+}
+
+h5.sub_title a, .h5.sub_title a {
+    color: #000000;
+}
+
+h6, .h6 {
+    font-family: "DM Sans", sans-serif;
+    /*Oswald, sans-serif;*/
+    font-weight: bold;
+    /*300;*/
+    font-style: normal;
+    font-size: 24px;
+    text-transform: none;
+    line-height: 1.5;
+    color: #000000;
+    display: block;
+    letter-spacing: 0px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0px;
+    margin: 0 0 0.5em 0;
+    padding: 7px 0;
+}
+
+@media only screen and (max-width: 798px) {
+    h6, .h6 {
+        font-size: 19px;
+    }
+}
+
+h6 a, .h6 a {
+    font-weight: inherit;
+}
+
+h6.title, .h6.title {
+    line-height: 32px;
+    margin: 0 0 0.5em 0;
+    color: #000000;
+}
+
+.cart h6 {
+    margin-top: 0;
+}
+
+.collection_title {
+    font-family: "DM Sans", sans-serif;
+    /*Oswald, sans-serif;*/
+    font-weight: bold;
+    /*300;*/
+    font-style: normal;
+    font-size: 41px;
+    text-transform: none;
+    line-height: 1.5;
+    color: #000000;
+    display: block;
+    letter-spacing: 0px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 auto 15px;
+    clear: both;
+    padding-top: 4px;
+}
+
+@media only screen and (max-width: 798px) {
+    .collection_title {
+        font-size: 32px;
+    }
+}
+
+.collection_title a {
+    font-weight: inherit;
+    color: #000000;
+}
+
+.collection_title a:hover, .collection_title a:active {
+    color: #1dadeb;
+}
+
+div.collection_title {
+    margin-bottom: 0;
+    line-height: 41px;
+    display: inline;
+}
+
+div.collection_title_tags {
+    padding-right: 25px;
+    border-right: solid 1px #cccccc;
+}
+
+.headline,
+.empty_cart,
+.promo_banner,
+.title {
+    font-family: "DM Sans", sans-serif;
+    /*Oswald, sans-serif;*/
+    font-weight: bold;
+    /*300;*/
+    font-style: normal;
+    font-size: 41px;
+    text-transform: none;
+    line-height: 1.5;
+    color: #000000;
+    display: block;
+    letter-spacing: 0px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media only screen and (max-width: 798px) {
+    .headline,
+    .empty_cart,
+    .promo_banner,
+    .title {
+        font-size: 32px;
+    }
+}
+
+.title.center.blog a {
+    color: #000000;
+}
+
+/*  Content  */
+p {
+    margin: 0 0 15px;
+    font-style: normal;
+    line-height: 1.6em;
+}
+
+p img {
+    margin: 0;
+}
+
+sub {
+    font-size: 60%;
+}
+
+em, i {
+    font-style: italic;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+small {
+    font-size: 90%;
+}
+
+.feature img {
+    position: relative;
+    top: 7px;
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+}
+
+.onboard-text {
+    margin: 0;
+}
+
+.page-divider {
+    opacity: 0;
+    border-color: #aaaaaa;
+    border-top: 0;
+}
+
+.active-divider {
+    opacity: 1;
+}
+
+.feature p {
+    font-size: smaller;
+}
+
+#featured_links {
+    padding: 20px 0;
+}
+
+#featured_links h2 {
+    padding-top: 15px;
+}
+
+#featured_links .column, #featured_links .columns {
+    opacity: 1;
+}
+
+.slider-gallery .shopify-product-reviews-badge {
+    height: 30px;
+    display: block;
+}
+
+.spr-badge + .feature_divider {
+    margin-top: 15px;
+}
+
+.spr-badge {
+    padding: 5px 0;
+}
+
+.thumbnail .spr-badge-caption {
+    display: none;
+}
+
+div#shopry-review-photos a {
+    display: block !important;
+}
+
+.feature_divider {
+    width: 100%;
+    margin-bottom: 20px;
+    display: block;
+    border: 0;
+    border-color: #aaaaaa;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.feature_divider.no-margin {
+    margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 798px) {
+    .feature_divider {
+        margin-bottom: 10px;
+    }
+}
+
+div.container.bottom-fix {
+    padding-bottom: 0px;
+}
+
+.page .feature_divider,
+.page h2.title + .feature_divider {
+    margin-bottom: 15px;
+}
+
+/*  Blockquotes  */
+blockquote, blockquote p {
+    font-size: 17px;
+    line-height: 24px;
+    font-style: italic;
+}
+
+blockquote {
+    margin: 0 0 20px;
+    padding: 9px 20px 0 19px;
+    border-left: 1px solid #cccccc;
+}
+
+blockquote cite {
+    display: block;
+    font-size: 12px;
+    color: #555;
+}
+
+blockquote cite a, blockquote cite a:visited {
+    color: #555;
+}
+
+blockquote cite:before {
+    content: "\2014 \0020";
+}
+
+hr {
+    border-color: #aaaaaa;
+    border-width: 1px;
+    border-style: solid;
+    clear: both;
+    margin: 12px 0;
+    height: 0;
+}
+
+.cart_container hr {
+    border-top-width: 0px;
+}
+
+div.section.collection_description {
+    margin: 0 0 1.5em 0;
+}

@@ -1,0 +1,45 @@
+﻿
+.product_gallery .video-container > div {
+    position: relative;
+}
+
+.product_gallery .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.product_gallery .vimeo {
+    max-width: 830px;
+    margin: 0 auto;
+}
+
+.product_gallery .vimeo > div {
+    padding-top: 56.26506%;
+}
+
+.product_gallery .youtube {
+    max-width: 853px;
+    margin: 0 auto;
+}
+
+.product_gallery .youtube > div {
+    padding-top: 56.271981%;
+}
+
+video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.video-section,
+.block__featured_video {
+    position: relative;
+}
+
+.video-section .mediaWrapper {
+    height: 100% !important;
+}

@@ -1,0 +1,28 @@
+﻿
+div.container {
+    margin: 0 auto;
+    padding: 20px 0;
+    /*   @media(min-width:992px){ //jason
+      padding-top: 85px;
+    } */
+}
+
+.featured_text {
+    font-size: 18px;
+    line-height: 36px;
+}
+
+.large_text {
+    font-size: 28px;
+    line-height: 50px;
+}
+
+div.content {
+    padding: 0px 0px 15px 0;
+}
+
+@media (min-width: 992px) {
+    div.content {
+        padding-top: 97px;
+    }
+}

@@ -1,0 +1,13 @@
+﻿
+.sidebar .sidebar_content .input-row {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.sidebar .sidebar_content .input-row input {
+    margin: 5px 0;
+}
