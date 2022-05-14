@@ -1,0 +1,118 @@
+﻿
+$dir : null !default;
+
+.header{
+    display:flex;
+    align-items:flex-start;
+}
+
+.main-nav-container {
+    order: 1;
+
+    @include bp {
+        order: 2;
+
+        //در حالت غیر موبایل، تاپ نو، باید تا جای ممکن همه فضا را بگیرد
+        flex: 1 100%;
+    }
+
+    &[data-ismobile='true'] {
+        order: 1;
+        flex: none;
+
+        ~ .header-logo-container {
+            //وقتی هنوز موبایل مد نیست اما تاپ نو، دو خطه شده و یک دکمه شده، قسمت لوگو باید بیشترین فضا را بگیره که دکمه جستجو بچسبه سمت راست راست
+            flex: 1 100%;
+        }
+    }
+}
+
+.header-logo-container {
+    order: 2;
+
+    //حالت پیش فرض، موبایل، لگو باید کل فضای ممکن را بگیره که دکمه جستجو بچسبه راست راست
+    flex: 1 100%;
+
+    @include bp {
+        order: 1;
+
+        //وقتی موبایل نیست، تاپ نو، کل صفحه را می گیره
+        flex:none;
+    }
+}
+
+.header-search-container{
+    order:3;
+}
+
+.header-actions-container {
+    order: 4;
+}
+
+.menu {
+    direction: $dir;
+    background-color: if($dir=='rtl', red, black);
+}
+
+
+//main nav and toggle it ----------------------
+@import "_header/_main_nav.scss";
+//---------------------------------------------
+
+
+//top action items ----------------------------
+@import "_header/_action_items.scss";
+//---------------------------------------------
+
+//logo ----------------------------------------
+@import "_header/_logo.scss";
+//---------------------------------------------
+
+
+#mySliderTexts {
+
+    h2 {
+        transition: all .3s ease-in-out;
+    }
+
+    span {
+        -webkit-text-size-adjust: 100%;
+        --announcement-bar-height: 47px;
+        text-align: center;
+        pointer-events: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        font-style: normal;
+        text-transform: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        color: #121212;
+        font-weight: 700;
+        font-family: Gilroy700;
+        word-break: break-word;
+        font-size: 64px;
+        line-height: 65px;
+        letter-spacing: -2px;
+        box-sizing: border-box;
+        display: inline-block;
+        opacity: 0;
+        animation: pop 1s ease-in-out 1 forwards;
+        animation-delay: var(--animate-delay);
+        --animate-delay: 0s;
+    }
+}
+@keyframes pop {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

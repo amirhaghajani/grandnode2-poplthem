@@ -1,0 +1,23 @@
+﻿@model MenuModel.CategoryLineModel
+
+@if (Model.Category.IncludeInMenu)
+{
+    <li class="@(Model.Category.SubCategories.Count() == 0 ? "category": "category -hasSubmenu" )">
+
+        <a href="@Url.RouteUrl("Category", new { SeName = Model.Category.SeName })">
+                @if (!string.IsNullOrEmpty(Model.Category.Icon))
+                {
+                    <b-icon class="category-icon" icon="@Model.Category.Icon"></b-icon>
+                }
+                <span>@Model.Category.Name</span>
+
+                @*اینجا بحث فلگ اون کتگوری هست*@
+                @*@if (!string.IsNullOrEmpty(Model.Category.FlagStyle))
+                {
+                    <span class="badge @Model.Category.FlagStyle">@Model.Category.Flag</span>
+                }*@
+            </a>
+        
+    </li>
+}
+

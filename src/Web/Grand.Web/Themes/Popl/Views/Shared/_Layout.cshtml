@@ -42,7 +42,7 @@
             {
                 @RenderSection("Breadcrumb")
             }
-            @*@RenderBody()*@
+            @RenderBody()
             @await Component.InvokeAsync("Widget", new { widgetZone = "content_after" })
             <vc:voice-navigation></vc:voice-navigation>
         </b-container>
@@ -51,43 +51,76 @@
         <partial name="_Notifications" />
     </div>
     @await Component.InvokeAsync("Widget", new { widgetZone = "body_end_html_tag_before" })
+
+
+    <!--aha.com ---------------------------------------------- !-->
+    <script>
+        var my_global = {};
+
+        my_global.isOverFlown = function(element) {
+
+            if(!element.children || element.children.length<2){
+                console.error('خطا: isOverFlown method error: element whithout 2 children');
+                return false;
+            }
+
+            const elementHeight = element.getBoundingClientRect().height;
+            if(elementHeight==0){
+                console.error('خطا: isOverflown method error: element is hide');
+                return false;
+            }
+
+
+
+            let prevItem = {};
+            let currItem = {};
+
+            for(let i=0;i<element.children.length;i++){
+                const subElement = element.children[i];
+
+                currItem = subElement.getBoundingClientRect();
+                if (prevItem && prevItem.top < currItem.top) {
+                    return true;
+                }
+                prevItem = currItem;
+            }
+
+            return false;
+
+        }
+
+        my_global.toggler=function(item){
+
+            if (!item) return;
+
+            var dataToggle = item.getAttribute('data-toggled');
+            if (!dataToggle) {
+                my_global.toggler_setToggled(item);
+            }else{
+                my_global.toggler_removeToggled(item);
+            }
+        }
+
+        my_global.toggler_setToggled = function(item) {
+            item.setAttribute('data-toggled', 'true');
+        }
+        my_global.toggler_removeToggled = function(item) {
+            item.removeAttribute('data-toggled');
+        }
+
+
+
+        my_global.isMoblieMode=function(){
+            var html = document.getElementsByTagName('html')[0];
+            var style = window.getComputedStyle(html, ':after');
+            return style.content == '"is-moblie"';
+        }
+    </script>
+    <!--aha.com ---------------------------------------------- !-->
+
     <resources asp-type="ScriptFooter" />
     <resources asp-type="TemplateFooter" />
 </body>
 </html>
 
-<script>
-    @*var element = document.getElementById("test");
-    alert(isOverflown(element));
 
-    function isOverflown(element) {
-        debugger;
-        if(!element.children || element.children.length<2){
-            console.error('isOverFlown method error: element whithout 2 children');
-            return false;
-        }
-
-        const elementHeight = element.getBoundingClientRect().height;
-        if(elementHeight==0){
-            console.error('isOverflown method error: element is hide');
-            return false;
-        }
-
-
-
-        let prevItem = {};
-        let currItem = {};
-
-        for(let i=0;i<element.children.length;i++){
-            const subElement = element.children[i];
-
-            currItem = subElement.getBoundingClientRect();
-            if (prevItem && prevItem.top < currItem.top) {
-                return true;
-            }
-            prevItem = currItem;
-        }
-
-        return false;
-    }*@
-</script>

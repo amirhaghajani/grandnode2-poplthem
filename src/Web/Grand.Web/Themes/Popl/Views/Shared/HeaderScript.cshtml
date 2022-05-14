@@ -1,0 +1,117 @@
+﻿
+<script asp-location="Footer" asp-order="300">
+
+//var my_vue_header = new Vue({
+//    data: function() {
+//        return {
+//            itemsShowArray:[],
+//            counter:-1,
+//            interval:9000,
+//            numberOfItems:4,
+            
+//        };
+//    }, methods: {
+
+//        next(){
+//            this.counter++;
+//            if (this.counter >= this.numberOfItems) this.counter = 0;
+
+//            this.itemsShowArray = [];
+//            for (var i = 0;i<this.numberOfItems;i++){
+//                this.itemsShowArray.push(i == this.counter);
+//            }
+
+//        }
+        
+//    }, created() {
+//        setInterval(this.next, this.interval);
+//        setTimeout(this.next, 1000);
+//    }
+//});
+
+
+//--------------------------------------------------
+window.addEventListener('resize', function(){
+    my_header_script.checkNavIsOneLine();
+});
+window.addEventListener('load', function(){
+    my_header_script.checkNavIsOneLine();
+    my_header_script.topNav_OpenClose();
+});
+
+
+var my_header_script = {};
+
+
+
+
+my_header_script.checkNavIsOneLine=function(isCheckOnly) {
+
+    var nav = document.getElementById('main_nav');
+    var item = document.getElementById('main-nav-container');
+
+    var isOverFlown = my_global.isOverFlown(nav);
+
+    if (isCheckOnly) return !isOverFlown;
+
+
+
+    item.removeAttribute('data-ismobile');
+    isOverFlown = my_global.isOverFlown(nav);
+
+    if(!my_global.isMoblieMode() && isOverFlown) item.setAttribute('data-ismobile', 'true');
+
+    return !isOverFlown;
+}
+
+my_header_script.topNav_OpenClose=function(){
+    var nav = document.getElementById('main_nav');
+
+    for (var i = 0; i < nav.children.length; i++) {
+        var child = nav.children[i];
+        my_header_script.topNav_OpenClose_setEvents(nav.children, child);
+    }
+}
+
+my_header_script.topNav_OpenClose_setEvents=function(allChilds, item){
+
+    item.addEventListener('mouseover', function() { item.setAttribute('data-ismouse', true); });
+
+    item.addEventListener('mouseover', function() { 
+        if (my_global.isMoblieMode() || !my_header_script.checkNavIsOneLine(true)) return;
+        my_header_script.topNav_OpenClose_removeToggledForOtherChilds(allChilds, item);
+        my_global.toggler_setToggled(item); 
+    });
+
+    item.addEventListener('mouseout', function() { 
+        if (my_global.isMoblieMode() || !my_header_script.checkNavIsOneLine(true)) return;
+        my_global.toggler_removeToggled(item); 
+    });
+
+    item.addEventListener('click', function() { 
+            
+        if (my_global.isMoblieMode() || !my_header_script.checkNavIsOneLine(true)) {
+            //مد موبایل، باید با موس کار کنه
+            my_header_script.topNav_OpenClose_removeToggledForOtherChilds(allChilds, item);
+            my_global.toggler(item); 
+
+            return;
+        }
+
+        if (item.getAttribute('data-ismouse')) return;
+
+        //کاربر موس نداره، با کلیک کار کن
+        my_global.toggler(item); 
+        
+    });
+}
+
+my_header_script.topNav_OpenClose_removeToggledForOtherChilds=function(allChilds, item){
+    for(var i=0;i<allChilds.length;i++){
+                var child = allChilds[i];
+                if (child == item) continue;
+                my_global.toggler_removeToggled(child); 
+            }
+}
+
+</Script>

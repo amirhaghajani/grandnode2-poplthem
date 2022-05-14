@@ -1,0 +1,47 @@
+﻿
+
+<script asp-location="Footer" asp-order="300">
+
+window.addEventListener('load', function(){
+
+    my_homeSlider_script.sliderStart();
+});
+
+var my_homeSlider_script={};
+
+my_homeSlider_script.sliderStart=function(){
+
+    var videos = document.querySelectorAll('#myVideos video');
+    var texts = document.querySelectorAll('#mySliderTexts h2');
+
+    for (var i = 0; i < 4;i++){
+        videos[i].pause();
+        videos[i].currentTime = 0;
+        var nextVideo = i == 3 ? 0 : i + 1;
+
+        my_homeSlider_script.sliderStart_createEvent(videos[i], videos, texts, nextVideo);
+    }
+
+    my_homeSlider_script.sliderStart_next(videos, texts, 0);
+}
+
+my_homeSlider_script.sliderStart_next=function(videos,texts,counter ){
+    var perCo = counter - 1;
+    if (counter == 0) perCo = 3;
+    
+    texts[counter].style.display = '';
+    texts[perCo].style.display = 'none';
+
+
+    videos[counter].load();
+
+    videos[counter].style.display = '';
+    videos[perCo].style.display = 'none';
+}
+my_homeSlider_script.sliderStart_createEvent=function(video, videos,texts,nextVideo){
+    video.onended = function(){
+            my_homeSlider_script.sliderStart_next(videos, texts, nextVideo);
+        };
+}
+
+</script>

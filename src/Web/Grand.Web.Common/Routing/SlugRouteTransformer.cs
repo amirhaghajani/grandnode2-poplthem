@@ -50,9 +50,26 @@ namespace Grand.Web.Common.Routing
 
             var entityUrl = await _slugService.GetBySlugCached(slug.ToString());
 
+            //aha.com ------------------------------------------------
+            //if (entityUrl == null)
+            //{
+            //    if (slug.ToString().ToLower() != "allproducts")
+            //        return null;
+
+            //    entityUrl = new Domain.Seo.EntityUrl() {
+            //        EntityName = "category",
+            //        Slug = "AllProducts",
+            //        IsActive = true,
+            //    };
+            //}
+            //aha.com ------------------------------------------------
+
             //no URL Entity found
             if (entityUrl == null)
                 return null;
+
+            
+                
 
             //if URL Entity is not active find the latest one
             if (!entityUrl.IsActive)

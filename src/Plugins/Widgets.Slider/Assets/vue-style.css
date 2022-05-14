@@ -112,7 +112,10 @@
  [dark-theme="true"] #GrandCarousel .carousel-item {
      background-color: #2d3133;
 }
- [dark-theme="true"] #GrandCarousel .carousel-item .slide-title h2, [dark-theme="true"] #GrandCarousel .carousel-item .slide-price .actual, [dark-theme="true"] #GrandCarousel .carousel-item .animate-top, [dark-theme="true"] #GrandCarousel .carousel-item .animate-center-title, [dark-theme="true"] #GrandCarousel .carousel-item .animate-center-content, [dark-theme="true"] #GrandCarousel .carousel-item .animate-bottom {
+ [dark-theme="true"] #GrandCarousel .carousel-item .slide-title h2, [dark-theme="true"] #GrandCarousel .carousel-item .slide-price .actual, 
+ [dark-theme="true"] #GrandCarousel .carousel-item .animate-top, 
+ [dark-theme="true"] #GrandCarousel .carousel-item .animate-center-title, 
+ [dark-theme="true"] #GrandCarousel .carousel-item .animate-center-content, [dark-theme="true"] #GrandCarousel .carousel-item .animate-bottom {
      color: #fff;
 }
  [dark-theme="true"] #GrandCarousel .carousel-item .slide-content {

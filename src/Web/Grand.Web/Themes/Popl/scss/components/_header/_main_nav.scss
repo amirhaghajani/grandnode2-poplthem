@@ -1,0 +1,34 @@
+﻿
+//toggle main nav ----------------------------------------------
+@import "_main_nav_toggle.scss";
+//toggle main nav ----------------------------------------------
+
+
+.main-nav > li {
+    //مین نو، خودش یک لیست است. لیست آیتم زیرش
+    vertical-align: top;
+    position: relative;
+    font-size:20px;
+
+    ul {
+        //منظور اون لیست باز شونده است
+        display: none;
+
+        @include bp {
+            position: absolute;
+            max-height: 65vh;
+            overflow-y: auto;
+        }
+    }
+
+    li {
+        display: block;
+    }
+
+
+    &[data-toggled='true'] {
+        ul {
+            display: block;
+        }
+    }
+}

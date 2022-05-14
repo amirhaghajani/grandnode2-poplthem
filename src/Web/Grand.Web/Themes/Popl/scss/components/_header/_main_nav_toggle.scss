@@ -1,0 +1,103 @@
+﻿%main-nav-absolute-left {
+    //پیش فرض که حالت موبایل است، سمت چپ مخفی باشه
+    position: absolute;
+    width: 100%;
+    left: -100vw;
+    transition: transform 350ms;
+    border: solid 1px red;
+}
+
+
+.main-nav-container[data-ismobile='true'] {
+    //حالتی که مین نو کانتینر، حالت موبایل است، حالت موبایل پیاده شود یعنی منو بره سمت چپ مخفی بشه و دکمه تاگل نمایش داده بشه
+    .main-nav {
+        @extend %main-nav-absolute-left;
+
+        //منو دو خطه شده اما حالت موبایل هم نیست
+        width: 65vw;
+
+        li {
+            //آیتم های اصلی زیر هم باشند
+            display: block;
+
+            ul{
+                //ایتم های زیر لیست، فضا بگیره و چیزی زیرش نیاد
+                position:static;
+            }
+        }
+    }
+
+    .menu-toggler-button {
+        //در این حالت دکمه تاگل باید نمایش بشه که نوعش فلکس است
+        display: flex;
+
+        &[data-toggled='true'] {
+            ~ .main-nav {
+                transform: translateX(100vw);
+            }
+        }
+    }
+}
+
+.main-nav {
+    //حالت پیش فرض موبایل، سمت چپ مخفی باشد
+    @extend %main-nav-absolute-left;
+
+
+    li {
+        //پیش فرض حالت موبایل، آیتم های لیست زیر هم باشد
+        display: block;
+    }
+
+    @include bp {
+        //حالت غیر موبایل، نمایش در جای عادی خودش
+        position: static;
+
+        & li {
+            //حالت غیر موبایل، نمایش آیتم های لیست کنار هم
+            display: inline-block
+        }
+    }
+}
+
+
+.menu-toggler-button {
+    //حالت پیش فرض موبایل، نمایش داده شود دکمه
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    margin: 0 10px 0 27px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+
+    span {
+        color: #000;
+        height: 2px;
+        width: 30px;
+        background-color: black;
+    }
+
+
+    @include bp {
+        //حالت غیر موبایل، نمایش داده نشود دکمه
+        display: none;
+    }
+
+    &[data-toggled='true'] {
+
+        ~ .main-nav {
+            //اگر حالت پیش فرض موبایل و دکمه دیتای باز بودن داشت، کلاس مین نو، 100 درصد حرکت کند به سمت راست
+            transform: translateX(100vw);
+
+            @include bp {
+                //حالت غیر موبایل نیازی به حرکت نیست
+                transform: translateX(0);
+            }
+        }
+    }
+}

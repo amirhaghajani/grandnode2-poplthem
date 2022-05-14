@@ -177,7 +177,17 @@ namespace Grand.Web.Features.Handlers.Catalog
 
 
             var categoryIds = new List<string>();
-            categoryIds.Add(request.Category.Id);
+            //aha.com -------------------------------------------------
+            if (request.Category.Name != "Shop All")
+            {
+            //aha.com -------------------------------------------------
+                
+                categoryIds.Add(request.Category.Id);
+            
+            //aha.com -------------------------------------------------
+            }
+            //aha.com -------------------------------------------------
+
             if (_catalogSettings.ShowProductsFromSubcategories)
             {
                 //include subcategories

@@ -54,6 +54,7 @@
     <Compile Remove="Plugins\**" />
     <EmbeddedResource Remove="Plugins\**" />
     <None Remove="Plugins\**" />
+    <Compile Remove="Themes\Popl\Views\Shared\Components\AHAHomeSlider\AHAHomeSliderScript.cshtml.cs" />
     <None Remove="Themes\myTheme\asset\jquery.min.js" />
     <None Remove="Themes\myTheme\js\app.js" />
     <None Remove="Themes\myTheme\js\sections.js" />
@@ -91,6 +92,12 @@
     <None Remove="Themes\myTheme\scss\_typography.scss" />
     <None Remove="Themes\myTheme\scss\_videos.scss" />
     <None Remove="Themes\Popl\preview.jpg" />
+    <None Remove="Themes\Popl\scss\components\_header.scss" />
+    <None Remove="Themes\Popl\scss\components\_header\_action_items.scss" />
+    <None Remove="Themes\Popl\scss\components\_header\_logo.scss" />
+    <None Remove="Themes\Popl\scss\components\_header\_main_nav.scss" />
+    <None Remove="Themes\Popl\scss\components\_header\_main_nav_toggle.scss" />
+    <None Remove="Themes\Popl\scss\theme\_icon.scss" />
     <Content Update="Plugins\**">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

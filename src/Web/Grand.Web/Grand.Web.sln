@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grand.Web", "Grand.Web.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grand.Web.Admin", "..\Grand.Web.Admin\Grand.Web.Admin.csproj", "{6A83FE46-7558-4B7A-85E8-F88DF4039913}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grand.Web.Common", "..\Grand.Web.Common\Grand.Web.Common.csproj", "{A34F9380-C0C1-4B19-B0DD-33C2CF17DF97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6A83FE46-7558-4B7A-85E8-F88DF4039913}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A83FE46-7558-4B7A-85E8-F88DF4039913}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A83FE46-7558-4B7A-85E8-F88DF4039913}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34F9380-C0C1-4B19-B0DD-33C2CF17DF97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34F9380-C0C1-4B19-B0DD-33C2CF17DF97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34F9380-C0C1-4B19-B0DD-33C2CF17DF97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34F9380-C0C1-4B19-B0DD-33C2CF17DF97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
