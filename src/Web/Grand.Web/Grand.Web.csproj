@@ -54,7 +54,6 @@
     <Compile Remove="Plugins\**" />
     <EmbeddedResource Remove="Plugins\**" />
     <None Remove="Plugins\**" />
-    <Compile Remove="Themes\Popl\Views\Shared\Components\AHAHomeSlider\AHAHomeSliderScript.cshtml.cs" />
     <None Remove="Themes\myTheme\asset\jquery.min.js" />
     <None Remove="Themes\myTheme\js\app.js" />
     <None Remove="Themes\myTheme\js\sections.js" />
