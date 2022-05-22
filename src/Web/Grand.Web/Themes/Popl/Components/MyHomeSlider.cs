@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Grand.Web.ViewComponents
 {
-    public class AHAHomeSlider : BaseViewComponent
+    public class MyHomeSlider : BaseViewComponent
     {
         public async Task<IViewComponentResult> InvokeAsync()
         {

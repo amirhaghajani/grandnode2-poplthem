@@ -49,15 +49,17 @@ namespace Grand.Web.Themes.Popl.Routing
                 return null;
 
             var entityUrl = await _slugService.GetBySlugCached(slug.ToString());
+            //no URL Entity found
+            if (entityUrl == null)
+                return null;
 
-            if (entityUrl != null) return null;
-
-            if (slug.ToString().ToLower() != "shop-all2")
+            if (slug.ToString().ToLower() != Grand.Web.Themes.Popl.MyConfig.shopAllUrl)
                 return null;
 
             values["controller"] = "MyCatalog";
-            values["action"] = "MyCategory";
-            values["SeName"] = slug.ToString().ToLower();
+            values["action"] = "MyCategoryShopAll";
+            values["categoryid"] = entityUrl.EntityId;
+            values["SeName"] = entityUrl.Slug;
 
             return values;
 

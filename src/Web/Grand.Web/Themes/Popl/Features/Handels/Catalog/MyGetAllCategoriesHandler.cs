@@ -15,13 +15,14 @@ using Grand.Web.Features.Models.Catalog;
 using Grand.Web.Features.Models.Products;
 using Grand.Web.Models.Catalog;
 using Grand.Web.Models.Media;
+using Grand.Web.Themes.Popl.Features.Models.Catalog;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 
-namespace Grand.Web.Features.Handlers.Catalog
+namespace Grand.Web.Themes.Popl.Features.Handels.Catalog
 {
-    public class GetCategoryHandler : IRequestHandler<GetCategory, CategoryModel>
+    public class MyGetAllCategoriesHandler : IRequestHandler<MyGetAllCategories, CategoryModel>
     {
         private readonly IMediator _mediator;
         private readonly ICacheBase _cacheBase;
@@ -33,7 +34,7 @@ namespace Grand.Web.Features.Handlers.Catalog
         private readonly CatalogSettings _catalogSettings;
         private readonly MediaSettings _mediaSettings;
 
-        public GetCategoryHandler(
+        public MyGetAllCategoriesHandler(
             IMediator mediator,
             ICacheBase cacheBase,
             ICategoryService categoryService,
@@ -55,7 +56,7 @@ namespace Grand.Web.Features.Handlers.Catalog
             _mediaSettings = mediaSettings;
         }
 
-        public async Task<CategoryModel> Handle(GetCategory request, CancellationToken cancellationToken)
+        public async Task<CategoryModel> Handle(MyGetAllCategories request, CancellationToken cancellationToken)
         {
             var model = request.Category.ToModel(request.Language);
             var customer = request.Customer;
@@ -67,7 +68,8 @@ namespace Grand.Web.Features.Handlers.Catalog
                 request.Command.OrderBy = request.Category.DefaultSort;
 
             //view/sorting/page size
-            var options = await _mediator.Send(new GetViewSortSizeOptions() {
+            var options = await _mediator.Send(new GetViewSortSizeOptions()
+            {
                 Command = request.Command,
                 PagingFilteringModel = request.Command,
                 Language = request.Language,
@@ -90,7 +92,8 @@ namespace Grand.Web.Features.Handlers.Catalog
                     languageId);
                 model.CategoryBreadcrumb = await _cacheBase.GetAsync(breadcrumbCacheKey, async () =>
                     (await _categoryService.GetCategoryBreadCrumb(request.Category))
-                    .Select(catBr => new CategoryModel {
+                    .Select(catBr => new CategoryModel
+                    {
                         Id = catBr.Id,
                         Name = catBr.GetTranslation(x => x.Name, languageId),
                         SeName = catBr.GetSeName(languageId)
@@ -103,7 +106,8 @@ namespace Grand.Web.Features.Handlers.Catalog
             var subCategories = new List<CategoryModel.SubCategoryModel>();
             foreach (var x in (await _categoryService.GetAllCategoriesByParentCategoryId(request.Category.Id)).Where(x => !x.HideOnCatalog))
             {
-                var subCatModel = new CategoryModel.SubCategoryModel {
+                var subCatModel = new CategoryModel.SubCategoryModel
+                {
                     Id = x.Id,
                     Name = x.GetTranslation(y => y.Name, languageId),
                     SeName = x.GetSeName(languageId),
@@ -113,7 +117,8 @@ namespace Grand.Web.Features.Handlers.Catalog
                 };
                 //prepare picture model
                 var picture = !string.IsNullOrEmpty(x.PictureId) ? await _pictureService.GetPictureById(x.PictureId) : null;
-                subCatModel.PictureModel = new PictureModel {
+                subCatModel.PictureModel = new PictureModel
+                {
                     Id = x.PictureId,
                     FullSizeImageUrl = await _pictureService.GetPictureUrl(x.PictureId),
                     ImageUrl = await _pictureService.GetPictureUrl(x.PictureId, _mediaSettings.CategoryThumbPictureSize),
@@ -144,7 +149,8 @@ namespace Grand.Web.Features.Handlers.Catalog
 
                 var hasFeaturedProductsCache = await _cacheBase.GetAsync<bool?>(cacheKey, async () =>
                 {
-                    featuredProducts = (await _mediator.Send(new GetSearchProductsQuery() {
+                    featuredProducts = (await _mediator.Send(new GetSearchProductsQuery()
+                    {
                         PageSize = _catalogSettings.LimitOfFeaturedProducts,
                         CategoryIds = new List<string> { request.Category.Id },
                         Customer = request.Customer,
@@ -158,7 +164,8 @@ namespace Grand.Web.Features.Handlers.Catalog
                 if (hasFeaturedProductsCache.Value && featuredProducts == null)
                 {
                     //cache indicates that the category has featured products
-                    featuredProducts = (await _mediator.Send(new GetSearchProductsQuery() {
+                    featuredProducts = (await _mediator.Send(new GetSearchProductsQuery()
+                    {
                         PageSize = _catalogSettings.LimitOfFeaturedProducts,
                         CategoryIds = new List<string> { request.Category.Id },
                         Customer = request.Customer,
@@ -169,7 +176,8 @@ namespace Grand.Web.Features.Handlers.Catalog
                 }
                 if (featuredProducts != null && featuredProducts.Any())
                 {
-                    model.FeaturedProducts = (await _mediator.Send(new GetProductOverview() {
+                    model.FeaturedProducts = (await _mediator.Send(new GetProductOverview()
+                    {
                         Products = featuredProducts,
                     })).ToList();
                 }
@@ -178,8 +186,8 @@ namespace Grand.Web.Features.Handlers.Catalog
 
             var categoryIds = new List<string>();
 
-            categoryIds.Add(request.Category.Id);
-            
+            //categoryIds.Add(request.Category.Id);
+
             if (_catalogSettings.ShowProductsFromSubcategories)
             {
                 //include subcategories
@@ -188,7 +196,8 @@ namespace Grand.Web.Features.Handlers.Catalog
             //products
             IList<string> alreadyFilteredSpecOptionIds = await model.PagingFilteringContext.SpecificationFilter.GetAlreadyFilteredSpecOptionIds(
                 _httpContextAccessor.HttpContext.Request.Query, _specificationAttributeService);
-            var products = (await _mediator.Send(new GetSearchProductsQuery() {
+            var products = (await _mediator.Send(new GetSearchProductsQuery()
+            {
                 LoadFilterableSpecificationAttributeOptionIds = !_catalogSettings.IgnoreFilterableSpecAttributeOption,
                 CategoryIds = categoryIds,
                 Customer = request.Customer,
@@ -201,7 +210,8 @@ namespace Grand.Web.Features.Handlers.Catalog
                 PageSize = request.Command.PageSize
             }));
 
-            model.Products = (await _mediator.Send(new GetProductOverview() {
+            model.Products = (await _mediator.Send(new GetProductOverview()
+            {
                 PrepareSpecificationAttributes = _catalogSettings.ShowSpecAttributeOnCatalogPages,
                 Products = products.products,
             })).ToList();

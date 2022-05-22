@@ -23,12 +23,6 @@ namespace Grand.Web.Themes.Popl.Endpoints
             }
 
             endpointRouteBuilder.MapDynamicControllerRoute<MyRouteTransformer>(pattern);
-
-
-            endpointRouteBuilder.MapControllerRoute(
-                name: "MyCatalog",
-                pattern: pattern,
-                new { controller = "MyCatalog", action = "MyCategory" });
         }
 
         public int Priority
