@@ -1,10 +1,10 @@
 ﻿using Grand.Domain.Data;
 using Grand.Infrastructure.Configuration;
 using Grand.Infrastructure.Endpoints;
-using Grand.Web.Themes.Popl.Routing;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
+
 
 namespace Grand.Web.Themes.Popl.Endpoints
 {
@@ -12,27 +12,31 @@ namespace Grand.Web.Themes.Popl.Endpoints
     {
         public void RegisterEndpoint(IEndpointRouteBuilder endpointRouteBuilder)
         {
-            if (!DataSettingsManager.DatabaseIsInstalled())
-                return;
-
-            var pattern = "{**SeName}";
-            var config = endpointRouteBuilder.ServiceProvider.GetRequiredService<AppConfig>();
-            if (config.SeoFriendlyUrlsForLanguagesEnabled)
+            var pattern = "";
+            if (DataSettingsManager.DatabaseIsInstalled())
             {
-                pattern = $"{{language:lang={config.SeoFriendlyUrlsDefaultCode}}}/{{**SeName}}";
+                var config = endpointRouteBuilder.ServiceProvider.GetRequiredService<AppConfig>();
+                if (config.SeoFriendlyUrlsForLanguagesEnabled)
+                {
+                    pattern = $"{{language:lang={config.SeoFriendlyUrlsDefaultCode}}}/";
+                }
             }
 
-            endpointRouteBuilder.MapDynamicControllerRoute<MyRouteTransformer>(pattern);
+            RegisterAddToCartRoute(endpointRouteBuilder, pattern);
         }
 
-        public int Priority
+        public int Priority => 1;
+
+
+        private void RegisterAddToCartRoute(IEndpointRouteBuilder endpointRouteBuilder, string pattern)
         {
-            get
-            {
-                //it should be the last route
-                //we do not set it to -int.MaxValue so it could be overridden (if required)
-                return -100;
-            }
+
+            //add product to cart (without any attributes and options). used on catalog pages.
+            endpointRouteBuilder.MapControllerRoute("MyAddProductCatalog",
+                            pattern + "myaddproducttocart/catalog/{productId?}/{shoppingCartTypeId?}",
+                            new { controller = "MyActionCart", action = "AddProductCatalog" },
+                            new { productId = @"\w+", shoppingCartTypeId = @"\d+" },
+                            new[] { "Grand.Web.Controllers" });
         }
     }
 }

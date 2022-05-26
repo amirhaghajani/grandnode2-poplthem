@@ -1,5 +1,22 @@
 ﻿@using System.Globalization
+@using Grand.Web.Themes.Popl
 @model ProductOverviewModel
+
+@{
+    bool isCustomProduct = false;
+    if(Model.ProductAttributeModels.Any()){
+        foreach( var item in Model.ProductAttributeModels)
+        {
+            if(item.Name.ToLower()==MyConfig.productIsCustomProperty)
+            {
+                isCustomProduct=true;
+                break;
+            }
+        }
+    }
+    
+}
+
 @{
     //prepare "Add to cart" Axios link
     string addtocartlink = "";
@@ -16,7 +33,7 @@
         }
         else
         {
-            addtocartlink = Url.RouteUrl("AddProductCatalog", new { productId = Model.Id, shoppingCartTypeId = shoppingCartTypeId, quantity = quantity });
+            addtocartlink = Url.RouteUrl("MyAddProductCatalog", new { productId = Model.Id, shoppingCartTypeId = shoppingCartTypeId, quantity = quantity });
         }
         addtowishlistlink = Url.RouteUrl("AddProductCatalog", new { productId = Model.Id, shoppingCartTypeId = (int)ShoppingCartType.Wishlist, quantity = quantity });
     }
@@ -45,7 +62,8 @@
                 <b-card-img-lazy class="hover-img" alt="@Model.SecondPictureModel.AlternateText" src="@Model.SecondPictureModel.ImageUrl"></b-card-img-lazy>
             }
         </a>
-        <a title="@Loc["Products.QuickView"]" class="btn btn-secondary quick-view-button" data-target="ModalQuickView" onclick="AxiosCart.quickview_product('@quickviewurl');return false;">
+        <a title="@Loc["Products.QuickView"]" class="btn btn-secondary quick-view-button" data-target="ModalQuickView" 
+            onclick="AxiosCart.quickview_product('@quickviewurl');return false;">
             <b-icon icon="search"></b-icon>
             <span>@Loc["Products.QuickView"]</span>
         </a>
@@ -254,7 +272,8 @@
         <div class="btn-group">
             @if (!Model.ProductPrice.DisableWishlistButton && Model.ProductType == ProductType.SimpleProduct)
             {
-                <button v-b-tooltip.hover.bottom title="@Loc["ShoppingCart.AddToWishlist"]" class="btn btn-secondary" onclick="AxiosCart.addproducttocart_catalog('@addtowishlistlink', '@Model.ShowQty', '@Model.Id');return false;">
+                <button v-b-tooltip.hover.bottom title="@Loc["ShoppingCart.AddToWishlist"]" class="btn btn-secondary" 
+                    onclick="AxiosCart.addproducttocart_catalog('@addtowishlistlink', '@Model.ShowQty', '@Model.Id');return false;">
                     <b-icon icon="heart"></b-icon>
                     <span class="sr-only">AddToWishlist</span>
                 </button>
@@ -270,7 +289,8 @@
                 {
                     addToCartText = Loc["ShoppingCart.PreOrder"];
                 }
-                <button class="btn btn-info justify-content-center w-100" onclick="AxiosCart.addproducttocart_catalog('@addtocartlink', '@Model.ShowQty', '@Model.Id');return false;">
+                <button class="btn btn-info justify-content-center w-100" 
+                    onclick="AxiosCart.addproducttocart_catalog('@addtocartlink', '@Model.ShowQty', '@Model.Id');return false;">
                     <b-icon icon="cart2" class="mx-auto d-sm-none d-block"></b-icon>
                     <span class="add-cart-text d-sm-block d-none">@(addToCartText)</span>
                     <span class="sr-only">AddToCart</span>
@@ -282,7 +302,8 @@
                 {
 
                     var addToCartText = Loc["ShoppingCart.Bids"];
-                    <button class="btn btn-info justify-content-center w-100" onclick="AxiosCart.addproducttocart_catalog('@addtocartlink', 'false', '@Model.Id');return false;">
+                    <button class="btn btn-info justify-content-center w-100" 
+                        onclick="AxiosCart.addproducttocart_catalog('@addtocartlink', 'false', '@Model.Id');return false;">
                         <b-icon icon="hammer" class="mx-auto d-sm-none d-block"></b-icon>
                         <span class="add-cart-text d-sm-block d-none">@(addToCartText)</span>
                         <span class="sr-only">AddToCart</span>
@@ -291,11 +312,28 @@
             }
             @if (!Model.ProductPrice.DisableAddToCompareListButton && Model.ProductType == ProductType.SimpleProduct)
             {
-                <button v-b-tooltip.hover.bottom title="@Loc["ShoppingCart.AddToCompareList"]" class="btn btn-secondary" onclick="AxiosCart.addproducttocomparelist('@Model.Id', '@Loc["Products.ProductHasBeenAddedToCompareList.Link"]', '@Url.RouteUrl("CompareProducts")')">
+                <button v-b-tooltip.hover.bottom title="@Loc["ShoppingCart.AddToCompareList"]" class="btn btn-secondary" 
+                    onclick="AxiosCart.addproducttocomparelist('@Model.Id', '@Loc["Products.ProductHasBeenAddedToCompareList.Link"]', '@Url.RouteUrl("CompareProducts")')">
                     <span class="sr-only">AddToCompareList</span>
                     <b-icon icon="shuffle"></b-icon>
                 </button>
             }
         </div>
+
+        @if (isCustomProduct)
+        {
+            <h1>Custom product</h1>
+        }
+        else
+        {
+            var addToCartText = Loc["ShoppingCart.AddToCart"];
+
+            <button class="btn btn-info justify-content-center w-100" 
+                onclick="AxiosCart.addproducttocart_catalog('@addtocartlink', '@Model.ShowQty', '@Model.Id');return false;">
+                <b-icon icon="cart2" class="mx-auto d-sm-none d-block"></b-icon>
+                <span class="add-cart-text d-sm-block d-none">@(addToCartText) - 2</span>
+                <span class="sr-only">AddToCart</span>
+            </button>
+        }
     </div>
 </article> 

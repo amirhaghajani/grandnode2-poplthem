@@ -417,7 +417,7 @@ var vm = new Vue({
                     var message = response.data.message;
                     var downloadGuid = response.data.downloadGuid;
                     var downloadUrl = response.data.downloadUrl;
-                    var downloadBtn = document.querySelector('.download-file');
+                    var downloadBtn = document.querySelectorAll('.download-file');
                     var messageContainer = document.getElementById('download-message');
 
                     e.setAttribute('qq-button-id', downloadGuid);
@@ -428,9 +428,8 @@ var vm = new Vue({
                     messageContainer.classList.add('alert-info');
                     messageContainer.innerText = message;
 
-                    downloadBtn.style.display = "block";
-                    downloadBtn.children[0].setAttribute('href', downloadUrl);
-
+                    downloadBtn[0].style.display = "block";
+                    downloadBtn[0].children[0].setAttribute('href', downloadUrl);
                 } else {
                     var message = response.data.message;
                     var messageContainer = document.getElementById('download-message');

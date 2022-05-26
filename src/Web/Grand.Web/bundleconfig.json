@@ -122,7 +122,7 @@
       "renameLocals": false
     },
     "sourceMap": false
-  }
+  },
   //--myThemee
   //aha.com -------------------------------------------------------------
 
@@ -130,6 +130,28 @@
 
   //aha.com -------------------------------------------------------------
   //--poplTheme
+  {
+    "outputFileName": "wwwroot/popl/scripts/my.popl.app.js",
+    "inputFiles": [
+      "Themes/popl/scripts/my.popl.app.js"
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": false
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/popl/scripts/my.popl.public.axios.js",
+    "inputFiles": [
+      "Themes/popl/scripts/my.popl.public.axios.js"
+    ],
+    "minify": {
+      "enabled": false,
+      "renameLocals": false
+    },
+    "sourceMap": false
+  }
 
 
 
