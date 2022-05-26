@@ -757,7 +757,19 @@ html #mySliderTexts span {
     opacity: 1;
   }
 }
-
+html .slide-fade-enter-active {
+  animation: heartBeat;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 3s;
+  /* don't forget to set a duration! */
+  background: #17a2b8;
+}
+html .slide-fade-leave-active {
+  animation: zoomOut;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s;
+  /* don't forget to set a duration! */
+}
 html[dir=rtl] .header {
   display: flex;
   align-items: flex-start;
@@ -962,7 +974,19 @@ html[dir=rtl] #mySliderTexts span {
     opacity: 1;
   }
 }
-
+html[dir=rtl] .slide-fade-enter-active {
+  animation: heartBeat;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 3s;
+  /* don't forget to set a duration! */
+  background: #17a2b8;
+}
+html[dir=rtl] .slide-fade-leave-active {
+  animation: zoomOut;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s;
+  /* don't forget to set a duration! */
+}
 /*==================================================
  main - theme
 ==================================================*/

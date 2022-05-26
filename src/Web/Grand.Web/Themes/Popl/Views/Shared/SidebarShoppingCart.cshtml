@@ -8,14 +8,21 @@
         <li class="nav-item">
             <a href="#" target="_self" class="nav-link">
                 <b-icon icon="cart" :variant="[darkMode ? 'white' : 'dark']" @@click="if(flycartfirstload){updateSidebarShoppingCart('@Url.RouteUrl("SidebarShoppingCart")')}" v-b-toggle.sidebar-cart></b-icon>
-                <span class="cart-count">
-                    <template v-if="flycartindicator == null">
-                        @Loc["ShoppingCart.HeaderQuantity", Model]
-                    </template>
-                    <template v-else>
-                        {{flycartindicator}}
-                    </template>
-                </span>
+                
+                <transition name="slide-fade" mode="out-in">
+
+                    <span class="cart-count" :key="flycartindicator">
+                        <template v-if="flycartindicator == null">
+                            @Loc["ShoppingCart.HeaderQuantity", Model]
+                        </template>
+                        <template v-else>
+                            {{flycartindicator}}
+                        </template>
+                    </span>
+
+                  </transition>
+
+                
             </a>
         </li>
         <template>

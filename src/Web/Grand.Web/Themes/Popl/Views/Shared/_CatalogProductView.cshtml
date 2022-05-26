@@ -33,7 +33,7 @@
         }
         else
         {
-            addtocartlink = Url.RouteUrl("MyAddProductCatalog", new { productId = Model.Id, shoppingCartTypeId = shoppingCartTypeId, quantity = quantity });
+            addtocartlink = Url.RouteUrl("AddProductCatalog", new { productId = Model.Id, shoppingCartTypeId = shoppingCartTypeId, quantity = quantity });
         }
         addtowishlistlink = Url.RouteUrl("AddProductCatalog", new { productId = Model.Id, shoppingCartTypeId = (int)ShoppingCartType.Wishlist, quantity = quantity });
     }
@@ -56,17 +56,28 @@
 <article v-bind:class="{ mobile: isMobile()}" class="card product-box mb-2">
     <div class="picture-container">
         <a class="img-container" href="@Url.RouteUrl("Product", new { SeName = Model.SeName })" title="@Model.DefaultPictureModel.Title">
-            <b-card-img-lazy alt="@Model.DefaultPictureModel.AlternateText" class="main-product-img" src="@Model.DefaultPictureModel.ImageUrl" title="@Model.DefaultPictureModel.Title"></b-card-img-lazy>
-            @if (!string.IsNullOrEmpty(Model.SecondPictureModel.ImageUrl))
+            
+            <b-card-img-lazy alt="@Model.DefaultPictureModel.AlternateText" class="main-product-img" 
+                src="@Model.DefaultPictureModel.ImageUrl" title="@Model.DefaultPictureModel.Title">
+            </b-card-img-lazy>
+            
+
+            @*عکس دوم محصول*@
+            @*@if (!string.IsNullOrEmpty(Model.SecondPictureModel.ImageUrl))
             {
                 <b-card-img-lazy class="hover-img" alt="@Model.SecondPictureModel.AlternateText" src="@Model.SecondPictureModel.ImageUrl"></b-card-img-lazy>
-            }
+            }*@
         </a>
-        <a title="@Loc["Products.QuickView"]" class="btn btn-secondary quick-view-button" data-target="ModalQuickView" 
+
+
+        @*دکمه مشاهده سریع برداشته شد*@
+        @*<a title="@Loc["Products.QuickView"]" class="btn btn-secondary quick-view-button" data-target="ModalQuickView" 
             onclick="AxiosCart.quickview_product('@quickviewurl');return false;">
             <b-icon icon="search"></b-icon>
             <span>@Loc["Products.QuickView"]</span>
-        </a>
+        </a>*@
+
+
         @if (!string.IsNullOrEmpty(Model.Flag))
         {
             <div class="product-label">
@@ -216,14 +227,14 @@
                                                 case AttributeControlType.RadioList:
                                                 case AttributeControlType.Checkboxes:
                                                 case AttributeControlType.ReadonlyCheckboxes:
-                                                    <a class="btn btn-sm btn-light name" href="@Url.RouteUrl("Product", new { SeName = Model.SeName })?@item.Name=@Html.Raw(spec.Name)">
+                                                   @* <a class="btn btn-sm btn-light name" href="@Url.RouteUrl("Product", new { SeName = Model.SeName })?@item.Name=@Html.Raw(spec.Name)">
                                                         @Html.Raw(spec.Name)
-                                                    </a>
+                                                    </a>*@
                                                     break;
                                                 case AttributeControlType.ColorSquares:
                                                     if ((spec.PictureModel.FullSizeImageUrl) != null)
                                                     {
-                                                        <a class="btn btn-sm btn-light name color-container" title="@spec.Name" @@click="productImage($event)" data-href="@spec.PictureModel.FullSizeImageUrl">
+                                                        <a class="btn btn-sm btn-light name color-container" title="@spec.Name" @@click="myPoplProductImage($event)" data-href="@spec.PictureModel.FullSizeImageUrl">
                                                             <span class="color" style="background-color:@spec.ColorSquaresRgb;">&nbsp;</span>
                                                         </a>
                                                     }
@@ -235,7 +246,7 @@
                                                     }
                                                     break;
                                                 case AttributeControlType.ImageSquares:
-                                                    if ((spec.PictureModel.FullSizeImageUrl) != null)
+                                                    @*if ((spec.PictureModel.FullSizeImageUrl) != null)
                                                     {
                                                         <a class="btn btn-sm btn-light p-1 name image-container" v-on:click='productImage' data-href="@spec.PictureModel.FullSizeImageUrl">
                                                             <img src="@spec.ImageSquaresPictureModel?.ImageUrl" alt="@spec.Name" />
@@ -246,7 +257,7 @@
                                                         <a class="btn btn-sm btn-light p-1 name image-container" href="@Url.RouteUrl("Product", new { SeName = Model.SeName })?@item.Name=@Html.Raw(spec.Name)">
                                                             <img src="@spec.ImageSquaresPictureModel?.ImageUrl" alt="@spec.Name" />
                                                         </a>
-                                                    }
+                                                    }*@
                                                     break;
                                                 default:
                                                     break;
@@ -261,15 +272,21 @@
                 </table>
             </div>
         }
-        <div class="desc">
+
+
+        @*<div class="desc">
             @Html.Raw(Model.ShortDescription)
-        </div>
-        @if (Model.ShowQty)
+        </div>*@
+
+        @*امکان تعداد را عوض کردن*@
+        @*@if (Model.ShowQty)
         {
             var qtyId = "addtocart_" + @Model.Id + "_EnteredQuantity";
             <input class="form-control input-group-addon catalog-quantity" type="number" min="1" id="@qtyId" name="@qtyId" value="1">
-        }
-        <div class="btn-group">
+        }*@
+
+        @*قسمت دکمه های اضافه کردن به کارت، مقایسه و مورد علاقه برداشته شد*@
+        @*<div class="btn-group">
             @if (!Model.ProductPrice.DisableWishlistButton && Model.ProductType == ProductType.SimpleProduct)
             {
                 <button v-b-tooltip.hover.bottom title="@Loc["ShoppingCart.AddToWishlist"]" class="btn btn-secondary" 
@@ -318,20 +335,25 @@
                     <b-icon icon="shuffle"></b-icon>
                 </button>
             }
-        </div>
+        </div>*@
 
         @if (isCustomProduct)
         {
-            <h1>Custom product</h1>
+            <button class="btn btn-info justify-content-center w-100" 
+                onclick="AxiosCart.quickview_product('@quickviewurl');return false;">
+                <b-icon icon="cart2" class="mx-auto d-sm-none d-block"></b-icon>
+                <span class="add-cart-text d-sm-block d-none">Custome</span>
+                <span class="sr-only">AddToCart</span>
+            </button>
         }
         else
         {
             var addToCartText = Loc["ShoppingCart.AddToCart"];
 
             <button class="btn btn-info justify-content-center w-100" 
-                onclick="AxiosCart.addproducttocart_catalog('@addtocartlink', '@Model.ShowQty', '@Model.Id');return false;">
+                onclick="AxiosCart.myAddproducttocart_catalog('@addtocartlink', '@Model.ShowQty', '@Model.Id', '@quickviewurl');return false;">
                 <b-icon icon="cart2" class="mx-auto d-sm-none d-block"></b-icon>
-                <span class="add-cart-text d-sm-block d-none">@(addToCartText) - 2</span>
+                <span class="add-cart-text d-sm-block d-none">@(addToCartText)</span>
                 <span class="sr-only">AddToCart</span>
             </button>
         }
