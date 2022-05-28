@@ -68,3 +68,19 @@ vm.myPoplProductImage = function (event) {
     Image.setAttribute('src', Imagesrc);
 
 };
+
+vm.myPoplProductColorSelected = function (event) {
+    var element = event.target;
+    var tagName = element.tagName;
+    if (tagName != 'A' && tagName != 'a') {
+        element = event.target.parentElement;
+    }
+
+    var parent = element.parentElement;
+    for (var i = 0; i < parent.children.length; i++) {
+        var child = parent.children[i];
+        child.classList.remove('selected');
+    }
+
+    element.classList.add('selected');
+}

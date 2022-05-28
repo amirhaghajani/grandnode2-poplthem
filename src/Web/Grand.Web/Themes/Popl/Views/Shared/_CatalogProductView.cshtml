@@ -1,8 +1,9 @@
 ﻿@using System.Globalization
 @using Grand.Web.Themes.Popl
-@model ProductOverviewModel
+@model MyProductOverviewModel
 
 @{
+    //aha.com ---------------------------------------
     bool isCustomProduct = false;
     if(Model.ProductAttributeModels.Any()){
         foreach( var item in Model.ProductAttributeModels)
@@ -14,12 +15,13 @@
             }
         }
     }
-    
+    //aha.com ---------------------------------------
 }
 
 @{
     //prepare "Add to cart" Axios link
     string addtocartlink = "";
+    string myAddtocartlink = "";
     string addtowishlistlink = "";
     string quickviewurl = Url.RouteUrl("QuickView-Product", new { productId = Model.Id });
 
@@ -34,6 +36,7 @@
         else
         {
             addtocartlink = Url.RouteUrl("AddProductCatalog", new { productId = Model.Id, shoppingCartTypeId = shoppingCartTypeId, quantity = quantity });
+            myAddtocartlink = Url.RouteUrl("MyAddProductCatalog", new { productId = Model.Id, shoppingCartTypeId = shoppingCartTypeId, quantity = quantity });
         }
         addtowishlistlink = Url.RouteUrl("AddProductCatalog", new { productId = Model.Id, shoppingCartTypeId = (int)ShoppingCartType.Wishlist, quantity = quantity });
     }
@@ -218,7 +221,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="attr-value">
+                                    <div class="attr-value" data-attributeid="@item.Id">
                                         @foreach (var spec in item.Values)
                                         {
                                             switch (item.AttributeControlType)
@@ -234,13 +237,21 @@
                                                 case AttributeControlType.ColorSquares:
                                                     if ((spec.PictureModel.FullSizeImageUrl) != null)
                                                     {
-                                                        <a class="btn btn-sm btn-light name color-container" title="@spec.Name" @@click="myPoplProductImage($event)" data-href="@spec.PictureModel.FullSizeImageUrl">
+                                                        <a class="btn btn-sm btn-light name color-container @(spec.IsPreSelected ? "selected": "")" 
+                                                            title="@spec.Name" @@click="myPoplProductImage($event); myPoplProductColorSelected($event)" 
+                                                            data-href="@spec.PictureModel.FullSizeImageUrl"
+                                                            data-valueid="@spec.Id"
+                                                            >
                                                             <span class="color" style="background-color:@spec.ColorSquaresRgb;">&nbsp;</span>
                                                         </a>
                                                     }
                                                     else
                                                     {
-                                                        <a class="btn btn-sm btn-light name color-container" title="@spec.Name" href="@Url.RouteUrl("Product", new { SeName = Model.SeName })?@item.Name=@Html.Raw(spec.Name)">
+                                                        <a class="btn btn-sm btn-light name color-container" title="@spec.Name" 
+                                                            @*href="@Url.RouteUrl("Product", new { SeName = Model.SeName })?@item.Name=@Html.Raw(spec.Name)"*@
+                                                            @@click="myPoplProductColorSelected($event)"
+                                                            data-valueid="@spec.Id"
+                                                        >
                                                             <span class="color" style="background-color:@spec.ColorSquaresRgb;">&nbsp;</span>
                                                         </a>
                                                     }
@@ -351,7 +362,7 @@
             var addToCartText = Loc["ShoppingCart.AddToCart"];
 
             <button class="btn btn-info justify-content-center w-100" 
-                onclick="AxiosCart.myAddproducttocart_catalog('@addtocartlink', '@Model.ShowQty', '@Model.Id', '@quickviewurl');return false;">
+                onclick="AxiosCart.myAddproducttocart_catalog(this, '@myAddtocartlink', '@Model.ShowQty', '@Model.Id', '@quickviewurl');return false;">
                 <b-icon icon="cart2" class="mx-auto d-sm-none d-block"></b-icon>
                 <span class="add-cart-text d-sm-block d-none">@(addToCartText)</span>
                 <span class="sr-only">AddToCart</span>

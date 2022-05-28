@@ -123,9 +123,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Themes\Popl\Features\Handels\Products\" />
-    <Folder Include="Themes\Popl\Features\Models\Products\" />
-    <Folder Include="Themes\Popl\Models\Catalog\" />
     <Folder Include="wwwroot\myTheme\bundles\" />
   </ItemGroup>
 </Project>

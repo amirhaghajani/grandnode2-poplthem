@@ -147,6 +147,8 @@ namespace Grand.Web.Controllers
                 _translationService.GetResource("ActivityLog.PublicStore.ViewCategory"), category.Name);
             await _customerActionEventService.Viewed(customer, HttpContext.Request.Path.ToString(), Request.Headers[HeaderNames.Referer].ToString() != null ? Request.Headers["Referer"].ToString() : "");
 
+
+            //aha.com -------------------------------------------------
             //model
             var model = await _mediator.Send(new MyGetAllCategories() {
                 Category = category,

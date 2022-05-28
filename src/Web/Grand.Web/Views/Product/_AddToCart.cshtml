@@ -95,7 +95,10 @@
 
         </script>
         <div class="input-group-append">
-            <button type="button" id="add-to-cart-button-@Model.ProductId" class="btn btn-info w-100 add-to-cart-button d-inline-flex" data-productid="@Model.ProductId" onclick="AxiosCart.addproducttocart_details('@Url.RouteUrl("AddProductDetails", new { productId = Model.ProductId, shoppingCartTypeId = (int)shoppingCartType })', '#product-details-form');return false;">
+            <button type="button" id="add-to-cart-button-@Model.ProductId" 
+                class="btn btn-info w-100 add-to-cart-button d-inline-flex" 
+                data-productid="@Model.ProductId" 
+                onclick="AxiosCart.addproducttocart_details('@Url.RouteUrl("AddProductDetails", new { productId = Model.ProductId, shoppingCartTypeId = (int)shoppingCartType })', '#product-details-form');return false;">
                 <span>@addToCartText</span>
             </button>
         </div>

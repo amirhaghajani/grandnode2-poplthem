@@ -1,5 +1,16 @@
 ﻿
-AxiosCart.myAddproducttocart_catalog = function (urladd, showqty, productid, quickviewUrl) {
+AxiosCart.myAddproducttocart_catalog = function (event, urladd, showqty, productid, quickviewUrl) {
+    console.log(urladd);
+    var selectedColor = event.parentElement.querySelector('.selected');
+
+    var fd = new FormData();
+
+    if (selectedColor) {
+        valueId = selectedColor.getAttribute('data-valueid');
+        attributeId = selectedColor.parentElement.getAttribute('data-attributeid');
+
+        fd.append('product_attribute_' + attributeId, valueId);
+    }
     
     if (showqty.toLowerCase() == 'true') {
         var qty = document.querySelector('#addtocart_' + productid + '_EnteredQuantity').value;
@@ -18,6 +29,7 @@ AxiosCart.myAddproducttocart_catalog = function (urladd, showqty, productid, qui
     axios({
         url: urladd,
         method: 'post',
+        data: fd,
     }).then(function (response) {
         this.AxiosCart.mySuccess_process(response, quickviewUrl);
     }).catch(function (error) {

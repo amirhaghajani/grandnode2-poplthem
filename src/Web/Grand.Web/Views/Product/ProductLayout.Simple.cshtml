@@ -170,7 +170,9 @@
                                         var dataDictAddToCart = new ViewDataDictionary(ViewData);
                                         dataDictAddToCart.TemplateInfo.HtmlFieldPrefix = string.Format("addtocart_{0}", Model.Id);
                                     }
+                                    
                                     <partial name="_AddToCart" model="Model.AddToCart" view-data="dataDictAddToCart" />
+                                    
                                     <div class="btn-group mt-2 mb-3 w-100">
                                         @if (Model.ProductType == ProductType.SimpleProduct || Model.ProductType == ProductType.BundledProduct)
                                         {
