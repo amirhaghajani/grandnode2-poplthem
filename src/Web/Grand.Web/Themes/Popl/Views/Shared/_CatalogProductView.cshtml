@@ -56,7 +56,74 @@
 }
 
 @await Component.InvokeAsync("Widget", new { widgetZone = "productbox_before_content", additionalData = Model })
-<article v-bind:class="{ mobile: isMobile()}" class="card product-box mb-2">
+
+<article class="catalog_product_item">
+
+    <a class="catalog_product_item-imageSection"
+        href="@Url.RouteUrl("Product", new { SeName = Model.SeName })" 
+        title="@Model.DefaultPictureModel.Title"> 
+
+        @if (!string.IsNullOrEmpty(Model.Flag))
+        {
+            <div class="product-label">
+                <div class="badge badge-info">@Model.Flag</div>
+            </div>
+        }
+
+        <div class="img_container"> 
+            <b-card-img-lazy alt="@Model.DefaultPictureModel.AlternateText" class="main-product-img" 
+                src="@Model.DefaultPictureModel.ImageUrl" title="@Model.DefaultPictureModel.Title">
+            </b-card-img-lazy>
+        </div>
+
+        <div class="thumbnail-overlay"> 
+
+            <div class="product-details-container">
+                <div class="product-details"> 
+                    <div class="title">@Model.Name</div> 
+                    <div class="price">@Model.ProductPrice.Price</div>
+                </div>
+            </div>
+            
+        </div>
+
+
+    </a>
+
+    <div >
+
+        
+
+        
+
+        
+    </div>
+
+    <div class="catalog_product_item-detailSection"> 
+        <a href="@Url.RouteUrl("Product", new { SeName = Model.SeName })" title="@Model.DefaultPictureModel.Title" 
+            class="hidden-product-link url_7065722454198">@Model.Name</a>
+
+        <div class="product-details"> 
+            <span class="title" itemprop="name">@Model.Name</span> 
+            <span class="price">@Model.ProductPrice.Price</span>
+        </div>
+    </div>
+
+    
+
+    <div class="catalog_product_item-purchaseSection">
+        @*دکمه خرید و قیمت*@
+
+    </div>
+
+    <div class="atalog_product_item-colorOptionsSection">
+
+    </div>
+
+</article>
+
+
+<article v-bind:class="{ mobile: isMobile()}" class="card product-box mb-2" style="display:none">
     <div class="picture-container">
         <a class="img-container" href="@Url.RouteUrl("Product", new { SeName = Model.SeName })" title="@Model.DefaultPictureModel.Title">
             

@@ -46,12 +46,14 @@ html {
     $dir: null;
 
     @import "components/_header.scss";
+    @import "components/_cataloge_product.scss";
 }
 
 html[dir="rtl"] {
     $dir: rtl;
 
     @import "components/_header.scss";
+    @import "components/_cataloge_product.scss";
 }
 
 

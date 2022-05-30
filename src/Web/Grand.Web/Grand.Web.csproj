@@ -93,11 +93,13 @@
     <None Remove="Themes\Popl\preview.jpg" />
     <None Remove="Themes\Popl\scripts\my.popl.app.js" />
     <None Remove="Themes\Popl\scripts\my.popl.public.axios.js" />
+    <None Remove="Themes\Popl\scss\components\_cataloge_product.scss" />
     <None Remove="Themes\Popl\scss\components\_header.scss" />
     <None Remove="Themes\Popl\scss\components\_header\_action_items.scss" />
     <None Remove="Themes\Popl\scss\components\_header\_logo.scss" />
     <None Remove="Themes\Popl\scss\components\_header\_main_nav.scss" />
     <None Remove="Themes\Popl\scss\components\_header\_main_nav_toggle.scss" />
+    <None Remove="Themes\Popl\scss\helpers\mixins\_flexbox.scss" />
     <None Remove="Themes\Popl\scss\theme\_icon.scss" />
     <Content Update="Plugins\**">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -123,6 +125,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Themes\Popl\scss\components\_cataloge_product\" />
     <Folder Include="wwwroot\myTheme\bundles\" />
   </ItemGroup>
 </Project>

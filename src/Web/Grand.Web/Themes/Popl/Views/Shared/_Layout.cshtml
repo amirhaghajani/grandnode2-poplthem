@@ -55,7 +55,22 @@
 
     <!--aha.com ---------------------------------------------- !-->
     <script>
-        var my_global = {};
+        var my_global = {
+            user_device_has_touch:false,
+            user_device_has_mouse:false,
+            user_device_is_mobile:false,
+        };
+
+        if (window.matchMedia("(any-pointer: coarse)").matches) {
+            my_global.user_device_has_touch = true;
+        }
+        if (matchMedia('(pointer:fine)').matches) {
+            my_global.user_device_has_mouse = true;
+        }
+
+        my_global.user_device_is_mobile = (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        
+
 
         my_global.isOverFlown = function(element) {
 

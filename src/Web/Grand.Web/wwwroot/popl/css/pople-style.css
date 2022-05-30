@@ -770,6 +770,64 @@ html .slide-fade-leave-active {
   animation-duration: 1s;
   /* don't forget to set a duration! */
 }
+html .catalog_product_item-imageSection .img_container {
+  min-height: 200px;
+}
+html .catalog_product_item-imageSection:hover .thumbnail-overlay {
+  opacity: 1;
+}
+html .catalog_product_item-imageSection:hover .product-details {
+  transform: none;
+  opacity: 1;
+}
+html .catalog_product_item-imageSection .thumbnail-overlay {
+  opacity: 0;
+  background-color: #000000b3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.3s ease-in;
+  border-radius: 20px;
+}
+html .catalog_product_item-imageSection .product-details-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-direction: normal;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+html .catalog_product_item-imageSection .product-details {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  color: white;
+}
+
 html[dir=rtl] .header {
   display: flex;
   align-items: flex-start;
@@ -987,6 +1045,64 @@ html[dir=rtl] .slide-fade-leave-active {
   animation-duration: 1s;
   /* don't forget to set a duration! */
 }
+html[dir=rtl] .catalog_product_item-imageSection .img_container {
+  min-height: 200px;
+}
+html[dir=rtl] .catalog_product_item-imageSection:hover .thumbnail-overlay {
+  opacity: 1;
+}
+html[dir=rtl] .catalog_product_item-imageSection:hover .product-details {
+  transform: none;
+  opacity: 1;
+}
+html[dir=rtl] .catalog_product_item-imageSection .thumbnail-overlay {
+  opacity: 0;
+  background-color: #000000b3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.3s ease-in;
+  border-radius: 20px;
+}
+html[dir=rtl] .catalog_product_item-imageSection .product-details-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-direction: normal;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+html[dir=rtl] .catalog_product_item-imageSection .product-details {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  color: white;
+}
+
 /*==================================================
  main - theme
 ==================================================*/
