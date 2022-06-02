@@ -1,4 +1,5 @@
-﻿/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+﻿@charset "UTF-8";
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
 /**
@@ -770,6 +771,32 @@ html .slide-fade-leave-active {
   animation-duration: 1s;
   /* don't forget to set a duration! */
 }
+html .catalog_product_items_container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+}
+html .catalog_product_item {
+  flex: 0 50%;
+}
+@media (min-width: 768px) {
+  html .catalog_product_item {
+    flex: 0 25%;
+  }
+}
+html .catalog_product_item-imageSection {
+  position: relative;
+}
+html .catalog_product_item-imageSection .product-label {
+  position: absolute;
+  left: 2px;
+  top: 10px;
+  z-index: 9;
+}
 html .catalog_product_item-imageSection .img_container {
   min-height: 200px;
 }
@@ -781,15 +808,22 @@ html .catalog_product_item-imageSection:hover .product-details {
   opacity: 1;
 }
 html .catalog_product_item-imageSection .thumbnail-overlay {
-  opacity: 0;
-  background-color: #000000b3;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: opacity 0.3s ease-in;
-  border-radius: 20px;
+  /*حالت پیش فرض یعنی موبایل نیازی به این نیست*/
+  display: none;
+}
+@media (min-width: 480px) {
+  html .catalog_product_item-imageSection .thumbnail-overlay {
+    display: block;
+    opacity: 0;
+    background-color: #000000b3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.3s ease-in;
+    border-radius: 20px;
+  }
 }
 html .catalog_product_item-imageSection .product-details-container {
   position: absolute;
@@ -826,6 +860,31 @@ html .catalog_product_item-imageSection .product-details {
   transform: translateY(-100%);
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   color: white;
+}
+html .catalog_product_item-purchaseSection {
+  color: #121212;
+}
+html .catalog_product_item-purchaseSection .btnAddToCart {
+  background: #000;
+  border: solid 2px #000;
+  border-radius: 100px;
+  color: #fff;
+  padding: 0 15px;
+  font-weight: 700;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+}
+html .catalog_product_item-purchaseSection .btnAddToCart:hover {
+  box-shadow: 6px 10px 25px #00000030, 0 6px 20px #00000030;
+}
+html .catalog_product_item-purchaseSection .btnAddToCart .add-cart-text {
+  margin-right: 12px;
+  padding-right: 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.38);
+}
+html .atalog_product_item-colorOptionsSection .color-container {
+  cursor: pointer;
 }
 
 html[dir=rtl] .header {
@@ -1045,6 +1104,32 @@ html[dir=rtl] .slide-fade-leave-active {
   animation-duration: 1s;
   /* don't forget to set a duration! */
 }
+html[dir=rtl] .catalog_product_items_container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+}
+html[dir=rtl] .catalog_product_item {
+  flex: 0 50%;
+}
+@media (min-width: 768px) {
+  html[dir=rtl] .catalog_product_item {
+    flex: 0 25%;
+  }
+}
+html[dir=rtl] .catalog_product_item-imageSection {
+  position: relative;
+}
+html[dir=rtl] .catalog_product_item-imageSection .product-label {
+  position: absolute;
+  left: 2px;
+  top: 10px;
+  z-index: 9;
+}
 html[dir=rtl] .catalog_product_item-imageSection .img_container {
   min-height: 200px;
 }
@@ -1056,15 +1141,22 @@ html[dir=rtl] .catalog_product_item-imageSection:hover .product-details {
   opacity: 1;
 }
 html[dir=rtl] .catalog_product_item-imageSection .thumbnail-overlay {
-  opacity: 0;
-  background-color: #000000b3;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: opacity 0.3s ease-in;
-  border-radius: 20px;
+  /*حالت پیش فرض یعنی موبایل نیازی به این نیست*/
+  display: none;
+}
+@media (min-width: 480px) {
+  html[dir=rtl] .catalog_product_item-imageSection .thumbnail-overlay {
+    display: block;
+    opacity: 0;
+    background-color: #000000b3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.3s ease-in;
+    border-radius: 20px;
+  }
 }
 html[dir=rtl] .catalog_product_item-imageSection .product-details-container {
   position: absolute;
@@ -1101,6 +1193,31 @@ html[dir=rtl] .catalog_product_item-imageSection .product-details {
   transform: translateY(-100%);
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   color: white;
+}
+html[dir=rtl] .catalog_product_item-purchaseSection {
+  color: #121212;
+}
+html[dir=rtl] .catalog_product_item-purchaseSection .btnAddToCart {
+  background: #000;
+  border: solid 2px #000;
+  border-radius: 100px;
+  color: #fff;
+  padding: 0 15px;
+  font-weight: 700;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+}
+html[dir=rtl] .catalog_product_item-purchaseSection .btnAddToCart:hover {
+  box-shadow: 6px 10px 25px #00000030, 0 6px 20px #00000030;
+}
+html[dir=rtl] .catalog_product_item-purchaseSection .btnAddToCart .add-cart-text {
+  margin-right: 12px;
+  padding-right: 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.38);
+}
+html[dir=rtl] .atalog_product_item-colorOptionsSection .color-container {
+  cursor: pointer;
 }
 
 /*==================================================

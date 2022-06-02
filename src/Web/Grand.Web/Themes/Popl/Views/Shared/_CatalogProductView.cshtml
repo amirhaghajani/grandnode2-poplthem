@@ -72,6 +72,7 @@
 
         <div class="img_container"> 
             <b-card-img-lazy alt="@Model.DefaultPictureModel.AlternateText" class="main-product-img" 
+                data-uniqueid="catalog_product_img_container_@Model.Id"
                 src="@Model.DefaultPictureModel.ImageUrl" title="@Model.DefaultPictureModel.Title">
             </b-card-img-lazy>
         </div>
@@ -90,15 +91,6 @@
 
     </a>
 
-    <div >
-
-        
-
-        
-
-        
-    </div>
-
     <div class="catalog_product_item-detailSection"> 
         <a href="@Url.RouteUrl("Product", new { SeName = Model.SeName })" title="@Model.DefaultPictureModel.Title" 
             class="hidden-product-link url_7065722454198">@Model.Name</a>
@@ -113,12 +105,70 @@
 
     <div class="catalog_product_item-purchaseSection">
         @*دکمه خرید و قیمت*@
+        @if (isCustomProduct)
+        {
+            <button class="btnAddToCart justify-content-center w-100" 
+                onclick="AxiosCart.quickview_product('@quickviewurl');return false;">
+                <b-icon icon="cart2" class="mx-auto d-sm-none d-block"></b-icon>
+                <span class="add-cart-text d-sm-block d-none">Custome</span>
+                <span class="sr-only">Custome buy</span>
+                <span>@Model.ProductPrice.Price</span>
+            </button>
+        }
+        else
+        {
+            var addToCartText = Loc["ShoppingCart.AddToCart"];
+            var uniqueId = "atalog_product_item-colorOptionsSection" + Model.Id;
 
+            <button class="btnAddToCart justify-content-center w-100" 
+                onclick="AxiosCart.myAddproducttocart_catalog(this, '@myAddtocartlink', '@Model.ShowQty', '@Model.Id', '@quickviewurl','@uniqueId');">
+                <span class="add-cart-text d-sm-block d-none">@(addToCartText)</span>
+                <span class="sr-only">AddToCart</span>
+                <span>@Model.ProductPrice.Price</span>
+            </button>
+        }
     </div>
 
-    <div class="atalog_product_item-colorOptionsSection">
+    @*color section*@
+    @{
+        var colorPropertyItem = Model.ProductAttributeModels.FirstOrDefault(p => p.AttributeControlType == AttributeControlType.ColorSquares);
+    }
+    @if (colorPropertyItem!=null)
+    {
+        var uniqueId = "atalog_product_item-colorOptionsSection" + Model.Id;
 
-    </div>
+        <div class="atalog_product_item-colorOptionsSection" data-attributeid="@colorPropertyItem.Id" data-uniqueid="@uniqueId">
+            @foreach (var spec in colorPropertyItem.Values)
+            {
+                switch (colorPropertyItem.AttributeControlType)
+                {
+                    case AttributeControlType.ColorSquares:
+                            var commandStr = "myPoplProductImage($event, 'catalog_product_img_container_"+Model.Id+"');";
+                            var commandStrFull = (spec.PictureModel.FullSizeImageUrl) != null ? commandStr : "";
+
+                        <div class="color-container @(spec.IsPreSelected ? "selected": "")" 
+                                    title="@spec.Name" 
+                                    @@click="@commandStrFull myPoplProductColorSelected($event);" 
+                                    data-href="@spec.PictureModel.FullSizeImageUrl"
+                                    data-valueid="@spec.Id"
+                                    >
+                                    <span class="color" style="background-color:@spec.ColorSquaresRgb;">&nbsp;</span>
+                        </div>
+                            
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        </div>
+    }
+    else
+    {
+        <div>color no</div>
+    }
+
+
 
 </article>
 
@@ -274,82 +324,7 @@
             </div>
         }
  
-        @if (Model.ProductAttributeModels.Any())
-        {
-            <div class="attr-container">
-                <table>
-                    <tbody>
-                        @foreach (var item in Model.ProductAttributeModels)
-                        {
-                            <tr class="attr">
-                                <td>
-                                    <div class="attr-name">
-                                        @item.Name
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="attr-value" data-attributeid="@item.Id">
-                                        @foreach (var spec in item.Values)
-                                        {
-                                            switch (item.AttributeControlType)
-                                            {
-                                                case AttributeControlType.DropdownList:
-                                                case AttributeControlType.RadioList:
-                                                case AttributeControlType.Checkboxes:
-                                                case AttributeControlType.ReadonlyCheckboxes:
-                                                   @* <a class="btn btn-sm btn-light name" href="@Url.RouteUrl("Product", new { SeName = Model.SeName })?@item.Name=@Html.Raw(spec.Name)">
-                                                        @Html.Raw(spec.Name)
-                                                    </a>*@
-                                                    break;
-                                                case AttributeControlType.ColorSquares:
-                                                    if ((spec.PictureModel.FullSizeImageUrl) != null)
-                                                    {
-                                                        <a class="btn btn-sm btn-light name color-container @(spec.IsPreSelected ? "selected": "")" 
-                                                            title="@spec.Name" @@click="myPoplProductImage($event); myPoplProductColorSelected($event)" 
-                                                            data-href="@spec.PictureModel.FullSizeImageUrl"
-                                                            data-valueid="@spec.Id"
-                                                            >
-                                                            <span class="color" style="background-color:@spec.ColorSquaresRgb;">&nbsp;</span>
-                                                        </a>
-                                                    }
-                                                    else
-                                                    {
-                                                        <a class="btn btn-sm btn-light name color-container" title="@spec.Name" 
-                                                            @*href="@Url.RouteUrl("Product", new { SeName = Model.SeName })?@item.Name=@Html.Raw(spec.Name)"*@
-                                                            @@click="myPoplProductColorSelected($event)"
-                                                            data-valueid="@spec.Id"
-                                                        >
-                                                            <span class="color" style="background-color:@spec.ColorSquaresRgb;">&nbsp;</span>
-                                                        </a>
-                                                    }
-                                                    break;
-                                                case AttributeControlType.ImageSquares:
-                                                    @*if ((spec.PictureModel.FullSizeImageUrl) != null)
-                                                    {
-                                                        <a class="btn btn-sm btn-light p-1 name image-container" v-on:click='productImage' data-href="@spec.PictureModel.FullSizeImageUrl">
-                                                            <img src="@spec.ImageSquaresPictureModel?.ImageUrl" alt="@spec.Name" />
-                                                        </a>
-                                                    }
-                                                    else
-                                                    {
-                                                        <a class="btn btn-sm btn-light p-1 name image-container" href="@Url.RouteUrl("Product", new { SeName = Model.SeName })?@item.Name=@Html.Raw(spec.Name)">
-                                                            <img src="@spec.ImageSquaresPictureModel?.ImageUrl" alt="@spec.Name" />
-                                                        </a>
-                                                    }*@
-                                                    break;
-                                                default:
-                                                    break;
-                                            }
-                                        }
-                                    </div>
-                                </td>
-
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        }
+        
 
 
         @*<div class="desc">
@@ -415,25 +390,6 @@
             }
         </div>*@
 
-        @if (isCustomProduct)
-        {
-            <button class="btn btn-info justify-content-center w-100" 
-                onclick="AxiosCart.quickview_product('@quickviewurl');return false;">
-                <b-icon icon="cart2" class="mx-auto d-sm-none d-block"></b-icon>
-                <span class="add-cart-text d-sm-block d-none">Custome</span>
-                <span class="sr-only">AddToCart</span>
-            </button>
-        }
-        else
-        {
-            var addToCartText = Loc["ShoppingCart.AddToCart"];
-
-            <button class="btn btn-info justify-content-center w-100" 
-                onclick="AxiosCart.myAddproducttocart_catalog(this, '@myAddtocartlink', '@Model.ShowQty', '@Model.Id', '@quickviewurl');return false;">
-                <b-icon icon="cart2" class="mx-auto d-sm-none d-block"></b-icon>
-                <span class="add-cart-text d-sm-block d-none">@(addToCartText)</span>
-                <span class="sr-only">AddToCart</span>
-            </button>
-        }
+        
     </div>
 </article> 

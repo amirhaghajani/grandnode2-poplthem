@@ -1,7 +1,7 @@
 
-AxiosCart.myAddproducttocart_catalog = function (event, urladd, showqty, productid, quickviewUrl) {
-    console.log(urladd);
-    var selectedColor = event.parentElement.querySelector('.selected');
+AxiosCart.myAddproducttocart_catalog = function (event, urladd, showqty, productid, quickviewUrl, colorSectionContainerDataUniqueId) {
+
+    var selectedColor = document.querySelector(`[data-uniqueid="${colorSectionContainerDataUniqueId}"] .selected`);
 
     var fd = new FormData();
 
@@ -11,7 +11,7 @@ AxiosCart.myAddproducttocart_catalog = function (event, urladd, showqty, product
 
         fd.append('product_attribute_' + attributeId, valueId);
     }
-    
+
     if (showqty.toLowerCase() == 'true') {
         var qty = document.querySelector('#addtocart_' + productid + '_EnteredQuantity').value;
         if (urladd.indexOf("forceredirection") != -1) {
@@ -60,7 +60,7 @@ AxiosCart.mySuccess_process = function (response, quickViewUrl) {
         vm.flycartindicator = newfly.TotalProducts;
 
     }
-    if (response.data.updatetopcartsectionhtml !== 'undefiend') {
+    if (response.data.updatetopcartsectionhtml !== undefined) {
         vm.flycartindicator = response.data.updatetopcartsectionhtml;
     }
     if (response.data.product) {
@@ -109,8 +109,21 @@ AxiosCart.mySuccess_process = function (response, quickViewUrl) {
     }
     if (response.data.redirect) {
         //location.href = response.data.redirect;
-        AxiosCart.quickview_product(quickViewUrl)
+        AxiosCart.myQuickview_product(quickViewUrl)
         return true;
     }
     return false;
+};
+
+AxiosCart.myQuickview_product = function (quickviewurl) {
+    axios({
+        url: quickviewurl,
+        method: 'post',
+    }).then(function (response) {
+        this.AxiosCart.mySuccess_process(response);
+    }).catch(function (error) {
+        error.axiosFailure;
+    }).then(function (response) {
+        this.AxiosCart.resetLoadWaiting();
+    });
 };

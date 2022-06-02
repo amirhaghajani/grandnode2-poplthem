@@ -1,6 +1,27 @@
 ﻿
-.catalog_product_item-imageSection {
+.catalog_product_items_container {
+    @include flexbox;
+    flex-flow: row wrap;
+    align-content:space-around;
+}
+.catalog_product_item {
+    flex: 0 50%;
 
+    @include bp {
+        flex: 0 25%;
+    }
+}
+
+.catalog_product_item-imageSection {
+    position: relative;
+
+    .product-label{
+        position:absolute;
+        left:2px;
+        top:10px;
+        z-index:9;
+    } 
+    
     .img_container {
         min-height: 200px;
     }
@@ -16,19 +37,29 @@
         }
     }
 
-
-
     .thumbnail-overlay {
-        opacity: 0;
-        background-color: #000000b3;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        transition: opacity 0.3s ease-in;
-        border-radius: 20px;
+        /*حالت پیش فرض یعنی موبایل نیازی به این نیست*/
+        display: none;
     }
+
+
+    @include bp(small) {
+
+        .thumbnail-overlay {
+            display: block;
+            opacity: 0;
+            background-color: #000000b3;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: opacity 0.3s ease-in;
+            border-radius: 20px;
+        }
+    }
+
+
 
     .product-details-container {
         position: absolute;
@@ -46,10 +77,43 @@
     .product-details {
         position: relative;
         opacity: 0;
-
-        transform:translateY(-100%);
-
+        transform: translateY(-100%);
         transition: opacity 0.3s ease-out, transform 0.3s ease-out;
         color: white;
     }
 }
+
+.catalog_product_item-purchaseSection {
+    color: #121212;
+
+
+    .btnAddToCart {
+        background: #000;
+        border: solid 2px #000;
+        border-radius: 100px;
+        color: #fff;
+        padding: 0 15px;
+        font-weight: 700;
+        min-height: 36px;
+        display: flex;
+        align-items:center;
+
+        &:hover {
+            box-shadow: 6px 10px 25px #00000030, 0 6px 20px #00000030;
+        }
+
+        .add-cart-text {
+            margin-right: 12px;
+            padding-right: 12px;
+            border-right: 1px solid rgba(255,255,255,0.38);
+        }
+    }
+}
+
+.atalog_product_item-colorOptionsSection {
+    
+    .color-container{
+        cursor:pointer;
+    }
+}
+
