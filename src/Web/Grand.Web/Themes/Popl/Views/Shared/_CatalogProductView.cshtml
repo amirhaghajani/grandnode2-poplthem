@@ -91,6 +91,7 @@
 
     </a>
 
+    @*قسمت قیمت و نام محصول ------------------------------------------------------*@
     <div class="catalog_product_item-detailSection"> 
         <a href="@Url.RouteUrl("Product", new { SeName = Model.SeName })" title="@Model.DefaultPictureModel.Title" 
             class="hidden-product-link url_7065722454198">@Model.Name</a>
@@ -102,14 +103,14 @@
     </div>
 
     
-
+    @*دکمه خرید و قیمت -----------------------------------------------------------*@
     <div class="catalog_product_item-purchaseSection">
-        @*دکمه خرید و قیمت*@
+        
         @if (isCustomProduct)
         {
-            <button class="btnAddToCart justify-content-center w-100" 
+            <button class="btnAddToCart" 
                 onclick="AxiosCart.quickview_product('@quickviewurl');return false;">
-                <b-icon icon="cart2" class="mx-auto d-sm-none d-block"></b-icon>
+                @*<b-icon icon="cart2" class="mx-auto d-sm-none d-block"></b-icon>*@
                 <span class="add-cart-text d-sm-block d-none">Custome</span>
                 <span class="sr-only">Custome buy</span>
                 <span>@Model.ProductPrice.Price</span>
@@ -120,7 +121,7 @@
             var addToCartText = Loc["ShoppingCart.AddToCart"];
             var uniqueId = "atalog_product_item-colorOptionsSection" + Model.Id;
 
-            <button class="btnAddToCart justify-content-center w-100" 
+            <button class="btnAddToCart" 
                 onclick="AxiosCart.myAddproducttocart_catalog(this, '@myAddtocartlink', '@Model.ShowQty', '@Model.Id', '@quickviewurl','@uniqueId');">
                 <span class="add-cart-text d-sm-block d-none">@(addToCartText)</span>
                 <span class="sr-only">AddToCart</span>
@@ -129,7 +130,7 @@
         }
     </div>
 
-    @*color section*@
+    @*color section ------------------------------------------------------*@
     @{
         var colorPropertyItem = Model.ProductAttributeModels.FirstOrDefault(p => p.AttributeControlType == AttributeControlType.ColorSquares);
     }
@@ -152,7 +153,7 @@
                                     data-href="@spec.PictureModel.FullSizeImageUrl"
                                     data-valueid="@spec.Id"
                                     >
-                                    <span class="color" style="background-color:@spec.ColorSquaresRgb;">&nbsp;</span>
+                                    <span class="myColor" style="background-color:@spec.ColorSquaresRgb;">&nbsp;</span>
                         </div>
                             
                         break;
@@ -165,7 +166,7 @@
     }
     else
     {
-        <div>color no</div>
+        <div style="min-height:30px;"></div>
     }
 
 

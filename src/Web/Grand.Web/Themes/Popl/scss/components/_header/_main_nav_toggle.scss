@@ -2,9 +2,8 @@
     //پیش فرض که حالت موبایل است، سمت چپ مخفی باشه
     position: absolute;
     width: 100%;
-    left: -100vw;
+    left: -100%;
     transition: transform 350ms;
-    border: solid 1px red;
 }
 
 
@@ -33,7 +32,7 @@
 
         &[data-toggled='true'] {
             ~ .main-nav {
-                transform: translateX(100vw);
+                transform: translateX(100%);
             }
         }
     }
@@ -92,7 +91,7 @@
 
         ~ .main-nav {
             //اگر حالت پیش فرض موبایل و دکمه دیتای باز بودن داشت، کلاس مین نو، 100 درصد حرکت کند به سمت راست
-            transform: translateX(100vw);
+            transform: translateX(100%);
 
             @include bp {
                 //حالت غیر موبایل نیازی به حرکت نیست

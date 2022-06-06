@@ -3,7 +3,13 @@ $dir : null !default;
 
 .header{
     display:flex;
-    align-items:flex-start;
+    align-items:center;
+    position:fixed;
+    top:0;
+    background:#fff;
+    width:100%;
+    z-index:1000;
+    max-height:89px;
 }
 
 .main-nav-container {
@@ -69,53 +75,6 @@ $dir : null !default;
 //---------------------------------------------
 
 
-#mySliderTexts {
-
-    h2 {
-        transition: all .3s ease-in-out;
-    }
-
-    span {
-        -webkit-text-size-adjust: 100%;
-        --announcement-bar-height: 47px;
-        text-align: center;
-        pointer-events: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-        font-style: normal;
-        text-transform: none;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        color: #121212;
-        font-weight: 700;
-        font-family: Gilroy700;
-        word-break: break-word;
-        font-size: 64px;
-        line-height: 65px;
-        letter-spacing: -2px;
-        box-sizing: border-box;
-        display: inline-block;
-        opacity: 0;
-        animation: pop 1s ease-in-out 1 forwards;
-        animation-delay: var(--animate-delay);
-        --animate-delay: 0s;
-    }
-}
-@keyframes pop {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        transform: scale(1.15);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
 
 //SidebarShoppingCart.cshtml-----------------------------------------------
 .slide-fade-enter-active {

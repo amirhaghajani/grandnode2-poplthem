@@ -3,89 +3,87 @@
     var supportRtl = workContext.WorkingLanguage.Rtl;
 }
 
-<div class="header-container">
-    <div class="header">
+<div class="header">
 
-        <div id="main-nav-container" class="main-nav-container">
+    <div id="main-nav-container" class="main-nav-container">
 
-            <button aria-label="menu-toggler" class="menu-toggler-button" onclick="my_global.toggler(this)">
-                <span></span><span></span><span></span>
-            </button>
-            <ul id="main_nav" class="main-nav">
-                <li>
-                    Products <span class="icon-down-arrow"></span>
-                    <ul>
-                        @await Component.InvokeAsync("Menu")
-                    </ul>
-                </li>
-                <li>For Businesses and Teams</li>
-                <li>
-                    Company <span class="icon-down-arrow"></span>
-                    <ul>
-                        <li>Pople Teams</li>
-                        <li>Pople Pro</li>
-                    </ul>
-                </li>
-                <li>
-                    Resources <span class="icon-down-arrow"></span>
-                    <ul>
-                        <li>New to Popl?</li>
-                        <li>How to use Popl</li>
-                    </ul>
-                </li>
-            </ul>
+        <button aria-label="menu-toggler" class="menu-toggler-button" onclick="my_global.toggler(this)">
+            <span></span><span></span><span></span>
+        </button>
+        <ul id="main_nav" class="main-nav">
+            <li>
+                Products <span class="icon-down-arrow"></span>
+                <ul>
+                    @await Component.InvokeAsync("Menu")
+                </ul>
+            </li>
+            <li>For Businesses and Teams</li>
+            <li>
+                Company <span class="icon-down-arrow"></span>
+                <ul>
+                    <li>Pople Teams</li>
+                    <li>Pople Pro</li>
+                </ul>
+            </li>
+            <li>
+                Resources <span class="icon-down-arrow"></span>
+                <ul>
+                    <li>New to Popl?</li>
+                    <li>How to use Popl</li>
+                </ul>
+            </li>
+        </ul>
             
-        </div>
+    </div>
 
 
-         <div class="header-logo-container">
-            <partial name="_Logo" />
-        </div>
+    <div class="header-logo-container">
+        <partial name="_Logo" />
+    </div>
 
-        <div class="header-search-container">
+    <div class="header-search-container">
 
-            <a href="#" target="_self" class="nav-link">
-                <b-icon icon="search" :variant="[darkMode ? 'white' : 'dark']" v-b-modal.search-box></b-icon>
-            </a>
-            <b-modal id="search-box" ref="search-box" :dark-theme="darkMode" @@shown="vm.$refs.searchBoxInput.focus()"
-                        hide-footer hide-header size="xl">
-                @await Component.InvokeAsync("SearchBox")
-            </b-modal>
+        <a href="#" target="_self" class="nav-link">
+            <b-icon icon="search" :variant="[darkMode ? 'white' : 'dark']" v-b-modal.search-box></b-icon>
+        </a>
+        <b-modal id="search-box" ref="search-box" :dark-theme="darkMode" @@shown="vm.$refs.searchBoxInput.focus()"
+                    hide-footer hide-header size="xl">
+            @await Component.InvokeAsync("SearchBox")
+        </b-modal>
              
-        </div>
+    </div>
 
-        <div class="header-actions-container">
-            <ul>
+    <div class="header-actions-container">
+        <ul>
                 
-                <partial name="_ShoppingCartLinks" />
+            <partial name="_ShoppingCartLinks" />
 
-                <template>
-                    <li class="nav-item">
-                        <span class="nav-link">
-                            <b-icon icon="person-circle" :variant="[darkMode ? 'white' : 'dark']" v-b-toggle.sidebar-right></b-icon>
-                        </span>
-                        <template>
-                            <b-sidebar id="sidebar-right" body-class="user-panel" title="@Loc["Account.MyAccount"]" 
-                                @if (!supportRtl) { <text>right</text> } backdrop>
-                            <div class="d-inline-flex flex-wrap mb-2">
-                                <partial name="_Selector_TaxType" />
-                                <partial name="_Selector_Currency" />
-                                <partial name="_Selector_Language" />
-                                <partial name="_Selector_Store" />
-                                <partial name="_Selector_Theme" />
-                                    @await Component.InvokeAsync("Widget", new { widgetZone = "header_selectors" })
-                            </div>
-                            <partial name="_HeaderLinks" />
-                        </b-sidebar>
-                        </template>
-                    </li>
-                </template>
+            <template>
+                <li class="nav-item">
+                    <span class="nav-link">
+                        <b-icon icon="person-circle" :variant="[darkMode ? 'white' : 'dark']" v-b-toggle.sidebar-right></b-icon>
+                    </span>
+                    <template>
+                        <b-sidebar id="sidebar-right" body-class="user-panel" title="@Loc["Account.MyAccount"]" 
+                            @if (!supportRtl) { <text>right</text> } backdrop>
+                        <div class="d-inline-flex flex-wrap mb-2">
+                            <partial name="_Selector_TaxType" />
+                            <partial name="_Selector_Currency" />
+                            <partial name="_Selector_Language" />
+                            <partial name="_Selector_Store" />
+                            <partial name="_Selector_Theme" />
+                                @await Component.InvokeAsync("Widget", new { widgetZone = "header_selectors" })
+                        </div>
+                        <partial name="_HeaderLinks" />
+                    </b-sidebar>
+                    </template>
+                </li>
+            </template>
                 
-            </ul>
-
-        </div>
+        </ul>
 
     </div>
+
 </div>
 
 <partial name="HeaderScript" />

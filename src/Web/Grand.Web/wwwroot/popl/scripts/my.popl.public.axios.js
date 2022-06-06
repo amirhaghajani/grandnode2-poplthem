@@ -109,21 +109,8 @@ AxiosCart.mySuccess_process = function (response, quickViewUrl) {
     }
     if (response.data.redirect) {
         //location.href = response.data.redirect;
-        AxiosCart.myQuickview_product(quickViewUrl)
+        AxiosCart.quickview_product(quickViewUrl)
         return true;
     }
     return false;
-};
-
-AxiosCart.myQuickview_product = function (quickviewurl) {
-    axios({
-        url: quickviewurl,
-        method: 'post',
-    }).then(function (response) {
-        this.AxiosCart.mySuccess_process(response);
-    }).catch(function (error) {
-        error.axiosFailure;
-    }).then(function (response) {
-        this.AxiosCart.resetLoadWaiting();
-    });
 };

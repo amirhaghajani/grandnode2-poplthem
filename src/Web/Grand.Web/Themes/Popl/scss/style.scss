@@ -14,14 +14,30 @@
     box-sizing: border-box;
 }
 
-
+html {
+    min-width: 300px;
+    overflow: auto;
+}
 html, body, #app {
     min-height: 100vh;
+}
+
+body {
+    
+}
+h1{
+    text-rendering:optimizeLegibility;
 }
 
 #app {
     max-width: 1440px;
     margin: auto;
+    padding-top:85px;
+}
+
+.main-container{
+    max-width:74.375rem;
+    margin:0 auto;
 }
 
 html {
@@ -29,8 +45,8 @@ html {
     &:after {
         //از این در جاوا اسکریپت استفاده کردم که ببینم حالت موبایل هست یا نه
         content: "is-moblie";
-        position:absolute;
-        left:-100%;
+        position: absolute;
+        left: -100%;
     }
 
 
@@ -47,6 +63,7 @@ html {
 
     @import "components/_header.scss";
     @import "components/_cataloge_product.scss";
+    @import "components/_myHomeSlider.scss";
 }
 
 html[dir="rtl"] {
@@ -54,6 +71,7 @@ html[dir="rtl"] {
 
     @import "components/_header.scss";
     @import "components/_cataloge_product.scss";
+    @import "components/_myHomeSlider.scss";
 }
 
 

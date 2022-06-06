@@ -11,37 +11,127 @@ var my_homeSlider_script={};
 
 my_homeSlider_script.sliderStart=function(){
 
-    var videos = document.querySelectorAll('#myVideos video');
+    var allVideos = document.querySelectorAll('#myVideos video');
     var texts = document.querySelectorAll('#mySliderTexts h2');
 
-    for (var i = 0; i < 4;i++){
-        videos[i].pause();
-        videos[i].currentTime = 0;
-        var nextVideo = i == 3 ? 0 : i + 1;
+    my_homeSlider_script.splitWords(texts);
 
-        my_homeSlider_script.sliderStart_createEvent(videos[i], videos, texts, nextVideo);
+    texts = document.querySelectorAll('#mySliderTexts h2');
+
+    my_homeSlider_script.sliderStart_next(texts, 0, allVideos);
+}
+
+my_homeSlider_script.sliderStart_next=function(texts,counter, allVideos ){
+
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+    var videoDefaultWidth, videoDefaultHeight;
+    var isMobile = my_global.isMoblieMode();
+
+    var videos = [];
+    if (isMobile) {
+        videos = document.querySelectorAll('#myVideos .mobile_mode video');
+        videoDefaultWidth = 1080;
+        videoDefaultHeight = 1920;
+    }else{
+        videos = document.querySelectorAll('#myVideos .desktop_mode video');
+        videoDefaultWidth = 1920;
+        videoDefaultHeight = 768;
     }
 
-    my_homeSlider_script.sliderStart_next(videos, texts, 0);
-}
+    var video = videos[counter];
+    video.pause();
+    video.currentTime = 0;
+    var nextVideoCo = counter + 1;
+    if (nextVideoCo == texts.length) nextVideoCo = 0;
 
-my_homeSlider_script.sliderStart_next=function(videos,texts,counter ){
-    var perCo = counter - 1;
-    if (counter == 0) perCo = 3;
+    my_homeSlider_script.sliderStart_createEvent(video, texts, nextVideoCo, allVideos);
     
+
+    my_homeSlider_script.hideAll(texts);
+    my_homeSlider_script.hideAll(allVideos);
+    
+    
+
+
+    var parentElement = video.parentElement;
+    var w = parentElement.offsetWidth;
+
+    var next = document.getElementsByClassName('banner__advantages')[0];
+
+    var realHeight = next.offsetTop - parentElement.offsetTop + next.offsetHeight;
+    //parentElement.style.paddingTop = next.offsetHeight + 'px';
+
+    
+    var h = w * videoDefaultHeight / videoDefaultWidth;
+    if (isMobile) h -= h * 0.1;
+
+    realHeight+= realHeight * 0.1;
+    h = h > realHeight ? realHeight : h;
+
+
+    video.setAttribute('width', w+'px');
+    video.setAttribute('height', h+'px');
+
+    video.load();
+
+    video.style.display = '';
     texts[counter].style.display = '';
-    texts[perCo].style.display = 'none';
 
-
-    videos[counter].load();
-
-    videos[counter].style.display = '';
-    videos[perCo].style.display = 'none';
 }
-my_homeSlider_script.sliderStart_createEvent=function(video, videos,texts,nextVideo){
+
+my_homeSlider_script.hideAll=function(items){
+    for (var i = 0; i < items.length; i++){
+        items[i].style.display = 'none';
+    }
+}
+
+my_homeSlider_script.sliderStart_createEvent=function(video, texts,nextVideoCo, allVideos){
     video.onended = function(){
-            my_homeSlider_script.sliderStart_next(videos, texts, nextVideo);
+            my_homeSlider_script.sliderStart_next(texts, nextVideoCo, allVideos);
         };
+}
+
+
+my_homeSlider_script.splitWords=function(items){
+
+    for(var i = 0; i<items.length; i++){
+        var element = items[i];
+        var h2Text = items[i].innerHTML;
+        var wordsArray = h2Text.split(' ');
+
+        element.innerHTML = '';
+
+        var co = 0;
+        for(var j=0; j<wordsArray.length;j++){
+            var word = wordsArray[j];
+            var big = document.createElement('big');
+            element.appendChild(big);
+            co = my_homeSlider_script.splitWords_createSpan(big, word, co);
+        }
+    }
+}
+my_homeSlider_script.splitWords_createSpan = function (element, word, co) {
+
+    var charArray=word.split("");
+    for(var i=0; i<charArray.length; i++){
+
+        var delay = co * 0.1;
+
+        var char = charArray[i];
+
+        var span = document.createElement('span');
+        span.innerHTML = char;
+        element.appendChild(span);
+        var a = `${delay}s`;
+        span.style.setProperty('--animate-delay', a);
+        var b = span.style.getPropertyValue('--animate-delay');
+
+        co++;
+    }
+
+    return co;
 }
 
 </script>

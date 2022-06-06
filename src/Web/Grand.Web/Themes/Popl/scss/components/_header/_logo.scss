@@ -1,4 +1,12 @@
 ﻿
-.header-logo-container img {
-    width: 61.91px;
+.header-logo-container {
+    a {
+        padding: 41px 0;
+        display:block;
+    }
+
+    img {
+        width: 61.91px;
+        margin: 0 auto;
+    }
 }

@@ -1,8 +1,9 @@
 $default-breakpoint: medium !default;
 $breakpoints: (
         small: 480px,
-        medium: 768px,
-        large: 980px
+        medium: 798px,
+        large: 1025px,
+        verylarg: 1440px
 ) !default;
 
 @mixin bp($size: unquote($default-breakpoint), $breakpoints: $breakpoints) {

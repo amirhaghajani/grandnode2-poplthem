@@ -4,7 +4,7 @@
 @{ 
     var urlLogo = await pictureService.GetPictureUrl(storeInformation.LogoPictureId);
 }
-<a class="navbar-brand store-logo mx-lg-0 mx-auto" target="_self" href="@Url.RouteUrl("HomePage")">
+<a class="mySiteLego" target="_self" href="@Url.RouteUrl("HomePage")">
     <img src="@urlLogo" alt="@workContext.CurrentStore.Name"/>
     <span class="screen-reader-text">@Loc["Logo"]</span>
 </a>
