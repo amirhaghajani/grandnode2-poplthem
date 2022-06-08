@@ -550,16 +550,16 @@ body #app {
   text-transform: none;
   color: #333;
   line-height: 1.6em;
-  overflow: auto;
+  /*overflow: auto; به خاطر استیکی برداشته شد*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
   scroll-behavior: smooth;
-  background-color: #fff;
   font-family: DM Sans, sans-serif;
   font-size: 16px;
-  padding: 0;
-  margin: 0;
+  max-width: 1440px;
+  margin: auto;
+  padding: 85px 0 0 0;
 }
 
 h1 {
@@ -587,12 +587,6 @@ a, a:visited, a span {
   text-decoration: none;
   position: relative;
   transition: color 0.1s linear;
-}
-
-#app {
-  max-width: 1440px;
-  margin: auto;
-  padding-top: 85px;
 }
 
 .popl_container {
@@ -1169,7 +1163,7 @@ html .features__tabs .tabs-nav {
   display: flex;
   border-bottom: 0.0625rem solid rgba(18, 18, 18, 0.1);
   position: sticky;
-  top: 7.875rem;
+  top: 5.56rem;
   background: #F9F9F9;
   justify-content: center;
   z-index: 255;
@@ -1305,6 +1299,19 @@ html .features__tabs .tabs-stage .l-tag .l-tag__details p {
   font-size: 1em;
   line-height: 1.4;
 }
+html .myHomWhoItWorkSection::after {
+  content: " ";
+  position: absolute;
+  background-image: url(/popl/images/BG-Mob.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 208vw;
+  left: 0;
+  top: 1957px;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
 html .myHomWhoItWorkSection {
   position: relative;
   padding: 0.8125rem 0 4.875rem;
@@ -1411,6 +1418,97 @@ html .myHomWhoItWorkSection .work__start .work__start--download .l-app-tag img {
   object-fit: contain;
   margin-right: 0;
   margin-bottom: 2px;
+}
+html .myHomeTeams {
+  padding: 2.5rem 0 3.8125rem;
+  background-color: #fff !important;
+  position: relative;
+}
+html .myHomeTeams ._forDesk {
+  display: none;
+}
+html .myHomeTeams .d-desktop {
+  display: none;
+}
+html .myHomeTeams .teams__head {
+  margin-bottom: 1.8125rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+html .myHomeTeams .teams__head .l-title {
+  font-family: "Gilroy500";
+  color: #121212;
+  letter-spacing: -0.56px;
+  font-size: 30px;
+  line-height: 37.5px;
+  text-transform: none;
+  text-align: left;
+  font-weight: 500;
+  margin-bottom: 0.6875rem;
+}
+html .myHomeTeams .teams__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+html .myHomeTeams .teams__collab {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+html .myHomeTeams .teams__collab p {
+  font-size: 0.9375em;
+  line-height: 1.4;
+  margin-bottom: 5.125rem;
+  text-align: left;
+  letter-spacing: -0.72px;
+  font-weight: 400;
+  font-family: "Inter";
+}
+html .myHomeTeams .teams__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0.9375rem;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 3;
+}
+html .myHomeTeams .teams__cards .teams__pro {
+  border-radius: 22px !important;
+  background: #ffffff !important;
+  box-shadow: 0 12px 31px #0000001f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2.1875rem;
+  flex-direction: column;
+  position: relative;
+  padding: 1.625rem 1.625rem 2.4375rem 1.6875rem;
+  width: 335px;
+}
+html .myHomeTeams .teams__cards .teams__pro .teams__pro--image {
+  width: 72.65px;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  top: -37px;
+}
+html .myHomeTeams .teams__cards .teams__pro a {
+  text-decoration: none;
+  color: #121212;
+  top: 29px;
+  margin-top: 19px;
+}
+html .myHomeTeams .teams__cards .teams__pro h2 {
+  font-size: 1.75em;
+  line-height: 0.78571;
+  margin-bottom: 1rem;
+  letter-spacing: -0.16px;
+  font-family: "Gilroy400";
+}
+html .myHomeTeams .teams__cards :nth-child(2) {
+  margin-top: 31px;
 }
 
 html[dir=rtl] .header {
@@ -1960,7 +2058,7 @@ html[dir=rtl] .features__tabs .tabs-nav {
   display: flex;
   border-bottom: 0.0625rem solid rgba(18, 18, 18, 0.1);
   position: sticky;
-  top: 7.875rem;
+  top: 5.56rem;
   background: #F9F9F9;
   justify-content: center;
   z-index: 255;
@@ -2096,6 +2194,19 @@ html[dir=rtl] .features__tabs .tabs-stage .l-tag .l-tag__details p {
   font-size: 1em;
   line-height: 1.4;
 }
+html[dir=rtl] .myHomWhoItWorkSection::after {
+  content: " ";
+  position: absolute;
+  background-image: url(/popl/images/BG-Mob.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 208vw;
+  left: 0;
+  top: 1957px;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
 html[dir=rtl] .myHomWhoItWorkSection {
   position: relative;
   padding: 0.8125rem 0 4.875rem;
@@ -2203,7 +2314,113 @@ html[dir=rtl] .myHomWhoItWorkSection .work__start .work__start--download .l-app-
   margin-right: 0;
   margin-bottom: 2px;
 }
+html[dir=rtl] .myHomeTeams {
+  padding: 2.5rem 0 3.8125rem;
+  background-color: #fff !important;
+  position: relative;
+}
+html[dir=rtl] .myHomeTeams ._forDesk {
+  display: none;
+}
+html[dir=rtl] .myHomeTeams .d-desktop {
+  display: none;
+}
+html[dir=rtl] .myHomeTeams .teams__head {
+  margin-bottom: 1.8125rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+html[dir=rtl] .myHomeTeams .teams__head .l-title {
+  font-family: "Gilroy500";
+  color: #121212;
+  letter-spacing: -0.56px;
+  font-size: 30px;
+  line-height: 37.5px;
+  text-transform: none;
+  text-align: left;
+  font-weight: 500;
+  margin-bottom: 0.6875rem;
+}
+html[dir=rtl] .myHomeTeams .teams__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+html[dir=rtl] .myHomeTeams .teams__collab {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+html[dir=rtl] .myHomeTeams .teams__collab p {
+  font-size: 0.9375em;
+  line-height: 1.4;
+  margin-bottom: 5.125rem;
+  text-align: left;
+  letter-spacing: -0.72px;
+  font-weight: 400;
+  font-family: "Inter";
+}
+html[dir=rtl] .myHomeTeams .teams__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0.9375rem;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 3;
+}
+html[dir=rtl] .myHomeTeams .teams__cards .teams__pro {
+  border-radius: 22px !important;
+  background: #ffffff !important;
+  box-shadow: 0 12px 31px #0000001f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2.1875rem;
+  flex-direction: column;
+  position: relative;
+  padding: 1.625rem 1.625rem 2.4375rem 1.6875rem;
+  width: 335px;
+}
+html[dir=rtl] .myHomeTeams .teams__cards .teams__pro .teams__pro--image {
+  width: 72.65px;
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+  top: -37px;
+}
+html[dir=rtl] .myHomeTeams .teams__cards .teams__pro a {
+  text-decoration: none;
+  color: #121212;
+  top: 29px;
+  margin-top: 19px;
+}
+html[dir=rtl] .myHomeTeams .teams__cards .teams__pro h2 {
+  font-size: 1.75em;
+  line-height: 0.78571;
+  margin-bottom: 1rem;
+  letter-spacing: -0.16px;
+  font-family: "Gilroy400";
+}
+html[dir=rtl] .myHomeTeams .teams__cards :nth-child(2) {
+  margin-top: 31px;
+}
 
 /*==================================================
  main - theme
 ==================================================*/
+@media screen and (min-width: 550px) {
+  .popl.mission::after {
+    content: "";
+    background-image: url(/popl/images/BG-Mob.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 283vw;
+    /* transform: translateX(-50%); */
+    top: 25px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+  }
+}

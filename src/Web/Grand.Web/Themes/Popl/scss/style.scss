@@ -28,21 +28,20 @@ html, body, #app {
 body #app {
     font-weight: 400;
     font-style: normal;
-
     text-transform: none;
     color: #333;
     line-height: 1.6em;
-    overflow: auto;
+    /*overflow: auto; به خاطر استیکی برداشته شد*/ 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
     scroll-behavior: smooth;
-    background-color: #fff;
-
     font-family: DM Sans,sans-serif;
     font-size: 16px;
-    padding: 0;
-    margin: 0;
+    
+    max-width: 1440px;
+    margin: auto;
+    padding: 85px 0 0 0;
 }
 h1{
     text-rendering:optimizeLegibility;
@@ -70,11 +69,7 @@ a, a:visited, a span {
     transition: color .1s linear;
 }
 
-#app {
-    max-width: 1440px;
-    margin: auto;
-    padding-top:85px;
-}
+
 
 .popl_container {
     max-width: 74.375rem;
@@ -118,6 +113,7 @@ html {
     @import "components/_myHomeSlider.scss";
     @import "components/_myPoplFeatures.scss";
     @import "components/_myHomeWhoItWork.scss";
+    @import "components/_myHomeTeams.scss";
 }
 
 html[dir="rtl"] {
@@ -128,6 +124,7 @@ html[dir="rtl"] {
     @import "components/_myHomeSlider.scss";
     @import "components/_myPoplFeatures.scss";
     @import "components/_myHomeWhoItWork.scss";
+    @import "components/_myHomeTeams.scss";
 }
 
 
@@ -149,3 +146,19 @@ html.dark {
 }
 
 
+
+@media screen and (min-width: 550px) {
+    .popl.mission::after {
+        content: "";
+        background-image: url(/popl/images/BG-Mob.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 283vw;
+        /* transform: translateX(-50%); */
+        top: 25px;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+    }
+}

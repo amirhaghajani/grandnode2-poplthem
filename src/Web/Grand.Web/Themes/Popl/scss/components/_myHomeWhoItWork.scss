@@ -1,4 +1,19 @@
-﻿.myHomWhoItWorkSection {
+﻿
+.myHomWhoItWorkSection::after {
+    content: " ";
+    position: absolute;
+    background-image: url(/popl/images/BG-Mob.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 208vw;
+    left: 0;
+    top: 1957px;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.myHomWhoItWorkSection {
     position: relative;
     padding: 0.8125rem 0 4.875rem;
 

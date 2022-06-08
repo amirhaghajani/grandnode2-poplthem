@@ -100,6 +100,7 @@
     <None Remove="Themes\Popl\scss\components\_header\_main_nav_toggle.scss" />
     <None Remove="Themes\Popl\scss\components\_myHomePageProduct.scss" />
     <None Remove="Themes\Popl\scss\components\_myHomeSlider.scss" />
+    <None Remove="Themes\Popl\scss\components\_myHomeTeams.scss" />
     <None Remove="Themes\Popl\scss\components\_myHomeWhoItWork.scss" />
     <None Remove="Themes\Popl\scss\components\_myPoplFeatures.scss" />
     <None Remove="Themes\Popl\scss\helpers\mixins\_flexbox.scss" />

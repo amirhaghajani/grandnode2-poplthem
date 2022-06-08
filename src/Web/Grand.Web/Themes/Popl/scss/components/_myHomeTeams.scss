@@ -1,0 +1,106 @@
+﻿
+.myHomeTeams {
+    padding: 2.5rem 0 3.8125rem;
+    background-color: #fff !important;
+    position: relative;
+
+    ._forDesk {
+        display: none;
+    }
+
+    .d-desktop {
+        display: none;
+    }
+
+    .teams__head {
+        margin-bottom: 1.8125rem;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .l-title {
+            font-family: "Gilroy500";
+            color: #121212;
+            letter-spacing: -0.56px;
+            font-size: 30px;
+            line-height: 37.5px;
+            text-transform: none;
+            text-align: left;
+            font-weight: 500;
+            margin-bottom: 0.6875rem;
+        }
+    }
+
+    .teams__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .teams__collab {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        p {
+            font-size: .9375em;
+            line-height: 1.4;
+            margin-bottom: 5.125rem;
+            text-align: left;
+            letter-spacing: -.72px;
+            font-weight: 400;
+            font-family: "Inter";
+        }
+    }
+
+    .teams__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 0.9375rem;
+        width: 100%;
+        margin: 0 auto;
+        z-index: 3;
+
+        .teams__pro {
+            border-radius: 22px !important;
+            background: #ffffff !important;
+            box-shadow: 0 12px 31px #0000001f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 2.1875rem;
+            flex-direction: column;
+            position: relative;
+            padding: 1.625rem 1.625rem 2.4375rem 1.6875rem;
+            width: 335px;
+
+            .teams__pro--image {
+                width: 72.65px;
+                position: absolute;
+                transform: translate(-50%);
+                left: 50%;
+                top: -37px;
+            }
+
+            a {
+                text-decoration: none;
+                color: #121212;
+                top: 29px;
+                margin-top: 19px;
+            }
+
+            h2 {
+                font-size: 1.75em;
+                line-height: .78571;
+                margin-bottom: 1rem;
+                letter-spacing: -.16px;
+                font-family: "Gilroy400";
+            }
+        }
+
+        & :nth-child(2) {
+            margin-top: 31px;
+        }
+    }
+}
+
