@@ -538,18 +538,55 @@ p, h1, h2, h3, h4, h5, h6 {
 html {
   min-width: 300px;
   overflow: visible;
-  font-family: DM Sans, sans-serif;
-  font-size: 16px;
-  padding: 0;
-  margin: 0;
 }
 
 html, body, #app {
   min-height: 100vh;
 }
 
+body #app {
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  color: #333;
+  line-height: 1.6em;
+  overflow: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  background-color: #fff;
+  font-family: DM Sans, sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
 h1 {
   text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: #121212;
+  padding: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul li, ol li {
+  list-style: none;
+  margin-bottom: 0rem;
+}
+
+a, a:visited, a span {
+  color: #4a9ef4;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.1s linear;
 }
 
 #app {
@@ -1268,6 +1305,113 @@ html .features__tabs .tabs-stage .l-tag .l-tag__details p {
   font-size: 1em;
   line-height: 1.4;
 }
+html .myHomWhoItWorkSection {
+  position: relative;
+  padding: 0.8125rem 0 4.875rem;
+}
+html .myHomWhoItWorkSection .work__head {
+  margin-bottom: 2.5rem;
+}
+html .myHomWhoItWorkSection .work__head .l-title {
+  color: #121212;
+  font-weight: 500;
+  font-family: "Gilroy500";
+  font-size: 29.4px;
+  line-height: 36.75px;
+  letter-spacing: -0.56px;
+  text-align: center;
+  margin-bottom: 0.6875rem;
+}
+html .myHomWhoItWorkSection .work__cards {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+html .myHomWhoItWorkSection .work__cards .work__card {
+  margin-bottom: 4.625rem;
+  width: 100%;
+}
+html .myHomWhoItWorkSection .work__cards .work__thumb {
+  margin-bottom: 2.25rem;
+}
+html .myHomWhoItWorkSection .work__cards .work__thumb img {
+  width: 236px;
+  height: auto;
+  max-height: 224px;
+  transform: none;
+}
+html .myHomWhoItWorkSection .work__cards .work__content h3 {
+  font-size: 0.9375em;
+  line-height: 1.21;
+  font-weight: 600;
+  font-family: "Inter";
+  letter-spacing: -0.5px;
+  margin: 0 auto;
+  max-width: 56%;
+  margin-bottom: 0.75rem;
+}
+html .myHomWhoItWorkSection .work__cards .work__content .work__link {
+  font-weight: 500;
+  font-family: "Inter";
+  color: #767676;
+  text-decoration: none;
+  position: relative;
+  padding-right: 1.25rem;
+  font-size: 0.8125em;
+  line-height: 1.73077;
+  letter-spacing: -0.25px;
+  width: max-content;
+  margin: 0 auto;
+}
+html .myHomWhoItWorkSection .work__numbers {
+  font-family: "Gilroy600";
+  font-weight: 900;
+  height: 53.14px;
+  width: 53.14px;
+  border: 1.5px solid rgba(0, 0, 0, 0.7);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #000000;
+  opacity: 1;
+}
+html .myHomWhoItWorkSection .work__start {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+html .myHomWhoItWorkSection .work__start .custom_download--label {
+  color: #8c8c8c;
+  font-family: "Gilroy400";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 25px;
+  margin-bottom: 28px;
+}
+html .myHomWhoItWorkSection .work__start .work__start--download {
+  display: inline-flex;
+  margin: 0 auto;
+  flex-direction: column;
+}
+html .myHomWhoItWorkSection .work__start .work__start--download .l-app-tag {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 2px;
+  display: inline-block;
+}
+html .myHomWhoItWorkSection .work__start .work__start--download .l-app-tag img {
+  width: 275px;
+  height: 55px;
+  object-fit: contain;
+  margin-right: 0;
+  margin-bottom: 2px;
+}
 
 html[dir=rtl] .header {
   display: flex;
@@ -1951,6 +2095,113 @@ html[dir=rtl] .features__tabs .tabs-stage .l-tag .l-tag__details h4 {
 html[dir=rtl] .features__tabs .tabs-stage .l-tag .l-tag__details p {
   font-size: 1em;
   line-height: 1.4;
+}
+html[dir=rtl] .myHomWhoItWorkSection {
+  position: relative;
+  padding: 0.8125rem 0 4.875rem;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__head {
+  margin-bottom: 2.5rem;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__head .l-title {
+  color: #121212;
+  font-weight: 500;
+  font-family: "Gilroy500";
+  font-size: 29.4px;
+  line-height: 36.75px;
+  letter-spacing: -0.56px;
+  text-align: center;
+  margin-bottom: 0.6875rem;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__cards {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__card {
+  margin-bottom: 4.625rem;
+  width: 100%;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__thumb {
+  margin-bottom: 2.25rem;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__thumb img {
+  width: 236px;
+  height: auto;
+  max-height: 224px;
+  transform: none;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__content h3 {
+  font-size: 0.9375em;
+  line-height: 1.21;
+  font-weight: 600;
+  font-family: "Inter";
+  letter-spacing: -0.5px;
+  margin: 0 auto;
+  max-width: 56%;
+  margin-bottom: 0.75rem;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__content .work__link {
+  font-weight: 500;
+  font-family: "Inter";
+  color: #767676;
+  text-decoration: none;
+  position: relative;
+  padding-right: 1.25rem;
+  font-size: 0.8125em;
+  line-height: 1.73077;
+  letter-spacing: -0.25px;
+  width: max-content;
+  margin: 0 auto;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__numbers {
+  font-family: "Gilroy600";
+  font-weight: 900;
+  height: 53.14px;
+  width: 53.14px;
+  border: 1.5px solid rgba(0, 0, 0, 0.7);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #000000;
+  opacity: 1;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__start {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__start .custom_download--label {
+  color: #8c8c8c;
+  font-family: "Gilroy400";
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 25px;
+  margin-bottom: 28px;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__start .work__start--download {
+  display: inline-flex;
+  margin: 0 auto;
+  flex-direction: column;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__start .work__start--download .l-app-tag {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 2px;
+  display: inline-block;
+}
+html[dir=rtl] .myHomWhoItWorkSection .work__start .work__start--download .l-app-tag img {
+  width: 275px;
+  height: 55px;
+  object-fit: contain;
+  margin-right: 0;
+  margin-bottom: 2px;
 }
 
 /*==================================================
