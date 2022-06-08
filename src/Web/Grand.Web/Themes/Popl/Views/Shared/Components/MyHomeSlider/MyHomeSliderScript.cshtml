@@ -55,24 +55,33 @@ my_homeSlider_script.sliderStart_next=function(texts,counter, allVideos ){
     
 
 
-    var parentElement = video.parentElement;
+    var parentElement = video.parentElement.parentElement;
     var w = parentElement.offsetWidth;
+    var left = 0;
 
     var next = document.getElementsByClassName('banner__advantages')[0];
 
     var realHeight = next.offsetTop - parentElement.offsetTop + next.offsetHeight;
-    //parentElement.style.paddingTop = next.offsetHeight + 'px';
+    realHeight+= realHeight * 0.1;
 
     
     var h = w * videoDefaultHeight / videoDefaultWidth;
     if (isMobile) h -= h * 0.1;
 
-    realHeight+= realHeight * 0.1;
+    while (h > realHeight+realHeight * 0.1) {
+        w-=10;
+        left += 5;
+        h = w * videoDefaultHeight / videoDefaultWidth;
+        if (isMobile) h -= h * 0.1;
+    }
+    
+    
     h = h > realHeight ? realHeight : h;
 
 
     video.setAttribute('width', w+'px');
     video.setAttribute('height', h+'px');
+    video.style.left = left + 'px';
 
     video.load();
 

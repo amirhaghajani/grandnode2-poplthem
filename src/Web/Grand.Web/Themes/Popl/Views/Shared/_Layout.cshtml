@@ -36,7 +36,8 @@
         </div>
         <vc:get-coordinate></vc:get-coordinate>
         <partial name="Header" />
-        <div class="main-container">
+
+
             @await Component.InvokeAsync("Widget", new { widgetZone = "content_before" })
             @if (IsSectionDefined("Breadcrumb"))
             {
@@ -45,7 +46,7 @@
             @RenderBody()
             @await Component.InvokeAsync("Widget", new { widgetZone = "content_after" })
             <vc:voice-navigation></vc:voice-navigation>
-        </div>
+
         @*@await Component.InvokeAsync("Footer")*@
         <partial name="_Cookie" />
         <partial name="_Notifications" />

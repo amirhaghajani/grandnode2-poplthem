@@ -6,7 +6,7 @@ using Grand.Web.Features.Models.Catalog;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Grand.Web.ViewComponents
+namespace Grand.Web.Themes.Popl.Components
 {
     public class MyHomeSliderViewComponent : BaseViewComponent
     {

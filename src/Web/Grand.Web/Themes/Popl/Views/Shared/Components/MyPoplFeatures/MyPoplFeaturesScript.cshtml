@@ -1,0 +1,47 @@
+﻿
+<script asp-location="Footer" asp-order="300">
+
+myPoplFeaturs = {tab1:null, tab2:null, tab3:null, tab4:null, tabNavUl:null};
+
+myPoplFeaturs.activateTab=function(sender, tabId){
+    if (!myPoplFeaturs.tab1) myPoplFeaturs.foundTabs();
+
+    var clickedLi = sender.parentNode;
+    if (!myPoplFeaturs.tabNavUl) myPoplFeaturs.tabNavUl = clickedLi.parentNode;
+
+    myPoplFeaturs.unActiveTabNavs();
+
+    clickedLi.classList.add('tab-active');
+
+    myPoplFeaturs.showTabContent(tabId);
+}
+
+myPoplFeaturs.unActiveTabNavs=function(){
+    for(var i=0;i<myPoplFeaturs.tabNavUl.children.length;i++){
+        var nav = myPoplFeaturs.tabNavUl.children[i];
+        nav.classList.remove('tab-active');
+    }
+}
+
+myPoplFeaturs.foundTabs=function(){
+    myPoplFeaturs.tab1 = document.getElementById('tab-1');
+    myPoplFeaturs.tab2 = document.getElementById('tab-2');
+    myPoplFeaturs.tab3 = document.getElementById('tab-3');
+    myPoplFeaturs.tab4 = document.getElementById('tab-4');
+}
+
+myPoplFeaturs.showTabContent=function(tabId){
+    
+    for (var i = 1; i < 5; i++) {
+        var currentTabId = 'tab' + i;
+        var element = myPoplFeaturs[currentTabId];
+        if (currentTabId == tabId) {
+            
+            element.classList.remove('dontShowWithScale');
+
+        } else {
+            element.classList.add('dontShowWithScale');
+        }
+    }
+}
+</script>

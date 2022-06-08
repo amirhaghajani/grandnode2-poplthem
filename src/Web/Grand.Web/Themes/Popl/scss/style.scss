@@ -16,7 +16,13 @@
 
 html {
     min-width: 300px;
-    overflow: auto;
+    overflow: visible;
+
+
+    font-family: DM Sans,sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
 }
 html, body, #app {
     min-height: 100vh;
@@ -35,9 +41,20 @@ h1{
     padding-top:85px;
 }
 
-.main-container{
-    max-width:74.375rem;
-    margin:0 auto;
+.popl_container {
+    max-width: 74.375rem;
+    margin: 0 auto;
+    padding: 0 25px;
+    width: auto;
+    position:relative;
+}
+.popl_seciton{
+    margin-top:100px;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
 
 html {
@@ -62,16 +79,18 @@ html {
     $dir: null;
 
     @import "components/_header.scss";
-    @import "components/_cataloge_product.scss";
+    @import "components/_myHomePageProduct.scss";
     @import "components/_myHomeSlider.scss";
+    @import "components/_myPoplFeatures.scss";
 }
 
 html[dir="rtl"] {
     $dir: rtl;
 
     @import "components/_header.scss";
-    @import "components/_cataloge_product.scss";
+    @import "components/_myHomePageProduct.scss";
     @import "components/_myHomeSlider.scss";
+    @import "components/_myPoplFeatures.scss";
 }
 
 
