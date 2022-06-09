@@ -1,2 +1,76 @@
-﻿body {
+﻿
+.myHomeMission {
+    position: relative;
+
+    .d-desktop {
+        display: none;
+    }
+
+    .popl_container {
+        padding: 0 37px 0 48px;
+    }
+
+    .mission__wrap_out {
+        padding: 3.375rem 0 3.8125rem;
+    }
+
+    .mission__head {
+        margin-bottom: 0.8125rem;
+
+        h1 {
+            font-size: 19.52px;
+            font-weight: 400;
+            font-family: "Gilroy400";
+            letter-spacing: 1.87px;
+            line-height: 42.42px;
+            text-align: left;
+            opacity: 0.6;
+            text-transform: uppercase;
+        }
+    }
+
+    .mission__hero {
+        margin-bottom: 5rem;
+        z-index: 2;
+
+        h2 {
+            font-size: 30px;
+            letter-spacing: -0.56px;
+            line-height: 37.5px;
+            text-align: left;
+            font-weight: 500;
+            font-family: "Gilroy500";
+            max-width: 316px;
+        }
+    }
+
+    .mission__wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mission__content {
+        margin-bottom: 3.875rem;
+        order: 2;
+
+        p {
+            font-size: 22px;
+            letter-spacing: -0.25px;
+            line-height: 30.36px;
+            margin-bottom: 1.875rem;
+            margin-top: 0;
+            font-family: "Inter";
+        }
+    }
+
+    .mission__gallery {
+        order: 1;
+        z-index: 0;
+
+        .mission__thumb {
+            margin-top: -123px;
+            transform: scale(1.2);
+            margin-bottom: 0.625rem;
+        }
+    }
 }

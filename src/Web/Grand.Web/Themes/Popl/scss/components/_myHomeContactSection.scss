@@ -1,1 +1,110 @@
 ﻿
+.myHomeContact {
+    padding: 5.125rem 0 2.5625rem;
+
+    .contact__head {
+        margin-bottom: 26px;
+
+        .l-title {
+            font-family: "Gilroy500";
+            font-weight: 500;
+            font-size: 1.96875em;
+            line-height: 1.19048;
+            letter-spacing: -0.56px;
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    .contact__sub {
+        p {
+            text-align: center;
+            font-weight: 600;
+            font-family: "Gilroy600";
+            color: #121212;
+            font-size: 1.25em;
+            line-height: 1.25;
+            margin-bottom: 2.75rem;
+            margin-top: 0.625rem;
+        }
+    }
+
+    .contact__form {
+        max-width: 28.125rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .formfield__wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 52px;
+        justify-content: space-between;
+    }
+
+    .input__wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        flex: 0 0 100%;
+
+        input {
+            color: #8c8c8c;
+            background-color: #f6f6f6;
+            font-size: 0.9375em;
+            line-height: 1.21;
+            padding: 19px 24px;
+            -webkit-appearance: none;
+            border: 0;
+            box-shadow: none;
+            margin-bottom: 1.0625rem;
+            height: 3.5rem;
+            border-radius: 0.75rem;
+            font-family: "Inter";
+            font-weight: 400;
+        }
+    }
+
+
+    textarea {
+        font-family: "Inter";
+        font-weight: 400;
+        color: #8c8c8c;
+        background-color: #f6f6f6;
+        font-size: 0.9375em;
+        line-height: 1.21;
+        padding: 19px 24px;
+        -webkit-appearance: none;
+        border: 0;
+        box-shadow: none;
+        border-radius: 0.75rem;
+        resize: none;
+        min-height: 8.75rem;
+    }
+
+    .l-btn {
+        font-size: 0.9375em;
+        line-height: 1.21;
+        font-family: "Inter";
+        font-weight: 500;
+        padding: 0 1.25rem;
+        border-radius: 45rem;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        background-color: #121212;
+        box-shadow: 0 4px 7px 0 rgb(0 0 0 / 50%);
+        min-width: 14.375rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        -webkit-appearance: none;
+        border: 0;
+        margin-bottom: 4.0625rem;
+        width: auto;
+        height: 3.125rem;
+        letter-spacing: -0.02em;
+    }
+}

@@ -1510,6 +1510,112 @@ html .myHomeTeams .teams__cards .teams__pro h2 {
 html .myHomeTeams .teams__cards :nth-child(2) {
   margin-top: 31px;
 }
+html .myHomeUpgradeSection {
+  position: relative;
+  padding: 0.0625rem 0 4.85938rem;
+}
+html .myHomeUpgradeSection .popl_container {
+  padding: 0 50px;
+}
+html .myHomeUpgradeSection .d-desktop {
+  display: none;
+}
+html .myHomeUpgradeSection .upgrade__content {
+  text-align: left;
+}
+html .myHomeUpgradeSection .upgrade__content h1 {
+  font-size: 1.875em;
+  line-height: 1.25;
+  letter-spacing: -0.56px;
+  font-family: "Gilroy500";
+  font-weight: 500;
+  margin-bottom: 3.125rem;
+  text-align: left;
+  max-width: 279px;
+}
+html .myHomeUpgradeSection .upgrade__content .l-btn {
+  width: 215px;
+  height: 55px;
+  border-radius: 740px;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: "Inter";
+  font-size: 18px;
+  line-height: 21.78px;
+  letter-spacing: -0.02em;
+  padding: 16.5px 70px;
+  text-transform: capitalize;
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
+  min-width: 14.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+html .myHomeMission {
+  position: relative;
+}
+html .myHomeMission .d-desktop {
+  display: none;
+}
+html .myHomeMission .popl_container {
+  padding: 0 37px 0 48px;
+}
+html .myHomeMission .mission__wrap_out {
+  padding: 3.375rem 0 3.8125rem;
+}
+html .myHomeMission .mission__head {
+  margin-bottom: 0.8125rem;
+}
+html .myHomeMission .mission__head h1 {
+  font-size: 19.52px;
+  font-weight: 400;
+  font-family: "Gilroy400";
+  letter-spacing: 1.87px;
+  line-height: 42.42px;
+  text-align: left;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+html .myHomeMission .mission__hero {
+  margin-bottom: 5rem;
+  z-index: 2;
+}
+html .myHomeMission .mission__hero h2 {
+  font-size: 30px;
+  letter-spacing: -0.56px;
+  line-height: 37.5px;
+  text-align: left;
+  font-weight: 500;
+  font-family: "Gilroy500";
+  max-width: 316px;
+}
+html .myHomeMission .mission__wrap {
+  display: flex;
+  flex-direction: column;
+}
+html .myHomeMission .mission__content {
+  margin-bottom: 3.875rem;
+  order: 2;
+}
+html .myHomeMission .mission__content p {
+  font-size: 22px;
+  letter-spacing: -0.25px;
+  line-height: 30.36px;
+  margin-bottom: 1.875rem;
+  margin-top: 0;
+  font-family: "Inter";
+}
+html .myHomeMission .mission__gallery {
+  order: 1;
+  z-index: 0;
+}
+html .myHomeMission .mission__gallery .mission__thumb {
+  margin-top: -123px;
+  transform: scale(1.2);
+  margin-bottom: 0.625rem;
+}
 html .myHomeFAQSection {
   padding: 2.25rem 0 2.5rem;
   background: rgba(196, 196, 196, 0.1);
@@ -1582,6 +1688,103 @@ html .myHomeFAQSection .l-accordion.is-open .l-accordion__title::after {
 html .myHomeFAQSection .l-accordion.is-open .l-accordion__content {
   opacity: 1;
   height: 100%;
+}
+html .myHomeContact {
+  padding: 5.125rem 0 2.5625rem;
+}
+html .myHomeContact .contact__head {
+  margin-bottom: 26px;
+}
+html .myHomeContact .contact__head .l-title {
+  font-family: "Gilroy500";
+  font-weight: 500;
+  font-size: 1.96875em;
+  line-height: 1.19048;
+  letter-spacing: -0.56px;
+  margin: 0;
+  text-align: center;
+}
+html .myHomeContact .contact__sub p {
+  text-align: center;
+  font-weight: 600;
+  font-family: "Gilroy600";
+  color: #121212;
+  font-size: 1.25em;
+  line-height: 1.25;
+  margin-bottom: 2.75rem;
+  margin-top: 0.625rem;
+}
+html .myHomeContact .contact__form {
+  max-width: 28.125rem;
+  text-align: center;
+  margin: 0 auto;
+}
+html .myHomeContact .formfield__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 52px;
+  justify-content: space-between;
+}
+html .myHomeContact .input__wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  flex: 0 0 100%;
+}
+html .myHomeContact .input__wrapper input {
+  color: #8c8c8c;
+  background-color: #f6f6f6;
+  font-size: 0.9375em;
+  line-height: 1.21;
+  padding: 19px 24px;
+  -webkit-appearance: none;
+  border: 0;
+  box-shadow: none;
+  margin-bottom: 1.0625rem;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+  font-family: "Inter";
+  font-weight: 400;
+}
+html .myHomeContact textarea {
+  font-family: "Inter";
+  font-weight: 400;
+  color: #8c8c8c;
+  background-color: #f6f6f6;
+  font-size: 0.9375em;
+  line-height: 1.21;
+  padding: 19px 24px;
+  -webkit-appearance: none;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0.75rem;
+  resize: none;
+  min-height: 8.75rem;
+}
+html .myHomeContact .l-btn {
+  font-size: 0.9375em;
+  line-height: 1.21;
+  font-family: "Inter";
+  font-weight: 500;
+  padding: 0 1.25rem;
+  border-radius: 45rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #121212;
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+  min-width: 14.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: 0;
+  margin-bottom: 4.0625rem;
+  width: auto;
+  height: 3.125rem;
+  letter-spacing: -0.02em;
 }
 
 html[dir=rtl] .header {
@@ -2478,6 +2681,112 @@ html[dir=rtl] .myHomeTeams .teams__cards .teams__pro h2 {
 html[dir=rtl] .myHomeTeams .teams__cards :nth-child(2) {
   margin-top: 31px;
 }
+html[dir=rtl] .myHomeUpgradeSection {
+  position: relative;
+  padding: 0.0625rem 0 4.85938rem;
+}
+html[dir=rtl] .myHomeUpgradeSection .popl_container {
+  padding: 0 50px;
+}
+html[dir=rtl] .myHomeUpgradeSection .d-desktop {
+  display: none;
+}
+html[dir=rtl] .myHomeUpgradeSection .upgrade__content {
+  text-align: left;
+}
+html[dir=rtl] .myHomeUpgradeSection .upgrade__content h1 {
+  font-size: 1.875em;
+  line-height: 1.25;
+  letter-spacing: -0.56px;
+  font-family: "Gilroy500";
+  font-weight: 500;
+  margin-bottom: 3.125rem;
+  text-align: left;
+  max-width: 279px;
+}
+html[dir=rtl] .myHomeUpgradeSection .upgrade__content .l-btn {
+  width: 215px;
+  height: 55px;
+  border-radius: 740px;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: "Inter";
+  font-size: 18px;
+  line-height: 21.78px;
+  letter-spacing: -0.02em;
+  padding: 16.5px 70px;
+  text-transform: capitalize;
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
+  min-width: 14.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+html[dir=rtl] .myHomeMission {
+  position: relative;
+}
+html[dir=rtl] .myHomeMission .d-desktop {
+  display: none;
+}
+html[dir=rtl] .myHomeMission .popl_container {
+  padding: 0 37px 0 48px;
+}
+html[dir=rtl] .myHomeMission .mission__wrap_out {
+  padding: 3.375rem 0 3.8125rem;
+}
+html[dir=rtl] .myHomeMission .mission__head {
+  margin-bottom: 0.8125rem;
+}
+html[dir=rtl] .myHomeMission .mission__head h1 {
+  font-size: 19.52px;
+  font-weight: 400;
+  font-family: "Gilroy400";
+  letter-spacing: 1.87px;
+  line-height: 42.42px;
+  text-align: left;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+html[dir=rtl] .myHomeMission .mission__hero {
+  margin-bottom: 5rem;
+  z-index: 2;
+}
+html[dir=rtl] .myHomeMission .mission__hero h2 {
+  font-size: 30px;
+  letter-spacing: -0.56px;
+  line-height: 37.5px;
+  text-align: left;
+  font-weight: 500;
+  font-family: "Gilroy500";
+  max-width: 316px;
+}
+html[dir=rtl] .myHomeMission .mission__wrap {
+  display: flex;
+  flex-direction: column;
+}
+html[dir=rtl] .myHomeMission .mission__content {
+  margin-bottom: 3.875rem;
+  order: 2;
+}
+html[dir=rtl] .myHomeMission .mission__content p {
+  font-size: 22px;
+  letter-spacing: -0.25px;
+  line-height: 30.36px;
+  margin-bottom: 1.875rem;
+  margin-top: 0;
+  font-family: "Inter";
+}
+html[dir=rtl] .myHomeMission .mission__gallery {
+  order: 1;
+  z-index: 0;
+}
+html[dir=rtl] .myHomeMission .mission__gallery .mission__thumb {
+  margin-top: -123px;
+  transform: scale(1.2);
+  margin-bottom: 0.625rem;
+}
 html[dir=rtl] .myHomeFAQSection {
   padding: 2.25rem 0 2.5rem;
   background: rgba(196, 196, 196, 0.1);
@@ -2550,6 +2859,103 @@ html[dir=rtl] .myHomeFAQSection .l-accordion.is-open .l-accordion__title::after 
 html[dir=rtl] .myHomeFAQSection .l-accordion.is-open .l-accordion__content {
   opacity: 1;
   height: 100%;
+}
+html[dir=rtl] .myHomeContact {
+  padding: 5.125rem 0 2.5625rem;
+}
+html[dir=rtl] .myHomeContact .contact__head {
+  margin-bottom: 26px;
+}
+html[dir=rtl] .myHomeContact .contact__head .l-title {
+  font-family: "Gilroy500";
+  font-weight: 500;
+  font-size: 1.96875em;
+  line-height: 1.19048;
+  letter-spacing: -0.56px;
+  margin: 0;
+  text-align: center;
+}
+html[dir=rtl] .myHomeContact .contact__sub p {
+  text-align: center;
+  font-weight: 600;
+  font-family: "Gilroy600";
+  color: #121212;
+  font-size: 1.25em;
+  line-height: 1.25;
+  margin-bottom: 2.75rem;
+  margin-top: 0.625rem;
+}
+html[dir=rtl] .myHomeContact .contact__form {
+  max-width: 28.125rem;
+  text-align: center;
+  margin: 0 auto;
+}
+html[dir=rtl] .myHomeContact .formfield__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 52px;
+  justify-content: space-between;
+}
+html[dir=rtl] .myHomeContact .input__wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  flex: 0 0 100%;
+}
+html[dir=rtl] .myHomeContact .input__wrapper input {
+  color: #8c8c8c;
+  background-color: #f6f6f6;
+  font-size: 0.9375em;
+  line-height: 1.21;
+  padding: 19px 24px;
+  -webkit-appearance: none;
+  border: 0;
+  box-shadow: none;
+  margin-bottom: 1.0625rem;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+  font-family: "Inter";
+  font-weight: 400;
+}
+html[dir=rtl] .myHomeContact textarea {
+  font-family: "Inter";
+  font-weight: 400;
+  color: #8c8c8c;
+  background-color: #f6f6f6;
+  font-size: 0.9375em;
+  line-height: 1.21;
+  padding: 19px 24px;
+  -webkit-appearance: none;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0.75rem;
+  resize: none;
+  min-height: 8.75rem;
+}
+html[dir=rtl] .myHomeContact .l-btn {
+  font-size: 0.9375em;
+  line-height: 1.21;
+  font-family: "Inter";
+  font-weight: 500;
+  padding: 0 1.25rem;
+  border-radius: 45rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #121212;
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+  min-width: 14.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: 0;
+  margin-bottom: 4.0625rem;
+  width: auto;
+  height: 3.125rem;
+  letter-spacing: -0.02em;
 }
 
 /*==================================================
