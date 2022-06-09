@@ -1,0 +1,90 @@
+﻿
+.myHomeFAQSection {
+    padding: 2.25rem 0 2.5rem;
+    background: rgba(196, 196, 196, 0.1);
+    border-radius: 16px;
+
+    ._forDesk {
+        display: none;
+    }
+
+    .d-desktop {
+        display: none;
+    }
+
+    .faq__head {
+        padding-bottom: 0;
+        margin: 0 auto;
+        text-align: center;
+
+        h1 {
+            width: 223px;
+            text-align: left;
+            margin-left: 17px;
+        }
+    }
+
+    .l-accordion {
+        margin-bottom: 0.3125rem;
+        padding: 23.6px 34.6px 21.58px 17px;
+        position: relative;
+        border-radius: 8px;
+
+        .l-accordion__title {
+            cursor: pointer;
+            position: relative;
+            margin-bottom: 0.625rem;
+            padding-right: 1.875rem;
+
+            &::after {
+                position: absolute;
+                content: " ";
+                right: -12px;
+                height: 5px;
+                width: 12px;
+                transform: translateX(-50%);
+                background-size: contain !important;
+                background-repeat: no-repeat;
+                background-position: center;
+                top: 13px;
+                background-image: url(/popl/images/icon/down-arrow.png);
+            }
+        }
+
+        h3 {
+            font-family: "Gilroy700";
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+            letter-spacing: -0.4px;
+        }
+
+        p {
+            font-family: "Gilroy400";
+            font-weight: 400;
+            font-size: 1.25em;
+            line-height: 1.2;
+            color: #000000;
+        }
+
+        .l-accordion__content {
+            transition: height 0.4s ease-in, opacity 0.4s ease-in;
+            opacity: 0;
+            height: 0;
+        }
+
+        &.is-open {
+            .l-accordion__title {
+                &::after {
+                    content: " ";
+                    background-image: url(/popl/images/icon/up-arrow.png);
+                }
+            }
+
+            .l-accordion__content {
+                opacity: 1;
+                height: 100%;
+            }
+        }
+    }
+}

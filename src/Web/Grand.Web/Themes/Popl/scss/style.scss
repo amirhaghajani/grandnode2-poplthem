@@ -114,6 +114,11 @@ html {
     @import "components/_myPoplFeatures.scss";
     @import "components/_myHomeWhoItWork.scss";
     @import "components/_myHomeTeams.scss";
+    
+    @import "components/_myHomeUpgradeSection.scss";
+    @import "components/_myHomeMissionSeciton.scss";
+    @import "components/_myHomeFAQSection.scss";
+    @import "components/_myHomeContactSection.scss";
 }
 
 html[dir="rtl"] {
@@ -125,6 +130,11 @@ html[dir="rtl"] {
     @import "components/_myPoplFeatures.scss";
     @import "components/_myHomeWhoItWork.scss";
     @import "components/_myHomeTeams.scss";
+
+    @import "components/_myHomeUpgradeSection.scss";
+    @import "components/_myHomeMissionSeciton.scss";
+    @import "components/_myHomeFAQSection.scss";
+    @import "components/_myHomeContactSection.scss";
 }
 
 

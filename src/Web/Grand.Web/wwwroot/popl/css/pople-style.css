@@ -1510,6 +1510,79 @@ html .myHomeTeams .teams__cards .teams__pro h2 {
 html .myHomeTeams .teams__cards :nth-child(2) {
   margin-top: 31px;
 }
+html .myHomeFAQSection {
+  padding: 2.25rem 0 2.5rem;
+  background: rgba(196, 196, 196, 0.1);
+  border-radius: 16px;
+}
+html .myHomeFAQSection ._forDesk {
+  display: none;
+}
+html .myHomeFAQSection .d-desktop {
+  display: none;
+}
+html .myHomeFAQSection .faq__head {
+  padding-bottom: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+html .myHomeFAQSection .faq__head h1 {
+  width: 223px;
+  text-align: left;
+  margin-left: 17px;
+}
+html .myHomeFAQSection .l-accordion {
+  margin-bottom: 0.3125rem;
+  padding: 23.6px 34.6px 21.58px 17px;
+  position: relative;
+  border-radius: 8px;
+}
+html .myHomeFAQSection .l-accordion .l-accordion__title {
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.625rem;
+  padding-right: 1.875rem;
+}
+html .myHomeFAQSection .l-accordion .l-accordion__title::after {
+  position: absolute;
+  content: " ";
+  right: -12px;
+  height: 5px;
+  width: 12px;
+  transform: translateX(-50%);
+  background-size: contain !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 13px;
+  background-image: url(/popl/images/icon/down-arrow.png);
+}
+html .myHomeFAQSection .l-accordion h3 {
+  font-family: "Gilroy700";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.4px;
+}
+html .myHomeFAQSection .l-accordion p {
+  font-family: "Gilroy400";
+  font-weight: 400;
+  font-size: 1.25em;
+  line-height: 1.2;
+  color: #000000;
+}
+html .myHomeFAQSection .l-accordion .l-accordion__content {
+  transition: height 0.4s ease-in, opacity 0.4s ease-in;
+  opacity: 0;
+  height: 0;
+}
+html .myHomeFAQSection .l-accordion.is-open .l-accordion__title::after {
+  content: " ";
+  background-image: url(/popl/images/icon/up-arrow.png);
+}
+html .myHomeFAQSection .l-accordion.is-open .l-accordion__content {
+  opacity: 1;
+  height: 100%;
+}
 
 html[dir=rtl] .header {
   display: flex;
@@ -2404,6 +2477,79 @@ html[dir=rtl] .myHomeTeams .teams__cards .teams__pro h2 {
 }
 html[dir=rtl] .myHomeTeams .teams__cards :nth-child(2) {
   margin-top: 31px;
+}
+html[dir=rtl] .myHomeFAQSection {
+  padding: 2.25rem 0 2.5rem;
+  background: rgba(196, 196, 196, 0.1);
+  border-radius: 16px;
+}
+html[dir=rtl] .myHomeFAQSection ._forDesk {
+  display: none;
+}
+html[dir=rtl] .myHomeFAQSection .d-desktop {
+  display: none;
+}
+html[dir=rtl] .myHomeFAQSection .faq__head {
+  padding-bottom: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+html[dir=rtl] .myHomeFAQSection .faq__head h1 {
+  width: 223px;
+  text-align: left;
+  margin-left: 17px;
+}
+html[dir=rtl] .myHomeFAQSection .l-accordion {
+  margin-bottom: 0.3125rem;
+  padding: 23.6px 34.6px 21.58px 17px;
+  position: relative;
+  border-radius: 8px;
+}
+html[dir=rtl] .myHomeFAQSection .l-accordion .l-accordion__title {
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0.625rem;
+  padding-right: 1.875rem;
+}
+html[dir=rtl] .myHomeFAQSection .l-accordion .l-accordion__title::after {
+  position: absolute;
+  content: " ";
+  right: -12px;
+  height: 5px;
+  width: 12px;
+  transform: translateX(-50%);
+  background-size: contain !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 13px;
+  background-image: url(/popl/images/icon/down-arrow.png);
+}
+html[dir=rtl] .myHomeFAQSection .l-accordion h3 {
+  font-family: "Gilroy700";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.4px;
+}
+html[dir=rtl] .myHomeFAQSection .l-accordion p {
+  font-family: "Gilroy400";
+  font-weight: 400;
+  font-size: 1.25em;
+  line-height: 1.2;
+  color: #000000;
+}
+html[dir=rtl] .myHomeFAQSection .l-accordion .l-accordion__content {
+  transition: height 0.4s ease-in, opacity 0.4s ease-in;
+  opacity: 0;
+  height: 0;
+}
+html[dir=rtl] .myHomeFAQSection .l-accordion.is-open .l-accordion__title::after {
+  content: " ";
+  background-image: url(/popl/images/icon/up-arrow.png);
+}
+html[dir=rtl] .myHomeFAQSection .l-accordion.is-open .l-accordion__content {
+  opacity: 1;
+  height: 100%;
 }
 
 /*==================================================

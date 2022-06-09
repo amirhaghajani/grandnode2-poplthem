@@ -1,0 +1,70 @@
+﻿
+<div id="shopify-section-index-get-in-touch" class="shopify-section">
+   <form id="contactForm" accept-charset="UTF-8" class="contact-form">
+      <input type="hidden" name="utf8" value="✓">
+      <div class="popl contact">
+         <div class="container">
+            <div class="contact__head">
+               <h1 class="l-title">Get in touch with us</h1>
+            </div>
+            <div class="contact__sub">
+               <p>We'd love to hear from you!</p>
+            </div>
+            <div class="contact__form" id="form_fields">
+               <div class="formfield__wrapper">
+                  <div class="input__wrapper"> <input type="text" id="contactFormName" name="contactFormName" placeholder="Name" autocapitalize="words" value="" required="required"> <input type="email" id="contactFormEmail" name="contactFormEmail" placeholder="Email address" autocorrect="off" autocapitalize="off" value="" required="required"></div>
+                  <textarea rows="5" id="contactFormMessage" name="contactFormMessage" placeholder="Your Message" required="required"></textarea>
+               </div>
+               <input type="submit" class="submit l-btn" id="customSubmit" value="Send">
+            </div>
+            <div class="thank-you-message" id="formStatus" style="display:none; text-align:center;"></div>
+         </div>
+      </div>
+   </form>
+   <script>
+      // $(function() {
+      //    $("#contactForm").submit(function(e) { alert();
+      //       e.preventDefault();
+      //       var form = jQuery(this);
+      //       var postURL = 'https://contact.poplme.co/?sAction=SendEmailTeamsCustomer&sToEmail=admin-popl@mailinator.com';
+      //       var name = $("#contactFormName").val();
+      //       var email = $("#contactFormEmail").val();
+      //       var message = $("#contactFormMessage").val();
+      //       var subject = "Website Form";                                       
+      
+      // //       jQuery.ajax({
+      // //              type: "POST",
+      // //              url: postURL + '&sFromName=' + email+'&sFromEmail='+email+'&sSubject='+subject+'&sContent='+message,
+      // //              data: form.serialize(),
+      // //              success: function(data)
+      // //              { 
+      // //                form.find('#thank_you').show();
+      // //              },
+      // //              error: function (xhr, ajaxOptions, thrownError) {
+      // //               alert(xhr.status);
+      // //               alert(thrownError);
+      // //              },
+      // //      });
+      //   });
+      // });
+      
+        processFormData = function() {
+          console.log('Submitting form…');
+          document.getElementById('form_fields').style.display = 'none';
+          document.getElementById('thank_you').style.display = 'block';
+          event.preventDefault();
+          
+            var form = document.getElementById("contactForm");
+            var submit = document.querySelector('#customSubmit');
+      
+      //   submit.addEventListener('click', function (e) {
+      //     e.preventDefault();
+      //     // Hide first view
+      // //     document.getElementById('contact_form').style.display = 'none';
+      
+      //     // Show thank you message element
+      //     document.getElementById('thank_you').style.display = 'block';
+      //   });
+      }
+   </script>
+</div>
