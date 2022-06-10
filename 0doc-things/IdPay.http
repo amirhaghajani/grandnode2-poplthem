@@ -1,0 +1,28 @@
+
+POST https://api.idpay.ir/v1.1/payment HTTP/1.1
+content-type: application/json
+X-API-KEY: 6a7f99eb-7c20-4412-a972-6dfb7cd253a4
+X-SANDBOX: 1
+
+{
+    "order_id": "104",
+    "amount": 10000,
+    "name": "قاسم رادمان",
+    "phone": "09382198592",
+    "mail": "my@site.com",
+    "desc": "توضیحات پرداخت کننده",
+    "callback": "https://example.com/callback"
+}
+
+
+###
+
+POST https://api.idpay.ir/v1.1/payment/verify HTTP/1.1
+content-type: application/json
+X-API-KEY: 6a7f99eb-7c20-4412-a972-6dfb7cd253a4
+X-SANDBOX: 1
+
+{
+    "id": "477c1c48a9bd5c07aab530138fd29b18",
+    "order_id": "104"
+}

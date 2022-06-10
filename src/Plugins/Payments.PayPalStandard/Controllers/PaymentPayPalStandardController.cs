@@ -64,6 +64,12 @@ namespace Payments.PayPalStandard.Controllers
             return HttpContext.Request.Query[name].ToString();
         }
 
+
+        /// <summary>
+        /// پرداخت موفقیت آمیز بود، پی پال برمی گردونه به این آدرس
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="GrandException"></exception>
         public async Task<IActionResult> PDTHandler()
         {
             var tx = QueryString("tx");
@@ -185,6 +191,12 @@ namespace Payments.PayPalStandard.Controllers
             }
         }
 
+        /// <summary>
+        /// notify url
+        /// آدرس به پی پل تحت نام نوتی فای پاس داده میشه
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="GrandException"></exception>
         [HttpPost]
         public async Task<IActionResult> IPNHandler()
         {
@@ -384,6 +396,11 @@ namespace Payments.PayPalStandard.Controllers
 
         }
 
+
+        /// <summary>
+        /// این آدرس به پی پال پاس داده میشه برای بحث کنسل که کاربر کنسل کرد میاد اینجا
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> CancelOrder()
         {
             var order = (await _orderService.SearchOrders(storeId: _workContext.CurrentStore.Id,
