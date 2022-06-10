@@ -58,6 +58,14 @@ namespace Payments.IDPayIR.Controllers
 
         private string QueryString(string name)
         {
+            if (HttpContext.Request.Method == "POST")
+            {
+               if( StringValues.IsNullOrEmpty(HttpContext.Request.Form[name]))
+                    return default;
+                return HttpContext.Request.Form[name].ToString();
+            }
+
+
             if (StringValues.IsNullOrEmpty(HttpContext.Request.Query[name]))
                 return default;
 
@@ -72,6 +80,7 @@ namespace Payments.IDPayIR.Controllers
         /// <exception cref="GrandException"></exception>
         public async Task<IActionResult> PaymentHandler()
         {
+            
             var status = QueryString("status");
             var track_id = QueryString("track_id");
             var transactionId = QueryString("id");
