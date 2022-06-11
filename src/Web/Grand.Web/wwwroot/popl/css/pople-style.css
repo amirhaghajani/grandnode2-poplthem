@@ -1633,7 +1633,6 @@ html .myHomeFAQSection .faq__head {
   text-align: center;
 }
 html .myHomeFAQSection .faq__head h1 {
-  width: 223px;
   text-align: left;
   margin-left: 17px;
 }
@@ -1668,6 +1667,7 @@ html .myHomeFAQSection .l-accordion h3 {
   font-size: 24px;
   line-height: 32px;
   letter-spacing: -0.4px;
+  text-align: justify;
 }
 html .myHomeFAQSection .l-accordion p {
   font-family: "Gilroy400";
@@ -2804,7 +2804,6 @@ html[dir=rtl] .myHomeFAQSection .faq__head {
   text-align: center;
 }
 html[dir=rtl] .myHomeFAQSection .faq__head h1 {
-  width: 223px;
   text-align: left;
   margin-left: 17px;
 }
@@ -2839,6 +2838,7 @@ html[dir=rtl] .myHomeFAQSection .l-accordion h3 {
   font-size: 24px;
   line-height: 32px;
   letter-spacing: -0.4px;
+  text-align: justify;
 }
 html[dir=rtl] .myHomeFAQSection .l-accordion p {
   font-family: "Gilroy400";

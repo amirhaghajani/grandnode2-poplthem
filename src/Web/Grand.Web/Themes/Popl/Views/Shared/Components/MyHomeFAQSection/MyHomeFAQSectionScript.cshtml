@@ -35,13 +35,14 @@ myHomeFAQSection.toggleAccordion=function(sender_accordionTitle){
     var accordion = this.parentNode;
     if(accordion.classList.contains('is-open')){
 
-        myHomeFAQSection.closeAllAccordions();
+        //myHomeFAQSection.closeAllAccordions();
+        accordion.classList.remove('is-open');
 
 
     }else{
-        myHomeFAQSection.closeAllAccordions();
+        //myHomeFAQSection.closeAllAccordions();
         accordion.classList.add('is-open');
-        myHomeFAQSection.openAccordion(accordion);
+        //setTimeout(function () { accordion.scrollIntoView(); }, 100);
     }
 
 }
@@ -52,11 +53,6 @@ myHomeFAQSection.closeAllAccordions=function(){
         var accordion = accordions[i];
         accordion.classList.remove('is-open');
     }
-}
-
-myHomeFAQSection.openAccordion=function(accordion){
-    var content = accordion.children[1];
-    content.classList.add('animate__animated', 'animate__slideOutDown');
 }
 
 
