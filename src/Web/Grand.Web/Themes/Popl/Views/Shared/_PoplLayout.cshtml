@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     @RenderSection("meta", required: false)    
     <head-custom>
-    <partial name="Head" />
+    <partial name="PoplHead" />
     <vc:widget widget-zone="head_html_tag" additional-data="null"></vc:widget>
     <canonical-urls>
     @*Favicon - upload favicon.ico file to the wwwroot directory*@
@@ -35,7 +35,7 @@
             <div class="page-loader"></div>
         </div>
         <vc:get-coordinate></vc:get-coordinate>
-        <partial name="Header" />
+        <partial name="PoplHeader" />
 
 
             @await Component.InvokeAsync("Widget", new { widgetZone = "content_before" })

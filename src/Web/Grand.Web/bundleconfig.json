@@ -65,68 +65,7 @@
       "renameLocals": false
     },
     "sourceMap": false
-  },
-  //aha.com -------------------------------------------------------------
-  //--myThemee
-  {
-    "outputFileName": "wwwroot/myTheme/bundles/vendors.js",
-    "inputFiles": [
-      "Themes/myTheme/js/vendors.js"
-    ],
-    "minify": {
-      "enabled": false,
-      "renameLocals": false
-    },
-    "sourceMap": false
-  },
-  {
-    "outputFileName": "wwwroot/myTheme/bundles/shopify.js",
-    "inputFiles": [
-      "Themes/myTheme/js/shopify.js"
-    ],
-    "minify": {
-      "enabled": false,
-      "renameLocals": false
-    },
-    "sourceMap": false
-  },
-  {
-    "outputFileName": "wwwroot/myTheme/bundles/utilities.js",
-    "inputFiles": [
-      "Themes/myTheme/js/utilities.js"
-    ],
-    "minify": {
-      "enabled": false,
-      "renameLocals": false
-    },
-    "sourceMap": false
-  },
-  {
-    "outputFileName": "wwwroot/myTheme/bundles/sections.js",
-    "inputFiles": [
-      "Themes/myTheme/js/sections.js"
-    ],
-    "minify": {
-      "enabled": false,
-      "renameLocals": false
-    },
-    "sourceMap": false
-  },
-  {
-    "outputFileName": "wwwroot/myTheme/bundles/app.js",
-    "inputFiles": [
-      "Themes/myTheme/js/app.js"
-    ],
-    "minify": {
-      "enabled": false,
-      "renameLocals": false
-    },
-    "sourceMap": false
-  },
-  //--myThemee
-  //aha.com -------------------------------------------------------------
-
-
+  },  
 
   //aha.com -------------------------------------------------------------
   //--poplTheme

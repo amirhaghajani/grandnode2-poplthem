@@ -14,7 +14,7 @@
             <li>
                 Products <span class="icon-down-arrow"></span>
                 <ul>
-                    @await Component.InvokeAsync("Menu")
+                    @await Component.InvokeAsync("PoplMenu")
                 </ul>
             </li>
             <li>For Businesses and Teams</li>
@@ -38,7 +38,7 @@
 
 
     <div class="header-logo-container">
-        <partial name="_Logo" />
+        <partial name="_PoplLogo" />
     </div>
 
     <div class="header-search-container">
@@ -56,7 +56,7 @@
     <div class="header-actions-container">
         <ul>
                 
-            <partial name="_ShoppingCartLinks" />
+            <partial name="_PoplShoppingCartLinks" />
 
             <template>
                 <li class="nav-item">
@@ -86,4 +86,4 @@
 
 </div>
 
-<partial name="HeaderScript" />
+<partial name="PoplHeaderScript" />

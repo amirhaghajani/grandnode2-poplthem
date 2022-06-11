@@ -2,9 +2,5 @@
   {
     "outputFile": "wwwroot/popl/css/pople-style.css",
     "inputFile": "Themes/Popl/scss/style.scss"
-  },
-  {
-    "outputFile": "wwwroot/myTheme/css/myTheme.css",
-    "inputFile": "Themes/myTheme/scss/myTheme.scss"
   }
 ]

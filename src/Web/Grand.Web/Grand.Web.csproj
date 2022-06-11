@@ -54,42 +54,7 @@
     <Compile Remove="Plugins\**" />
     <EmbeddedResource Remove="Plugins\**" />
     <None Remove="Plugins\**" />
-    <None Remove="Themes\myTheme\asset\jquery.min.js" />
-    <None Remove="Themes\myTheme\js\app.js" />
-    <None Remove="Themes\myTheme\js\sections.js" />
-    <None Remove="Themes\myTheme\js\shopify.js" />
-    <None Remove="Themes\myTheme\js\utilities.js" />
-    <None Remove="Themes\myTheme\js\vendors.js" />
-    <None Remove="Themes\myTheme\scss\myTheme.scss" />
-    <None Remove="Themes\myTheme\scss\_accordions.scss" />
-    <None Remove="Themes\myTheme\scss\_basic_styles.scss" />
-    <None Remove="Themes\myTheme\scss\_blog.scss" />
-    <None Remove="Themes\myTheme\scss\_buttons.scss" />
-    <None Remove="Themes\myTheme\scss\_contact_form.scss" />
-    <None Remove="Themes\myTheme\scss\_custom_styles.scss" />
-    <None Remove="Themes\myTheme\scss\_direction_helper.scss" />
-    <None Remove="Themes\myTheme\scss\_flickity.scss" />
-    <None Remove="Themes\myTheme\scss\_fonts.scss" />
-    <None Remove="Themes\myTheme\scss\_forms.scss" />
-    <None Remove="Themes\myTheme\scss\_header.scss" />
-    <None Remove="Themes\myTheme\scss\_images.scss" />
-    <None Remove="Themes\myTheme\scss\_layout.scss" />
-    <None Remove="Themes\myTheme\scss\_links.scss" />
-    <None Remove="Themes\myTheme\scss\_lists.scss" />
-    <None Remove="Themes\myTheme\scss\_ltr.scss" />
-    <None Remove="Themes\myTheme\scss\_menu.scss" />
-    <None Remove="Themes\myTheme\scss\_misc.scss" />
-    <None Remove="Themes\myTheme\scss\_newsletter.scss" />
-    <None Remove="Themes\myTheme\scss\_placeholders.scss" />
-    <None Remove="Themes\myTheme\scss\_reset_basic.scss" />
-    <None Remove="Themes\myTheme\css\header\header.css" />
-    <None Remove="Themes\myTheme\css\header\header.rtl.css" />
-    <None Remove="Themes\myTheme\scss\_rtl.scss" />
-    <None Remove="Themes\myTheme\scss\_site_style.scss" />
-    <None Remove="Themes\myTheme\scss\_tables.scss" />
-    <None Remove="Themes\myTheme\scss\_tabs.scss" />
-    <None Remove="Themes\myTheme\scss\_typography.scss" />
-    <None Remove="Themes\myTheme\scss\_videos.scss" />
+    <Content Remove="Themes\Popl\Components\PoplMenu.cs" />
     <None Remove="Themes\Popl\preview.jpg" />
     <None Remove="Themes\Popl\scripts\my.popl.app.js" />
     <None Remove="Themes\Popl\scripts\my.popl.public.axios.js" />
@@ -123,14 +88,6 @@
     <None Update="Rotativa\Windows\wkhtmltopdf.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Update="Themes\myTheme\css\header\header.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
-    <Content Update="Themes\myTheme\css\header\header.rtl.css">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\myTheme\bundles\" />
