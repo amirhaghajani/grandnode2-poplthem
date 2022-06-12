@@ -1,34 +1,6 @@
 ﻿
 <script asp-location="Footer" asp-order="300">
 
-//var my_vue_header = new Vue({
-//    data: function() {
-//        return {
-//            itemsShowArray:[],
-//            counter:-1,
-//            interval:9000,
-//            numberOfItems:4,
-            
-//        };
-//    }, methods: {
-
-//        next(){
-//            this.counter++;
-//            if (this.counter >= this.numberOfItems) this.counter = 0;
-
-//            this.itemsShowArray = [];
-//            for (var i = 0;i<this.numberOfItems;i++){
-//                this.itemsShowArray.push(i == this.counter);
-//            }
-
-//        }
-        
-//    }, created() {
-//        setInterval(this.next, this.interval);
-//        setTimeout(this.next, 1000);
-//    }
-//});
-
 
 //--------------------------------------------------
 window.addEventListener('resize', function(){
@@ -48,7 +20,7 @@ var my_header_script = {};
 my_header_script.checkNavIsOneLine=function(isCheckOnly) {
 
     var nav = document.getElementById('main_nav');
-    var item = document.getElementById('main-nav-container');
+    //var item = document.getElementById('main-nav-container');
 
     var isOverFlown = my_global.isOverFlown(nav);
 
@@ -56,10 +28,14 @@ my_header_script.checkNavIsOneLine=function(isCheckOnly) {
 
 
 
-    item.removeAttribute('data-ismobile');
+    //item.removeAttribute('data-ismobile');
+    document.body.removeAttribute('data-ismobile');
     isOverFlown = my_global.isOverFlown(nav);
 
-    if(!my_global.isMoblieMode() && isOverFlown) item.setAttribute('data-ismobile', 'true');
+    if (!my_global.isMoblieMode() && isOverFlown) {
+        //item.setAttribute('data-ismobile', 'true');
+        document.body.setAttribute('data-ismobile', 'true');
+    }
 
     return !isOverFlown;
 }

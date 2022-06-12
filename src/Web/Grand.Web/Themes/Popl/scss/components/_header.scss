@@ -12,29 +12,29 @@ $dir : null !default;
     max-height:89px;
 }
 
+
 .main-nav-container {
     order: 1;
 
     @include bp {
         order: 2;
-
         //در حالت غیر موبایل، تاپ نو، باید تا جای ممکن همه فضا را بگیرد
         flex: 1 100%;
     }
+}
+body[data-ismobile='true'] .main-nav-container {
+    order: 1;
+    flex: none;
 
-    &[data-ismobile='true'] {
-        order: 1;
-        flex: none;
-
-        ~ .header-logo-container {
-            //وقتی هنوز موبایل مد نیست اما تاپ نو، دو خطه شده و یک دکمه شده، قسمت لوگو باید بیشترین فضا را بگیره که دکمه جستجو بچسبه سمت راست راست
-            flex: 1 100%;
-        }
+    ~ .header-logo-container {
+        //وقتی هنوز موبایل مد نیست اما تاپ نو، دو خطه شده و یک دکمه شده، قسمت لوگو باید بیشترین فضا را بگیره که دکمه جستجو بچسبه سمت راست راست
+        flex: 1 100%;
     }
 }
 
 .header-logo-container {
     order: 2;
+    min-width:300px;
 
     //حالت پیش فرض، موبایل، لگو باید کل فضای ممکن را بگیره که دکمه جستجو بچسبه راست راست
     flex: 1 100%;

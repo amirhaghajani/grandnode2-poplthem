@@ -11,3 +11,14 @@ $breakpoints: (
     @content;
   }
 }
+
+@mixin default($onlyAddContentForBodyIsMobile: false) {
+
+    @if $onlyAddContentForBodyIsMobile{}
+    @else {@content}
+    
+
+    body[data-ismobile='true'] {
+        @content;
+    }
+}

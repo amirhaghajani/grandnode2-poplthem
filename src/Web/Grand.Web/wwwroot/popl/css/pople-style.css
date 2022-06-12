@@ -606,17 +606,34 @@ img {
   height: auto;
 }
 
-html:after {
+body:after {
   content: "is-moblie";
   position: absolute;
   left: -100%;
 }
 @media (min-width: 798px) {
-  html:after {
+  body:after {
     content: "";
   }
 }
+body[data-ismobile=true]:after {
+  content: "is-moblie";
+}
 
+html {
+  /*body {
+
+      &[data-ismobile='true'] .test, .test {
+          border: 3px solid yellow;
+      }
+
+      .test {
+          @include bp {
+              border: 2px solid green;
+          }
+      }
+  }*/
+}
 html .header {
   display: flex;
   align-items: center;
@@ -636,15 +653,16 @@ html .main-nav-container {
     flex: 1 100%;
   }
 }
-html .main-nav-container[data-ismobile=true] {
+html body[data-ismobile=true] .main-nav-container {
   order: 1;
   flex: none;
 }
-html .main-nav-container[data-ismobile=true] ~ .header-logo-container {
+html body[data-ismobile=true] .main-nav-container ~ .header-logo-container {
   flex: 1 100%;
 }
 html .header-logo-container {
   order: 2;
+  min-width: 300px;
   flex: 1 100%;
 }
 @media (min-width: 798px) {
@@ -662,25 +680,25 @@ html .header-actions-container {
 html .menu {
   background-color: black;
 }
-html[dir=rtl] .main-nav, html[dir=rtl] .main-nav-container[data-ismobile=true] .main-nav, html .main-nav, html .main-nav-container[data-ismobile=true] .main-nav {
+html[dir=rtl] .main-nav, html[dir=rtl] body[data-ismobile=true] .main-nav-container .main-nav, html .main-nav, html body[data-ismobile=true] .main-nav-container .main-nav {
   position: absolute;
   width: 100%;
   left: -100%;
   transition: transform 350ms;
 }
-html .main-nav-container[data-ismobile=true] .main-nav {
+html body[data-ismobile=true] .main-nav-container .main-nav {
   width: 65vw;
 }
-html .main-nav-container[data-ismobile=true] .main-nav li {
+html body[data-ismobile=true] .main-nav-container .main-nav li {
   display: block;
 }
-html .main-nav-container[data-ismobile=true] .main-nav li ul {
+html body[data-ismobile=true] .main-nav-container .main-nav li ul {
   position: static;
 }
-html .main-nav-container[data-ismobile=true] .menu-toggler-button {
+html body[data-ismobile=true] .main-nav-container .menu-toggler-button {
   display: flex;
 }
-html .main-nav-container[data-ismobile=true] .menu-toggler-button[data-toggled=true] ~ .main-nav {
+html body[data-ismobile=true] .main-nav-container .menu-toggler-button[data-toggled=true] ~ .main-nav {
   transform: translateX(100%);
 }
 html .main-nav li {
@@ -1689,6 +1707,17 @@ html .myHomeFAQSection .l-accordion.is-open .l-accordion__content {
   opacity: 1;
   height: 100%;
 }
+html body[data-ismobile=true] .test {
+  border: 3px solid yellow;
+}
+html .test {
+  border: 5px solid black;
+}
+@media (min-width: 798px) {
+  html .test {
+    border: 2px solid green;
+  }
+}
 html .myHomeContact {
   padding: 5.125rem 0 2.5625rem;
 }
@@ -1787,6 +1816,20 @@ html .myHomeContact .l-btn {
   letter-spacing: -0.02em;
 }
 
+html[dir=rtl] {
+  /*body {
+
+      &[data-ismobile='true'] .test, .test {
+          border: 3px solid yellow;
+      }
+
+      .test {
+          @include bp {
+              border: 2px solid green;
+          }
+      }
+  }*/
+}
 html[dir=rtl] .header {
   display: flex;
   align-items: center;
@@ -1806,15 +1849,16 @@ html[dir=rtl] .main-nav-container {
     flex: 1 100%;
   }
 }
-html[dir=rtl] .main-nav-container[data-ismobile=true] {
+html[dir=rtl] body[data-ismobile=true] .main-nav-container {
   order: 1;
   flex: none;
 }
-html[dir=rtl] .main-nav-container[data-ismobile=true] ~ .header-logo-container {
+html[dir=rtl] body[data-ismobile=true] .main-nav-container ~ .header-logo-container {
   flex: 1 100%;
 }
 html[dir=rtl] .header-logo-container {
   order: 2;
+  min-width: 300px;
   flex: 1 100%;
 }
 @media (min-width: 798px) {
@@ -1833,25 +1877,25 @@ html[dir=rtl] .menu {
   direction: rtl;
   background-color: red;
 }
-html[dir=rtl] .main-nav, html[dir=rtl] .main-nav-container[data-ismobile=true] .main-nav, html[dir=rtl] .main-nav {
+html[dir=rtl] .main-nav, html[dir=rtl] body[data-ismobile=true] .main-nav-container .main-nav, html[dir=rtl] .main-nav {
   position: absolute;
   width: 100%;
   left: -100%;
   transition: transform 350ms;
 }
-html[dir=rtl] .main-nav-container[data-ismobile=true] .main-nav {
+html[dir=rtl] body[data-ismobile=true] .main-nav-container .main-nav {
   width: 65vw;
 }
-html[dir=rtl] .main-nav-container[data-ismobile=true] .main-nav li {
+html[dir=rtl] body[data-ismobile=true] .main-nav-container .main-nav li {
   display: block;
 }
-html[dir=rtl] .main-nav-container[data-ismobile=true] .main-nav li ul {
+html[dir=rtl] body[data-ismobile=true] .main-nav-container .main-nav li ul {
   position: static;
 }
-html[dir=rtl] .main-nav-container[data-ismobile=true] .menu-toggler-button {
+html[dir=rtl] body[data-ismobile=true] .main-nav-container .menu-toggler-button {
   display: flex;
 }
-html[dir=rtl] .main-nav-container[data-ismobile=true] .menu-toggler-button[data-toggled=true] ~ .main-nav {
+html[dir=rtl] body[data-ismobile=true] .main-nav-container .menu-toggler-button[data-toggled=true] ~ .main-nav {
   transform: translateX(100%);
 }
 html[dir=rtl] .main-nav li {
@@ -2859,6 +2903,17 @@ html[dir=rtl] .myHomeFAQSection .l-accordion.is-open .l-accordion__title::after 
 html[dir=rtl] .myHomeFAQSection .l-accordion.is-open .l-accordion__content {
   opacity: 1;
   height: 100%;
+}
+html[dir=rtl] body[data-ismobile=true] .test {
+  border: 3px solid yellow;
+}
+html[dir=rtl] .test {
+  border: 5px solid black;
+}
+@media (min-width: 798px) {
+  html[dir=rtl] .test {
+    border: 2px solid green;
+  }
 }
 html[dir=rtl] .myHomeContact {
   padding: 5.125rem 0 2.5625rem;

@@ -10,6 +10,7 @@
 /*==================================================
  main - structure
 ==================================================*/
+
 *, :after, :before {
     box-sizing: border-box;
 }
@@ -87,7 +88,7 @@ img {
     height: auto;
 }
 
-html {
+body {
 
     &:after {
         //از این در جاوا اسکریپت استفاده کردم که ببینم حالت موبایل هست یا نه
@@ -101,6 +102,12 @@ html {
 
         &:after {
             content: "";
+        }
+    }
+
+    &[data-ismobile='true'] {
+        &:after {
+            content: "is-moblie";
         }
     }
 }

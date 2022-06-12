@@ -127,8 +127,7 @@
 
 
         my_global.isMoblieMode=function(){
-            var html = document.getElementsByTagName('html')[0];
-            var style = window.getComputedStyle(html, ':after');
+            var style = window.getComputedStyle(document.body, ':after');
             return style.content == '"is-moblie"';
         }
     </script>

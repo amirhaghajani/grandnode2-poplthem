@@ -88,3 +88,29 @@
         }
     }
 }
+
+
+/*body {
+
+    &[data-ismobile='true'] .test, .test {
+        border: 3px solid yellow;
+    }
+
+    .test {
+        @include bp {
+            border: 2px solid green;
+        }
+    }
+}*/
+
+@include default(true) {
+    .test {
+        border: 3px solid yellow;
+    }
+}
+.test {
+    border:5px solid black;
+    @include bp {
+        border: 2px solid green;
+    }
+}

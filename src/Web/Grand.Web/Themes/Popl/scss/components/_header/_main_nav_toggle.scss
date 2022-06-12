@@ -7,11 +7,11 @@
 }
 
 
-.main-nav-container[data-ismobile='true'] {
+
+body[data-ismobile='true'] .main-nav-container {
     //حالتی که مین نو کانتینر، حالت موبایل است، حالت موبایل پیاده شود یعنی منو بره سمت چپ مخفی بشه و دکمه تاگل نمایش داده بشه
     .main-nav {
         @extend %main-nav-absolute-left;
-
         //منو دو خطه شده اما حالت موبایل هم نیست
         width: 65vw;
 
@@ -19,9 +19,9 @@
             //آیتم های اصلی زیر هم باشند
             display: block;
 
-            ul{
+            ul {
                 //ایتم های زیر لیست، فضا بگیره و چیزی زیرش نیاد
-                position:static;
+                position: static;
             }
         }
     }
