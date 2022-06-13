@@ -1,0 +1,111 @@
+﻿
+.myHomeCustomersSection {
+    padding: 0 0 5.625rem;
+    margin-top:100px;
+
+    .popl_container {
+        padding: 0 3.125rem;
+    }
+
+    .customers__title {
+        margin-bottom: 2.8125rem;
+
+        h1 {
+            font-family: "Gilroy500";
+            text-align: center;
+            font-weight: 500;
+            font-size: 1.3125em;
+            line-height: 1.25;
+            letter-spacing: -0.4px;
+        }
+    }
+
+    .customers__gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 866.32px;
+        margin: 0 auto;
+
+        .customers__thumb {
+            width: calc(50% - 28px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3.4375rem;
+
+            &.order_1 {
+                order: 1;
+            }
+
+            &.order_2 {
+                order: 2;
+            }
+
+            &.order_3 {
+                order: 3;
+            }
+
+            &.order_4 {
+                order: 4;
+            }
+
+            &.order_5 {
+                order: 5;
+            }
+
+            &.order_6 {
+                order: 6;
+            }
+
+            &.order_7 {
+                order: 7;
+            }
+
+            &.order_8 {
+                order: 8;
+            }
+
+            img {
+                max-width: 8.5rem;
+                object-fit: contain;
+                display: block;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            &.custom_logo_1 {
+                height: 20.08px;
+            }
+
+            &.custom_logo_2 {
+                height: 32px;
+            }
+
+            &.custom_logo_3 {
+                height: 13.94px;
+            }
+
+            &.custom_logo_4 {
+                height: 13.64px;
+            }
+
+            &.custom_logo_5 {
+                height: 17.81px;
+            }
+
+            &.custom_logo_6 {
+                height: 16.33px;
+            }
+
+            &.custom_logo_7 {
+                height: 21.94px;
+            }
+
+            &.custom_logo_8 {
+                height: 20.94px;
+            }
+        }
+    }
+}

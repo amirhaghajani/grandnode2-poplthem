@@ -832,6 +832,94 @@ html .slide-fade-leave-active {
   animation-duration: 1s;
   /* don't forget to set a duration! */
 }
+html .myHomeCustomersSection {
+  padding: 0 0 5.625rem;
+  margin-top: 100px;
+}
+html .myHomeCustomersSection .popl_container {
+  padding: 0 3.125rem;
+}
+html .myHomeCustomersSection .customers__title {
+  margin-bottom: 2.8125rem;
+}
+html .myHomeCustomersSection .customers__title h1 {
+  font-family: "Gilroy500";
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.3125em;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+html .myHomeCustomersSection .customers__gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 866.32px;
+  margin: 0 auto;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb {
+  width: calc(50% - 28px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3.4375rem;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.order_1 {
+  order: 1;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.order_2 {
+  order: 2;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.order_3 {
+  order: 3;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.order_4 {
+  order: 4;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.order_5 {
+  order: 5;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.order_6 {
+  order: 6;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.order_7 {
+  order: 7;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.order_8 {
+  order: 8;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb img {
+  max-width: 8.5rem;
+  object-fit: contain;
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.custom_logo_1 {
+  height: 20.08px;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.custom_logo_2 {
+  height: 32px;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.custom_logo_3 {
+  height: 13.94px;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.custom_logo_4 {
+  height: 13.64px;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.custom_logo_5 {
+  height: 17.81px;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.custom_logo_6 {
+  height: 16.33px;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.custom_logo_7 {
+  height: 21.94px;
+}
+html .myHomeCustomersSection .customers__gallery .customers__thumb.custom_logo_8 {
+  height: 20.94px;
+}
 html .myHomePageProductContainer {
   padding: 0 45px;
 }

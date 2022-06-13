@@ -54,7 +54,6 @@
     <Compile Remove="Plugins\**" />
     <EmbeddedResource Remove="Plugins\**" />
     <None Remove="Plugins\**" />
-    <Content Remove="Themes\Popl\Components\PoplMenu.cs" />
     <None Remove="Themes\Popl\preview.jpg" />
     <None Remove="Themes\Popl\scripts\my.popl.app.js" />
     <None Remove="Themes\Popl\scripts\my.popl.public.axios.js" />
@@ -64,6 +63,7 @@
     <None Remove="Themes\Popl\scss\components\_header\_main_nav.scss" />
     <None Remove="Themes\Popl\scss\components\_header\_main_nav_toggle.scss" />
     <None Remove="Themes\Popl\scss\components\_myHomeContactSection.scss" />
+    <None Remove="Themes\Popl\scss\components\_myHomeCustomersSection.scss" />
     <None Remove="Themes\Popl\scss\components\_myHomeFAQSection.scss" />
     <None Remove="Themes\Popl\scss\components\_myHomeMissionSeciton.scss" />
     <None Remove="Themes\Popl\scss\components\_myHomePageProduct.scss" />

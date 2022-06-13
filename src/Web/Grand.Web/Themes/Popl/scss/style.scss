@@ -116,12 +116,13 @@ html {
     $dir: null;
 
     @import "components/_header.scss";
+    @import "components/_myHomeCustomersSection.scss";
     @import "components/_myHomePageProduct.scss";
     @import "components/_myHomeSlider.scss";
     @import "components/_myPoplFeatures.scss";
     @import "components/_myHomeWhoItWork.scss";
     @import "components/_myHomeTeams.scss";
-    
+
     @import "components/_myHomeUpgradeSection.scss";
     @import "components/_myHomeMissionSeciton.scss";
     @import "components/_myHomeFAQSection.scss";
