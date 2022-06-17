@@ -7,12 +7,41 @@
         padding: 0 50px;
     }
 
+    .upgrade__wrap {
+
+        @include bp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+
     .d-desktop {
         display: none;
+
+        @include bp {
+            display: block;
+            margin-bottom: 0.9375rem
+        }
+
+        img {
+            width: 315.89px;
+            margin-left: 68px;
+            filter: drop-shadow(0 28.64px 45.49px #00000040);
+
+            @include bp {
+                margin-left: 0;
+            }
+        }
     }
 
     .upgrade__content {
         text-align: left;
+
+        @include bp {
+            text-align: center;
+        }
 
         h1 {
             font-size: 1.875em;
@@ -23,6 +52,11 @@
             margin-bottom: 3.125rem;
             text-align: left;
             max-width: 279px;
+
+            @include bp {
+                max-width: 100%;
+                margin-top: 1.875rem;
+            }
         }
 
         .l-btn {

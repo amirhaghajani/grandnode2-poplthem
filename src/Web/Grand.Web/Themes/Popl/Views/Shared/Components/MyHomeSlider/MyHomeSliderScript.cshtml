@@ -120,10 +120,14 @@ my_homeSlider_script.sliderStart_next=function(texts,counter, allVideos ){
 
 
     var mySliderDiv = myVediosDiv.parentElement.parentElement;
-    mySliderDiv.style.height='calc(100vh - 130px)';
+    //mySliderDiv.style.height='calc(100vh - 130px)';
     var computedMySliderDivHeight = window.getComputedStyle(mySliderDiv).height.replace('px','')  * 1;
-    var mySliderDivHeight = (h>videosSetting.videoContainerMaxHeight ? videosSetting.videoContainerMaxHeight: h) + myVediosDiv.offsetTop - mySliderDiv.offsetTop + (myVediosDivMarginTop * -1);
-    if(mySliderDivHeight > computedMySliderDivHeight) mySliderDiv.style.height = mySliderDivHeight +'px';
+    var mySliderDivHeight = (h>videosSetting.videoContainerMaxHeight ? videosSetting.videoContainerMaxHeight: h) + 
+                                    myVediosDiv.offsetTop - 
+                                    mySliderDiv.offsetTop + 50 +
+                                    (myVediosDivMarginTop * -1);
+    //if(mySliderDivHeight > computedMySliderDivHeight) 
+    mySliderDiv.style.height = mySliderDivHeight +'px';
     
 
 

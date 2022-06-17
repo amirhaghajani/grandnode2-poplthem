@@ -245,7 +245,11 @@
         justify-content: center;
 
         @include bp {
-            align-items:center;
+            align-items: center;
+        }
+
+        @include bp(large) {
+            align-items: center;
             justify-content: flex-start;
             margin-bottom: 2px;
         }
@@ -259,7 +263,7 @@
         align-items: center;
         justify-content: center;
 
-        @include bp {
+        @include bp(large) {
             height: 28.59px;
             width: 28.59px;
         }

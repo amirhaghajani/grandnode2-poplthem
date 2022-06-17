@@ -42,6 +42,10 @@
         .work__card {
             margin-bottom: 4.625rem;
             width: 100%;
+
+            @include bp {
+                width: calc(50% - 30px);
+            }
         }
 
         .work__thumb {
@@ -112,12 +116,20 @@
             font-size: 17px;
             line-height: 25px;
             margin-bottom: 28px;
+
+            @include bp{
+                display:none;
+            }
         }
 
         .work__start--download {
             display: inline-flex;
             margin: 0 auto;
             flex-direction: column;
+
+            @include bp{
+                flex-direction: row;
+            }
 
             .l-app-tag {
                 width: 100%;
