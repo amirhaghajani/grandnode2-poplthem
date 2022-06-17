@@ -1,8 +1,8 @@
 $default-breakpoint: medium !default;
 $breakpoints: (
-        small: 480px,
+        small: 414px,
         medium: 798px,
-        large: 1025px,
+        large: 991px,
         verylarg: 1440px
 ) !default;
 
@@ -12,12 +12,17 @@ $breakpoints: (
   }
 }
 
+@mixin bpn($size) {
+    @media (min-width: $size+'px') {
+        @content;
+    }
+}
+
 @mixin default($onlyAddContentForBodyIsMobile: false) {
 
     @if $onlyAddContentForBodyIsMobile{}
     @else {@content}
     
-
     body[data-ismobile='true'] {
         @content;
     }

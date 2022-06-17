@@ -130,6 +130,15 @@
             var style = window.getComputedStyle(document.body, ':after');
             return style.content == '"is-moblie"';
         }
+
+        my_global.foundViewPortDimensions=function(){
+
+             const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+            return {w: vw, h: vh};
+
+        }
     </script>
     <!--aha.com ---------------------------------------------- !-->
 

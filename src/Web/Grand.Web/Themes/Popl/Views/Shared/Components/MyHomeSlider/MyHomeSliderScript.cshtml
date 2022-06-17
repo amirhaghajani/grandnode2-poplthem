@@ -4,7 +4,8 @@
 
 window.addEventListener('load', function(){
 
-    my_homeSlider_script.sliderStart();
+     my_homeSlider_script.sliderStart();
+    
 });
 
 var my_homeSlider_script={};
@@ -21,24 +22,69 @@ my_homeSlider_script.sliderStart=function(){
     my_homeSlider_script.sliderStart_next(texts, 0, allVideos);
 }
 
-my_homeSlider_script.sliderStart_next=function(texts,counter, allVideos ){
 
-    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+my_homeSlider_script._foundVedios= function(){
+    
+    var videoDefaultWidth = 1080;
+    var videoDefaultHeight = 1720;
+    var maxVideoHeight = 800;
+    var videoContainerMaxHeight = 600;
+    var mode = 'mobile';
+    
+    var videosS = document.querySelectorAll('#myVideos .mobile_mode video');
+    var mobile_modeDiv = videosS[0].parentElement;
+    var display = window.getComputedStyle(mobile_modeDiv).display;
 
-    var videoDefaultWidth, videoDefaultHeight;
-    var isMobile = my_global.isMoblieMode();
+    if(display == 'none'){
 
-    var videos = [];
-    if (isMobile) {
-        videos = document.querySelectorAll('#myVideos .mobile_mode video');
-        videoDefaultWidth = 1080;
-        videoDefaultHeight = 1920;
-    }else{
-        videos = document.querySelectorAll('#myVideos .desktop_mode video');
+        videosS = document.querySelectorAll('#myVideos .desktop_mode video');
         videoDefaultWidth = 1920;
         videoDefaultHeight = 768;
+        mode = 'desktop';
     }
+
+    //var videos = [];
+    //videos.push(videosS[0]);
+    //videos.push(videosS[0]);
+    //videos.push(videosS[0]);
+    //videos.push(videosS[0]);
+    var videos = videosS;
+
+    return { videos:videos , 
+        videoDefaultWidth:videoDefaultWidth ,
+        videoDefaultHeight:videoDefaultHeight, 
+        maxVideoHeight:maxVideoHeight, 
+        videoContainerMaxHeight:videoContainerMaxHeight ,
+        mode: mode
+    };
+}
+
+my_homeSlider_script._setVideoWidthHeight=function(video, w,videoSetting){
+
+    if (w > videoSetting.videoDefaultWidth) w = videoSetting.videoDefaultWidth;
+
+    var h = w * videoSetting.videoDefaultHeight / videoSetting.videoDefaultWidth;
+
+    if (h > videoSetting.maxVideoHeight) {
+        h = videoSetting.maxVideoHeight;
+        w = h * videoSetting.videoDefaultWidth  / videoSetting.videoDefaultHeight ;
+    }
+
+    video.setAttribute('width', w+'px');
+    video.setAttribute('height', h+'px');
+
+    return h;
+}
+
+my_homeSlider_script.sliderStart_next=function(texts,counter, allVideos ){
+
+    var viewport = my_global.foundViewPortDimensions();
+
+
+    if(viewport.w <460)videoContainerMaxHeight=500;
+
+    var videosSetting = my_homeSlider_script._foundVedios();
+    var videos = videosSetting.videos;
 
     var video = videos[counter];
     video.pause();
@@ -49,57 +95,70 @@ my_homeSlider_script.sliderStart_next=function(texts,counter, allVideos ){
     my_homeSlider_script.sliderStart_createEvent(video, texts, nextVideoCo, allVideos);
     
 
-    my_homeSlider_script.hideAll(texts);
+    var higherTextHeight = my_homeSlider_script.hideAll(texts);
+    texts[0].parentElement.style.minHeight = (higherTextHeight + 5) + 'px';
+
     my_homeSlider_script.hideAll(allVideos);
     
     
 
 
-    var parentElement = video.parentElement.parentElement;
-    var w = parentElement.offsetWidth;
-    var left = 0;
+    var myVediosDiv = video.parentElement.parentElement;//#myVideos
+    var myVediosDivMarginTop = 0;
+    myVediosDiv.style.marginTop = myVediosDivMarginTop;
 
-    var next = document.getElementsByClassName('banner__advantages')[0];
+    if(videosSetting.mode=='desktop'){
+        //دیو باید یک اندازه بالا بیاید که درست دیده شود
 
-    var realHeight = next.offsetTop - parentElement.offsetTop + next.offsetHeight;
-    realHeight+= realHeight * 0.1;
-
-    
-    var h = w * videoDefaultHeight / videoDefaultWidth;
-    if (isMobile) h -= h * 0.1;
-
-    while (h > realHeight+realHeight * 0.1) {
-        w-=10;
-        left += 5;
-        h = w * videoDefaultHeight / videoDefaultWidth;
-        if (isMobile) h -= h * 0.1;
+        var div = document.getElementsByClassName('banner__sub-title')[0];
+        myVediosDivMarginTop = div.offsetTop - myVediosDiv.offsetTop; //یک عدد منفی است
+        myVediosDiv.style.marginTop = myVediosDivMarginTop + 'px';
     }
+
+    var w = myVediosDiv.offsetWidth;
+    var h = my_homeSlider_script._setVideoWidthHeight(video, w, videosSetting);
+
+
+    var mySliderDiv = myVediosDiv.parentElement.parentElement;
+    mySliderDiv.style.height='calc(100vh - 130px)';
+    var computedMySliderDivHeight = window.getComputedStyle(mySliderDiv).height.replace('px','')  * 1;
+    var mySliderDivHeight = (h>videosSetting.videoContainerMaxHeight ? videosSetting.videoContainerMaxHeight: h) + myVediosDiv.offsetTop - mySliderDiv.offsetTop + (myVediosDivMarginTop * -1);
+    if(mySliderDivHeight > computedMySliderDivHeight) mySliderDiv.style.height = mySliderDivHeight +'px';
     
-    
-    h = h > realHeight ? realHeight : h;
 
-
-    video.setAttribute('width', w+'px');
-    video.setAttribute('height', h+'px');
-    video.style.left = left + 'px';
-
-    video.load();
 
     video.style.display = '';
     texts[counter].style.display = '';
-
+    
+   
+    video.load();
 }
 
-my_homeSlider_script.hideAll=function(items){
+my_homeSlider_script.hideAll=function(items , type){
+
+    var max = 0;
+    for (var i = 0; i < items.length; i++){
+        items[i].style.display = '';
+        if (items[i].offsetHeight > max) max = items[i].offsetHeight;
+    }
+    
+
     for (var i = 0; i < items.length; i++){
         items[i].style.display = 'none';
     }
+
+    return max;
 }
 
 my_homeSlider_script.sliderStart_createEvent=function(video, texts,nextVideoCo, allVideos){
-    video.onended = function(){
-            my_homeSlider_script.sliderStart_next(texts, nextVideoCo, allVideos);
-        };
+    //video.onended = function(){
+    //        my_homeSlider_script.sliderStart_next(texts, nextVideoCo, allVideos);
+    //    };
+
+     setTimeout(function () {
+        my_homeSlider_script.sliderStart_next(texts, nextVideoCo, allVideos);
+    }, video.duration * 1000);
+
 }
 
 

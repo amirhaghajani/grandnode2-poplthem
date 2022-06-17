@@ -1,70 +1,268 @@
 ﻿
 #mySlider {
-    text-align:center;
-    position:relative;
-    height:calc(100vh - 130px);
+    text-align: center;
+    position: relative;
+    height: calc(100vh - 130px);
+
+    .popl_container {
+        height: 100%;
+
+
+        @include bp(large) {
+            /*padding: 0 0.625rem;*/
+            padding: 0 25px;
+            text-align: left;
+        }
+    }
+
+    .banner__title {
+        margin: 0 auto;
+        margin-bottom: 0.8125rem;
+        text-align: center;
+        position: relative;
+        z-index: 999;
+
+        @include bp(small) {
+            width: 89%;
+        }
+
+        @include bp(large) {
+            text-align: left;
+            width: 100%;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-family: "Gilroy600";
+            letter-spacing: -0.4px;
+            font-size: 1.75em;
+            line-height: 1.25;
+            margin: 0;
+            color: #121212;
+            padding: 0;
+
+            @include bp(small) {
+                font-size: 2.45em;
+                line-height: 1.01556;
+                letter-spacing: -1.23px;
+            }
+
+            @include bp {
+                letter-spacing: -2px;
+                font-size: 4em;
+                line-height: 1.01563;
+                margin-top: 0;
+            }
+        }
+    }
+
+    #mySliderTexts {
+        min-height: 90px;
+
+        h2 {
+            transition: all .3s ease-in-out;
+            text-align: center;
+            font-weight: 700;
+            font-family: "Gilroy700";
+            margin-bottom: 0.4375rem;
+            word-break: break-word;
+
+            @include bp(small) {
+                font-size: 2.1875em;
+                line-height: 1;
+                letter-spacing: -1.23px;
+                margin-bottom: 0rem;
+            }
+
+            @include bp(large) {
+                text-align: left;
+                font-size: 4em;
+                line-height: 1.01563;
+                letter-spacing: -2px;
+            }
+        }
+
+        big {
+            letter-spacing: -1.23px;
+            margin-right: 10px;
+        }
+
+        span {
+            font-size: 35px;
+            line-height: 35px;
+
+
+            @include bp {
+                font-size: 64px;
+                line-height: 65px;
+            }
+
+            -webkit-text-size-adjust: 100%;
+            --announcement-bar-height: 47px;
+            text-align: center;
+            pointer-events: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            font-style: normal;
+            text-transform: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            color: #121212;
+            font-weight: 700;
+            font-family: Gilroy700;
+            word-break: break-word;
+            letter-spacing: -2px;
+            box-sizing: border-box;
+            display: inline-block;
+            opacity: 0;
+            animation: pop 1s ease-in-out 1 forwards;
+            animation-delay: var(--animate-delay);
+            --animate-delay: 0s;
+        }
+    }
 
     .banner__sub-title {
+        margin: 0 auto;
+        margin-bottom: 1.25rem;
         text-align: center;
-        padding-top: 10px;
-        margin-bottom: 2.5625rem;
-        margin-top: -0.3125rem;
+        width: 100%;
         font-weight: 500;
+        font-family: "Inter";
+
+        @include bp(small) {
+            margin-top: -0.3125rem;
+            margin-bottom: 2.5625rem;
+            padding-top: 10px;
+        }
+
+        @include bp(large) {
+            margin: 0;
+            width: 100%;
+            margin-bottom: 2.625rem;
+            text-align: left;
+        }
 
         h2 {
             font-size: 0.92rem;
+            font-weight: 500;
+            font-family: "Inter";
             line-height: 1.2106;
             letter-spacing: -0.31px;
             margin: 0;
             padding: 0;
+
+
+            @include bp(large) {
+                font-size: 1.25em;
+                line-height: 1.2;
+            }
+
+            @include bpn(1199) {
+                font-size: 1.50188em;
+                line-height: 1.21057;
+                letter-spacing: -0.5px;
+            }
         }
     }
 
-    a:hover,a:active, a:visited{
-        color:#fff;
+    a:hover, a:active, a:visited {
+        color: #fff;
     }
 
     .btnBuyNow {
-        background-color:#000;
+        background-color: #000;
+        border-radius: 740px;
+        letter-spacing: -0.02em;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        height: 3.75rem;
+        line-height: 1.47059;
+        font-family: "Inter";
+        font-weight: 600;
+        margin: 0 auto;
+        padding: 0 65px;
+        font-size: 1.275em;
+        line-height: 1.47059;
 
-        border-radius:740px;
+        @include bp {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: 80px;
+            padding-right: 80px;
+            font-size: 18px;
+            line-height: 21.78px;
+            letter-spacing: -0.02em;
+            padding: 16.5px 96px;
+        }
 
-        margin-top:0;
-        margin-bottom: 0px;
-        font-size:15px;
-        line-height:18.15px;
-        padding:18.5px 102.5px;
-        height:55px;
-        letter-spacing:-0.02em;
-        font-weight:500;
+        @include bp(large) {
+            margin-top: 9px;
+        }
+    }
 
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
 
-        text-transform:uppercase;
+
+    &::after {
+        content: "";
+        position: absolute;
+        background-image: url(/popl/images/background/MOBILE-BG-01-01.webp);
+        height: 204vw;
+        width: 100%;
+        top: -17%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1002;
+        pointer-events: none;
+
+        @include bp(large) {
+            background-image: url(/popl/images/background/new_desktop_bg.webp);
+            height: 95vw;
+            top: -10%;
+            left: 50%;
+            z-index: 1000;
+        }
     }
 }
 
 .banner__advantages {
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    @include bp {
+        left: 25px;
+    }
 
     .bannner__links {
         display: flex;
-        align-items: center;
+        align-items: baseline;
         justify-content: center;
+
+        @include bp {
+            align-items:center;
+            justify-content: flex-start;
+            margin-bottom: 2px;
+        }
     }
 
     .bannner__links-thumb {
-        width: 14.65px;
-        height: 14.81px;
+        width: 20.65px;
+        height: 20.81px;
         margin-right: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @include bp {
+            height: 28.59px;
+            width: 28.59px;
+        }
 
         img {
             width: 100%;
@@ -77,87 +275,61 @@
 
         h5 {
             display: none;
+            color: #121212;
+            font-weight: 600;
+            font-size: 18px;
+            font-family: "Inter";
+            font-size: 1.125em;
+            line-height: 1.21;
+            margin-bottom: 0.25rem;
+
+            @include bp {
+                display: block;
+                text-align: left;
+            }
         }
 
         h3 {
+            font-family: "Inter";
             font-weight: 400;
             font-size: 1em;
             line-height: 1.21;
             letter-spacing: -0.72px;
             color: #121212;
-            text-align:left;
+            text-align: left;
         }
     }
 }
 
-#mySliderTexts {
-    min-height: 90px;
-
-    h1 {
-        margin-bottom: 13px;
-        text-align: center;
-        font-weight: 600;
-        letter-spacing: -1.23px;
-        font-size: 39.2px;
-        line-height: 39.82px;
-    }
-
-    h2 {
-        transition: all .3s ease-in-out;
-        text-align: center;
-    }
-
-    big {
-        letter-spacing: -1.23px;
-        margin-right: 10px;
-    }
-
-    span {
-        font-size: 35px;
-        line-height: 35px;
+#myVideos {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: -1;
 
 
-        @include bp {
-            font-size: 64px;
-            line-height: 65px;
+    .desktop_mode {
+        display: none;
+
+        @include bp(large) {
+            display: block;
         }
-
-        -webkit-text-size-adjust: 100%;
-        --announcement-bar-height: 47px;
-        text-align: center;
-        pointer-events: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-        font-style: normal;
-        text-transform: none;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        color: #121212;
-        font-weight: 700;
-        font-family: Gilroy700;
-        word-break: break-word;
-        letter-spacing: -2px;
-        box-sizing: border-box;
-        display: inline-block;
-        opacity: 0;
-        animation: pop 1s ease-in-out 1 forwards;
-        animation-delay: var(--animate-delay);
-        --animate-delay: 0s;
     }
-}
 
-#myVideos{
-    height:100%;
-    width:100%;
-    position:relative;
-    z-index:-1;
+    .mobile_mode {
+        display: block;
 
-    video{
-        object-fit:cover;
-        position:absolute;
-        left:0;
-        top:0;
-        
+        @include bp(large) {
+            display: none;
+        }
+    }
+
+    video {
+        object-fit: cover;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
     }
 }
 
