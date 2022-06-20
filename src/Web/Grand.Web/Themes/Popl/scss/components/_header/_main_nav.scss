@@ -5,26 +5,35 @@
 
 .main-nav {
     padding: 10px 0;
-    margin:0;
+    margin: 0;
+
+    @include bp {
+        margin-left: 50px;
+    }
+
+    @include bps(1199) {
+        margin-left: 110px;
+    }
 
     & > li {
         padding: 12px;
         font-size: 14px;
         font-weight: 700;
         line-height: 25px;
-        border-bottom:3px solid transparent;
+        border-bottom: 3px solid transparent;
         //مین نو، خودش یک لیست است. لیست آیتم زیرش
         vertical-align: top;
         position: relative;
 
-        .icon-down-arrow{
-            font-size:10px;
-            font-weight:700;
+        .icon-down-arrow {
+            font-size: 10px;
+            font-weight: 700;
         }
-        
+
         ul {
             //منظور اون لیست باز شونده است
             display: none;
+            background-color: white;
 
             @include bp {
                 position: absolute;
@@ -40,7 +49,25 @@
 
         &[data-toggled='true'] {
             ul {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                overflow: auto;
+                height: auto;
+                max-height: 65vh;
+                border-radius: 10px;
+                background-color: #fff;
+                box-shadow: 0 2px 6px #00000080;
+                padding: 1.9375rem 1.875rem 1.3125rem;
+                text-align: left;
+                min-width: 180%;
+
+                .dropdown_title {
+                    color: #8c8c8c;
+                    font-family: "DM Sans";
+                    font-size: 17px;
+                    line-height: 17px;
+                    margin-bottom: 0.9375rem;
+                }
             }
         }
     }

@@ -12,7 +12,7 @@ $breakpoints: (
   }
 }
 
-@mixin bpn($size) {
+@mixin bps($size) {
     @media (min-width: $size+'px') {
         @content;
     }

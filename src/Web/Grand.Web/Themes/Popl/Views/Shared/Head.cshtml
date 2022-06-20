@@ -3,16 +3,12 @@
 @{
     var supportRtl = workContext.WorkingLanguage.Rtl;
 
-    
-
     <link asp-src="/bundles/css/animate.css.css" rel="preload" as="style">
     <link asp-src="/bundles/css/bootstrap-vue.css" rel="preload" as="style">
     <link asp-src="/bundles/css/bootstrap.css" rel="preload" as="style">
     <link asp-src="/bundles/css/pikaday.css" rel="preload" as="style">
     <link asp-src="/bundles/js/animate.css.js" rel="preload" as="script">
-    
     <link asp-src="/bundles/js/app.js" rel="preload" as="script">
-
     <link asp-src="/bundles/js/axios.js" rel="preload" as="script">
     <link asp-src="/bundles/js/bootstrap-vue.js" rel="preload" as="script">
     <link asp-src="/bundles/js/bootstrap.js" rel="preload" as="script">
@@ -34,40 +30,36 @@
     <link asp-src="/bundles/css/animate.css.css" rel="stylesheet">
     <link asp-src="/bundles/css/bootstrap.css" rel="stylesheet">
 
-    //<link rel="stylesheet" type="text/css" asp-src="/assets/custom/style.css">
-
-    //aha.com -----------------------------------------------------------------------
-    <link rel="stylesheet" type="text/css" href="/popl/css/pople-style.css" />
-    //aha.com -----------------------------------------------------------------------
+    <link rel="stylesheet" type="text/css" asp-src="/assets/custom/style.css">
 
     <environment include="Development">
         @if (supportRtl)
         {
-            //<link rel="stylesheet" type="text/css" asp-src="/theme/css/common/common.rtl.css">
-            //<link rel="stylesheet" type="text/css" asp-src="/theme/css/header/header.rtl.css">
-            //<link rel="stylesheet" type="text/css" asp-src="/theme/css/catalog/catalog.rtl.css">
-            //<link rel="stylesheet" type="text/css" asp-src="/theme/css/product/product.rtl.css">
-            //<link rel="stylesheet" type="text/css" asp-src="/theme/css/customer/customer.rtl.css">
-            //<link rel="stylesheet" type="text/css" asp-src="/theme/css/cart/cart.rtl.css">
+            <link rel="stylesheet" type="text/css" asp-src="/theme/css/common/common.rtl.css">
+            <link rel="stylesheet" type="text/css" asp-src="/theme/css/header/header.rtl.css">
+            <link rel="stylesheet" type="text/css" asp-src="/theme/css/catalog/catalog.rtl.css">
+            <link rel="stylesheet" type="text/css" asp-src="/theme/css/product/product.rtl.css">
+            <link rel="stylesheet" type="text/css" asp-src="/theme/css/customer/customer.rtl.css">
+            <link rel="stylesheet" type="text/css" asp-src="/theme/css/cart/cart.rtl.css">
         }
         else
         {
-            //<link rel="stylesheet" type="text/css" asp-src="/theme/css/common/common.css">
-            //<link rel="stylesheet" type="text/css" asp-src="/theme/css/header/header.css">
-            //<link rel="stylesheet" type="text/css" asp-src="/theme/css/catalog/catalog.css">
-            //<link rel="stylesheet" type="text/css" asp-src="/theme/css/product/product.css">
-            //<link rel="stylesheet" type="text/css" asp-src="/theme/css/customer/customer.css">
-            //<link rel="stylesheet" type="text/css" asp-src="/theme/css/cart/cart.css">
+            <link rel="stylesheet" type="text/css" asp-src="/theme/css/common/common.css">
+            <link rel="stylesheet" type="text/css" asp-src="/theme/css/header/header.css">
+            <link rel="stylesheet" type="text/css" asp-src="/theme/css/catalog/catalog.css">
+            <link rel="stylesheet" type="text/css" asp-src="/theme/css/product/product.css">
+            <link rel="stylesheet" type="text/css" asp-src="/theme/css/customer/customer.css">
+            <link rel="stylesheet" type="text/css" asp-src="/theme/css/cart/cart.css">
         }
     </environment>
     <environment include="Production">
         @if (supportRtl)
         {
-            //<link rel="stylesheet" type="text/css" asp-src="/bundles/style.rtl.min.css">
+            <link rel="stylesheet" type="text/css" asp-src="/bundles/style.rtl.min.css">
         }
         else
         {
-            //<link rel="stylesheet" type="text/css" asp-src="/bundles/style.min.css">
+            <link rel="stylesheet" type="text/css" asp-src="/bundles/style.min.css">
         }
     </environment>
 
@@ -93,26 +85,16 @@
     <environment include="Development">
         <script asp-location="Footer" asp-src="/theme/script/public.common.js" asp-order="201"></script>
         <script asp-location="Footer" asp-src="/theme/script/public.axios.js" asp-order="202"></script>
-        
     </environment>
     <environment include="Production">
         <script asp-location="Footer" asp-src="/bundles/site.min.js" asp-order="200"></script>
     </environment>
 
     <script asp-location="Footer" asp-src="/popl/scripts/my.popl.public.axios.js" asp-order="203"></script>
+
     <script asp-location="Footer" asp-src="/theme/script/app.js" asp-order="900"></script>
+
     <script asp-location="Footer" asp-src="/popl/scripts/my.popl.app.js" asp-order="901"></script>
 
     <script asp-location="Footer" asp-src="/assets/custom/script.js" asp-order="901"></script>
-
-
-
-    //aha.com -----------------------------------------------------------------------
-    //<script asp-location="Footer" asp-src="/myTheme/asset/jquery.min.js" asp-order="1000"></script>
-    //<script asp-location="Footer" asp-src="/myTheme/bundles/vendors.js" asp-order="1001"></script>
-    //<script asp-location="Footer" asp-src="/myTheme/bundles/shopify.js" asp-order="1002"></script>
-    //<script asp-location="Footer" asp-src="/myTheme/bundles/utilities.js" asp-order="1003"></script>
-    //<script asp-location="Footer" asp-src="/myTheme/bundles/sections.js" asp-order="1004"></script>
-    //<script asp-location="Footer" asp-src="/myTheme/bundles/app.js" asp-order="1005"></script>
-    //aha.com -----------------------------------------------------------------------
 }

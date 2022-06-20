@@ -10,6 +10,10 @@ $dir : null !default;
     width:100%;
     z-index:1000;
     max-height:89px;
+    
+    @include bp{
+        padding:0 70px;
+    }
 }
 
 
@@ -34,7 +38,6 @@ body[data-ismobile='true'] .main-nav-container {
 
 .header-logo-container {
     order: 2;
-    min-width:300px;
 
     //حالت پیش فرض، موبایل، لگو باید کل فضای ممکن را بگیره که دکمه جستجو بچسبه راست راست
     flex: 1 100%;
