@@ -6,6 +6,7 @@
 .main-nav {
     padding: 10px 0;
     margin: 0;
+    background-color:#fff;
 
     @include bp {
         margin-left: 50px;
@@ -24,6 +25,20 @@
         //مین نو، خودش یک لیست است. لیست آیتم زیرش
         vertical-align: top;
         position: relative;
+
+        white-space:nowrap;
+
+        a {
+            color: #000;
+            text-shadow: none;
+            text-decoration:none;
+
+            &:hover {
+                border-bottom: solid 3px #121212;
+                color: #4a9ef4;
+            }
+        }
+
 
         .icon-down-arrow {
             font-size: 10px;
@@ -59,7 +74,7 @@
                 box-shadow: 0 2px 6px #00000080;
                 padding: 1.9375rem 1.875rem 1.3125rem;
                 text-align: left;
-                min-width: 180%;
+                min-width: 100%;
 
                 .dropdown_title {
                     color: #8c8c8c;

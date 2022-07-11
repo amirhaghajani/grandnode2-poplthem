@@ -13,13 +13,27 @@ var my_homeSlider_script={};
 my_homeSlider_script.sliderStart=function(){
 
     var allVideos = document.querySelectorAll('#myVideos video');
-    var texts = document.querySelectorAll('#mySliderTexts h2');
+    
+    var textForPass = my_homeSlider_script._findTexes();
+    my_homeSlider_script.splitWords(textForPass);
 
-    my_homeSlider_script.splitWords(texts);
+    textForPass = my_homeSlider_script._findTexes();
 
-    texts = document.querySelectorAll('#mySliderTexts h2');
+    my_homeSlider_script.sliderStart_next(textForPass, 0, allVideos);
+}
 
-    my_homeSlider_script.sliderStart_next(texts, 0, allVideos);
+my_homeSlider_script._findTexes=function(){
+    var textForPass = [];
+    var texts = document.querySelectorAll('#mySliderTexts .mySliderTexts');
+    for (var i = 0; i < texts.length; i++) {
+        var tt = texts[i];
+        var display = window.getComputedStyle(tt).display;
+        if (display == 'none') continue;
+
+        textForPass = tt.children;
+    }
+
+    return textForPass;
 }
 
 
@@ -171,7 +185,13 @@ my_homeSlider_script.splitWords=function(items){
     for(var i = 0; i<items.length; i++){
         var element = items[i];
         var h2Text = items[i].innerHTML;
+
         var wordsArray = h2Text.split(' ');
+        if(h2Text.startsWith('&')){
+            wordsArray = h2Text.split('&#32;');
+        }
+
+        
 
         element.innerHTML = '';
 
@@ -180,7 +200,12 @@ my_homeSlider_script.splitWords=function(items){
             var word = wordsArray[j];
             var big = document.createElement('big');
             element.appendChild(big);
-            co = my_homeSlider_script.splitWords_createSpan(big, word, co);
+            if (word.startsWith('&')) {
+                co = my_homeSlider_script.splitWords_createSpan_utf8(big, word, co);
+            } else {
+                co = my_homeSlider_script.splitWords_createSpan(big, word, co);
+            }
+            
         }
     }
 }
@@ -194,7 +219,15 @@ my_homeSlider_script.splitWords_createSpan = function (element, word, co) {
         var char = charArray[i];
 
         var span = document.createElement('span');
-        span.innerHTML = char;
+        
+
+        if (i < charArray.length - 1 && charArray[i + 1] == '|') {
+            span.innerHTML = char + '&zwj;';
+            i++;
+        }else{
+            span.innerHTML = char;
+        }
+
         element.appendChild(span);
         var a = `${delay}s`;
         span.style.setProperty('--animate-delay', a);
@@ -204,6 +237,40 @@ my_homeSlider_script.splitWords_createSpan = function (element, word, co) {
     }
 
     return co;
+}
+
+my_homeSlider_script.splitWords_createSpan_utf8 = function (element, word, co) {
+
+    var charArray=word.split("&");
+    for(var i=0; i<charArray.length; i++){
+
+        var delay = co * 0.1;
+
+        var char = charArray[i];
+
+        var span = document.createElement('span');
+        
+
+        span.innerHTML = char;
+
+        element.appendChild(span);
+        var a = `${delay}s`;
+        span.style.setProperty('--animate-delay', a);
+        var b = span.style.getPropertyValue('--animate-delay');
+
+        co++;
+    }
+
+    return co;
+}
+
+
+function encode_utf8(s) {
+  return unescape(encodeURIComponent(s));
+}
+
+function decode_utf8(s) {
+  return decodeURIComponent(escape(s));
 }
 
 </script>

@@ -51,9 +51,17 @@
   </PropertyGroup>-->
   <ItemGroup>
     <Content Remove="Plugins\**" />
+    <Content Remove="wwwroot\myTheme\**" />
+    <Content Remove="wwwroot\popl\images\NewFolder\**" />
     <Compile Remove="Plugins\**" />
+    <Compile Remove="wwwroot\myTheme\**" />
+    <Compile Remove="wwwroot\popl\images\NewFolder\**" />
     <EmbeddedResource Remove="Plugins\**" />
+    <EmbeddedResource Remove="wwwroot\myTheme\**" />
+    <EmbeddedResource Remove="wwwroot\popl\images\NewFolder\**" />
     <None Remove="Plugins\**" />
+    <None Remove="wwwroot\myTheme\**" />
+    <None Remove="wwwroot\popl\images\NewFolder\**" />
     <None Remove="Themes\Popl\preview.jpg" />
     <None Remove="Themes\Popl\scripts\my.popl.app.js" />
     <None Remove="Themes\Popl\scripts\my.popl.public.axios.js" />
@@ -72,6 +80,7 @@
     <None Remove="Themes\Popl\scss\components\_myHomeUpgradeSection.scss" />
     <None Remove="Themes\Popl\scss\components\_myHomeWhoItWork.scss" />
     <None Remove="Themes\Popl\scss\components\_myPoplFeatures.scss" />
+    <None Remove="Themes\Popl\scss\components\_myPoplFooter.scss" />
     <None Remove="Themes\Popl\scss\helpers\mixins\_flexbox.scss" />
     <None Remove="Themes\Popl\scss\theme\_fonts.scss" />
     <None Remove="Themes\Popl\scss\theme\_icon.scss" />
@@ -91,9 +100,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\myTheme\bundles\" />
     <Folder Include="wwwroot\popl\images\icon\featureTab\" />
     <Folder Include="wwwroot\popl\font\" />
-    <Folder Include="wwwroot\popl\images\NewFolder\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\popl\images\svg\2022Youtube_white.svg" />
+    <None Include="wwwroot\popl\images\svg\Facebook.svg" />
+    <None Include="wwwroot\popl\images\svg\Instagram.svg" />
+    <None Include="wwwroot\popl\images\svg\TikTok.svg" />
+    <None Include="wwwroot\popl\images\svg\Twitter.svg" />
   </ItemGroup>
 </Project>

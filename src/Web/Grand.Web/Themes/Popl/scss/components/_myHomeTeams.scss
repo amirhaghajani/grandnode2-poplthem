@@ -79,6 +79,14 @@
             margin-bottom: 0;
         }
 
+
+        @include bps(1199) {
+            width: calc(68% - 33.5px);
+            flex: 0 0 calc(68% - 33.5px);
+            justify-content: space-between;
+            margin-top: 23px;
+        }
+
         .teams__pro {
             border-radius: 22px !important;
             background: #ffffff !important;

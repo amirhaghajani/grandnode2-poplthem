@@ -46,16 +46,30 @@
             @include bp {
                 width: calc(50% - 30px);
             }
+
+            @include bps(991) {
+                width: calc(25% - 30px);
+            }
         }
 
         .work__thumb {
             margin-bottom: 2.25rem;
+
+            @include bp {
+                margin-bottom: 3.5625rem;
+            }
 
             img {
                 width: 236px;
                 height: auto;
                 max-height: 224px;
                 transform: none;
+
+                @include bp {
+                    transform: scale(1.2);
+                    width: 190.32px;
+                    height: 135.45px;
+                }
             }
         }
 
@@ -69,6 +83,10 @@
                 margin: 0 auto;
                 max-width: 56%;
                 margin-bottom: 0.75rem;
+
+                @include bp {
+                    max-width: 80%;
+                }
             }
 
             .work__link {
@@ -117,8 +135,8 @@
             line-height: 25px;
             margin-bottom: 28px;
 
-            @include bp{
-                display:none;
+            @include bp {
+                display: none;
             }
         }
 
@@ -127,7 +145,7 @@
             margin: 0 auto;
             flex-direction: column;
 
-            @include bp{
+            @include bp {
                 flex-direction: row;
             }
 
