@@ -101,7 +101,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\popl\images\icon\featureTab\" />
-    <Folder Include="wwwroot\popl\font\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\popl\images\svg\2022Youtube_white.svg" />

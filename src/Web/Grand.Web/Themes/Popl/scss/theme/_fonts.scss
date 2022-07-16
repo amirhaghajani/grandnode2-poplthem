@@ -1,6 +1,17 @@
 ﻿@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
 
+$persianFont: IranianSan !default;
+
+@font-face {
+    font-family: 'IranianSan';
+    src: url('/popl/font/per/IranianSans.eot'); /* IE9 Compat Modes */
+    src: url('/popl/font/per/IranianSans.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/popl/font/per/IranianSans.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/popl/font/per/IranianSans.woff') format('woff'), /* Pretty Modern Browsers */
+    url('/popl/font/per/IranianSans.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
 @font-face {
     font-family: "Gilroy";
     src: url("/popl/font/a21f2416-e83c-44c4-88bf-a47ca6325a02.woff2") format("woff2"), url("/popl/font/25f5b6f4-855f-48e2-b53d-3d6ad49faae8.woff") format("woff");

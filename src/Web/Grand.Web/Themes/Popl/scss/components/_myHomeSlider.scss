@@ -1,4 +1,7 @@
-﻿
+﻿$dir: ltr !default;
+$persianFont: IranianSan !default;
+$leftRight: if($dir==rtl,right,left);
+
 #mySlider {
     text-align: center;
     position: relative;
@@ -27,13 +30,13 @@
         }
 
         @include bp(large) {
-            text-align: left;
+            text-align: $leftRight;
             width: 100%;
         }
 
         h1 {
             font-weight: 600;
-            font-family: "Gilroy600";
+            font-family: if($dir==rtl,$persianFont,"Gilroy600");
             letter-spacing: -0.4px;
             font-size: 1.75em;
             line-height: 1.25;
@@ -63,7 +66,7 @@
             transition: all .3s ease-in-out;
             text-align: center;
             font-weight: 700;
-            font-family: "Gilroy700";
+            font-family: if($dir==rtl,$persianFont,"Gilroy700");
             margin-bottom: 0.4375rem;
             word-break: break-word;
 
@@ -75,7 +78,7 @@
             }
 
             @include bp(large) {
-                text-align: left;
+                text-align: $leftRight;
                 font-size: 4em;
                 line-height: 1.01563;
                 letter-spacing: -2px;
@@ -84,7 +87,7 @@
 
         big {
             letter-spacing: -1.23px;
-            margin-right: 10px;
+            margin-#{$leftRight}: 10px;
         }
 
         span {
@@ -109,7 +112,7 @@
             -webkit-font-smoothing: antialiased;
             color: #121212;
             font-weight: 700;
-            font-family: Gilroy700;
+            font-family: if($dir==rtl,$persianFont,"Gilroy700");
             word-break: break-word;
             letter-spacing: -2px;
             box-sizing: border-box;
@@ -139,13 +142,13 @@
             margin: 0;
             width: 100%;
             margin-bottom: 2.625rem;
-            text-align: left;
+            text-align: $leftRight;
         }
 
         h2 {
             font-size: 0.92rem;
             font-weight: 500;
-            font-family: "Inter";
+            font-family: if($dir==rtl,$persianFont,"Inter");
             line-height: 1.2106;
             letter-spacing: -0.31px;
             margin: 0;
@@ -167,6 +170,12 @@
 
     a:hover, a:active, a:visited {
         color: #fff;
+    }
+
+
+
+    .btnBuyNowContainer {
+        text-align: $leftRight;
     }
 
     .btnBuyNow {
@@ -228,6 +237,8 @@
         }
     }
 }
+
+
 
 .banner__advantages {
     position: absolute;
@@ -304,6 +315,19 @@
         }
     }
 }
+.banner__advantages {
+
+    .onlyEnglish {
+        display: if($dir==rtl,none,unset);
+    }
+
+    .onlyPersian {
+        display: if($dir==rtl,unset,none);
+    }
+}
+
+
+
 
 #myVideos {
     height: 100%;

@@ -117,12 +117,15 @@ body {
     }
 }
 
+$persianFont: IranianSan;
+
 html {
     $dir: null;
 
-    .onlyEnglish {
+
+    /*.onlyEnglish {
         display: block;
-    }
+    }*/
 
     .onlyPersian {
         display: none;
@@ -148,11 +151,11 @@ html[dir="rtl"] {
     $dir: rtl;
 
     .onlyEnglish {
-        display: none;
+        display: none !important;
     }
 
     .onlyPersian {
-        display: block;
+        display: unset;
     }
 
     @import "components/_header.scss";

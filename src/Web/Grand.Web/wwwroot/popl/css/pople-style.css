@@ -531,6 +531,12 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 @font-face {
+  font-family: "IranianSan";
+  src: url("/popl/font/per/IranianSans.eot");
+  /* IE9 Compat Modes */
+  src: url("/popl/font/per/IranianSans.eot?#iefix") format("embedded-opentype"), url("/popl/font/per/IranianSans.woff2") format("woff2"), url("/popl/font/per/IranianSans.woff") format("woff"), url("/popl/font/per/IranianSans.ttf") format("truetype");
+}
+@font-face {
   font-family: "Gilroy";
   src: url("/popl/font/a21f2416-e83c-44c4-88bf-a47ca6325a02.woff2") format("woff2"), url("/popl/font/25f5b6f4-855f-48e2-b53d-3d6ad49faae8.woff") format("woff");
 }
@@ -705,8 +711,10 @@ body[data-ismobile=true]:after {
   content: "is-moblie";
 }
 
-html .onlyEnglish {
-  display: block;
+html {
+  /*.onlyEnglish {
+      display: block;
+  }*/
 }
 html .onlyPersian {
   display: none;
@@ -1283,7 +1291,7 @@ html #mySlider #mySliderTexts h2 {
 }
 html #mySlider #mySliderTexts big {
   letter-spacing: -1.23px;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 html #mySlider #mySliderTexts span {
   font-size: 35px;
@@ -1300,7 +1308,7 @@ html #mySlider #mySliderTexts span {
   -webkit-font-smoothing: antialiased;
   color: #121212;
   font-weight: 700;
-  font-family: Gilroy700;
+  font-family: "Gilroy700";
   word-break: break-word;
   letter-spacing: -2px;
   box-sizing: border-box;
@@ -1363,6 +1371,9 @@ html #mySlider .banner__sub-title h2 {
 }
 html #mySlider a:hover, html #mySlider a:active, html #mySlider a:visited {
   color: #fff;
+}
+html #mySlider .btnBuyNowContainer {
+  text-align: left;
 }
 html #mySlider .btnBuyNow {
   background-color: #000;
@@ -1495,6 +1506,12 @@ html .banner__advantages .banner__links-text h3 {
   letter-spacing: -0.72px;
   color: #121212;
   text-align: left;
+}
+html .banner__advantages .onlyEnglish {
+  display: unset;
+}
+html .banner__advantages .onlyPersian {
+  display: none;
 }
 html #myVideos {
   height: 100%;
@@ -2491,10 +2508,10 @@ html .popl_footer .footer_withsocial .contact__social div img {
 }
 
 html[dir=rtl] .onlyEnglish {
-  display: none;
+  display: none !important;
 }
 html[dir=rtl] .onlyPersian {
-  display: block;
+  display: unset;
 }
 html[dir=rtl] .header {
   display: flex;
@@ -2923,13 +2940,13 @@ html[dir=rtl] #mySlider .banner__title {
 }
 @media (min-width: 991px) {
   html[dir=rtl] #mySlider .banner__title {
-    text-align: left;
+    text-align: right;
     width: 100%;
   }
 }
 html[dir=rtl] #mySlider .banner__title h1 {
   font-weight: 600;
-  font-family: "Gilroy600";
+  font-family: IranianSan;
   letter-spacing: -0.4px;
   font-size: 1.75em;
   line-height: 1.25;
@@ -2959,7 +2976,7 @@ html[dir=rtl] #mySlider #mySliderTexts h2 {
   transition: all 0.3s ease-in-out;
   text-align: center;
   font-weight: 700;
-  font-family: "Gilroy700";
+  font-family: IranianSan;
   margin-bottom: 0.4375rem;
   word-break: break-word;
 }
@@ -2973,7 +2990,7 @@ html[dir=rtl] #mySlider #mySliderTexts h2 {
 }
 @media (min-width: 991px) {
   html[dir=rtl] #mySlider #mySliderTexts h2 {
-    text-align: left;
+    text-align: right;
     font-size: 4em;
     line-height: 1.01563;
     letter-spacing: -2px;
@@ -2998,7 +3015,7 @@ html[dir=rtl] #mySlider #mySliderTexts span {
   -webkit-font-smoothing: antialiased;
   color: #121212;
   font-weight: 700;
-  font-family: Gilroy700;
+  font-family: IranianSan;
   word-break: break-word;
   letter-spacing: -2px;
   box-sizing: border-box;
@@ -3034,13 +3051,13 @@ html[dir=rtl] #mySlider .banner__sub-title {
     margin: 0;
     width: 100%;
     margin-bottom: 2.625rem;
-    text-align: left;
+    text-align: right;
   }
 }
 html[dir=rtl] #mySlider .banner__sub-title h2 {
   font-size: 0.92rem;
   font-weight: 500;
-  font-family: "Inter";
+  font-family: IranianSan;
   line-height: 1.2106;
   letter-spacing: -0.31px;
   margin: 0;
@@ -3061,6 +3078,9 @@ html[dir=rtl] #mySlider .banner__sub-title h2 {
 }
 html[dir=rtl] #mySlider a:hover, html[dir=rtl] #mySlider a:active, html[dir=rtl] #mySlider a:visited {
   color: #fff;
+}
+html[dir=rtl] #mySlider .btnBuyNowContainer {
+  text-align: right;
 }
 html[dir=rtl] #mySlider .btnBuyNow {
   background-color: #000;
@@ -3193,6 +3213,12 @@ html[dir=rtl] .banner__advantages .banner__links-text h3 {
   letter-spacing: -0.72px;
   color: #121212;
   text-align: left;
+}
+html[dir=rtl] .banner__advantages .onlyEnglish {
+  display: none;
+}
+html[dir=rtl] .banner__advantages .onlyPersian {
+  display: unset;
 }
 html[dir=rtl] #myVideos {
   height: 100%;
