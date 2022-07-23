@@ -839,6 +839,7 @@ html .menu-toggler-button[data-toggled=true] ~ .main-nav {
   }
 }
 html .main-nav {
+  text-align: left;
   padding: 10px 0;
   margin: 0;
   background-color: #fff;
@@ -1451,9 +1452,14 @@ html .banner__advantages {
   }
 }
 html .banner__advantages .bannner__links {
-  display: flex;
   align-items: baseline;
   justify-content: center;
+}
+html .banner__advantages .bannner__links.onlyEnglish {
+  display: flex;
+}
+html .banner__advantages .bannner__links.onlyPersian {
+  display: none;
 }
 @media (min-width: 798px) {
   html .banner__advantages .bannner__links {
@@ -1470,7 +1476,8 @@ html .banner__advantages .bannner__links {
 html .banner__advantages .bannner__links-thumb {
   width: 20.65px;
   height: 20.81px;
-  margin-right: 12px;
+  margin-left: 12px;
+  /*margin-right: 0;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1485,10 +1492,12 @@ html .banner__advantages .bannner__links-thumb img {
   width: 100%;
 }
 html .banner__advantages .banner__links-text {
-  width: 78%;
+  padding-left: 22%;
+  padding-right: 0;
   text-align: center;
 }
 html .banner__advantages .banner__links-text h5 {
+  text-align: left;
   display: none;
   color: #121212;
   font-weight: 600;
@@ -2638,18 +2647,19 @@ html[dir=rtl] .menu-toggler-button[data-toggled=true] ~ .main-nav {
   }
 }
 html[dir=rtl] .main-nav {
+  text-align: right;
   padding: 10px 0;
   margin: 0;
   background-color: #fff;
 }
 @media (min-width: 798px) {
   html[dir=rtl] .main-nav {
-    margin-left: 50px;
+    margin-right: 50px;
   }
 }
 @media (min-width: 1199px) {
   html[dir=rtl] .main-nav {
-    margin-left: 110px;
+    margin-right: 110px;
   }
 }
 html[dir=rtl] .main-nav > li {
@@ -2699,7 +2709,7 @@ html[dir=rtl] .main-nav > li[data-toggled=true] ul {
   background-color: #fff;
   box-shadow: 0 2px 6px #00000080;
   padding: 1.9375rem 1.875rem 1.3125rem;
-  text-align: left;
+  text-align: right;
   min-width: 100%;
 }
 html[dir=rtl] .main-nav > li[data-toggled=true] ul .dropdown_title {
@@ -3162,9 +3172,14 @@ html[dir=rtl] .banner__advantages {
   }
 }
 html[dir=rtl] .banner__advantages .bannner__links {
-  display: flex;
   align-items: baseline;
   justify-content: center;
+}
+html[dir=rtl] .banner__advantages .bannner__links.onlyEnglish {
+  display: none;
+}
+html[dir=rtl] .banner__advantages .bannner__links.onlyPersian {
+  display: flex;
 }
 @media (min-width: 798px) {
   html[dir=rtl] .banner__advantages .bannner__links {
@@ -3181,7 +3196,8 @@ html[dir=rtl] .banner__advantages .bannner__links {
 html[dir=rtl] .banner__advantages .bannner__links-thumb {
   width: 20.65px;
   height: 20.81px;
-  margin-right: 12px;
+  margin-left: 12px;
+  /*margin-left: 0;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3196,10 +3212,12 @@ html[dir=rtl] .banner__advantages .bannner__links-thumb img {
   width: 100%;
 }
 html[dir=rtl] .banner__advantages .banner__links-text {
-  width: 78%;
+  padding-right: 22%;
+  padding-left: 0;
   text-align: center;
 }
 html[dir=rtl] .banner__advantages .banner__links-text h5 {
+  text-align: right;
   display: none;
   color: #121212;
   font-weight: 600;
@@ -3212,7 +3230,7 @@ html[dir=rtl] .banner__advantages .banner__links-text h5 {
 @media (min-width: 798px) {
   html[dir=rtl] .banner__advantages .banner__links-text h5 {
     display: block;
-    text-align: left;
+    text-align: right;
   }
 }
 html[dir=rtl] .banner__advantages .banner__links-text h3 {
@@ -3222,7 +3240,7 @@ html[dir=rtl] .banner__advantages .banner__links-text h3 {
   line-height: 1.21;
   letter-spacing: -0.72px;
   color: #121212;
-  text-align: left;
+  text-align: right;
 }
 html[dir=rtl] .banner__advantages .onlyEnglish {
   display: none;

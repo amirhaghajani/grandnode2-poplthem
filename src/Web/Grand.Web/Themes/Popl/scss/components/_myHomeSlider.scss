@@ -1,6 +1,7 @@
 ﻿$dir: ltr !default;
 $persianFont: IRANSans !default;
 $leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
 
 #mySlider {
     text-align: center;
@@ -251,7 +252,15 @@ $leftRight: if($dir==rtl,right,left);
     }
 
     .bannner__links {
-        display: flex;
+
+        &.onlyEnglish {
+            display: if($dir==ltr, flex, none);
+        }
+
+        &.onlyPersian {
+            display: if($dir==ltr, none, flex);
+        }
+
         align-items: baseline;
         justify-content: center;
 
@@ -269,7 +278,8 @@ $leftRight: if($dir==rtl,right,left);
     .bannner__links-thumb {
         width: 20.65px;
         height: 20.81px;
-        margin-right: 12px;
+        margin-left: 12px;
+        /*margin-#{$leftRightReverse}: 0;*/
         display: flex;
         align-items: center;
         justify-content: center;
@@ -285,10 +295,12 @@ $leftRight: if($dir==rtl,right,left);
     }
 
     .banner__links-text {
-        width: 78%;
+        padding-#{$leftRight}: 22%;
+        padding-#{$leftRightReverse}: 0;
         text-align: center;
 
         h5 {
+            text-align: $leftRight;
             display: none;
             color: #121212;
             font-weight: 600;
@@ -300,7 +312,7 @@ $leftRight: if($dir==rtl,right,left);
 
             @include bp {
                 display: block;
-                text-align: left;
+                text-align: $leftRight;
             }
         }
 
@@ -311,7 +323,7 @@ $leftRight: if($dir==rtl,right,left);
             line-height: 1.21;
             letter-spacing: -0.72px;
             color: #121212;
-            text-align: left;
+            text-align: $leftRight;
         }
     }
 }
