@@ -531,10 +531,18 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 @font-face {
-  font-family: "IranianSan";
-  src: url("/popl/font/per/IranianSans.eot");
-  /* IE9 Compat Modes */
-  src: url("/popl/font/per/IranianSans.eot?#iefix") format("embedded-opentype"), url("/popl/font/per/IranianSans.woff2") format("woff2"), url("/popl/font/per/IranianSans.woff") format("woff"), url("/popl/font/per/IranianSans.ttf") format("truetype");
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: normal;
+  src: url("/popl/font/per/IRANSansWeb.eot");
+  src: url("/popl/font/per//IRANSansWeb.eot?#iefix") format("embedded-opentype"), url("/popl/font/per/IRANSansWeb.woff2") format("woff2"), url("/popl/font/per/IRANSansWeb.woff") format("woff"), url("/popl/font/per/IRANSansWeb.ttf") format("truetype");
+}
+@font-face {
+  font-family: IRANSans;
+  font-style: normal;
+  font-weight: bold;
+  src: url("/popl/font/per/IRANSansWeb_Bold.eot");
+  src: url("/popl/font/per/IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype"), url("/popl/font/per/IRANSansWeb_Bold.woff2") format("woff2"), url("/popl/font/per/IRANSansWeb_Bold.woff") format("woff"), url("/popl/font/per/IRANSansWeb_Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Gilroy";
@@ -711,10 +719,8 @@ body[data-ismobile=true]:after {
   content: "is-moblie";
 }
 
-html {
-  /*.onlyEnglish {
-      display: block;
-  }*/
+html .onlyEnglish {
+  display: revert;
 }
 html .onlyPersian {
   display: none;
@@ -1662,6 +1668,7 @@ html .features__tabs .tabs-stage .tab__content {
 html .features__tabs .tabs-stage .tab__content-head {
   margin-left: 42px;
   margin-bottom: 15px;
+  text-align: left;
 }
 html .features__tabs .tabs-stage .tab__content-head h3 {
   font-size: 1.625em;
@@ -1673,6 +1680,7 @@ html .features__tabs .tabs-stage .tab__content-head h3 {
 html .features__tabs .tabs-stage .tab__content-details {
   margin-bottom: 1.8125rem;
   color: #121212;
+  text-align: left;
 }
 html .features__tabs .tabs-stage .tab__content-wrap {
   display: flex;
@@ -1733,10 +1741,12 @@ html .features__tabs .tabs-stage .l-tag .l-tag__details h4 {
   font-weight: 600;
   letter-spacing: -0.5px;
   margin-bottom: 0.25rem;
+  text-align: left;
 }
 html .features__tabs .tabs-stage .l-tag .l-tag__details p {
   font-size: 1em;
   line-height: 1.4;
+  text-align: left;
 }
 html .myHomWhoItWorkSection::after {
   content: " ";
@@ -2511,7 +2521,7 @@ html[dir=rtl] .onlyEnglish {
   display: none !important;
 }
 html[dir=rtl] .onlyPersian {
-  display: unset;
+  display: revert;
 }
 html[dir=rtl] .header {
   display: flex;
@@ -2946,7 +2956,7 @@ html[dir=rtl] #mySlider .banner__title {
 }
 html[dir=rtl] #mySlider .banner__title h1 {
   font-weight: 600;
-  font-family: IranianSan;
+  font-family: IRANSans;
   letter-spacing: -0.4px;
   font-size: 1.75em;
   line-height: 1.25;
@@ -2976,7 +2986,7 @@ html[dir=rtl] #mySlider #mySliderTexts h2 {
   transition: all 0.3s ease-in-out;
   text-align: center;
   font-weight: 700;
-  font-family: IranianSan;
+  font-family: IRANSans;
   margin-bottom: 0.4375rem;
   word-break: break-word;
 }
@@ -3015,7 +3025,7 @@ html[dir=rtl] #mySlider #mySliderTexts span {
   -webkit-font-smoothing: antialiased;
   color: #121212;
   font-weight: 700;
-  font-family: IranianSan;
+  font-family: IRANSans;
   word-break: break-word;
   letter-spacing: -2px;
   box-sizing: border-box;
@@ -3057,7 +3067,7 @@ html[dir=rtl] #mySlider .banner__sub-title {
 html[dir=rtl] #mySlider .banner__sub-title h2 {
   font-size: 0.92rem;
   font-weight: 500;
-  font-family: IranianSan;
+  font-family: IRANSans;
   line-height: 1.2106;
   letter-spacing: -0.31px;
   margin: 0;
@@ -3367,8 +3377,9 @@ html[dir=rtl] .features__tabs .tabs-stage .tab__content {
   transition: opacity 1s ease-in;
 }
 html[dir=rtl] .features__tabs .tabs-stage .tab__content-head {
-  margin-left: 42px;
+  margin-right: 42px;
   margin-bottom: 15px;
+  text-align: right;
 }
 html[dir=rtl] .features__tabs .tabs-stage .tab__content-head h3 {
   font-size: 1.625em;
@@ -3380,6 +3391,7 @@ html[dir=rtl] .features__tabs .tabs-stage .tab__content-head h3 {
 html[dir=rtl] .features__tabs .tabs-stage .tab__content-details {
   margin-bottom: 1.8125rem;
   color: #121212;
+  text-align: right;
 }
 html[dir=rtl] .features__tabs .tabs-stage .tab__content-wrap {
   display: flex;
@@ -3428,7 +3440,7 @@ html[dir=rtl] .features__tabs .tabs-stage .l-tag {
   margin-right: 7%;
 }
 html[dir=rtl] .features__tabs .tabs-stage .l-tag img {
-  margin-right: 1.125rem;
+  margin-left: 1.125rem;
   width: 3.0625rem;
   height: 2.4375rem;
   object-fit: contain;
@@ -3440,10 +3452,12 @@ html[dir=rtl] .features__tabs .tabs-stage .l-tag .l-tag__details h4 {
   font-weight: 600;
   letter-spacing: -0.5px;
   margin-bottom: 0.25rem;
+  text-align: right;
 }
 html[dir=rtl] .features__tabs .tabs-stage .l-tag .l-tag__details p {
   font-size: 1em;
   line-height: 1.4;
+  text-align: right;
 }
 html[dir=rtl] .myHomWhoItWorkSection::after {
   content: " ";

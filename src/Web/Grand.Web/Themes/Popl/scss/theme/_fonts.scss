@@ -4,12 +4,25 @@
 $persianFont: IranianSan !default;
 
 @font-face {
-    font-family: 'IranianSan';
-    src: url('/popl/font/per/IranianSans.eot'); /* IE9 Compat Modes */
-    src: url('/popl/font/per/IranianSans.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('/popl/font/per/IranianSans.woff2') format('woff2'), /* Super Modern Browsers */
-    url('/popl/font/per/IranianSans.woff') format('woff'), /* Pretty Modern Browsers */
-    url('/popl/font/per/IranianSans.ttf') format('truetype'), /* Safari, Android, iOS */
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('/popl/font/per/IRANSansWeb.eot');
+    src: url('/popl/font/per//IRANSansWeb.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('/popl/font/per/IRANSansWeb.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('/popl/font/per/IRANSansWeb.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('/popl/font/per/IRANSansWeb.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('/popl/font/per/IRANSansWeb_Bold.eot');
+    src: url('/popl/font/per/IRANSansWeb_Bold.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('/popl/font/per/IRANSansWeb_Bold.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
+    url('/popl/font/per/IRANSansWeb_Bold.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('/popl/font/per/IRANSansWeb_Bold.ttf') format('truetype');
 }
 
 @font-face {

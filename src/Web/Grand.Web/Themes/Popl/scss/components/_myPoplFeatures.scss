@@ -1,4 +1,8 @@
-﻿
+﻿$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightRevers: if($dir==rtl,left, right);
+
 .myPoplFeatures {
     padding: 1.125rem 0 0rem;
     background: rgba(196,196,196,.1);
@@ -125,8 +129,9 @@
         }
 
         .tab__content-head {
-            margin-left: 42px;
+            margin-#{$leftRight}: 42px;
             margin-bottom: 15px;
+            text-align: $leftRight;
 
             h3 {
                 font-size: 1.625em;
@@ -140,6 +145,7 @@
         .tab__content-details {
             margin-bottom: 1.8125rem;
             color: #121212;
+            text-align: $leftRight;
         }
 
         .tab__content-wrap {
@@ -195,7 +201,7 @@
             margin-right: 7%;
 
             img {
-                margin-right: 1.125rem;
+                margin-#{$leftRightRevers}: 1.125rem;
                 width: 3.0625rem;
                 height: 2.4375rem;
                 object-fit: contain;
@@ -209,11 +215,13 @@
                     font-weight: 600;
                     letter-spacing: -.5px;
                     margin-bottom: 0.25rem;
+                    text-align: $leftRight;
                 }
 
                 p {
                     font-size: 1em;
                     line-height: 1.4;
+                    text-align: $leftRight;
                 }
             }
         }
