@@ -1,4 +1,9 @@
 ﻿
+$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
+
 .myHomeFAQSection {
     padding: 2.25rem 0 2.5rem;
     background: rgba(196, 196, 196, 0.1);
@@ -18,8 +23,8 @@
         text-align: center;
 
         h1 {
-            text-align: left;
-            margin-left: 17px;
+            text-align: $leftRight;
+            margin-#{$leftRight}: 17px;
         }
     }
 

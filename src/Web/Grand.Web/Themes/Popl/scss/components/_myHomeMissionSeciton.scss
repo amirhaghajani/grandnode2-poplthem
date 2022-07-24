@@ -1,11 +1,15 @@
-﻿
+﻿$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
+
 .myHomeMission {
     position: relative;
 
 
 
     .popl_container {
-        padding: 0 37px 0 48px;
+        padding: 0 if($dir==rtl,48px,37px) 0 if($dir==rtl,37px,48px);
     }
 
     .mission__wrap_out {
@@ -18,10 +22,10 @@
         h1 {
             font-size: 19.52px;
             font-weight: 400;
-            font-family: "Gilroy400";
+            font-family: if($dir==rtl,$persianFont,"Gilroy400");
             letter-spacing: 1.87px;
             line-height: 42.42px;
-            text-align: left;
+            text-align: $leftRight;
             opacity: 0.6;
             text-transform: uppercase;
         }
@@ -51,6 +55,7 @@
         margin-bottom: 3.875rem;
         order: 2;
 
+
         p {
             font-size: 22px;
             letter-spacing: -0.25px;
@@ -58,6 +63,7 @@
             margin-bottom: 1.875rem;
             margin-top: 0;
             font-family: "Inter";
+            text-align: $leftRight;
         }
     }
 
