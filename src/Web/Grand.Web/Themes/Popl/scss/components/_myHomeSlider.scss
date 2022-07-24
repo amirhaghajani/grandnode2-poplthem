@@ -242,6 +242,9 @@ $leftRightReverse: if($dir==rtl,left,right);
 
 
 .banner__advantages {
+    padding-#{$leftRight}: 22%;
+    padding-#{$leftRightReverse}: 0;
+
     position: absolute;
     left: 0;
     right: 0;
@@ -278,8 +281,8 @@ $leftRightReverse: if($dir==rtl,left,right);
     .bannner__links-thumb {
         width: 20.65px;
         height: 20.81px;
-        margin-left: 12px;
-        /*margin-#{$leftRightReverse}: 0;*/
+        margin-#{$leftRight}: 0;
+        margin-#{$leftRightReverse}: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -295,9 +298,9 @@ $leftRightReverse: if($dir==rtl,left,right);
     }
 
     .banner__links-text {
-        padding-#{$leftRight}: 22%;
-        padding-#{$leftRightReverse}: 0;
+        width: 100%;
         text-align: center;
+
 
         h5 {
             text-align: $leftRight;
@@ -327,6 +330,7 @@ $leftRightReverse: if($dir==rtl,left,right);
         }
     }
 }
+
 .banner__advantages {
 
     .onlyEnglish {

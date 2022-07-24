@@ -1441,6 +1441,8 @@ html #mySlider::after {
   }
 }
 html .banner__advantages {
+  padding-left: 22%;
+  padding-right: 0;
   position: absolute;
   left: 0;
   right: 0;
@@ -1476,8 +1478,8 @@ html .banner__advantages .bannner__links.onlyPersian {
 html .banner__advantages .bannner__links-thumb {
   width: 20.65px;
   height: 20.81px;
-  margin-left: 12px;
-  /*margin-right: 0;*/
+  margin-left: 0;
+  margin-right: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1492,8 +1494,7 @@ html .banner__advantages .bannner__links-thumb img {
   width: 100%;
 }
 html .banner__advantages .banner__links-text {
-  padding-left: 22%;
-  padding-right: 0;
+  width: 100%;
   text-align: center;
 }
 html .banner__advantages .banner__links-text h5 {
@@ -3161,6 +3162,8 @@ html[dir=rtl] #mySlider::after {
   }
 }
 html[dir=rtl] .banner__advantages {
+  padding-right: 22%;
+  padding-left: 0;
   position: absolute;
   left: 0;
   right: 0;
@@ -3196,8 +3199,8 @@ html[dir=rtl] .banner__advantages .bannner__links.onlyPersian {
 html[dir=rtl] .banner__advantages .bannner__links-thumb {
   width: 20.65px;
   height: 20.81px;
+  margin-right: 0;
   margin-left: 12px;
-  /*margin-left: 0;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3212,8 +3215,7 @@ html[dir=rtl] .banner__advantages .bannner__links-thumb img {
   width: 100%;
 }
 html[dir=rtl] .banner__advantages .banner__links-text {
-  padding-right: 22%;
-  padding-left: 0;
+  width: 100%;
   text-align: center;
 }
 html[dir=rtl] .banner__advantages .banner__links-text h5 {
