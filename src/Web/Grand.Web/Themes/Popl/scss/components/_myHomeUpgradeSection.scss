@@ -1,4 +1,9 @@
 ﻿
+$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightRevers: if($dir==rtl,left, right);
+
 .myHomeUpgradeSection {
     position: relative;
     padding: 0.0625rem 0 4.85938rem;
@@ -47,7 +52,7 @@
             font-size: 1.875em;
             line-height: 1.25;
             letter-spacing: -0.56px;
-            font-family: "Gilroy500";
+            font-family: if($dir==rtl,$persianFont,"Gilroy500");
             font-weight: 500;
             margin-bottom: 3.125rem;
             text-align: left;

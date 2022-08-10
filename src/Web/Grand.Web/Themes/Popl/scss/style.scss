@@ -19,9 +19,6 @@
 html {
     min-width: 300px;
     overflow: visible;
-
-
-    
 }
 html, body, #app {
     min-height: 100vh;
@@ -156,6 +153,7 @@ html[dir="rtl"] {
 
     .onlyPersian {
         display: revert;
+        font-family: IRANSans !important;
     }
 
     @import "components/_header.scss";

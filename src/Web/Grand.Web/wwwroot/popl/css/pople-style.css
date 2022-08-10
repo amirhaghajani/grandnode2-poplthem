@@ -1603,7 +1603,7 @@ html .features__head .features__title h2 {
   line-height: 1.25;
   text-transform: inherit;
   text-align: center;
-  font-family: Gilroy500;
+  font-family: "Gilroy500";
   margin: 0;
   color: #121212;
   padding: 0;
@@ -2533,6 +2533,7 @@ html[dir=rtl] .onlyEnglish {
 }
 html[dir=rtl] .onlyPersian {
   display: revert;
+  font-family: IRANSans !important;
 }
 html[dir=rtl] .header {
   display: flex;
@@ -3059,7 +3060,7 @@ html[dir=rtl] #mySlider .banner__sub-title {
   text-align: center;
   width: 100%;
   font-weight: 500;
-  font-family: "Inter";
+  font-family: IRANSans;
 }
 @media (min-width: 414px) {
   html[dir=rtl] #mySlider .banner__sub-title {
@@ -3225,7 +3226,7 @@ html[dir=rtl] .banner__advantages .banner__links-text h5 {
   color: #121212;
   font-weight: 600;
   font-size: 18px;
-  font-family: "Inter";
+  font-family: IRANSans;
   font-size: 1.125em;
   line-height: 1.21;
   margin-bottom: 0.25rem;
@@ -3237,7 +3238,7 @@ html[dir=rtl] .banner__advantages .banner__links-text h5 {
   }
 }
 html[dir=rtl] .banner__advantages .banner__links-text h3 {
-  font-family: "Inter";
+  font-family: IRANSans;
   font-weight: 400;
   font-size: 1em;
   line-height: 1.21;
@@ -3325,7 +3326,7 @@ html[dir=rtl] .features__head .features__title h2 {
   line-height: 1.25;
   text-transform: inherit;
   text-align: center;
-  font-family: Gilroy500;
+  font-family: IRANSans;
   margin: 0;
   color: #121212;
   padding: 0;
@@ -3503,7 +3504,7 @@ html[dir=rtl] .myHomWhoItWorkSection .work__head {
 html[dir=rtl] .myHomWhoItWorkSection .work__head .l-title {
   color: #121212;
   font-weight: 500;
-  font-family: "Gilroy500";
+  font-family: IRANSans;
   font-size: 29.4px;
   line-height: 36.75px;
   letter-spacing: -0.56px;
@@ -3556,7 +3557,7 @@ html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__content h3 {
   font-size: 0.9375em;
   line-height: 1.21;
   font-weight: 600;
-  font-family: "Inter";
+  font-family: IRANSans;
   letter-spacing: -0.5px;
   margin: 0 auto;
   max-width: 56%;
@@ -3569,7 +3570,7 @@ html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__content h3 {
 }
 html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__content .work__link {
   font-weight: 500;
-  font-family: "Inter";
+  font-family: IRANSans;
   color: #767676;
   text-decoration: none;
   position: relative;
@@ -3581,7 +3582,7 @@ html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__content .work__link {
   margin: 0 auto;
 }
 html[dir=rtl] .myHomWhoItWorkSection .work__numbers {
-  font-family: "Gilroy600";
+  font-family: IRANSans;
   font-weight: 900;
   height: 53.14px;
   width: 53.14px;
@@ -3603,7 +3604,7 @@ html[dir=rtl] .myHomWhoItWorkSection .work__start {
 }
 html[dir=rtl] .myHomWhoItWorkSection .work__start .custom_download--label {
   color: #8c8c8c;
-  font-family: "Gilroy400";
+  font-family: IRANSans;
   font-weight: 400;
   font-size: 17px;
   line-height: 25px;
@@ -3814,7 +3815,7 @@ html[dir=rtl] .myHomeUpgradeSection .upgrade__content h1 {
   font-size: 1.875em;
   line-height: 1.25;
   letter-spacing: -0.56px;
-  font-family: "Gilroy500";
+  font-family: IRANSans;
   font-weight: 500;
   margin-bottom: 3.125rem;
   text-align: left;
@@ -3878,7 +3879,7 @@ html[dir=rtl] .myHomeMission .mission__hero h2 {
   line-height: 37.5px;
   text-align: left;
   font-weight: 500;
-  font-family: "Gilroy500";
+  font-family: IRANSans;
   max-width: 316px;
 }
 html[dir=rtl] .myHomeMission .mission__wrap {
@@ -3895,7 +3896,7 @@ html[dir=rtl] .myHomeMission .mission__content p {
   line-height: 30.36px;
   margin-bottom: 1.875rem;
   margin-top: 0;
-  font-family: "Inter";
+  font-family: IRANSans;
   text-align: right;
 }
 html[dir=rtl] .myHomeMission .mission__gallery {

@@ -1,4 +1,9 @@
 ﻿
+$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightRevers: if($dir==rtl,left, right);
+
 .myHomWhoItWorkSection::after {
     content: " ";
     position: absolute;
@@ -23,7 +28,7 @@
         .l-title {
             color: #121212;
             font-weight: 500;
-            font-family: "Gilroy500";
+            font-family: if($dir==rtl,$persianFont,"Gilroy500");
             font-size: 29.4px;
             line-height: 36.75px;
             letter-spacing: -0.56px;
@@ -78,7 +83,7 @@
                 font-size: 0.9375em;
                 line-height: 1.21;
                 font-weight: 600;
-                font-family: "Inter";
+                font-family: if($dir==rtl,$persianFont,"Inter");
                 letter-spacing: -0.5px;
                 margin: 0 auto;
                 max-width: 56%;
@@ -91,7 +96,7 @@
 
             .work__link {
                 font-weight: 500;
-                font-family: "Inter";
+                font-family: if($dir==rtl,$persianFont,"Inter");
                 color: #767676;
                 text-decoration: none;
                 position: relative;
@@ -106,7 +111,7 @@
     }
 
     .work__numbers {
-        font-family: "Gilroy600";
+        font-family: if($dir==rtl,$persianFont,"Gilroy600");
         font-weight: 900;
         height: 53.14px;
         width: 53.14px;
@@ -129,7 +134,7 @@
 
         .custom_download--label {
             color: #8c8c8c;
-            font-family: "Gilroy400";
+            font-family: if($dir==rtl,$persianFont,"Gilroy400");
             font-weight: 400;
             font-size: 17px;
             line-height: 25px;

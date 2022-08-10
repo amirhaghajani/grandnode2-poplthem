@@ -41,7 +41,7 @@ $leftRightReverse: if($dir==rtl,left,right);
             line-height: 37.5px;
             text-align: left;
             font-weight: 500;
-            font-family: "Gilroy500";
+            font-family: if($dir==rtl,$persianFont,"Gilroy500");
             max-width: 316px;
         }
     }
@@ -62,7 +62,7 @@ $leftRightReverse: if($dir==rtl,left,right);
             line-height: 30.36px;
             margin-bottom: 1.875rem;
             margin-top: 0;
-            font-family: "Inter";
+            font-family: if($dir==rtl,$persianFont,"Inter");
             text-align: $leftRight;
         }
     }

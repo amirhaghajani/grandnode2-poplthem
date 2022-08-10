@@ -39,7 +39,7 @@ $leftRightRevers: if($dir==rtl,left, right);
             line-height: 1.25;
             text-transform: inherit;
             text-align: center;
-            font-family: Gilroy500;
+            font-family: if($dir==rtl,$persianFont,"Gilroy500");
 
 
             margin: 0;
