@@ -142,6 +142,9 @@ my_homeSlider_script.sliderStart_next=function(texts,counter, allVideos ){
                                     (myVediosDivMarginTop * -1);
     //if(mySliderDivHeight > computedMySliderDivHeight) 
     mySliderDiv.style.height = mySliderDivHeight +'px';
+        if (viewport.w>=768 && viewport.w<=991){
+            mySliderDiv.style.height = (mySliderDivHeight+50) + 'px';
+        }
     
 
 

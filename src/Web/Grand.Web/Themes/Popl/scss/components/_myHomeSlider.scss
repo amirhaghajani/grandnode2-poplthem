@@ -7,6 +7,7 @@ $leftRightReverse: if($dir==rtl,left,right);
     text-align: center;
     position: relative;
     height: calc(100vh - 130px);
+    padding-top: 20px;
 
     .popl_container {
         height: 100%;
@@ -176,7 +177,11 @@ $leftRightReverse: if($dir==rtl,left,right);
 
 
     .btnBuyNowContainer {
-        text-align: $leftRight;
+        text-align: center;
+
+        @include bps(991) {
+            text-align: $leftRight;
+        }
     }
 
     .btnBuyNow {
@@ -242,15 +247,21 @@ $leftRightReverse: if($dir==rtl,left,right);
 
 
 .banner__advantages {
-    padding-#{$leftRight}: 22%;
-    padding-#{$leftRightReverse}: 0;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
+    margin: 0 1.5rem;
+
 
     @include bp {
-        left: 25px;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    @include bps(991) {
+        width: 100%;
+        margin: 0 25px;
     }
 
     .bannner__links {
