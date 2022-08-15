@@ -1003,6 +1003,11 @@ html .myHomeCustomersSection .customers__gallery .customers__thumb {
   justify-content: center;
   margin-bottom: 3.4375rem;
 }
+@media (min-width: 991px) {
+  html .myHomeCustomersSection .customers__gallery .customers__thumb {
+    width: calc(25% - 28px);
+  }
+}
 html .myHomeCustomersSection .customers__gallery .customers__thumb.order_1 {
   order: 1;
 }
@@ -1646,10 +1651,35 @@ html .features__tabs .tabs-nav li {
   list-style: none;
   margin-bottom: 0rem;
 }
+html .features__tabs .tabs-nav li:before {
+  background-repeat: no-repeat;
+  content: "";
+  width: 57px;
+  position: absolute;
+  height: 10px;
+  bottom: -16px;
+  left: 57%;
+  background-size: contain;
+  transform: translate(-50%);
+  background-image: url(/popl/images/icon/down_arrow.png);
+}
 html .features__tabs .tabs-nav li.tab-active {
   background-color: #e8e8e8;
   border-radius: 11px;
   outline: none;
+}
+html .features__tabs .tabs-nav li.tab-active:after {
+  content: " ";
+  bottom: -18px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 24px 32px 0 32px;
+  border-color: #e8e8e8 transparent transparent transparent;
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%);
 }
 html .features__tabs .tabs-nav li a {
   padding: 1.025rem 19px 1.35rem;
@@ -3381,10 +3411,35 @@ html[dir=rtl] .features__tabs .tabs-nav li {
   list-style: none;
   margin-bottom: 0rem;
 }
+html[dir=rtl] .features__tabs .tabs-nav li:before {
+  background-repeat: no-repeat;
+  content: "";
+  width: 57px;
+  position: absolute;
+  height: 10px;
+  bottom: -16px;
+  left: 57%;
+  background-size: contain;
+  transform: translate(-50%);
+  background-image: url(/popl/images/icon/down_arrow.png);
+}
 html[dir=rtl] .features__tabs .tabs-nav li.tab-active {
   background-color: #e8e8e8;
   border-radius: 11px;
   outline: none;
+}
+html[dir=rtl] .features__tabs .tabs-nav li.tab-active:after {
+  content: " ";
+  bottom: -18px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 24px 32px 0 32px;
+  border-color: #e8e8e8 transparent transparent transparent;
+  position: absolute;
+  z-index: 2;
+  transform: translate(-50%);
 }
 html[dir=rtl] .features__tabs .tabs-nav li a {
   padding: 1.025rem 19px 1.35rem;

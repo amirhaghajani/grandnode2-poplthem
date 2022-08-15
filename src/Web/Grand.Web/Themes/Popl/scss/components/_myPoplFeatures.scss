@@ -79,10 +79,37 @@ $leftRightRevers: if($dir==rtl,left, right);
             list-style: none;
             margin-bottom: 0rem;
 
+            &:before {
+                background-repeat: no-repeat;
+                content: "";
+                width: 57px;
+                position: absolute;
+                height: 10px;
+                bottom: -16px;
+                left: 57%;
+                background-size: contain;
+                transform: translate(-50%);
+                background-image: url(/popl/images/icon/down_arrow.png);
+            }
+
             &.tab-active {
                 background-color: #e8e8e8;
                 border-radius: 11px;
                 outline: none;
+
+                &:after {
+                    content: " ";
+                    bottom: -18px;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 24px 32px 0 32px;
+                    border-color: #e8e8e8 transparent transparent transparent;
+                    position: absolute;
+                    z-index: 2;
+                    transform: translate(-50%);
+                }
             }
 
             a {

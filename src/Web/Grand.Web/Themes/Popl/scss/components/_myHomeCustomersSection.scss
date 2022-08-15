@@ -1,7 +1,7 @@
 ﻿
 .myHomeCustomersSection {
     padding: 0 0 5.625rem;
-    margin-top:100px;
+    margin-top: 100px;
 
     .popl_container {
         padding: 0 3.125rem;
@@ -33,6 +33,10 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 3.4375rem;
+
+            @include bps(991) {
+                width: calc(25% - 28px);
+            }
 
             &.order_1 {
                 order: 1;
