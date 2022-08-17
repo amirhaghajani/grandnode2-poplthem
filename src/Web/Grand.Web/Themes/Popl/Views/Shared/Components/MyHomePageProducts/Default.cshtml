@@ -2,12 +2,29 @@
 @inject DisplayOrderHomePage order 
 
 <div class="myHomePageProductContainer">
-    <h2 class="generalTitle text-center">@Loc["HomePage.Products"]</h2>
+    
+    <div class="container featured_products product-grid">
+        <div class="sixteen columns center homepage_content">
+            <div class="title-grid">
+                <p>Free Shipping on Orders Over $55</p>
+                <a href="/collections/best-sellers">
+                    <h2 class="title">Our Products</h2>
+                </a>
+                <p>Worldwide Shipping and tracking</p>
+            </div>
+        </div>
+    </div>
+
     <div class="catalog_product_items_container">
         @foreach (var item in Model)
         {
             <partial name="_MyCatalogProductView" model="item" />
         }
+    </div>
+
+
+    <div class="btn-container" style="margin-bottom: 100px">
+        <a href="/shop-all" class="btn-feature shadow" style="background-color: #000000">See All Products</a>
     </div>
 </div>
 

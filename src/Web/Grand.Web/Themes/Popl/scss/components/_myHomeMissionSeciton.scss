@@ -28,6 +28,13 @@ $leftRightReverse: if($dir==rtl,left,right);
             text-align: $leftRight;
             opacity: 0.6;
             text-transform: uppercase;
+
+            @include bp {
+                font-size: 25px;
+                letter-spacing: 2.2px;
+                line-height: 50px;
+                opacity: .7;
+            }
         }
     }
 
@@ -35,25 +42,52 @@ $leftRightReverse: if($dir==rtl,left,right);
         margin-bottom: 5rem;
         z-index: 2;
 
+        @include bps(991) {
+            order: 2;
+            flex: 0 0 calc(43% - 15px);
+        }
+
         h2 {
             font-size: 30px;
             letter-spacing: -0.56px;
             line-height: 37.5px;
-            text-align: left;
+            text-align: $leftRight;
             font-weight: 500;
             font-family: if($dir==rtl,$persianFont,"Gilroy500");
             max-width: 316px;
+
+            @include bp {
+                width: 100%;
+            }
+
+            @include bps(991) {
+                font-size: 45px;
+                letter-spacing: -.8px;
+                line-height: 50px;
+                max-width: 864px;
+            }
         }
     }
 
     .mission__wrap {
         display: flex;
         flex-direction: column;
+
+        @include bps(991) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
     .mission__content {
         margin-bottom: 3.875rem;
         order: 2;
+
+        @include bps(991) {
+            order: 1;
+            width: calc(44% - 15px);
+            flex: 0 0 calc(44% - 15px);
+        }
 
 
         p {
@@ -70,6 +104,11 @@ $leftRightReverse: if($dir==rtl,left,right);
     .mission__gallery {
         order: 1;
         z-index: 0;
+
+        @include bps(991) {
+            order: 2;
+            z-index: -4;
+        }
 
         .d-desktop {
             display: none;

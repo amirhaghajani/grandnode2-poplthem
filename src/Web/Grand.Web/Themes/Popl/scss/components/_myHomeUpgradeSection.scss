@@ -20,6 +20,21 @@ $leftRightRevers: if($dir==rtl,left, right);
             justify-content: center;
             flex-direction: column;
         }
+
+        @include bps(991) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .upgrade__thumb {
+            margin-bottom: .9375rem;
+
+            @include bps(991) {
+                width: 50%;
+                flex: 0 0 50%;
+                margin: 0;
+            }
+        }
     }
 
     .d-desktop {
@@ -32,20 +47,30 @@ $leftRightRevers: if($dir==rtl,left, right);
 
         img {
             width: 315.89px;
-            margin-left: 68px;
+            margin-#{$leftRight}: 68px;
             filter: drop-shadow(0 28.64px 45.49px #00000040);
 
             @include bp {
-                margin-left: 0;
+                margin-#{$leftRight}: 0;
+            }
+
+            @include bps(991) {
+                margin-#{$leftRight}: 68px;
             }
         }
     }
 
     .upgrade__content {
-        text-align: left;
+        text-align: $leftRight;
 
         @include bp {
             text-align: center;
+        }
+
+        @include bps(991) {
+            width: 50%;
+            flex: 0 0 50%;
+            text-align: $leftRight;
         }
 
         h1 {
@@ -55,7 +80,7 @@ $leftRightRevers: if($dir==rtl,left, right);
             font-family: if($dir==rtl,$persianFont,"Gilroy500");
             font-weight: 500;
             margin-bottom: 3.125rem;
-            text-align: left;
+            text-align: $leftRight;
             max-width: 279px;
 
             @include bp {

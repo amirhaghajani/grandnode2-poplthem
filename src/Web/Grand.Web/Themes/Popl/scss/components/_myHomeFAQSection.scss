@@ -23,8 +23,12 @@ $leftRightReverse: if($dir==rtl,left,right);
         text-align: center;
 
         h1 {
-            text-align: $leftRight;
+            font-size: 30px;
             margin-#{$leftRight}: 17px;
+
+            @include bp {
+                font-size: 45px;
+            }
         }
     }
 
@@ -61,7 +65,7 @@ $leftRightReverse: if($dir==rtl,left,right);
             font-size: 24px;
             line-height: 32px;
             letter-spacing: -0.4px;
-            text-align:justify;
+            text-align: justify;
         }
 
         p {
@@ -70,6 +74,7 @@ $leftRightReverse: if($dir==rtl,left,right);
             font-size: 1.25em;
             line-height: 1.2;
             color: #000000;
+            text-align:$leftRight;
         }
 
         .l-accordion__content {

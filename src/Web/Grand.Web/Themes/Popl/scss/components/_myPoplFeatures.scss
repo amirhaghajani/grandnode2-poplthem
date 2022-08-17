@@ -7,6 +7,10 @@ $leftRightRevers: if($dir==rtl,left, right);
     padding: 1.125rem 0 0rem;
     background: rgba(196,196,196,.1);
     position: relative;
+
+    @include bp {
+        padding: 1.125rem 25px 0rem;
+    }
 }
 
 .features__head {
@@ -73,8 +77,8 @@ $leftRightRevers: if($dir==rtl,left, right);
         list-style: disc outside;
 
         li {
-            width: 26%;
-            flex: 0 0 26%;
+            width: 25%;
+            flex: 0 0 25%;
             position: relative;
             list-style: none;
             margin-bottom: 0rem;
@@ -126,6 +130,10 @@ $leftRightRevers: if($dir==rtl,left, right);
                 position: relative;
                 top: 0.125rem;
                 background-color: transparent;
+
+                @include bp {
+                    padding: 1.25rem 0 1.625rem;
+                }
             }
 
             .tab__thumbnail {
@@ -133,7 +141,34 @@ $leftRightRevers: if($dir==rtl,left, right);
                 height: 1.5625rem;
                 margin: 0 auto;
                 margin-bottom: 0.625rem;
+
+                @include bp {
+                    width: 1.955rem;
+                    height: 1.9775rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
+
+            .tab__title {
+                color: #121212;
+                font-weight: 400;
+                font-family: if($dir==rtl,$persianFont,"Gilroy400");
+                letter-spacing: -.4px;
+                font-size: 12px;
+                line-height: 14.12px;
+
+
+                @include bp {
+                    font-weight: 600;
+                    font-family: if($dir==rtl,$persianFont,"Gilroy600");
+                    letter-spacing: -.33px;
+                    font-size: 17.29px;
+                    line-height: 20.58px;
+                }
+            }
+
 
             img {
                 width: 19px;
@@ -153,6 +188,10 @@ $leftRightRevers: if($dir==rtl,left, right);
 
         .tab__content {
             transition: opacity 1s ease-in;
+
+            @include bps(991) {
+                margin-left: 5.1875rem;
+            }
         }
 
         .tab__content-head {
@@ -173,23 +212,51 @@ $leftRightRevers: if($dir==rtl,left, right);
             margin-bottom: 1.8125rem;
             color: #121212;
             text-align: $leftRight;
+
+            p {
+                @include bp {
+                    width: 49%;
+                }
+            }
         }
 
         .tab__content-wrap {
             display: flex;
             flex-direction: column;
 
+            @include bps(991) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
             .tab__left {
                 order: 2;
+
+                @include bps(991) {
+                    width: calc(45% - 32px);
+                    flex: 0 0 calc(45% - 32px);
+                    order: 1;
+                }
             }
 
             .tab__right {
                 order: 1;
 
+                @include bps(991) {
+                    order: 2;
+                    width: calc(55% - 32px);
+                    flex: 0 0 calc(55% - 32px);
+                }
+
                 .tab__thumb {
                     max-width: 17.5625rem;
                     margin: 0 auto;
                     line-height: 0;
+
+                    @include bps(991) {
+                        max-width: 32rem;
+                        margin-top: -4.375rem;
+                    }
                 }
 
                 .tab__btn-wrap {
