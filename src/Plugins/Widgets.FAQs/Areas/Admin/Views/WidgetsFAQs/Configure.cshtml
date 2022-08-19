@@ -1,0 +1,114 @@
+﻿@model ConfigurationModel
+@inject AdminAreaSettings adminAreaSettings
+@{
+    Layout = "_ConfigurePlugin";
+}
+@{
+    //page title
+    ViewBag.Title = Loc["Widgets.FAQs.Manage"];
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel light form-fit">
+            <div class="x_title">
+                <div class="caption">
+                    <i class="fa fa-sitemap"></i>
+                    @Loc["Widgets.FAQs.Manage"]
+                </div>
+                <div class="actions btn-group btn-group-devided util-btn-margin-bottom-5">
+                    <a href="@Url.Action("Create", "WidgetsFAQs")" class="btn green">
+                        <i class="fa fa-plus"></i><span class="hidden-xs"> @Loc["Admin.Common.AddNew"] </span>
+                    </a>
+                </div>
+            </div>
+            <div class="x_content">
+                <div id="faq-grid"></div>
+            </div>
+            <div class="x_content form">
+                <partial name="_Settings.cshtml" model="Model" />
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#faq-grid").kendoGrid({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "@Html.Raw(Url.Action("List", "WidgetsFAQs"))",
+                        type: "POST",
+                        dataType: "json"
+                    },
+                    destroy: {
+                        url: "@Html.Raw(Url.Action("Delete", "WidgetsFAQs"))",
+                        type: "POST",
+                        dataType: "json",
+                    }
+                },
+                schema: {
+                    data: "Data",
+                    total: "Total",
+                    errors: "Errors",
+                    model: {
+                        id: "Id",
+                    }
+                },
+                error: function (e) {
+                    display_kendoui_grid_error(e);
+                    // Cancel the changes
+                    this.cancelChanges();
+                },
+                pageSize: @(adminAreaSettings.DefaultGridPageSize),
+                serverPaging: true,
+                serverFiltering: true,
+                serverSorting: true
+            },
+            pageable: {
+                refresh: true,
+                pageSizes: [@(adminAreaSettings.GridPageSizes)]
+            },
+            editable: {
+                confirmation: true,
+                mode: "inline"
+            },
+            scrollable: false,
+            columns: [{
+                field: "Question",
+                title: "@Loc["Widgets.FAQs.Fields.Question"]",
+                width: 300,
+                template: '<a class="k-link" href="Edit/#=Id#">#=Question#</a>'
+            }, {
+                field: "Answer",
+                title: "@Loc["Widgets.FAQs.Fields.Answer"]",
+                width: 300
+            }, {
+                field: "DisplayOrder",
+                title: "@Loc["Widgets.FAQs.Fields.DisplayOrder"]",
+                attributes: { style: "text-align:center" },
+                width: 100
+            }, {
+                field: "IsImportantQuestion",
+                title: "@Loc["Widgets.FAQs.Fields.IsImportantQuestion"]",
+                width: 100,
+                minScreenWidth: 500,
+                headerAttributes: { style: "text-align:center" },
+                attributes: { style: "text-align:center" },
+                template: '# if(IsImportantQuestion) {# <i class="fa fa-check" aria-hidden="true" style="color:green"></i> #} else {# <i class="fa fa-times" aria-hidden="true" style="color:red"></i> #} #'
+            },
+            {
+                command: [
+                    {
+                        name: "destroy",
+                        text: "@Loc["Admin.Common.Delete"]"
+                    }
+                ],
+                width: 200
+            }
+            ]
+        });
+    });
+</script>
+

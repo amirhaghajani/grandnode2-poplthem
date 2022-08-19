@@ -1742,6 +1742,9 @@ html .features__tabs .tabs-nav li.tab-active:after {
   z-index: 2;
   transform: translate(-50%);
 }
+html .features__tabs .tabs-nav li.tab-active:before {
+  content: none;
+}
 html .features__tabs .tabs-nav li a {
   padding: 1.025rem 19px 1.35rem;
   color: inherit;
@@ -3709,6 +3712,9 @@ html[dir=rtl] .features__tabs .tabs-nav li.tab-active:after {
   position: absolute;
   z-index: 2;
   transform: translate(-50%);
+}
+html[dir=rtl] .features__tabs .tabs-nav li.tab-active:before {
+  content: none;
 }
 html[dir=rtl] .features__tabs .tabs-nav li a {
   padding: 1.025rem 19px 1.35rem;

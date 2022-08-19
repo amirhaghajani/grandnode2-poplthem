@@ -114,6 +114,10 @@ $leftRightRevers: if($dir==rtl,left, right);
                     z-index: 2;
                     transform: translate(-50%);
                 }
+
+                &:before {
+                    content:none;
+                }
             }
 
             a {
