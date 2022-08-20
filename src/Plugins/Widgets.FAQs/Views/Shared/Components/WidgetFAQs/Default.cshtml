@@ -1,4 +1,39 @@
-﻿@page
-@model Widgets.FAQs.Views.Shared.Components.WidgetFAQs.DefaultModel
-@{
-}
+﻿@model Widgets.FAQs.Models.PublicInfoModel
+
+
+<div>
+    <div class="myHomeFAQSection">
+        <div class="popl_container">
+            <div class="faq__warp">
+                <div class="faq__head onlyEnglish">
+                    <h1 class="l-title _forDesk">@Loc["zap.homepage.faq.head"]</h1>
+                    <h1 class="l-title _forMob">@Loc["zap.homepage.faq.head"]</h1>
+                    <a class="faq__head--small d-desktop" href="https://popl.co/a/faq" title="See all FAQs" target="_blank">See all FAQs</a>
+                </div>
+                <div class="faq__head onlyPersian">
+                    <h1 class="l-title _forDesk">@Loc["zap.homepage.faq.head"]</h1>
+                    <h1 class="l-title _forMob">@Loc["zap.homepage.faq.head"]</h1>
+                    <a class="faq__head--small d-desktop" href="https://popl.co/a/faq" title="See all FAQs" target="_blank">See all FAQs</a>
+                </div>
+
+                <div class="faq__accordion">
+                    @foreach(var item in Model.FAQsList){
+                        <div class="l-accordion">
+                            <div class="l-accordion__title">
+                                <h3>@item.Question</h3>
+                            </div>
+                            <div class="l-accordion__content">
+                                <p>
+                                    @item.Answer
+                                </p>
+                            </div>
+                        </div>
+                    }
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="Components/WidgetFAQs/MyHomeFAQSectionScript" />

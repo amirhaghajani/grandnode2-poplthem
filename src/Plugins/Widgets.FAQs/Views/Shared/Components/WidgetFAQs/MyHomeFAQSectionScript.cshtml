@@ -1,0 +1,60 @@
+﻿
+<script asp-location="Footer" asp-order="300">
+
+//    $('.l-accordion__title ').on('click', function(e) {
+//    var accordion = $(this).parent('.l-accordion');
+//    if ($(accordion).hasClass('is-open')) {
+//        $(accordion).removeClass('is-open');
+//        $('.l-accordion__content').slideUp();
+//    } else {
+//        $('.l-accordion__content').slideUp();
+//        $(accordion).find('.l-accordion__content').slideDown();
+//        $(".l-accordion").removeClass('is-open');
+//        $(accordion).addClass('is-open');
+//    }
+//});
+
+
+window.addEventListener('load', function(){
+
+    myHomeFAQSection.init();
+});
+
+var myHomeFAQSection = {};
+
+myHomeFAQSection.init = function(){
+    var titles = document.getElementsByClassName('l-accordion__title');
+    for(var i=0;i<titles.length; i++){
+        var title = titles[i];
+        title.addEventListener("click", myHomeFAQSection.toggleAccordion);
+    }
+}
+
+myHomeFAQSection.toggleAccordion=function(sender_accordionTitle){
+
+    var accordion = this.parentNode;
+    if(accordion.classList.contains('is-open')){
+
+        //myHomeFAQSection.closeAllAccordions();
+        accordion.classList.remove('is-open');
+
+
+    }else{
+        //myHomeFAQSection.closeAllAccordions();
+        accordion.classList.add('is-open');
+        //setTimeout(function () { accordion.scrollIntoView(); }, 100);
+    }
+
+}
+
+myHomeFAQSection.closeAllAccordions=function(){
+    var accordions = document.getElementsByClassName('l-accordion');
+    for(var i=0;i<accordions.length; i++){
+        var accordion = accordions[i];
+        accordion.classList.remove('is-open');
+    }
+}
+
+
+
+</Script>

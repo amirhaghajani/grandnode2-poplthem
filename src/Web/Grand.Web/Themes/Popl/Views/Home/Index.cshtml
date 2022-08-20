@@ -70,7 +70,8 @@
 
     @await Component.InvokeAsync("MyHomeUpgradeSection")
     @await Component.InvokeAsync("MyHomeMissionSeciton")
-    @await Component.InvokeAsync("MyHomeFAQSection")
+    @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_faqs" })
+    @*@await Component.InvokeAsync("MyHomeFAQSection")*@
     @await Component.InvokeAsync("MyHomeContactSection")
     
     @await Component.InvokeAsync("MyPoplFooter")

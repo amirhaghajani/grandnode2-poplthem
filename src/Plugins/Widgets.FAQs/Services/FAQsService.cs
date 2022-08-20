@@ -24,10 +24,9 @@ namespace Widgets.FAQs.Services
         /// </summary>
         /// <remarks>
         /// {0} : Store id
-        /// {1} : Slider type
-        /// {2} : Object entry / categoryId || collectionId
+        /// {1} : Is important
         /// </remarks>
-        public const string FAQS_MODEL_KEY = "Grand.faqs-{0}-{1}-{2}";
+        public const string FAQS_MODEL_KEY = "Grand.faqs-{0}-{1}";
         public const string FAQS_PATTERN_KEY = "Grand.faqs";
         #endregion
 
@@ -61,14 +60,14 @@ namespace Widgets.FAQs.Services
         {
             return await Task.FromResult(_reporistoryFAQ.Table
                 .OrderByDescending(x => x.IsImportantQuestion)
-                .ThenBy(x => x.FAQId)
+                .ThenBy(x => x.DisplayOrder)
                 .ToList());
         }
 
         public async Task<IList<FAQ>> GetFaqs(bool? onlyImportantQuestions)
         {
             string cacheKey = string.Format(FAQS_MODEL_KEY, _workContext.CurrentStore.Id, 
-                            onlyImportantQuestions.HasValue ? '-' : onlyImportantQuestions.ToString());
+                            onlyImportantQuestions.HasValue ? onlyImportantQuestions.ToString() : '-' );
 
             return await _cacheManager.GetAsync(cacheKey, async () =>
             {
@@ -76,7 +75,7 @@ namespace Widgets.FAQs.Services
                             where onlyImportantQuestions.HasValue ? s.IsImportantQuestion==onlyImportantQuestions.Value : true
                             select s;
 
-                var items = query.ToList();
+                var items = query.OrderBy(f=>f.DisplayOrder).ToList();
                 return await Task.FromResult(items.Where(c => _aclService.Authorize(c, _workContext.CurrentStore.Id)).ToList());
             });
         }
