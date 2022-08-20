@@ -13,6 +13,8 @@ namespace Widgets.FAQs.Models
             this.FAQsList = new List<PublicFAQ>();
         }
 
+        public bool ShowLinkToAllFAQs { get; set; }
+
         public IList<PublicFAQ> FAQsList { get; set; }
         public class PublicFAQ
         {

@@ -38,5 +38,13 @@ namespace Grand.Web.Themes.Popl.Endpoints
                             new { productId = @"\w+", shoppingCartTypeId = @"\d+" },
                             new[] { "Grand.Web.Controllers" });
         }
+
+        private void RegisterFAQRoute(IEndpointRouteBuilder endpointRouteBuilder, string pattern)
+        {
+            endpointRouteBuilder.MapControllerRoute("FAQ",
+                            pattern + "FAQ",
+                            new { controller = "FAQ", action = "Index" },
+                            new[] { "Grand.Web.Controllers" });
+        }
     }
 }

@@ -27,11 +27,25 @@ namespace Widgets.FAQs.Components
 
         public async Task<IViewComponentResult> InvokeAsync(string widgetZone, object additionalData = null)
         {
-            IList<FAQ> answers =await this._faqService.GetFaqs(widgetZone == "home_page_faqs");
+            IList<FAQ> answers;
+
+            var inHomePage = widgetZone == "home_page_faqs";
+
+            if (inHomePage)
+            {
+                answers = await this._faqService.GetFaqs(true);
+            }
+            else
+            {
+                answers = await this._faqService.GetFaqs();
+            }
+
 
             var model = new PublicInfoModel();
 
-            foreach(var item in answers)
+            model.ShowLinkToAllFAQs = inHomePage;
+
+            foreach (var item in answers)
             {
                 model.FAQsList.Add(new PublicInfoModel.PublicFAQ {
                     Question = item.GetTranslation(x=>x.Question, _workContext.WorkingLanguage.Id),
