@@ -59,20 +59,23 @@
     @await Component.InvokeAsync("HomePageBlog")
     @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_bottom" })*@
 
-    @await Component.InvokeAsync("MyHomeSlider")
-    @await Component.InvokeAsync("MyHomeCustomersSection")
+    <div id="mainLayouContainer">
+        @await Component.InvokeAsync("MyHomeSlider")
+        @await Component.InvokeAsync("MyHomeCustomersSection")
 
-    @await Component.InvokeAsync("MyPoplFeatures")
-    @await Component.InvokeAsync("MyHomePageProducts")
-    @await Component.InvokeAsync("MyHomeWhoItWork")
-    @*@await Component.InvokeAsync("MyHomeTeams")*@
+        @await Component.InvokeAsync("MyPoplFeatures")
+        @await Component.InvokeAsync("MyHomePageProducts")
+        @await Component.InvokeAsync("MyHomeWhoItWork")
+        @*@await Component.InvokeAsync("MyHomeTeams")*@
 
 
-    @await Component.InvokeAsync("MyHomeUpgradeSection")
-    @await Component.InvokeAsync("MyHomeMissionSeciton")
-    @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_faqs" })
-    @*@await Component.InvokeAsync("MyHomeFAQSection")*@
-    @await Component.InvokeAsync("MyHomeContactSection")
+        @await Component.InvokeAsync("MyHomeUpgradeSection")
+        @await Component.InvokeAsync("MyHomeMissionSeciton")
+        @await Component.InvokeAsync("Widget", new { widgetZone = "home_page_faqs" })
+        @*@await Component.InvokeAsync("MyHomeFAQSection")*@
+        @await Component.InvokeAsync("MyHomeContactSection")
+
+    </div>
     
     @await Component.InvokeAsync("MyPoplFooter")
 </div>

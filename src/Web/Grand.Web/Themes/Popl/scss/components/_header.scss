@@ -1,24 +1,32 @@
 ﻿
 $dir : null !default;
 
-.header{
-    display:flex;
-    align-items:center;
-    position:fixed;
-    top:0;
-    background:#fff;
-    width:100%;
-    z-index:1000;
-    max-height:89px;
-    
-    @include bp{
-        padding:0 70px;
+.header {
+    max-width: 1440px;
+    margin: auto;
+
+    .header-main-container {
+        max-width: 1440px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        background: #fff;
+        width: 100%;
+        z-index: 1000;
+        max-height: 89px;
+
+        @include bp {
+            padding: 0 70px;
+        }
     }
 }
 
 
 .main-nav-container {
     order: 1;
+    
 
     @include bp {
         order: 2;

@@ -1,4 +1,11 @@
 ﻿
+
+$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightRevers: if($dir==rtl,left, right);
+$rightLeft: if($dir==rtl,left,right);
+
 .myHomePageProductContainer {
     padding: 60px 45px;
 
@@ -181,12 +188,20 @@
             box-shadow: 6px 10px 25px #00000030, 0 6px 20px #00000030;
         }
 
-        .add-cart-text {
-            margin-right: 12px;
-            padding-right: 12px;
-            border-right: 1px solid rgba(255,255,255,0.38);
+        .add-cart-text.onlyPersian {
+            margin-left: 12px;
+            padding-left: 12px;
+            border-left: 1px solid rgba(255,255,255,0.38);
             font-size: 12px;
             white-space: nowrap;
+        }
+
+        .add-cart-text.onlyEnglish {
+                margin-right: 12px;
+                padding-right: 12px;
+                border-right: 1px solid rgba(255,255,255,0.38);
+                font-size: 12px;
+                white-space: nowrap;
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-@import "helpers/_all.scss";
+﻿@import "helpers/_all.scss";
 
 @import "base/_normalize.scss";
 @import "base/_global.scss";
@@ -24,8 +23,9 @@ html, body, #app {
     min-height: 100vh;
 }
 
-body #app, .header {
+body #mainLayouContainer {
     max-width: 1440px;
+    margin: auto;
 }
 
 body #app {
@@ -34,15 +34,13 @@ body #app {
     text-transform: none;
     color: #333;
     line-height: 1.6em;
-    /*overflow: auto; به خاطر استیکی برداشته شد*/ 
+    /*overflow: auto; به خاطر استیکی برداشته شد*/
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
     scroll-behavior: smooth;
     font-family: DM Sans,sans-serif;
     font-size: 16px;
-    
-    
     margin: auto;
     padding: 85px 0 0 0;
 }
@@ -157,6 +155,7 @@ html[dir="rtl"] {
     }
 
     @import "components/_header.scss";
+    @import "components/_myHomeCustomersSection.scss";
     @import "components/_myHomePageProduct.scss";
     @import "components/_myHomeSlider.scss";
     @import "components/_myPoplFeatures.scss";

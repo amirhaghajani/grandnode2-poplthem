@@ -108,13 +108,17 @@
         
         @if (isCustomProduct)
         {
+
+
             <button class="btnAddToCart" 
                 onclick="AxiosCart.quickview_product('@quickviewurl');return false;">
                 @*<b-icon icon="cart2" class="mx-auto d-sm-none d-block"></b-icon>*@
-                <span class="add-cart-text d-sm-block d-none">Custome</span>
+                <span class="add-cart-text onlyEnglish">Custome</span>
+                <span class="add-cart-text onlyPersian">Custome</span>
                 <span class="sr-only">Custome buy</span>
                 <span>@Model.ProductPrice.Price</span>
             </button>
+            
         }
         else
         {
@@ -123,10 +127,13 @@
 
             <button class="btnAddToCart" 
                 onclick="AxiosCart.myAddproducttocart_catalog(this, '@myAddtocartlink', '@Model.ShowQty', '@Model.Id', '@quickviewurl','@uniqueId');">
-                <span class="add-cart-text d-sm-block d-none">@(addToCartText)</span>
+
+                <span class="add-cart-text onlyEnglish">@(addToCartText)</span>
+                <span class="add-cart-text onlyPersian">@(addToCartText)</span>
                 <span class="sr-only">AddToCart</span>
                 <span>@Model.ProductPrice.Price</span>
             </button>
+            
         }
     </div>
 

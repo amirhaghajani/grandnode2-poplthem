@@ -1,4 +1,9 @@
 ﻿
+$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightRevers: if($dir==rtl,left, right);
+
 .myHomeTeams {
     padding: 2.5rem 0 3.8125rem;
     background-color: #fff !important;
