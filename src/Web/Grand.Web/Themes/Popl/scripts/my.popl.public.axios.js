@@ -1,5 +1,8 @@
 ﻿
-AxiosCart.myAddproducttocart_catalog = function (event, urladd, showqty, productid, quickviewUrl, colorSectionContainerDataUniqueId) {
+AxiosCart.myAddproducttocart_catalog = function (btn, urladd, showqty, productid, quickviewUrl, colorSectionContainerDataUniqueId) {
+
+
+
 
     var selectedColor = document.querySelector(`[data-uniqueid="${colorSectionContainerDataUniqueId}"] .selected`);
 
@@ -21,17 +24,40 @@ AxiosCart.myAddproducttocart_catalog = function (event, urladd, showqty, product
             urladd += '?quantity=' + qty;
         }
     }
+
     if (this.loadWaiting != false) {
         return;
     }
+
     this.setLoadWaiting(true);
+
+
+    //befor send -----------------------------------
+    btn.classList.add('disabled');
+    btn.disabled = true;
+
+    var spanAddToCard1 = btn.children[0];//انگلیسی
+    spanAddToCard1.classList.remove('fadeInDown');
+    spanAddToCard1.classList.add('zoomOut');
+
+    spanAddToCard2 = btn.children[1];//فارسی
+    spanAddToCard2.classList.remove('fadeInDown');
+    spanAddToCard2.classList.add('zoomOut');
+
+    var svg = btn.children[2];
+
+
+    //-------------------------------------------------------
+
 
     axios({
         url: urladd,
         method: 'post',
         data: fd,
     }).then(function (response) {
-        this.AxiosCart.mySuccess_process(response, quickviewUrl);
+        this.AxiosCart.mySuccess_process(response, quickviewUrl, svg);
+
+
     }).catch(function (error) {
         error.axiosFailure;
     }).then(function () {
@@ -42,10 +68,23 @@ AxiosCart.myAddproducttocart_catalog = function (event, urladd, showqty, product
             vmorder.getModel();
         }
         this.AxiosCart.resetLoadWaiting();
+
+        setTimeout(function () {
+            spanAddToCard1.classList.remove('zoomOut');
+            spanAddToCard1.classList.add('fadeInDown');
+            spanAddToCard2.classList.remove('zoomOut');
+            spanAddToCard2.classList.add('fadeInDown');
+
+            svg.classList.remove('checkmark-active');
+
+            btn.classList.remove('disabled');
+            btn.disabled = false;
+
+        }, 1000);
     });
 };
 
-AxiosCart.mySuccess_process = function (response, quickViewUrl) {
+AxiosCart.mySuccess_process = function (response, quickViewUrl, svgTik) {
     if (response.data.updatetopwishlistsectionhtml) {
         if (document.querySelector('.wishlist-qty'))
             document.querySelector('.wishlist-qty').innerHTML = response.data.updatetopwishlistsectionhtml;
@@ -58,7 +97,6 @@ AxiosCart.mySuccess_process = function (response, quickViewUrl) {
         vm.flycart = newfly;
         vm.flycartitems = newfly.Items;
         vm.flycartindicator = newfly.TotalProducts;
-
     }
     if (response.data.updatetopcartsectionhtml !== undefined) {
         vm.flycartindicator = response.data.updatetopcartsectionhtml;
@@ -99,6 +137,8 @@ AxiosCart.mySuccess_process = function (response, quickViewUrl) {
                 }
                 Reservation.fillAvailableDates(Reservation.currentYear, Reservation.currentMonth, param, true);
             }
+
+            svgTik.classList.add('checkmark-active');
 
         }
         else {
