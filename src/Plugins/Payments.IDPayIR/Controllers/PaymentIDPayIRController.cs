@@ -80,16 +80,27 @@ namespace Payments.IDPayIR.Controllers
         /// <exception cref="GrandException"></exception>
         public async Task<IActionResult> PaymentHandler()
         {
-            
+            if (_paymentService.LoadPaymentMethodBySystemName("Payments.IDPayIR") is not IDPayIRPaymentProvider processor ||
+                !processor.IsPaymentMethodActive(_paymentSettings))
+                throw new GrandException("IdPay.Ir module cannot be loaded");
+
             var status = QueryString("status");
             var track_id = QueryString("track_id");
             var transactionId = QueryString("id");
             var order_id = QueryString("order_id");
 
-            if (_paymentService.LoadPaymentMethodBySystemName("Payments.IDPayIR") is not IDPayIRPaymentProvider processor ||
-                !processor.IsPaymentMethodActive(_paymentSettings))
-                throw new GrandException("IdPay.Ir module cannot be loaded");
 
+
+            var orderNumberGuid = new Guid(order_id);
+            Order order = await _orderService.GetOrderByGuid(orderNumberGuid);
+            var paymentTransaction = await _paymentTransactionService.GetByOrdeGuid(orderNumberGuid);
+
+            if (paymentTransaction.TransactionStatus == TransactionStatus.Paid)
+            {
+                throw new GrandException("سفارش در حال حاضر پرداخت شده است");
+            }
+
+            //-----------------------
             IdPayVerifyPaymentRespons response = 
                 await _IdPayHttpClient.VerifyPayment(this._idPayIRPaymentSettings.ApiToken, transactionId, order_id,
                 this._idPayIRPaymentSettings.UseSandbox);
@@ -99,9 +110,7 @@ namespace Payments.IDPayIR.Controllers
             if (!response.PaymentPerformed) throw new Exception("پرداخت انجام نشده است" + response.ErrorMessage);
             if (response.OrderId != order_id || response.PaymentTransactionId != transactionId) throw new Exception("بین درخواست و پاسخ همخوانی وجود ندارد");
 
-            var orderNumberGuid = new Guid(order_id);
-            Order order = await _orderService.GetOrderByGuid(orderNumberGuid);
-            var paymentTransaction = await _paymentTransactionService.GetByOrdeGuid(orderNumberGuid);
+            
 
             var sb = new StringBuilder();
             sb.AppendLine("TransactionId:" + order_id);

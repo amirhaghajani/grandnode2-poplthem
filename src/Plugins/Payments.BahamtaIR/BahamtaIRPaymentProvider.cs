@@ -12,6 +12,7 @@ using Grand.Domain.Orders;
 using Grand.Domain.Payments;
 using Grand.Domain.Shipping;
 using Grand.Infrastructure;
+using Grand.SharedKernel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.DependencyInjection;
@@ -144,9 +145,9 @@ namespace Payments.BahamtaIR
             var response = await this._bahamtaHttpClient
                                 .CreateBahamtaPayment(this._bahamtaIRPaymentSettings.ApiToken, request, isTest:isTest);
 
-            if (response.HasError) throw new Exception(response.ErrorMessage);
+            if (response.HasError) throw new GrandException(response.ErrorMessage);
 
-            await _userFieldService.SaveField(order, "BahamtaPayment_Id_Link",response.PaymentTransactionId + "_" + response.PaymentLink);
+            await _userFieldService.SaveField(order, "BahamtaPayment_Id_Link", response.PaymentLink);
 
             _httpContextAccessor.HttpContext.Response.Redirect(response.PaymentLink);
         }

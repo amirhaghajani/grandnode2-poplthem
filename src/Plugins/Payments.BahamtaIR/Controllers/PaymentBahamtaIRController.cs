@@ -14,6 +14,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
+using Payments.BahamtaIR.Helper;
 using Payments.BahamtaIR.Services;
 using System.Globalization;
 
@@ -80,31 +81,51 @@ namespace Payments.BahamtaIR.Controllers
         /// <exception cref="GrandException"></exception>
         public async Task<IActionResult> PaymentHandler()
         {
-            
-            var status = QueryString("status");
-            var track_id = QueryString("track_id");
-            var transactionId = QueryString("id");
-            var order_id = QueryString("order_id");
-
             if (_paymentService.LoadPaymentMethodBySystemName("Payments.BahamtaIR") is not BahamtaIRPaymentProvider processor ||
                 !processor.IsPaymentMethodActive(_paymentSettings))
                 throw new GrandException("Bahamta.Ir module cannot be loaded");
 
-            BahamtaVerifyPaymentRespons response = 
-                await _BahamtaHttpClient.VerifyPayment(this._bahamtaIRPaymentSettings.ApiToken, transactionId, order_id,isTest:false);
+            var status = QueryString("state");
+            var order_id = QueryString("reference");
 
-            if (response.HasError) throw new Exception(response.ErrorMessage);
+            if(status== "error")
+            {
+                var errorMessage = QueryString("error_message");
+                throw new GrandException("خطا در پرداخت - " + errorMessage);
+            }
 
-            if (!response.PaymentPerformed) throw new Exception("پرداخت انجام نشده است" + response.ErrorMessage);
-            if (response.OrderId != order_id || response.PaymentTransactionId != transactionId) throw new Exception("بین درخواست و پاسخ همخوانی وجود ندارد");
+            if(status != "wait_for_confirm")
+            {
+                throw new GrandException("خطا در پرداخت - وضعیت باید منتظر تایید باشد current status: " + status);
+            }
+
+
+
+            
 
             var orderNumberGuid = new Guid(order_id);
             Order order = await _orderService.GetOrderByGuid(orderNumberGuid);
+            if (order == null) throw new GrandException("سفارش یافت نشد");
+            
             var paymentTransaction = await _paymentTransactionService.GetByOrdeGuid(orderNumberGuid);
+            if (paymentTransaction.TransactionStatus == TransactionStatus.Paid)
+            {
+                throw new GrandException("سفارش در حال حاضر پرداخت شده است");
+            }
+
+            //--------------
+            BahamtaVerifyPaymentRespons response =
+                await _BahamtaHttpClient.VerifyPayment(this._bahamtaIRPaymentSettings.ApiToken, order_id, order.MyRoundTotalAmountOfOrder());
+
+            if (response.HasError) throw new GrandException(response.ErrorMessage);
+
+            if (!response.PaymentPerformed) throw new GrandException("پرداخت انجام نشده است" + response.ErrorMessage);
+            if (response.OrderId != order_id) throw new GrandException("بین درخواست و پاسخ همخوانی وجود ندارد");
+            //--------------
 
             var sb = new StringBuilder();
-            sb.AppendLine("TransactionId:" + order_id);
-            sb.AppendLine("track_id:" + track_id);
+            sb.AppendLine("ReferenceId:" + order_id);
+            sb.AppendLine("track_id:" + response.PaymentTransactionId);
 
             //order note
             await _orderService.InsertOrderNote(new OrderNote {

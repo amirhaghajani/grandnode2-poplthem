@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using Automatonymous;
+using Grand.SharedKernel;
+using Newtonsoft.Json;
 using Payments.BahamtaIR.Helper;
 using System;
 using System.Collections.Generic;
@@ -41,10 +43,11 @@ namespace Payments.BahamtaIR.Services
                 case System.Net.HttpStatusCode.OK:
                     {
                         var jsonAnswer = JsonConvert.DeserializeAnonymousType(getAnswer.content, 
-                                new { ok = true,
+                                new { 
+                                    ok = true,
                                     error="error key",
                                     result = new { 
-                                        payment_url="" 
+                                        payment_url= "" 
                                     } 
                                 });
 
@@ -56,19 +59,28 @@ namespace Payments.BahamtaIR.Services
                             };
                         }
 
-                        if (jsonAnswer.ok)
+                        if (!jsonAnswer.ok)
                         {
                             return new BahamtaCreatePaymentResponse {
-                                PaymentLink = jsonAnswer!.result.payment_url,
-                                HasError = false,
-                                ErrorMessage = string.Empty
+                                HasError = true,
+                                ErrorMessage = _foundPaymentRequestError(jsonAnswer.error)
+                            };
+                        }
+
+                        if (jsonAnswer.result == null || jsonAnswer.result.payment_url == null)
+                        {
+                            return new BahamtaCreatePaymentResponse {
+                                HasError = true,
+                                ErrorMessage = "Invalid response: " + getAnswer.content
                             };
                         }
 
                         return new BahamtaCreatePaymentResponse {
-                            HasError = true,
-                            ErrorMessage = _foundPaymentRequestError(jsonAnswer.error)
+                            PaymentLink = jsonAnswer.result.payment_url,
+                            HasError = false,
+                            ErrorMessage = string.Empty
                         };
+
                     }
 
                 default:
@@ -87,10 +99,10 @@ namespace Payments.BahamtaIR.Services
             {
                 var sb = new StringBuilder(baseUrl);
                 sb.Append($"?api_key={apiKey}");
-                sb.Append($"?reference={request.order_id}");
-                sb.Append($"?amount_irr={request.amount}");
-                sb.Append($"?payer_mobile={request.mail}");
-                sb.Append($"?callback_url={request.callback}");
+                sb.Append($"&reference={request.order_id}");
+                sb.Append($"&amount_irr={request.amount}");
+                sb.Append($"&payer_mobile={request.mail}");
+                sb.Append($"&callback_url={request.callback}");
                 
                 return sb.ToString();
             }
@@ -99,11 +111,11 @@ namespace Payments.BahamtaIR.Services
         }
 
 
-        public async Task<BahamtaVerifyPaymentRespons> VerifyPayment(string apiKey, string paymentTransactionId, string order_id, bool isTest)
+        public async Task<BahamtaVerifyPaymentRespons> VerifyPayment(string apiKey, string order_id, string paymemntAmountIRR)
         {
-            addHttpHeaders(this._client, apiKey, isTest);
-            string content = __createJsonContent(paymentTransactionId, order_id);
-            var postAnswer = await post(this._client, BahamtaIRHelper.BahamtaVerifyPaymentURL, content);
+            addHttpHeaders(this._client);
+            string url = __createUrl(BahamtaIRHelper.BahamtaVerifyPaymentURL, apiKey, order_id, paymemntAmountIRR);
+            var postAnswer = await get(this._client, url);
 
 
             switch (postAnswer.response.StatusCode)
@@ -112,45 +124,48 @@ namespace Payments.BahamtaIR.Services
                 case System.Net.HttpStatusCode.OK:
                     {
                         var jsonAnswer = JsonConvert.DeserializeAnonymousType(postAnswer.content, 
-                            new { status = 1,
-                                track_id = "",
-                                id="",
-                                order_id="",
-                                amount="",
-                                date="",
-                                payment=new
+                            new { 
+                                ok=true,
+                                error = "<ERROR_KEY>",
+                                result = new
                                 {
-                                    track_id="",
-                                    amount="",
-                                    card_no="",
-                                    hashed_card_no="",
-                                    date=""
-                                },
-                                verify = new
-                                {
-                                    date=""
+                                    state= "paid",
+                                    total= 1000000,
+                                    wage= 5000,
+                                    gateway= "sep",
+                                    terminal= "11223344",
+                                    pay_ref= "GmshtyjwKSu5lKOLquYrzO9BqjUMb/TPUK0qak/iVs",
+                                    pay_trace= "935041",
+                                    pay_pan= "123456******1234",
+                                    pay_cid= "77CB1B455FB5F60415A7A02E4502134CFD72DBF6D1EC8FA2B48467DFB124AA75A",
+                                    pay_time= "2019-11-12T16:39:57.686436+03:30"
                                 }
                             });
-                        var status = getVerifyStatusCode().FirstOrDefault(s => s.StatusCode == jsonAnswer.status);
-                        if (status == null)
-                            return new BahamtaVerifyPaymentRespons {
-                                PaymentPerformed=false,
-                                HasError=true,
-                                ErrorMessage= "Unknown response status code"
-                            };
-                            
-                        
-                        if(!status.IsPaymentPerformed)
+                        if (jsonAnswer == null)
+                        {
+                            throw new GrandException("پاسخ غیر متعارف از باهمتا هنگام تایید پرداخت - " + postAnswer.content);
+                        }
+                        if (!jsonAnswer.ok)
+                        {
+                            if(jsonAnswer.error==null) throw new GrandException("پاسخ غیر متعارف از باهمتا هنگام تایید پرداخت - " + postAnswer.content);
+
                             return new BahamtaVerifyPaymentRespons {
                                 PaymentPerformed = false,
                                 HasError = true,
-                                ErrorMessage = status.Description
+                                ErrorMessage = _foundVerifyRequestError(jsonAnswer.error),
                             };
+
+                        }
+
+                        if (jsonAnswer.result == null || jsonAnswer.result.pay_trace==null)
+                        {
+                            throw new GrandException("پاسخ غیر متعارف از باهمتا هنگام تایید پرداخت - " + postAnswer.content);
+                        }
 
                         return new BahamtaVerifyPaymentRespons {
                             PaymentPerformed = true,
-                            OrderId=jsonAnswer.order_id,
-                            PaymentTransactionId = jsonAnswer.id,
+                            OrderId = order_id,
+                            PaymentTransactionId = jsonAnswer.result.pay_trace,
                             HasError = false,
                             ErrorMessage = String.Empty
                         };
@@ -167,11 +182,13 @@ namespace Payments.BahamtaIR.Services
                     }
             }
 
-            static string __createJsonContent(string paymentTransactionId, string order_id)
+            static string __createUrl(string baseUrl, string api_key, string order_id, string paymemntAmountIRR)
             {
-                var contect = new {id= paymentTransactionId, order_id= order_id };
-                string jsonSerialized = JsonConvert.SerializeObject(contect);
-                return jsonSerialized;
+                var sb = new StringBuilder(baseUrl);
+                sb.Append($"?api_key={api_key}");
+                sb.Append($"&reference={order_id}");
+                sb.Append($"&amount_irr={paymemntAmountIRR}");
+                return sb.ToString();
             }
         }
 
@@ -271,80 +288,54 @@ namespace Payments.BahamtaIR.Services
         {
             public string ErrorKey { get; set; }
             public string ErrorDescription { get; set; }
-        } 
+        }
 
 
-        private List<BahamtaVerifyPaymentStatusCode> getVerifyStatusCode()
+        private string _foundVerifyRequestError(string errorCode)
         {
-            return new List<BahamtaVerifyPaymentStatusCode> {
-                new BahamtaVerifyPaymentStatusCode {
-                    StatusCode = 1,
-                    Description="پرداخت انجام نشده است",
-                    IsPaymentPerformed=false
+            var errors = _getVerifyRequestErrors();
+            var found = errors.Find(f => f.ErrorKey.Equals(errorCode, StringComparison.CurrentCultureIgnoreCase));
+            if (found != null) return found.ErrorDescription;
+            return errorCode;
+        }
+        private List<BahamtaServiceErrorCode> _getVerifyRequestErrors()
+        {
+            return new List<BahamtaServiceErrorCode> {
+                new BahamtaServiceErrorCode {
+                    ErrorKey="NOT_AUTHORIZED",
+                    ErrorDescription = "گرچه ساختار کلید درست است، اما هیچ فروشنده‌ای با این کلید در وب پی ثبت نشده است",
                 },
-                new BahamtaVerifyPaymentStatusCode {
-                    StatusCode = 2,
-                    Description="پرداخت ناموفق بوده است",
-                    IsPaymentPerformed=false
+                new BahamtaServiceErrorCode {
+                    ErrorKey="INVALID_AMOUNT",
+                    ErrorDescription = "پارامتر مبلغ فرستاده نشده و یا نادرست فرستاده شده است",
                 },
-                new BahamtaVerifyPaymentStatusCode {
-                    StatusCode = 3,
-                    Description="خطا رخ داده است",
-                    IsPaymentPerformed=false
+                new BahamtaServiceErrorCode {
+                    ErrorKey="INVALID_REFERENCE",
+                    ErrorDescription = "شماره شناسه پرداخت ناردست است",
                 },
-                new BahamtaVerifyPaymentStatusCode {
-                    StatusCode = 4,
-                    Description="بلوکه شده",
-                    IsPaymentPerformed=false
+                new BahamtaServiceErrorCode {
+                    ErrorKey="INVALID_PARAM",
+                    ErrorDescription = "خطایی در مقادیر فرستاده شده وجود دارد که جزو موارد ثبت شده نیست",
                 },
-                new BahamtaVerifyPaymentStatusCode {
-                    StatusCode = 5,
-                    Description="برگشت به پرداخت کننده",
-                    IsPaymentPerformed=false
+                new BahamtaServiceErrorCode {
+                    ErrorKey="UNKNOWN_BILL",
+                    ErrorDescription = "پرداختی با شماره شناسه فرستاده شده ثبت نشده است",
                 },
-                new BahamtaVerifyPaymentStatusCode {
-                    StatusCode = 6,
-                    Description="برگشت خورده سیستمی",
-                    IsPaymentPerformed=false
+                new BahamtaServiceErrorCode {
+                    ErrorKey="MISMATCHED_DATA",
+                    ErrorDescription = "مبلغ اعلام شده با آنچه در وب پی ثبت شده است مطابقت ندارد",
                 },
-                new BahamtaVerifyPaymentStatusCode {
-                    StatusCode = 7,
-                    Description="انصراف از پرداخت",
-                    IsPaymentPerformed=false
+                new BahamtaServiceErrorCode {
+                    ErrorKey="NOT_CONFIRMED",
+                    ErrorDescription = "این پرداخت تأیید نشد",
                 },
-                new BahamtaVerifyPaymentStatusCode {
-                    StatusCode = 8,
-                    Description="به درگاه پرداخت منتقل شد",
-                    IsPaymentPerformed=false
+                new BahamtaServiceErrorCode {
+                    ErrorKey="SERVICE_ERROR",
+                    ErrorDescription = "خطای داخلی سرویس رخ داده است",
                 },
-                new BahamtaVerifyPaymentStatusCode {
-                    StatusCode = 10,
-                    Description="در انتظار تایید پرداخت",
-                    IsPaymentPerformed=false
-                },
-                new BahamtaVerifyPaymentStatusCode {
-                    StatusCode = 100,
-                    Description="پرداخت تایید شده است",
-                    IsPaymentPerformed=true
-                },
-                new BahamtaVerifyPaymentStatusCode {
-                    StatusCode = 101,
-                    Description="پرداخت قبلا تایید شده است",
-                    IsPaymentPerformed=true
-                },
-                new BahamtaVerifyPaymentStatusCode {
-                    StatusCode = 200,
-                    Description="به دریافت کننده واریز شد",
-                    IsPaymentPerformed=true
-                },
+
             };
         }
 
-        private class BahamtaVerifyPaymentStatusCode
-        {
-            public int StatusCode { get; set; }
-            public string Description { get; set; }
-            public bool IsPaymentPerformed { get; set; }
-        }
     }
 }

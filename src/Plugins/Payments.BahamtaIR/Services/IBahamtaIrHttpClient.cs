@@ -10,7 +10,7 @@ namespace Payments.BahamtaIR.Services
     {
         Task<BahamtaCreatePaymentResponse> CreateBahamtaPayment(string apiKey, BahamtaDataNeedForCreatePayment request, bool isTest);
 
-        Task<BahamtaVerifyPaymentRespons> VerifyPayment(string apiKey, string paymentTransactionId, string order_id, bool isTest);
+        Task<BahamtaVerifyPaymentRespons> VerifyPayment(string apiKey, string order_id, string paymemntAmountIRR);
     }
 
     public class BahamtaDataNeedForCreatePayment
