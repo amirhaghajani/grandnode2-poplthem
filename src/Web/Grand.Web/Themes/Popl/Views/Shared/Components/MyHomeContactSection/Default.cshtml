@@ -5,17 +5,20 @@
       <div class="myHomeContact">
          <div class="popl_container">
             <div class="contact__head">
-               <h1 class="l-title">Get in touch with us</h1>
+                    <h1 class="l-title">@Loc["zap.homepage.contact_form.header"]</h1>
             </div>
             <div class="contact__sub">
-               <p>We'd love to hear from you!</p>
+                    <p>@Loc["zap.homepage.contact_form.sub_header"]</p>
             </div>
             <div class="contact__form" id="form_fields">
                <div class="formfield__wrapper">
-                  <div class="input__wrapper"> <input type="text" id="contactFormName" name="contactFormName" placeholder="Name" autocapitalize="words" value="" required="required"> <input type="email" id="contactFormEmail" name="contactFormEmail" placeholder="Email address" autocorrect="off" autocapitalize="off" value="" required="required"></div>
-                  <textarea rows="5" id="contactFormMessage" name="contactFormMessage" placeholder="Your Message" required="required"></textarea>
+                  <div class="input__wrapper">
+                            <input type="text" id="contactFormName" name="contactFormName" placeholder="@Loc["zap.homepage.contact_form.name"]" autocapitalize="words" value="" required="required">
+                            <input type="email" id="contactFormEmail" name="contactFormEmail" placeholder="@Loc["zap.homepage.contact_form.email"]" autocorrect="off" autocapitalize="off" value="" required="required">
+                  </div>
+                        <textarea rows="5" id="contactFormMessage" name="contactFormMessage" placeholder="@Loc["zap.homepage.contact_form.message"]" required="required"></textarea>
                </div>
-               <input type="submit" class="submit l-btn" id="customSubmit" value="Send">
+               <input type="submit" class="submit l-btn" id="customSubmit" value="@Loc["zap.homepage.contact_form.send"]">
             </div>
             <div class="thank-you-message" id="formStatus" style="display:none; text-align:center;"></div>
          </div>

@@ -1,7 +1,7 @@
 ﻿@model CheckoutShippingAddressModel
 <div class="checkout-data">
     @await Component.InvokeAsync("Widget", new { widgetZone = "checkout_shipping_address_top" })
-    @if (Model.BillToTheSameAddress)
+    @*@if (Model.BillToTheSameAddress)
     {
         <div class="bill-to-same-address">
             <p class="selector">
@@ -12,7 +12,7 @@
                 </label>
             </p>
         </div>
-    }
+    }*@
 
     <partial name="_ShippingAddressPickupInStore" model="Model" />
     <div v-show="vmorder.shippingContainer">
