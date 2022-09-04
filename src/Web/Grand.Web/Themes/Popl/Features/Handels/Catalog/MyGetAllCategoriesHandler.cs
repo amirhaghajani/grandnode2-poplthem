@@ -82,27 +82,7 @@ namespace Grand.Web.Themes.Popl.Features.Handels.Catalog
             model.PagingFilteringContext = options.command;
 
             //price ranges
-            //category breadcrumb
-            if (_catalogSettings.CategoryBreadcrumbEnabled)
-            {
-                model.DisplayCategoryBreadcrumb = true;
-
-                string breadcrumbCacheKey = string.Format(CacheKeyConst.CATEGORY_BREADCRUMB_KEY,
-                    request.Category.Id,
-                    string.Join(",", customer.GetCustomerGroupIds()),
-                    storeId,
-                    languageId);
-                model.CategoryBreadcrumb = await _cacheBase.GetAsync(breadcrumbCacheKey, async () =>
-                    (await _categoryService.GetCategoryBreadCrumb(request.Category))
-                    .Select(catBr => new CategoryModel
-                    {
-                        Id = catBr.Id,
-                        Name = catBr.GetTranslation(x => x.Name, languageId),
-                        SeName = catBr.GetSeName(languageId)
-                    })
-                    .ToList()
-                );
-            }
+            
 
             //subcategories
             var subCategories = new List<CategoryModel.SubCategoryModel>();
@@ -141,54 +121,11 @@ namespace Grand.Web.Themes.Popl.Features.Handels.Catalog
 
             model.SubCategories = subCategories;
 
-            //featured products
-            if (!_catalogSettings.IgnoreFeaturedProducts)
-            {
-                //We cache a value indicating whether we have featured products
-                IPagedList<Product> featuredProducts = null;
-                string cacheKey = string.Format(CacheKeyConst.CATEGORY_HAS_FEATURED_PRODUCTS_KEY, request.Category.Id,
-                    string.Join(",", customer.GetCustomerGroupIds()), storeId);
-
-                var hasFeaturedProductsCache = await _cacheBase.GetAsync<bool?>(cacheKey, async () =>
-                {
-                    featuredProducts = (await _mediator.Send(new GetSearchProductsQuery()
-                    {
-                        PageSize = _catalogSettings.LimitOfFeaturedProducts,
-                        CategoryIds = new List<string> { request.Category.Id },
-                        Customer = request.Customer,
-                        StoreId = storeId,
-                        VisibleIndividuallyOnly = true,
-                        FeaturedProducts = true
-                    })).products;
-                    return featuredProducts.Any();
-                });
-
-                if (hasFeaturedProductsCache.Value && featuredProducts == null)
-                {
-                    //cache indicates that the category has featured products
-                    featuredProducts = (await _mediator.Send(new GetSearchProductsQuery()
-                    {
-                        PageSize = _catalogSettings.LimitOfFeaturedProducts,
-                        CategoryIds = new List<string> { request.Category.Id },
-                        Customer = request.Customer,
-                        StoreId = storeId,
-                        VisibleIndividuallyOnly = true,
-                        FeaturedProducts = true
-                    })).products;
-                }
-                if (featuredProducts != null && featuredProducts.Any())
-                {
-                    model.FeaturedProducts = (await _mediator.Send(new GetProductOverview()
-                    {
-                        Products = featuredProducts,
-                    })).ToList();
-                }
-            }
 
 
             var categoryIds = new List<string>();
 
-            //categoryIds.Add(request.Category.Id);
+            if(request.Category.SeName!= "shop-all") categoryIds.Add(request.Category.Id);
 
             if (_catalogSettings.ShowProductsFromSubcategories)
             {
