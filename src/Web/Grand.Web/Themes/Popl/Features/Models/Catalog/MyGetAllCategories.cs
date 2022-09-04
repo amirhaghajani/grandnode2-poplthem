@@ -4,11 +4,12 @@ using Grand.Domain.Directory;
 using Grand.Domain.Localization;
 using Grand.Domain.Stores;
 using Grand.Web.Models.Catalog;
+using Grand.Web.Themes.Popl.Models.Catalog;
 using MediatR;
 
 namespace Grand.Web.Themes.Popl.Features.Models.Catalog
 {
-    public class MyGetAllCategories : IRequest<CategoryModel>
+    public class MyGetAllCategories : IRequest<List<MyProductOverviewModel>>
     {
         public Customer Customer { get; set; }
         public Store Store { get; set; }

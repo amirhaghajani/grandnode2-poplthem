@@ -53,16 +53,27 @@ namespace Grand.Web.Themes.Popl.Routing
             if (entityUrl == null)
                 return null;
 
-            if (slug.ToString().ToLower() != Grand.Web.Themes.Popl.MyConfig.shopAllUrl)
-                return null;
+            if (slug.ToString().ToLower() == Grand.Web.Themes.Popl.MyConfig.shopAllUrl)
+            {
+                values["controller"] = "MyCatalog";
+                values["action"] = "MyCategoryShopAll";
+                values["categoryid"] = entityUrl.EntityId;
+                values["SeName"] = entityUrl.Slug;
 
-            values["controller"] = "MyCatalog";
-            values["action"] = "MyCategoryShopAll";
-            values["categoryid"] = entityUrl.EntityId;
-            values["SeName"] = entityUrl.Slug;
+                return values;
+            }
 
-            return values;
+            switch (entityUrl.EntityName.ToLowerInvariant())
+            {
+                case "category":
+                    values["controller"] = "MyCatalog";
+                    values["action"] = "MyCategoryShopAll";
+                    values["categoryid"] = entityUrl.EntityId;
+                    values["SeName"] = entityUrl.Slug;
+                    return values;
+            }
 
+            return null;
         }
     }
 }

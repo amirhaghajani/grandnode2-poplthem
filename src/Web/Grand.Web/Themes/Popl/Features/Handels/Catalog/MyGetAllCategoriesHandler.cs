@@ -16,13 +16,15 @@ using Grand.Web.Features.Models.Products;
 using Grand.Web.Models.Catalog;
 using Grand.Web.Models.Media;
 using Grand.Web.Themes.Popl.Features.Models.Catalog;
+using Grand.Web.Themes.Popl.Features.Models.Products;
+using Grand.Web.Themes.Popl.Models.Catalog;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 
 namespace Grand.Web.Themes.Popl.Features.Handels.Catalog
 {
-    public class MyGetAllCategoriesHandler : IRequestHandler<MyGetAllCategories, CategoryModel>
+    public class MyGetAllCategoriesHandler : IRequestHandler<MyGetAllCategories, List<MyProductOverviewModel>>
     {
         private readonly IMediator _mediator;
         private readonly ICacheBase _cacheBase;
@@ -56,7 +58,7 @@ namespace Grand.Web.Themes.Popl.Features.Handels.Catalog
             _mediaSettings = mediaSettings;
         }
 
-        public async Task<CategoryModel> Handle(MyGetAllCategories request, CancellationToken cancellationToken)
+        public async Task<List<MyProductOverviewModel>> Handle(MyGetAllCategories request, CancellationToken cancellationToken)
         {
             var model = request.Category.ToModel(request.Language);
             var customer = request.Customer;
@@ -210,7 +212,7 @@ namespace Grand.Web.Themes.Popl.Features.Handels.Catalog
                 PageSize = request.Command.PageSize
             }));
 
-            model.Products = (await _mediator.Send(new GetProductOverview()
+            List<MyProductOverviewModel> myProducts = (await _mediator.Send(new MyGetProductOverview()
             {
                 PrepareSpecificationAttributes = _catalogSettings.ShowSpecAttributeOnCatalogPages,
                 Products = products.products,
@@ -223,7 +225,7 @@ namespace Grand.Web.Themes.Popl.Features.Handels.Catalog
                 products.filterableSpecificationAttributeOptionIds,
                 _specificationAttributeService, _httpContextAccessor.HttpContext.Request.GetDisplayUrl(), request.Language.Id);
 
-            return model;
+            return myProducts;
         }
     }
 }

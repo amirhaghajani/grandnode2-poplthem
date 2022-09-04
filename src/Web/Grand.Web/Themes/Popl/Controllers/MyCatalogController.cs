@@ -24,6 +24,7 @@ using Grand.Web.Features.Models.Vendors;
 using Grand.Web.Models.Catalog;
 using Grand.Web.Models.Vendors;
 using Grand.Web.Themes.Popl.Features.Models.Catalog;
+using Grand.Web.Themes.Popl.Models.Catalog;
 using MediatR;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
@@ -150,7 +151,7 @@ namespace Grand.Web.Controllers
 
             //aha.com -------------------------------------------------
             //model
-            var model = await _mediator.Send(new MyGetAllCategories() {
+            List<MyProductOverviewModel> model = await _mediator.Send(new MyGetAllCategories() {
                 Category = category,
                 Command = command,
                 Currency = _workContext.WorkingCurrency,
