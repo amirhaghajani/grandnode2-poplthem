@@ -24,7 +24,7 @@ using Microsoft.AspNetCore.Http.Extensions;
 
 namespace Grand.Web.Themes.Popl.Features.Handels.Catalog
 {
-    public class MyGetAllCategoriesHandler : IRequestHandler<MyGetAllCategories, List<MyProductOverviewModel>>
+    public class MyGetAllCategoriesHandler : IRequestHandler<MyGetAllCategories, MyCategoryModel>
     {
         private readonly IMediator _mediator;
         private readonly ICacheBase _cacheBase;
@@ -58,9 +58,9 @@ namespace Grand.Web.Themes.Popl.Features.Handels.Catalog
             _mediaSettings = mediaSettings;
         }
 
-        public async Task<List<MyProductOverviewModel>> Handle(MyGetAllCategories request, CancellationToken cancellationToken)
+        public async Task<MyCategoryModel> Handle(MyGetAllCategories request, CancellationToken cancellationToken)
         {
-            var model = request.Category.ToModel(request.Language);
+            CategoryModel model = request.Category.ToModel(request.Language);
             var customer = request.Customer;
             var storeId = request.Store.Id;
             var languageId = request.Language.Id;
@@ -86,43 +86,7 @@ namespace Grand.Web.Themes.Popl.Features.Handels.Catalog
 
             //subcategories
             var subCategories = new List<CategoryModel.SubCategoryModel>();
-            foreach (var x in (await _categoryService.GetAllCategoriesByParentCategoryId(request.Category.Id)).Where(x => !x.HideOnCatalog))
-            {
-                var subCatModel = new CategoryModel.SubCategoryModel
-                {
-                    Id = x.Id,
-                    Name = x.GetTranslation(y => y.Name, languageId),
-                    SeName = x.GetSeName(languageId),
-                    Description = x.GetTranslation(y => y.Description, languageId),
-                    Flag = x.Flag,
-                    FlagStyle = x.FlagStyle
-                };
-                //prepare picture model
-                var picture = !string.IsNullOrEmpty(x.PictureId) ? await _pictureService.GetPictureById(x.PictureId) : null;
-                subCatModel.PictureModel = new PictureModel
-                {
-                    Id = x.PictureId,
-                    FullSizeImageUrl = await _pictureService.GetPictureUrl(x.PictureId),
-                    ImageUrl = await _pictureService.GetPictureUrl(x.PictureId, _mediaSettings.CategoryThumbPictureSize),
-                    Style = picture?.Style,
-                    ExtraField = picture?.ExtraField
-                };
-                //"title" attribute
-                subCatModel.PictureModel.Title = (picture != null && !string.IsNullOrEmpty(picture.GetTranslation(x => x.TitleAttribute, request.Language.Id))) ?
-                    picture.GetTranslation(x => x.TitleAttribute, request.Language.Id) :
-                    string.Format(_translationService.GetResource("Media.Category.ImageLinkTitleFormat"), x.Name);
-                //"alt" attribute
-                subCatModel.PictureModel.AlternateText = (picture != null && !string.IsNullOrEmpty(picture.GetTranslation(x => x.AltAttribute, request.Language.Id))) ?
-                    picture.GetTranslation(x => x.AltAttribute, request.Language.Id) :
-                    string.Format(_translationService.GetResource("Media.Category.ImageAlternateTextFormat"), x.Name);
-
-                subCategories.Add(subCatModel);
-            };
-
-            model.SubCategories = subCategories;
-
-
-
+            
             var categoryIds = new List<string>();
 
             if(request.Category.SeName!= "shop-all") categoryIds.Add(request.Category.Id);
@@ -162,7 +126,12 @@ namespace Grand.Web.Themes.Popl.Features.Handels.Catalog
                 products.filterableSpecificationAttributeOptionIds,
                 _specificationAttributeService, _httpContextAccessor.HttpContext.Request.GetDisplayUrl(), request.Language.Id);
 
-            return myProducts;
+
+            MyCategoryModel answer = new MyCategoryModel();
+            answer.Products = myProducts;
+            answer.SeName = model.SeName;
+
+            return answer;
         }
     }
 }

@@ -1,14 +1,20 @@
-﻿@model IList<MyProductOverviewModel>
+﻿@model MyCategoryModel
 @inject SeoSettings seoSettings
 @inject IPageHeadBuilder pagebuilder
 @{
     Layout = "_PoplSingleColumn";
-
 }
 
+
+<h1 class="myCatalogePageHeader">@Model.SeName</h1>
+
+<div class="feature_divider"></div>
+
 <div class="catalog_product_items_container">
-    @foreach (var item in Model)
+    @foreach (var item in Model.Products)
     {
+        item.IsInHomePage = false;
         <partial name="_MyCatalogProductView" model="item" />
     }
 </div>
+@await Component.InvokeAsync("MyPoplFooter")

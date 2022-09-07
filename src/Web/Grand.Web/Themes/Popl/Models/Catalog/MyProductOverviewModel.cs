@@ -5,6 +5,7 @@ namespace Grand.Web.Themes.Popl.Models.Catalog
 {
     public class MyProductOverviewModel: ProductOverviewModel
     {
+        public bool IsInHomePage { get; set; }
         public new IList<MyProductAttributeModel> ProductAttributeModels { get; set; }
 
         public class MyProductAttributeModel:ProductAttributeModel

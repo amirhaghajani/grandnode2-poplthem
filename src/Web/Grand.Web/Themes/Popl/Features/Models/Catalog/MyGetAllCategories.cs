@@ -9,7 +9,7 @@ using MediatR;
 
 namespace Grand.Web.Themes.Popl.Features.Models.Catalog
 {
-    public class MyGetAllCategories : IRequest<List<MyProductOverviewModel>>
+    public class MyGetAllCategories : IRequest<MyCategoryModel>
     {
         public Customer Customer { get; set; }
         public Store Store { get; set; }

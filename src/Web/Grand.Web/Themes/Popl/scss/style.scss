@@ -140,6 +140,8 @@ html {
     @import "components/_myHomeContactSection.scss";
 
     @import "components/_myPoplFooter.scss";
+
+    @import "pages/myCatalogPage.scss";
 }
 
 html[dir="rtl"] {
@@ -168,6 +170,9 @@ html[dir="rtl"] {
     @import "components/_myHomeContactSection.scss";
 
     @import "components/_myPoplFooter.scss";
+
+
+    @import "pages/myCatalogPage.scss";
 }
 
 

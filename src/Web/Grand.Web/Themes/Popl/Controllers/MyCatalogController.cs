@@ -151,7 +151,7 @@ namespace Grand.Web.Controllers
 
             //aha.com -------------------------------------------------
             //model
-            List<MyProductOverviewModel> model = await _mediator.Send(new MyGetAllCategories() {
+            MyCategoryModel model = await _mediator.Send(new MyGetAllCategories() {
                 Category = category,
                 Command = command,
                 Currency = _workContext.WorkingCurrency,

@@ -18,6 +18,7 @@
     <div class="catalog_product_items_container">
         @foreach (var item in Model)
         {
+            item.IsInHomePage = true;
             <partial name="_MyCatalogProductView" model="item" />
         }
     </div>
