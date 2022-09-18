@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNetCore.Http.Extensions
+@inject Grand.Business.Storage.Interfaces.IPictureService pictureService
+@inject SeoSettings seoSettings
+@{
+    Layout = "_PoplSingleColumn";
+}
+
+@section meta {
+    @if (seoSettings.OpenGraphMetaTags)
+    {
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="@seoSettings.DefaultTitle" />
+        <meta property="og:description" content="@Html.Encode(seoSettings.DefaultMetaDescription)" />
+        @if (!String.IsNullOrWhiteSpace(seoSettings.StorePictureId))
+        {
+            var picture = await pictureService.GetPictureUrl(seoSettings.StorePictureId);
+            <meta property="og:image" content="@picture" />
+        }
+        <meta property="og:url" content="@this.Url.ActionContext.HttpContext.Request.GetEncodedUrl()" />
+    }
+    @if (seoSettings.TwitterMetaTags)
+    {
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:site" content="@seoSettings.DefaultTitle" />
+        <meta property="twitter:title" content="@seoSettings.DefaultTitle" />
+        <meta property="twitter:description" content="@Html.Encode(seoSettings.DefaultMetaDescription)" />
+        @if (!String.IsNullOrWhiteSpace(seoSettings.StorePictureId))
+        {
+            var picture = await pictureService.GetPictureUrl(seoSettings.StorePictureId);
+            <meta property="twitter:image" content="@picture" />
+        }
+
+        <meta property="twitter:url" content="@this.Url.ActionContext.HttpContext.Request.GetEncodedUrl()" />
+    }
+}
+
+<h1>why zap</h1>

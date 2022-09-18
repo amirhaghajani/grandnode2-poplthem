@@ -22,6 +22,7 @@ namespace Grand.Web.Common.TagHelpers
         {
             _htmlHelper = htmlHelper;
             _captchaSettings = captchaSettings;
+            _captchaSettings.ReCaptchaTheme = "dark";
         }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)

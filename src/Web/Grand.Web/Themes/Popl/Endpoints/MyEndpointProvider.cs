@@ -23,6 +23,7 @@ namespace Grand.Web.Themes.Popl.Endpoints
             }
 
             RegisterAddToCartRoute(endpointRouteBuilder, pattern);
+            RegisterCommonRoute(endpointRouteBuilder, pattern);
         }
 
         public int Priority => 1;
@@ -39,12 +40,15 @@ namespace Grand.Web.Themes.Popl.Endpoints
                             new[] { "Grand.Web.Controllers" });
         }
 
-        private void RegisterFAQRoute(IEndpointRouteBuilder endpointRouteBuilder, string pattern)
+        private void RegisterCommonRoute(IEndpointRouteBuilder endpointRouteBuilder, string pattern)
         {
-            endpointRouteBuilder.MapControllerRoute("FAQ",
-                            pattern + "FAQ",
-                            new { controller = "FAQ", action = "Index" },
-                            new[] { "Grand.Web.Controllers" });
+
+            //contact us
+            endpointRouteBuilder.MapControllerRoute("MyContactUsFromHome",
+                            pattern + "mycontactusfromhome",
+                            new { controller = "MyCommon", action = "MyContactUsFromHome" });
         }
-    }
+
+
+        }
 }

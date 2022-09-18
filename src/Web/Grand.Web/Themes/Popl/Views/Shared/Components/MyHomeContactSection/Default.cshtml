@@ -1,6 +1,6 @@
 ﻿
 <div >
-   <form id="contactForm" accept-charset="UTF-8" class="contact-form">
+    <form asp-route="MyContactUsFromHome" method="post" id="contactus-form" ref="form" class="contact-form">
       <input type="hidden" name="utf8" value="✓">
       <div class="myHomeContact">
          <div class="popl_container">
@@ -13,17 +13,35 @@
             <div class="contact__form" id="form_fields">
                <div class="formfield__wrapper">
                   <div class="input__wrapper">
-                            <input type="text" id="contactFormName" name="contactFormName" placeholder="@Loc["zap.homepage.contact_form.name"]" autocapitalize="words" value="" required="required">
-                            <input type="email" id="contactFormEmail" name="contactFormEmail" placeholder="@Loc["zap.homepage.contact_form.email"]" autocorrect="off" autocapitalize="off" value="" required="required">
+                            <input type="text" id="contactFormName" name="FullName"
+                                   placeholder="@Loc["zap.homepage.contact_form.name"]" 
+                                autocapitalize="words" value="" required="required">
+
+                            <input type="email" id="contactFormEmail"
+                                   name="Email" placeholder="@Loc["zap.homepage.contact_form.email"]"
+                                   autocorrect="off" autocapitalize="off" value="" required="required">
                   </div>
-                        <textarea rows="5" id="contactFormMessage" name="contactFormMessage" placeholder="@Loc["zap.homepage.contact_form.message"]" required="required"></textarea>
+                        <textarea rows="5" id="contactFormMessage" name="Enquiry"
+                                  placeholder="@Loc["zap.homepage.contact_form.message"]" required="required"></textarea>
                </div>
-               <input type="submit" class="submit l-btn" id="customSubmit" value="@Loc["zap.homepage.contact_form.send"]">
+
+               <div >
+                        <div class="captcha-box">
+                            <captcha />
+                        </div>
+
+                        <input type="submit"
+                            class="submit l-btn" id="customSubmit" value="@Loc["zap.homepage.contact_form.send"]">
+               </div>
+               
+
+               
             </div>
             <div class="thank-you-message" id="formStatus" style="display:none; text-align:center;"></div>
          </div>
       </div>
    </form>
+
    <script>
       // $(function() {
       //    $("#contactForm").submit(function(e) { alert();
@@ -50,7 +68,43 @@
       // //      });
       //   });
       // });
+
+      function postToContactUs(){
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "/MyContactUsFromHome");
+
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            xhr.onload = () => console.log(xhr.responseText);
+
+            let data = `{
+          "Id": 78912,
+          "Customer": "Jason Sweet",
+        }`;
+
+            xhr.send(data);
+      }
+
+      function sendData(event){
+          
+          postToContactUs();
+
+          event.preventDefault();
+          return false;
+
+            var inpObj = document.getElementById("contactFormName");
+            if (!inpObj.checkValidity()) {
+                document.getElementById("contactFormMessage")
+                    .innerHTML = inpObj.validationMessage;
+            } else {
+                document.getElementById("contactFormMessage")
+                    .innerHTML = "Input is ALL RIGHT";
+            }
+      }
       
+
+
         processFormData = function() {
           console.log('Submitting form…');
           document.getElementById('form_fields').style.display = 'none';

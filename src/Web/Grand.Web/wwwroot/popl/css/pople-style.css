@@ -2746,10 +2746,15 @@ html .myHomeContact .contact__form {
   text-align: center;
   margin: 0 auto;
 }
+html .myHomeContact .contact__form .captcha-box {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 1.0625rem;
+}
 html .myHomeContact .formfield__wrapper {
   display: flex;
   flex-direction: column;
-  margin-bottom: 52px;
+  margin-bottom: 1.0625rem;
   justify-content: space-between;
 }
 html .myHomeContact .input__wrapper {
@@ -5004,10 +5009,15 @@ html[dir=rtl] .myHomeContact .contact__form {
   text-align: center;
   margin: 0 auto;
 }
+html[dir=rtl] .myHomeContact .contact__form .captcha-box {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 1.0625rem;
+}
 html[dir=rtl] .myHomeContact .formfield__wrapper {
   display: flex;
   flex-direction: column;
-  margin-bottom: 52px;
+  margin-bottom: 1.0625rem;
   justify-content: space-between;
 }
 html[dir=rtl] .myHomeContact .input__wrapper {

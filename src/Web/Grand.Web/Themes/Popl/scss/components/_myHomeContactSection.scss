@@ -1,4 +1,10 @@
 ﻿
+
+$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
+
 .myHomeContact {
     padding: 5.125rem 0 2.5625rem;
 
@@ -33,12 +39,18 @@
         max-width: 28.125rem;
         text-align: center;
         margin: 0 auto;
+
+        .captcha-box {
+            display: flex;
+            justify-content: $leftRightReverse;
+            margin-bottom: 1.0625rem;
+        }
     }
 
     .formfield__wrapper {
         display: flex;
         flex-direction: column;
-        margin-bottom: 52px;
+        margin-bottom: 1.0625rem;
         justify-content: space-between;
     }
 
