@@ -2,5 +2,9 @@
   {
     "outputFile": "wwwroot/popl/css/pople-style.css",
     "inputFile": "Themes/Popl/scss/style.scss"
+  },
+  {
+    "outputFile": "wwwroot/popl/css/learn-zap.css",
+    "inputFile": "Themes/Popl/views/mycommon/learnzap.scss"
   }
 ]
