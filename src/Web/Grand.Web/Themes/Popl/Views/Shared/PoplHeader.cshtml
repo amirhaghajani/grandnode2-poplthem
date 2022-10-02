@@ -64,27 +64,9 @@
                 
                 <partial name="_PoplShoppingCartLinks" />
 
-                <template>
-                    <li class="nav-item">
-                        <span class="nav-link">
-                            <b-icon icon="person-circle" :variant="[darkMode ? 'white' : 'dark']" v-b-toggle.sidebar-right></b-icon>
-                        </span>
-                        <template>
-                            <b-sidebar id="sidebar-right" body-class="user-panel" title="@Loc["Account.MyAccount"]" 
-                                @if (!supportRtl) { <text>right</text> } backdrop>
-                            <div class="d-inline-flex flex-wrap mb-2">
-                                <partial name="_Selector_TaxType" />
-                                <partial name="_Selector_Currency" />
-                                <partial name="_Selector_Language" />
-                                <partial name="_Selector_Store" />
-                                <partial name="_Selector_Theme" />
-                                    @await Component.InvokeAsync("Widget", new { widgetZone = "header_selectors" })
-                            </div>
-                            <partial name="_HeaderLinks" />
-                        </b-sidebar>
-                        </template>
-                    </li>
-                </template>
+                @await Component.InvokeAsync("PoplHeaderAccountSideBar")
+
+                
                 
             </ul>
 

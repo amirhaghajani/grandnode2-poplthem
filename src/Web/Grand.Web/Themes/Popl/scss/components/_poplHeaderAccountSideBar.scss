@@ -1,0 +1,23 @@
+﻿
+.b-dropdown{
+    ul{
+        display:none !important;
+    }
+}
+
+.b-dropdown.show {
+    ul {
+        display: flex !important;
+    }
+}
+
+.mySideAccoundContainer {
+    .mySideRow {
+        display: flex;
+        .mySideCol1{
+            width:50px;
+            text-align:center;
+            font-size:24px;
+        }
+    }
+}

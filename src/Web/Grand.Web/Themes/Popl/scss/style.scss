@@ -141,6 +141,8 @@ html {
 
     @import "components/_myPoplFooter.scss";
 
+    @import "components/_poplHeaderAccountSideBar.scss";
+
     @import "pages/myCatalogPage.scss";
 }
 
@@ -170,6 +172,8 @@ html[dir="rtl"] {
     @import "components/_myHomeContactSection.scss";
 
     @import "components/_myPoplFooter.scss";
+
+    @import "components/_poplHeaderAccountSideBar.scss";
 
 
     @import "pages/myCatalogPage.scss";

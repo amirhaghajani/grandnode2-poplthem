@@ -62,7 +62,6 @@
     <None Remove="Plugins\**" />
     <None Remove="wwwroot\myTheme\**" />
     <None Remove="wwwroot\popl\images\NewFolder\**" />
-    <Compile Remove="Themes\Popl\Views\MyCommon\MyHomeSliderScript.cshtml.cs" />
     <None Remove="Themes\Popl\preview.jpg" />
     <None Remove="Themes\Popl\scripts\my.popl.app.js" />
     <None Remove="Themes\Popl\scripts\my.popl.public.axios.js" />
@@ -82,6 +81,7 @@
     <None Remove="Themes\Popl\scss\components\_myHomeWhoItWork.scss" />
     <None Remove="Themes\Popl\scss\components\_myPoplFeatures.scss" />
     <None Remove="Themes\Popl\scss\components\_myPoplFooter.scss" />
+    <None Remove="Themes\Popl\scss\components\_poplHeaderAccountSideBar.scss" />
     <None Remove="Themes\Popl\scss\helpers\mixins\_flexbox.scss" />
     <None Remove="Themes\Popl\scss\pages\myCatalogPage.scss" />
     <None Remove="Themes\Popl\scss\theme\_fonts.scss" />

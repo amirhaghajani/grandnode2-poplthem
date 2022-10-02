@@ -2969,6 +2969,20 @@ html .popl_footer .footer_withsocial .contact__social div img {
   width: 24px !important;
   height: 24px;
 }
+html .b-dropdown ul {
+  display: none !important;
+}
+html .b-dropdown.show ul {
+  display: flex !important;
+}
+html .mySideAccoundContainer .mySideRow {
+  display: flex;
+}
+html .mySideAccoundContainer .mySideRow .mySideCol1 {
+  width: 50px;
+  text-align: center;
+  font-size: 24px;
+}
 html .myCatalogePageHeader {
   font-style: normal;
   font-weight: 700;
@@ -5231,6 +5245,20 @@ html[dir=rtl] .popl_footer .footer_withsocial .contact__social div img {
   max-width: 24px;
   width: 24px !important;
   height: 24px;
+}
+html[dir=rtl] .b-dropdown ul {
+  display: none !important;
+}
+html[dir=rtl] .b-dropdown.show ul {
+  display: flex !important;
+}
+html[dir=rtl] .mySideAccoundContainer .mySideRow {
+  display: flex;
+}
+html[dir=rtl] .mySideAccoundContainer .mySideRow .mySideCol1 {
+  width: 50px;
+  text-align: center;
+  font-size: 24px;
 }
 html[dir=rtl] .myCatalogePageHeader {
   font-style: normal;

@@ -1,0 +1,58 @@
+﻿@inject IWorkContext workContext
+@{
+    var supportRtl = workContext.WorkingLanguage.Rtl;
+}
+
+@model CustomerInfoModel
+
+
+@{
+    var fullName = "";
+    var userHasLogined = false;
+    if(!string.IsNullOrEmpty(Model.LastName)){
+        fullName = Model.FirstName + " " + Model.LastName;
+        userHasLogined = true;
+    }
+}
+
+<template>
+    <li class="nav-item">
+        <span class="nav-link">
+            <b-icon icon="person-circle" :variant="[darkMode ? 'white' : 'dark']" v-b-toggle.sidebar-right></b-icon>
+        </span>
+        <template>
+            <b-sidebar id="sidebar-right" body-class="user-panel" title=""
+                @if (!supportRtl) { <text>right</text> } backdrop>
+
+                @if(userHasLogined){
+                    <div class="mySideAccoundContainer">
+                        <div class="mySideRow">
+                                <div class="mySideCol1"><b-icon icon="person-circle"></div>
+                                <div class="mySideCol2">@fullName</div>
+                        </div>
+                        <div class="mySideRow">
+                                    <div class="mySideCol1"><b-icon icon="person-circle"></div>
+                                    <div class="mySideCol2">انتخاب زبان</div>
+                                    <div class="mySideCol3"><partial name="_Selector_Language" /></div>
+                        </div>
+                        <div class="mySideRow">
+                            <div class="mySideCol1"><b-icon icon="person-circle"></div>
+                            <div class="mySideCol2">سفارش ها</div>
+                        </div>
+                        <div class="mySideRow">
+                                <div class="mySideCol1"><b-icon icon="person-circle"></div>
+                            <div class="mySideCol2">خروج</div>
+                        </div>
+                    </div>
+                }
+                else {
+
+                }
+
+
+                <partial name="_HeaderLinks" />
+
+            </b-sidebar>
+        </template>
+    </li>
+</template>
