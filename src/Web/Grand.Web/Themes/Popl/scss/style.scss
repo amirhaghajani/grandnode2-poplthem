@@ -144,6 +144,8 @@ html {
     @import "components/_poplHeaderAccountSideBar.scss";
 
     @import "pages/myCatalogPage.scss";
+
+    @import "components/_header-links.scss";
 }
 
 html[dir="rtl"] {
@@ -177,6 +179,8 @@ html[dir="rtl"] {
 
 
     @import "pages/myCatalogPage.scss";
+
+    @import "components/_header-links.scss";
 }
 
 

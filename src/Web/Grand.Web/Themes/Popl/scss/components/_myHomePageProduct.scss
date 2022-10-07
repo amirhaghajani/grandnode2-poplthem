@@ -76,6 +76,8 @@ $rightLeft: if($dir==rtl,left,right);
     @include flexbox;
     flex-flow: row wrap;
     align-content: space-around;
+    max-width:1440px;
+    margin:0 auto;
 }
 
 .catalog_product_item {

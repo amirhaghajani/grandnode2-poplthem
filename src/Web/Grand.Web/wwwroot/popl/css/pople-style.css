@@ -1142,6 +1142,8 @@ html .catalog_product_items_container {
   display: flex;
   flex-flow: row wrap;
   align-content: space-around;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 html .catalog_product_item {
   padding: 5px;
@@ -2994,6 +2996,21 @@ html .myCatalogePageHeader {
 html .feature_divider {
   border-bottom: 1px solid #C9C9C9;
 }
+html .popl-header-links .txtForUser {
+  font-family: "Gilroy400";
+  text-align: justify;
+  padding: 5px 15px 22px 15px;
+  border-bottom: solid 1px gray;
+  margin-bottom: 20px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+html .popl-header-links .login-container {
+  text-align: left;
+}
+html .popl-header-links .login-container a {
+  display: block;
+}
 
 html[dir=rtl] {
   /* for andimation add to card button */
@@ -3419,6 +3436,8 @@ html[dir=rtl] .catalog_product_items_container {
   display: flex;
   flex-flow: row wrap;
   align-content: space-around;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 html[dir=rtl] .catalog_product_item {
   padding: 5px;
@@ -5270,6 +5289,21 @@ html[dir=rtl] .myCatalogePageHeader {
 }
 html[dir=rtl] .feature_divider {
   border-bottom: 1px solid #C9C9C9;
+}
+html[dir=rtl] .popl-header-links .txtForUser {
+  font-family: IRANSans;
+  text-align: justify;
+  padding: 5px 15px 22px 15px;
+  border-bottom: solid 1px gray;
+  margin-bottom: 20px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+html[dir=rtl] .popl-header-links .login-container {
+  text-align: right;
+}
+html[dir=rtl] .popl-header-links .login-container a {
+  display: block;
 }
 
 /*==================================================

@@ -3,8 +3,13 @@
 @inject SeoSettings seoSettings
 @inject IPageHeadBuilder pagebuilder
 
+ <link rel="stylesheet" type="text/css" asp-src="/popl/css/product/product.css">
+
+
 @{
-    Layout = "_SingleColumn";
+    //Layout = "_SingleColumn";
+    Layout = "_PoplLayout";
+
 
     //title, meta
     pagebuilder.AddTitleParts(!String.IsNullOrEmpty(Model.MetaTitle) ? Model.MetaTitle : Model.Name);

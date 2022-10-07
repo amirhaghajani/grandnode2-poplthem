@@ -1,0 +1,23 @@
+﻿$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
+
+.popl-header-links {
+    .txtForUser {
+        font-family: if($dir==rtl,$persianFont,"Gilroy400");
+        text-align: justify;
+        padding: 5px 15px 22px 15px;
+        border-bottom: solid 1px gray;
+        margin-bottom: 20px;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .login-container {
+        text-align: $leftRight;
+        a {
+            display: block;
+        }
+    }
+}
