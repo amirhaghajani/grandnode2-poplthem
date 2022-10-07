@@ -25,7 +25,7 @@
     {
         <div class="min-qty-notification text-danger w-100 mb-2">@Model.MinimumQuantityNotification</div>
     }
-    <div role="group" class="input-group product-add-to-cart flex-nowrap">
+    <div role="group" class="product-add-to-cart">
 
         @if (!Model.DisableBuyButton)
         {
@@ -46,13 +46,29 @@
 
             var addId = "addtocart_" + @Model.ProductId + "_EnteredQuantity";
             <label for="@addId" class="sr-only">@Loc["ShoppingCart.AddToCart"]</label>
-            <input asp-for="EnteredQuantity" class="qty-input form-control text-center" type="number" inputmode="numeric" />
+            
+
             if (!String.IsNullOrEmpty(Model.MeasureUnit))
             {
                 <span class="qty-unit d-flex align-items-center mr-2">
                     @Model.MeasureUnit
                 </span>
             }
+
+                <div class="purchase-details__quantity product-quantity-box">
+                    <label for="quantity">Qty</label>
+                    <span class="ss-icon product-minus" data-func="minus" onclick="minus()">
+                        <span class="icon-minus"></span>
+                    </span>
+                    
+                    @*<input type="number"  class="quantity" name="quantity" id="quantity" value="1">*@
+
+                    <input asp-for="EnteredQuantity" min="1" size="2" class="quantity" id="quantity" type="number" />
+
+                    <span class="ss-icon product-plus js-change-quantity-plus" data-func="plus" onclick="plus()">
+                        <span class="icon-plus"></span>
+                    </span>
+                </div>
 
         }
         {
@@ -78,28 +94,77 @@
         }
         }
 
-        <script asp-location="Footer" asp-order="300">
-                    if (document.getElementById("@Html.IdFor(model => model.EnteredQuantity)")) {
-                        document.getElementById("@Html.IdFor(model => model.EnteredQuantity)").addEventListener("keyup", function (event) {
-                            if (event.keyCode == 13) {
-                                document.getElementById("add-to-cart-button-@Model.ProductId").click();
-                                return false;
-                            }
-                        });
-                    }
-                    if (document.getElementById("@Html.IdFor(model => model.CustomerEnteredPrice)")) {
-                        document.getElementById("@Html.IdFor(model => model.CustomerEnteredPrice)").addEventListener("keyup", function (event) {
-                        if (event.keyCode == 13) {
-                            document.getElementById("add-to-cart-button-@Model.ProductId").click();
-                            return false;
-                        }
-                        });
+
+        <script asp-location="Footer" asp-order="299">
+
+                    
+
+                    function plus(){
+                        _base(1);
                     }
 
+                    function minus(){
+                        _base(0);
+                    }
+
+                    function _base(type) {
+
+                        var valMax = 10000000;
+                        var valMin = 0;
+
+                        var item = document.getElementById('quantity');
+                        var val = parseInt(item.value);
+
+                        if (isNaN(val) || val < valMin) {
+                            item.value = valMin;
+                            return false;
+                        } else if (val > valMax) {
+                            item.value = valMax;
+                            return false;
+                        }
+
+                        if (type == 1) {
+                            if (val < valMax) item.value = ++val;
+                        } else {
+                            if (val - 1 <= valMin) {
+                                item.value = valMin;
+                                return;
+                            }
+
+                            item.value = --val;
+                        }
+                    }
+
+                    
         </script>
+
+        <script asp-location="Footer" asp-order="300">
+            if (document.getElementById("@Html.IdFor(model => model.EnteredQuantity)")) {
+                document.getElementById("@Html.IdFor(model => model.EnteredQuantity)").addEventListener("keyup", function (event) {
+                    if (event.keyCode == 13) {
+                        document.getElementById("add-to-cart-button-@Model.ProductId").click();
+                        return false;
+                    }
+                });
+            }
+            if (document.getElementById("@Html.IdFor(model => model.CustomerEnteredPrice)")) {
+                document.getElementById("@Html.IdFor(model => model.CustomerEnteredPrice)").addEventListener("keyup", function (event) {
+                if (event.keyCode == 13) {
+                    document.getElementById("add-to-cart-button-@Model.ProductId").click();
+                    return false;
+                }
+                });
+            }
+
+
+            
+
+        </script>
+
+
         <div class="input-group-append">
             <button type="button" id="add-to-cart-button-@Model.ProductId" 
-                class="btn btn-info w-100 add-to-cart-button d-inline-flex" 
+                class="btn-add-to-cart" 
                 data-productid="@Model.ProductId" 
                 onclick="AxiosCart.addproducttocart_details('@Url.RouteUrl("AddProductDetails", new { productId = Model.ProductId, shoppingCartTypeId = (int)shoppingCartType })', '#product-details-form');return false;">
                 <span>@addToCartText</span>
