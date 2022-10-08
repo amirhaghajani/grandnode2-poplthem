@@ -239,10 +239,12 @@
                         </b-tabs>
                     </div>
                 </div>
-                <vc:products-also-purchased product-id="@Model.Id" product-thumb-picture-size="null"></vc:products-also-purchased>
-                <vc:related-products product-id="@Model.Id" product-thumb-picture-size="null"></vc:related-products>
-                <vc:similar-products product-id="@Model.Id" product-thumb-picture-size="null"></vc:similar-products>
-                <vc:recommended-products product-id="@Model.Id" product-thumb-picture-size="null"></vc:recommended-products>
+                
+                <vc:my-products-also-purchased product-id="@Model.Id" product-thumb-picture-size="null"></vc:my-products-also-purchased>
+                <vc:my-related-products product-id="@Model.Id" product-thumb-picture-size="null"></vc:my-related-products>
+
+                <vc:my-similar-products product-id="@Model.Id" product-thumb-picture-size="null"></vc:my-similar-products>
+                <vc:my-recommended-products product-id="@Model.Id" product-thumb-picture-size="null"></vc:my-recommended-products>
                 @if (Model.RenderCaptcha)
                 {
                     <partial name="_Captcha" />

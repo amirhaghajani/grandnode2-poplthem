@@ -14,62 +14,18 @@
                     <div class="col-lg-8 col-12 cart-out-container">
                         <div class="shopping-cart-container">
                             <div class="shopping-cart-container">
-                                <table class="shopping-cart table">
-                                    <colgroup>
-                                        <col span="1">
-                                        <col span="1">
-                                        <col span="1">
-                                        <col>
-                                        <col span="1">
-                                        <col span="1">
-                                        <col span="1">
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th v-if="vmorder.cart.IsAllowOnHold && vmorder.cart.IsEditable" class="cart text-center"></th>
-                                            <th v-if="vmorder.cart.ShowProductImages" class="product-picture text-center">
-                                                @Loc["ShoppingCart.Image"]
-                                            </th>
-                                            <th class="product text-center">
-                                                @Loc["ShoppingCart.Product(s)"]
-                                            </th>
-                                            <th class="unit-price text-center">
-                                                @Loc["ShoppingCart.UnitPrice"]
-                                            </th>
-                                            <th class="quantity text-center">
-                                                @Loc["ShoppingCart.Quantity"]
-                                            </th>
-                                            <th class="subtotal text-center">
-                                                @Loc["ShoppingCart.ItemTotal"]
-                                            </th>
-                                            <th v-if="vmorder.cart.IsEditable" class="remove-from-cart text-center">
-                                                @Loc["Remove"]
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr v-for="item in vmorder.cart.Items">
-                                            <td v-if="vmorder.cart.IsAllowOnHold && vmorder.cart.IsEditable" class="onhold-cart">
-                                                <label class="custom-control custom-switch mb-0 pl-0">
-                                                    <input :id="'checkbox_' + item.Id" type="checkbox" :checked="item.IsCart" class="custom-control-input changeshoppingcartitem" v-on:change="vmorder.updateCartType(item.Id, !item.IsCart)" />
-                                                    <span class="custom-control-label ml-5"></span>
-                                                </label>
-                                            </td>
-                                            <td v-if="vmorder.cart.ShowProductImages" class="product-picture text-center">
-                                                <a :href="'/' + item.ProductSeName">
-                                                    <img alt="item.Picture.AlternateText" :src="item.Picture.ImageUrl" title="item.Picture.Title" />
-                                                </a>
-                                            </td>
-                                            <td class="product">
-                                                <div class="d-inline-flex align-items-center">
-                                                    <a :href="item.ProductUrl" class="product-name">
-                                                        {{item.ProductName}}
-                                                    </a>
-                                                    <div v-if="vmorder.cart.IsEditable && item.AllowItemEditing" class="edit-item">
-                                                        <a class="btn btn-link" @@click="vmorder.updateOnCart(item.Id)"><b-icon icon="pencil"></b-icon></a>
-                                                    </div>
-                                                </div>
-                                                <span v-if="vmorder.cart.ShowSku" class="sku-number">
+                                <div v-for="item in vmorder.cart.Items">
+                                    <div class="image-container">
+                                        <a :href="'/' + item.ProductSeName">
+                                            <img alt="item.Picture.AlternateText" :src="item.Picture.ImageUrl" title="item.Picture.Title" />
+                                        </a>
+                                    </div>
+                                    <div class="data-container">
+                                        <a :href="item.ProductUrl" class="product-name">
+                                            {{item.ProductName}}
+                                        </a>
+
+                                        <span v-if="vmorder.cart.ShowSku" class="sku-number">
                                                     {{item.Sku}}
                                                 </span>
                                                 <div v-if="item.AttributeInfo !== ''" v-html="item.AttributeInfo" class="attributes small"></div>
@@ -83,50 +39,53 @@
                                                         <li>{{warning}}</li>
                                                     </ul>
                                                 </div>
-                                            </td>
-                                            <td class="unit-price">
-                                                <span class="product-unit-price price">{{item.UnitPrice}}</span>
-                                                <div v-if="item.UnitPriceWithoutDiscountValue != item.UnitPriceValue && item.UnitPriceWithoutDiscountValue > 0" class="text-center">
-                                                    <del class="small text-danger">{{item.UnitPriceWithoutDiscount}}</del>
+
+
+                                                <div class="unit-price">
+                                                    <span class="product-unit-price price">{{item.UnitPrice}}</span>
+                                                    <div v-if="item.UnitPriceWithoutDiscountValue != item.UnitPriceValue && item.UnitPriceWithoutDiscountValue > 0" class="text-center">
+                                                        <del class="small text-danger">{{item.UnitPriceWithoutDiscount}}</del>
+                                                    </div>
                                                 </div>
-                                            </td>
-                                            <td class="quantity">
-                                                <div v-if="vmorder.cart.IsEditable">
-                                                    <div v-if="item.AllowedQuantities[0]">
-                                                        <select :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" class="custom-select form-control qty-dropdown" v-on:change="vmorder.updateQuantity('itemquantity', item.Id)">
-                                                            <option v-for="qty in item.AllowedQuantities" :selected="qty.Selected" :value="qty.Value">{{qty.Value}}</option>
-                                                        </select>
+
+                                                <div class="quantity">
+                                                    <div v-if="vmorder.cart.IsEditable">
+                                                        <div v-if="item.AllowedQuantities[0]">
+                                                            <select :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" class="custom-select form-control qty-dropdown" v-on:change="vmorder.updateQuantity('itemquantity', item.Id)">
+                                                                <option v-for="qty in item.AllowedQuantities" :selected="qty.Selected" :value="qty.Value">{{qty.Value}}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div v-else>
+                                                            <input :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" type="number" v-model="item.Quantity" min="1" v-on:change="vmorder.updateQuantity('itemquantity', item.Id)" class="qty-input form-control text-center" />
+                                                        </div>
                                                     </div>
                                                     <div v-else>
-                                                        <input :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" type="number" v-model="item.Quantity" min="1" v-on:change="vmorder.updateQuantity('itemquantity', item.Id)" class="qty-input form-control text-center" />
+                                                        <input :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" type="number" :value="item.Quantity" class="qty-input form-control text-center" readonly />
                                                     </div>
                                                 </div>
-                                                <div v-else>
-                                                    <input :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" type="number" :value="item.Quantity" class="qty-input form-control text-center" readonly />
-                                                </div>
-                                            </td>
-                                            <td class="subtotal">
-                                                <div v-if="item.Discount" class="d-flex flex-column">
-                                                    <p class="mb-0 prod-total">{{item.SubTotal}}</p>
-                                                    <div class="discount text-success text-center">
-                                                        <span>@Loc["ShoppingCart.ItemYouSave"]: </span>
-                                                        <span>{{item.Discount}}</span>
-                                                        <span v-if="item.DiscountedQty > 0" class="font-weight-light font-italic">@Loc["ShoppingCart.DiscountedQty"]: </span>
-                                                        <span v-if="item.DiscountedQty > 0" class="font-weight-light font-italic">{{item.DiscountedQty}}</span>
+
+                                                <div class="subtotal">
+                                                    <div v-if="item.Discount" class="d-flex flex-column">
+                                                        <p class="mb-0 prod-total">{{item.SubTotal}}</p>
+                                                        <div class="discount text-success text-center">
+                                                            <span>@Loc["ShoppingCart.ItemYouSave"]: </span>
+                                                            <span>{{item.Discount}}</span>
+                                                            <span v-if="item.DiscountedQty > 0" class="font-weight-light font-italic">@Loc["ShoppingCart.DiscountedQty"]: </span>
+                                                            <span v-if="item.DiscountedQty > 0" class="font-weight-light font-italic">{{item.DiscountedQty}}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div v-else>
+                                                        <p class="mb-0 prod-total">{{item.SubTotal}}</p>
                                                     </div>
                                                 </div>
-                                                <div v-else>
-                                                    <p class="mb-0 prod-total">{{item.SubTotal}}</p>
+                                                <div v-if="vmorder.cart.IsEditable" class="remove-from-cart text-center">
+                                                    <b-button variant="link" class="deleteshoppingcartitem" @@click="vmorder.deleteitem('@Url.RouteUrl("DeleteCartItem")/'+ item.Id +'?shoppingcartpage=True')">
+                                                        <b-icon icon="trash" variant="danger"></b-icon>
+                                                    </b-button>
                                                 </div>
-                                            </td>
-                                            <td v-if="vmorder.cart.IsEditable" class="remove-from-cart text-center">
-                                                <b-button variant="link" class="deleteshoppingcartitem" @@click="vmorder.deleteitem('@Url.RouteUrl("DeleteCartItem")/'+ item.Id +'?shoppingcartpage=True')">
-                                                    <b-icon icon="trash" variant="danger"></b-icon>
-                                                </b-button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                    </div>
+                                </div>
+                               
                             </div>
                         </div>
                         @await Component.InvokeAsync("Widget", new { widgetZone = "order_summary_cart_footer" })

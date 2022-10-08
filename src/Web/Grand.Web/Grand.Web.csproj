@@ -62,6 +62,9 @@
     <None Remove="Plugins\**" />
     <None Remove="wwwroot\myTheme\**" />
     <None Remove="wwwroot\popl\images\NewFolder\**" />
+    <Content Remove="Themes\Popl\Components\MyRecommendedProducts.cs" />
+    <Content Remove="Themes\Popl\Components\MyRelatedProducts.cs" />
+    <Content Remove="Themes\Popl\Components\MySimilarProducts.cs" />
     <None Remove="Themes\Popl\preview.jpg" />
     <None Remove="Themes\Popl\scripts\my.popl.app.js" />
     <None Remove="Themes\Popl\scripts\my.popl.public.axios.js" />

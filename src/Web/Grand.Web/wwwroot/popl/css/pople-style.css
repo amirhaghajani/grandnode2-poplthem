@@ -735,7 +735,7 @@ html {
   /* color section */
   /**/
   /* add to cart */
-  /* ساب تب پایین */
+  /* ساب تب پایین قسمت انتخابش واسط نباشه */
 }
 html .onlyEnglish {
   display: revert;
@@ -3024,6 +3024,10 @@ html .popl-header-links .login-container {
 html .popl-header-links .login-container a {
   display: block;
 }
+html .product-details-page {
+  max-width: 1440px;
+  margin: 0 auto;
+}
 html .product-details-page .gallery {
   display: inline-flex;
   align-items: flex-start;
@@ -3233,6 +3237,7 @@ html .vgs__next {
 }
 html .container.position-relative .overview {
   padding-right: 1rem !important;
+  text-align: left;
 }
 html .product-add-to-cart {
   display: flex;
@@ -3346,6 +3351,7 @@ html .input-group-append .btn-add-to-cart {
 }
 html .product-details-page .sub-tab-container .nav-tabs {
   justify-content: start !important;
+  margin: 0 50px;
 }
 
 html[dir=rtl] {
@@ -3363,7 +3369,7 @@ html[dir=rtl] {
   /* color section */
   /**/
   /* add to cart */
-  /* ساب تب پایین */
+  /* ساب تب پایین قسمت انتخابش واسط نباشه */
 }
 html[dir=rtl] .onlyEnglish {
   display: none !important;
@@ -5654,6 +5660,10 @@ html[dir=rtl] .popl-header-links .login-container {
 html[dir=rtl] .popl-header-links .login-container a {
   display: block;
 }
+html[dir=rtl] .product-details-page {
+  max-width: 1440px;
+  margin: 0 auto;
+}
 html[dir=rtl] .product-details-page .gallery {
   display: inline-flex;
   align-items: flex-start;
@@ -5863,6 +5873,7 @@ html[dir=rtl] .vgs__next {
 }
 html[dir=rtl] .container.position-relative .overview {
   padding-right: 1rem !important;
+  text-align: right;
 }
 html[dir=rtl] .product-add-to-cart {
   display: flex;
@@ -5976,6 +5987,7 @@ html[dir=rtl] .input-group-append .btn-add-to-cart {
 }
 html[dir=rtl] .product-details-page .sub-tab-container .nav-tabs {
   justify-content: start !important;
+  margin: 0 50px;
 }
 
 /*==================================================

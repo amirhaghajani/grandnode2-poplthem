@@ -5,6 +5,10 @@ $leftRightRevers: if($dir==rtl,left, right);
 
 /* product gallery */
 
+.product-details-page{
+    max-width:1440px;
+    margin: 0 auto;
+}
 .product-details-page .gallery {
     display: inline-flex;
     align-items: flex-start;
@@ -280,6 +284,7 @@ input:checked ~ .color-container {
 /**/
 .container.position-relative .overview {
     padding-right: 1rem !important;
+    text-align:$leftRight;
 }
 
 /* add to cart */
@@ -403,11 +408,12 @@ input:checked ~ .color-container {
     }
 }
 
-/* ساب تب پایین */
+/* ساب تب پایین قسمت انتخابش واسط نباشه */
 .product-details-page {
     .sub-tab-container {
         .nav-tabs {
             justify-content: start !important;
+            margin:0 50px;
         }
     }
 }
