@@ -155,6 +155,15 @@
                 }).then(function () {
                     this.vmorder.updateTotals();
                 });
+            }, minusQuantity(element,id){
+                var elementById = document.getElementById(element + id);
+                this._basePlusMinus(elementById, 0);
+                this.updateQuantity(element,id);
+            },
+            plusQuantity(element,id){
+                var elementById = document.getElementById(element + id);
+                this._basePlusMinus(elementById, 1);
+                this.updateQuantity(element,id);
             },
             updateCartType(id, iscart) {
                 var data = new FormData();
@@ -228,6 +237,30 @@
                     autoHideDelay: 5000,
                     appendToast: true
                 })
+            },_basePlusMinus(element, type){
+                var valMax = 10000000;
+                var valMin = 0;
+
+                var val = parseInt(element.value);
+
+                if (isNaN(val) || val < valMin) {
+                    element.value = valMin;
+                    return false;
+                } else if (val > valMax) {
+                    element.value = valMax;
+                    return false;
+                }
+
+                if (type == 1) {
+                    if (val < valMax) element.value = ++val;
+                } else {
+                    if (val - 1 <= valMin) {
+                        element.value = valMin;
+                        return;
+                    }
+
+                    element.value = --val;
+                }
             }
         }
     });

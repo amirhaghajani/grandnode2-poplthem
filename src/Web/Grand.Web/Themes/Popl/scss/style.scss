@@ -54,6 +54,22 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
 }
 
+h3, .h3 {
+    font-family: DM Sans,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 32px;
+    text-transform: none;
+    line-height: 1.5;
+    color: #000;
+    display: block;
+    letter-spacing: 0px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 auto 15px 0;
+}
+
 ul, ol {
     margin: 0;
     padding: 0;
@@ -147,6 +163,8 @@ html {
 
     @import "components/_header-links.scss";
     @import "components/_product.scss";
+
+    @import "pages/myCartSummaryPage.scss";
 }
 
 html[dir="rtl"] {
@@ -183,6 +201,8 @@ html[dir="rtl"] {
 
     @import "components/_header-links.scss";
     @import "components/_product.scss";
+
+    @import "pages/myCartSummaryPage.scss";
 }
 
 

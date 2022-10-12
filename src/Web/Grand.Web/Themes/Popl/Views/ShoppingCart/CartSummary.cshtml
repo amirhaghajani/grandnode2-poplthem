@@ -1,6 +1,6 @@
 ﻿@model ShoppingCartModel
 
-<div class="order-summary-content mt-3" id="ordersummarypagecart" v-if="vmorder.cart">
+<div class="my-cart-summary-page" id="ordersummarypagecart" v-if="vmorder.cart">
     @await Component.InvokeAsync("Widget", new { widgetZone = "order_summary_content_before" })
     <div v-if="typeof vmorder.cart.Items !== 'undefined' && vmorder.cart.Items.length > 0">
         <ul v-if="typeof vmorder.cart.Warnings !== 'undefined' && vmorder.cart.Warnings.length > 0" class="px-0 mb-3">
@@ -12,80 +12,90 @@
             <div class="col-12">
                 <div class="form-row">
                     <div class="col-lg-8 col-12 cart-out-container">
-                        <div class="shopping-cart-container">
-                            <div class="shopping-cart-container">
-                                <div v-for="item in vmorder.cart.Items">
-                                    <div class="image-container">
-                                        <a :href="'/' + item.ProductSeName">
-                                            <img alt="item.Picture.AlternateText" :src="item.Picture.ImageUrl" title="item.Picture.Title" />
-                                        </a>
-                                    </div>
-                                    <div class="data-container">
-                                        <a :href="item.ProductUrl" class="product-name">
-                                            {{item.ProductName}}
-                                        </a>
+                        <div v-for="item in vmorder.cart.Items" class="shopping-cart-container">
+                            <div class="image-container">
+                                <a :href="'/' + item.ProductSeName">
+                                    <img alt="item.Picture.AlternateText" :src="item.Picture.ImageUrl" title="item.Picture.Title" />
+                                </a>
+                            </div>
+                            <div class="data-container">
+                                <h3>
+                                    <a :href="item.ProductUrl" class="product-name">
+                                        {{item.ProductName}}
+                                    </a>
+                                </h3>
+                                
 
-                                        <span v-if="vmorder.cart.ShowSku" class="sku-number">
-                                                    {{item.Sku}}
-                                                </span>
-                                                <div v-if="item.AttributeInfo !== ''" v-html="item.AttributeInfo" class="attributes small"></div>
-                                                <div v-if="item.WarehouseName !== null" v-html="item.WarehouseName" class="attributes small"></div>
-                                                <div v-if="item.VendorName !== null" v-html="item.VendorName" class="attributes small"></div>
-                                                <div v-if="item.AuctionInfo !== null" v-html="item.AuctionInfo" class="attributes small"></div>
-                                                <div v-if="item.RecurringInfo !== null" v-html="item.RecurringInfo" class="recurring-info"></div>
-                                                <div v-if="item.ReservationInfo !== null" v-html="item.ReservationInfo" class="rental-info attributes small"></div>
-                                                <div v-if="typeof item.Warnings !== 'undefined' && item.Warnings.length > 0" class="message-error small alert alert-danger mt-2 mb-0">
-                                                    <ul v-for="warning in item.Warnings" class="mb-0 p-0">
-                                                        <li>{{warning}}</li>
-                                                    </ul>
-                                                </div>
+                                <span v-if="vmorder.cart.ShowSku" class="sku-number">
+                                    {{item.Sku}}
+                                </span>
+                                <div v-if="item.AttributeInfo !== ''" v-html="item.AttributeInfo" class="attributes small"></div>
+                                <div v-if="item.WarehouseName !== null" v-html="item.WarehouseName" class="attributes small"></div>
+                                <div v-if="item.VendorName !== null" v-html="item.VendorName" class="attributes small"></div>
+                                <div v-if="item.AuctionInfo !== null" v-html="item.AuctionInfo" class="attributes small"></div>
+                                <div v-if="item.RecurringInfo !== null" v-html="item.RecurringInfo" class="recurring-info"></div>
+                                <div v-if="item.ReservationInfo !== null" v-html="item.ReservationInfo" class="rental-info attributes small"></div>
+                                <div v-if="typeof item.Warnings !== 'undefined' && item.Warnings.length > 0" class="message-error small alert alert-danger mt-2 mb-0">
+                                    <ul v-for="warning in item.Warnings" class="mb-0 p-0">
+                                        <li>{{warning}}</li>
+                                    </ul>
+                                </div>
 
 
-                                                <div class="unit-price">
-                                                    <span class="product-unit-price price">{{item.UnitPrice}}</span>
-                                                    <div v-if="item.UnitPriceWithoutDiscountValue != item.UnitPriceValue && item.UnitPriceWithoutDiscountValue > 0" class="text-center">
-                                                        <del class="small text-danger">{{item.UnitPriceWithoutDiscount}}</del>
-                                                    </div>
-                                                </div>
-
-                                                <div class="quantity">
-                                                    <div v-if="vmorder.cart.IsEditable">
-                                                        <div v-if="item.AllowedQuantities[0]">
-                                                            <select :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" class="custom-select form-control qty-dropdown" v-on:change="vmorder.updateQuantity('itemquantity', item.Id)">
-                                                                <option v-for="qty in item.AllowedQuantities" :selected="qty.Selected" :value="qty.Value">{{qty.Value}}</option>
-                                                            </select>
-                                                        </div>
-                                                        <div v-else>
-                                                            <input :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" type="number" v-model="item.Quantity" min="1" v-on:change="vmorder.updateQuantity('itemquantity', item.Id)" class="qty-input form-control text-center" />
-                                                        </div>
-                                                    </div>
-                                                    <div v-else>
-                                                        <input :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" type="number" :value="item.Quantity" class="qty-input form-control text-center" readonly />
-                                                    </div>
-                                                </div>
-
-                                                <div class="subtotal">
-                                                    <div v-if="item.Discount" class="d-flex flex-column">
-                                                        <p class="mb-0 prod-total">{{item.SubTotal}}</p>
-                                                        <div class="discount text-success text-center">
-                                                            <span>@Loc["ShoppingCart.ItemYouSave"]: </span>
-                                                            <span>{{item.Discount}}</span>
-                                                            <span v-if="item.DiscountedQty > 0" class="font-weight-light font-italic">@Loc["ShoppingCart.DiscountedQty"]: </span>
-                                                            <span v-if="item.DiscountedQty > 0" class="font-weight-light font-italic">{{item.DiscountedQty}}</span>
-                                                        </div>
-                                                    </div>
-                                                    <div v-else>
-                                                        <p class="mb-0 prod-total">{{item.SubTotal}}</p>
-                                                    </div>
-                                                </div>
-                                                <div v-if="vmorder.cart.IsEditable" class="remove-from-cart text-center">
-                                                    <b-button variant="link" class="deleteshoppingcartitem" @@click="vmorder.deleteitem('@Url.RouteUrl("DeleteCartItem")/'+ item.Id +'?shoppingcartpage=True')">
-                                                        <b-icon icon="trash" variant="danger"></b-icon>
-                                                    </b-button>
-                                                </div>
+                                <div class="unit-price">
+                                    <span class="product-unit-price price">{{item.UnitPrice}}</span>
+                                    <div v-if="item.UnitPriceWithoutDiscountValue != item.UnitPriceValue && item.UnitPriceWithoutDiscountValue > 0" class="text-center">
+                                        <del class="small text-danger">{{item.UnitPriceWithoutDiscount}}</del>
                                     </div>
                                 </div>
-                               
+
+                                <div class="product-quantity-box">
+                                    <div v-if="vmorder.cart.IsEditable">
+                                        <div v-if="item.AllowedQuantities[0]">
+                                            <select :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" class="custom-select form-control qty-dropdown" 
+                                                v-on:change="vmorder.updateQuantity('itemquantity', item.Id)">
+                                                <option v-for="qty in item.AllowedQuantities" :selected="qty.Selected" :value="qty.Value">{{qty.Value}}</option>
+                                            </select>
+                                        </div>
+                                        <div v-else>
+
+                                            <span class="ss-icon product-minus" data-func="minus" 
+                                                                                            v-on:click="vmorder.minusQuantity('itemquantity', item.Id)">
+                                                <span class="icon-minus"></span>
+                                            </span>
+                                            <input :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" type="number" v-model="item.Quantity" min="1" 
+                                                v-on:change="vmorder.updateQuantity('itemquantity', item.Id)" class="qty-input form-control text-center" />
+                                            <span class="ss-icon product-plus" data-func="plus" 
+                                                                                            v-on:click="vmorder.plusQuantity('itemquantity', item.Id)">
+                                                <span class="icon-plus"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div v-else>
+                                        <input :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" type="number" :value="item.Quantity" class="qty-input form-control text-center" readonly />
+                                    </div>
+                                </div>
+
+                                <div class="subtotal">
+                                    <div v-if="item.Discount" class="d-flex flex-column">
+                                        <p class="mb-0 prod-total">{{item.SubTotal}}</p>
+                                        <div class="discount text-success text-center">
+                                            <span>@Loc["ShoppingCart.ItemYouSave"]: </span>
+                                            <span>{{item.Discount}}</span>
+                                            <span v-if="item.DiscountedQty > 0" class="font-weight-light font-italic">@Loc["ShoppingCart.DiscountedQty"]: </span>
+                                            <span v-if="item.DiscountedQty > 0" class="font-weight-light font-italic">{{item.DiscountedQty}}</span>
+                                        </div>
+                                    </div>
+                                    <div v-else>
+                                        <p class="mb-0 prod-total">{{item.SubTotal}}</p>
+                                    </div>
+                                </div>
+
+                                <div v-if="vmorder.cart.IsEditable" class="cart__remove-btn"
+                                     @@click="vmorder.deleteitem('@Url.RouteUrl("DeleteCartItem")/'+ item.Id +'?shoppingcartpage=True')">
+                                    <span class="remove-text">Remove</span> 
+                                    <span class="remove-icon"></span>
+                                </div>
                             </div>
                         </div>
                         @await Component.InvokeAsync("Widget", new { widgetZone = "order_summary_cart_footer" })
