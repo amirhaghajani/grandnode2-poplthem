@@ -6,8 +6,8 @@
 <li class="nav-item">
     <ul class="sidebar-cart px-0">
         <li class="nav-item">
-            <a href="#" target="_self" class="nav-link">
-                <b-icon icon="cart" :variant="[darkMode ? 'white' : 'dark']" @@click="if(flycartfirstload){updateSidebarShoppingCart('@Url.RouteUrl("SidebarShoppingCart")')}" v-b-toggle.sidebar-cart></b-icon>
+            <a href="#" target="_self" class="nav-link" @@click="if(flycartfirstload){updateSidebarShoppingCart('@Url.RouteUrl("SidebarShoppingCart")')}" v-b-toggle.sidebar-cart>
+                <b-icon icon="cart" :variant="[darkMode ? 'white' : 'dark']"  ></b-icon>
                 
                 <transition name="slide-fade" mode="out-in">
 
@@ -22,7 +22,7 @@
 
                   </transition>
 
-                
+               
             </a>
         </li>
         <template>

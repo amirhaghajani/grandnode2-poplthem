@@ -165,6 +165,8 @@ html {
     @import "components/_product.scss";
 
     @import "pages/myCartSummaryPage.scss";
+
+    @import "components/_myQuickProductView.scss";
 }
 
 html[dir="rtl"] {
@@ -203,6 +205,8 @@ html[dir="rtl"] {
     @import "components/_product.scss";
 
     @import "pages/myCartSummaryPage.scss";
+
+    @import "components/_myQuickProductView.scss";
 }
 
 

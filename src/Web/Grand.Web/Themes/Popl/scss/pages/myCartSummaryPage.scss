@@ -1,4 +1,8 @@
-﻿
+﻿$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
+
 .shopping-cart-page {
     margin: 0 auto;
     width: calc(100% - 40px);
@@ -21,6 +25,39 @@
         height: 5px;
         max-width: 1440px;
     }
+
+    .continue-shopping-container {
+        cursor: pointer;
+        text-align: center;
+        color: #4a9ef4;
+        text-align: center;
+        font-family: DM Sans,sans-serif,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0px;
+        margin-top: 20px;
+
+        .continue-shopping-button {
+        }
+    }
+
+    .removeAll-cart-button-container {
+        position: absolute;
+        #{$leftRightReverse}: 0;
+        #{$leftRight}: unset;
+        text-transform: uppercase;
+        margin-top: -12px;
+
+        .removeAll-cart-button {
+            cursor: pointer;
+
+            span {
+                color: red;
+            }
+        }
+    }
 }
 
 .my-cart-summary-page {
@@ -31,14 +68,14 @@
         -webkit-align-items: center;
         -moz-align-items: center;
         -ms-align-items: center;
-        align-items: center;
+        align-items: flex-start;
         margin: 10px 0;
         padding: 10px 0;
         position: relative;
         border-bottom: 1px solid #cccccc;
 
         .image-container {
-            float: left;
+            float: $leftRight;
             display: inline;
             box-sizing: border-box;
             width: 100%;
@@ -64,6 +101,10 @@
         }
 
         .data-container {
+            flex: 1;
+            position: relative;
+            text-align: $leftRight;
+
             h3 {
                 font-size: 110%;
                 line-height: 1.5em;
@@ -88,6 +129,10 @@
                 margin: 15px 0;
                 width: 130px;
 
+                .product-quantity-box-sub{
+                    display:flex;
+                } 
+                
                 .product-minus {
                     padding-right: 0;
                     font-size: 15px;
@@ -155,12 +200,13 @@
                 display: flex;
                 cursor: pointer;
                 position: absolute;
-                right: 0;
+                #{$leftRightReverse}: 0;
+                #{$leftRight}: unset;
                 top: 10px;
 
                 .remove-icon {
                     color: #333;
-                    margin-left: 5px;
+                    margin-#{$leftRight}: 5px;
 
                     &::before {
                         font-family: Arial,Helvetica CY,Nimbus Sans L,sans-serif !important;
@@ -169,6 +215,13 @@
                         display: block;
                         content: "\d7";
                     }
+                }
+            }
+
+            .subtotal {
+                strong {
+                    margin-bottom: 20px;
+                    font-size: 20px;
                 }
             }
         }

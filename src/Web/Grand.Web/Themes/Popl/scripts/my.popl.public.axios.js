@@ -1,9 +1,6 @@
 ﻿
 AxiosCart.myAddproducttocart_catalog = function (btn, urladd, showqty, productid, quickviewUrl, colorSectionContainerDataUniqueId) {
 
-
-
-
     var selectedColor = document.querySelector(`[data-uniqueid="${colorSectionContainerDataUniqueId}"] .selected`);
 
     var fd = new FormData();
@@ -154,3 +151,6 @@ AxiosCart.mySuccess_process = function (response, quickViewUrl, svgTik) {
     }
     return false;
 };
+
+
+AxiosCart.success_process = AxiosCart.mySuccess_process;

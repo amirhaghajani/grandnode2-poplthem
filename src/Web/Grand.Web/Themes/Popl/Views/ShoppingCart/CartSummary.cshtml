@@ -8,10 +8,17 @@
                 <div class="alert alert-danger mb-1">{{item}}</div>
             </li>
         </ul>
+
+       
+
         <form asp-route="ShoppingCart" method="post" enctype="multipart/form-data" id="shopping-cart-form">
             <div class="col-12">
                 <div class="form-row">
                     <div class="col-lg-8 col-12 cart-out-container">
+                        <div class="removeAll-cart-button-container">
+                            <a onclick="location.href='@(Url.RouteUrl("ClearCart"))'" class="removeAll-cart-button"><span>@Loc["shoppingcart.clearcart"]</span></a>
+                        </div>
+
                         <div v-for="item in vmorder.cart.Items" class="shopping-cart-container">
                             <div class="image-container">
                                 <a :href="'/' + item.ProductSeName">
@@ -50,14 +57,14 @@
                                 </div>
 
                                 <div class="product-quantity-box">
-                                    <div v-if="vmorder.cart.IsEditable">
-                                        <div v-if="item.AllowedQuantities[0]">
+                                    <div v-if="vmorder.cart.IsEditable" >
+                                        <div v-if="item.AllowedQuantities[0]" class="product-quantity-box-sub">
                                             <select :id="'itemquantity' + item.Id" :name="'itemquantity' + item.Id" class="custom-select form-control qty-dropdown" 
                                                 v-on:change="vmorder.updateQuantity('itemquantity', item.Id)">
                                                 <option v-for="qty in item.AllowedQuantities" :selected="qty.Selected" :value="qty.Value">{{qty.Value}}</option>
                                             </select>
                                         </div>
-                                        <div v-else>
+                                        <div v-else class="product-quantity-box-sub">
 
                                             <span class="ss-icon product-minus" data-func="minus" 
                                                                                             v-on:click="vmorder.minusQuantity('itemquantity', item.Id)">
@@ -77,6 +84,9 @@
                                 </div>
 
                                 <div class="subtotal">
+
+                                    <strong>@Loc["ShoppingCart.Totals.OrderTotal"]:</strong>
+
                                     <div v-if="item.Discount" class="d-flex flex-column">
                                         <p class="mb-0 prod-total">{{item.SubTotal}}</p>
                                         <div class="discount text-success text-center">
@@ -100,10 +110,7 @@
                         </div>
                         @await Component.InvokeAsync("Widget", new { widgetZone = "order_summary_cart_footer" })
 
-                        <div class="common-buttons btn-group btn-group-sm mb-3">
-                            <a onclick="location.href='@(Url.RouteUrl("ClearCart"))'" class="btn btn-danger removeAll-cart-button"><span>@Loc["shoppingcart.clearcart"]</span></a>
-                            <a onclick="location.href=('@(Url.RouteUrl("ContinueShopping"))')" class="btn btn-outline-secondary continue-shopping-button">@Loc["shoppingcart.continueshopping"]</a>
-                        </div>
+                        
 
                         <div class="cart-options">
                             <div class="row">
@@ -167,7 +174,7 @@
                                             <b-button type="button" id="checkoutasguest" v-if="vmorder.cart.ShowCheckoutAsGuestButton" @@click="vmorder.termsCheck(true)" variant="secondary" class="checkout-as-guest-button mx-sm-1 mx-0">
                                                 @Loc["Account.Login.CheckoutAsGuest"]
                                             </b-button>
-                                            <b-button id="checkout" name="checkout" @@click="vmorder.termsCheck(false)" variant="info" class="checkout-button mt-sm-0 mt-1">
+                                            <b-button id="checkout" name="checkout" @@click="vmorder.termsCheck(false)" variant="info">
                                                 <span v-if="vmorder.cart.IsGuest">
                                                     @Loc["Checkout.Button.Login"]
                                                 </span>
@@ -199,6 +206,11 @@
                                     <div v-html="pm"></div>
                                 </div>
                             </div>
+
+                            <div class="continue-shopping-container">
+                                <a onclick="location.href=('@(Url.RouteUrl("ContinueShopping"))')" class="continue-shopping-button">@Loc["shoppingcart.continueshopping"]</a>
+                            </div>
+
                         </div>
                     </div>
                 </div>

@@ -239,7 +239,7 @@
                 })
             },_basePlusMinus(element, type){
                 var valMax = 10000000;
-                var valMin = 0;
+                var valMin = 1;
 
                 var val = parseInt(element.value);
 
@@ -254,7 +254,7 @@
                 if (type == 1) {
                     if (val < valMax) element.value = ++val;
                 } else {
-                    if (val - 1 <= valMin) {
+                    if (val - 1 < valMin) {
                         element.value = valMin;
                         return;
                     }

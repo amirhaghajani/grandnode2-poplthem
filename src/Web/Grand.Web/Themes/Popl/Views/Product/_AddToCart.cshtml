@@ -57,17 +57,20 @@
 
                 <div class="purchase-details__quantity product-quantity-box">
                     <label for="quantity">Qty</label>
-                    <span class="ss-icon product-minus" data-func="minus" onclick="minus()">
-                        <span class="icon-minus"></span>
-                    </span>
+                    <div style="display:flex;">
+                        <span class="ss-icon product-minus" data-func="minus" onclick="minus()">
+                            <span class="icon-minus"></span>
+                        </span>
                     
-                    @*<input type="number"  class="quantity" name="quantity" id="quantity" value="1">*@
+                        @*<input type="number"  class="quantity" name="quantity" id="quantity" value="1">*@
 
-                    <input asp-for="EnteredQuantity" min="1" size="2" class="quantity" id="quantity" type="number" />
+                        <input asp-for="EnteredQuantity" min="1" size="2" class="quantity" id="quantity" type="number" />
 
-                    <span class="ss-icon product-plus js-change-quantity-plus" data-func="plus" onclick="plus()">
-                        <span class="icon-plus"></span>
-                    </span>
+                        <span class="ss-icon product-plus js-change-quantity-plus" data-func="plus" onclick="plus()">
+                            <span class="icon-plus"></span>
+                        </span>
+                    </div>
+                    
                 </div>
 
         }
@@ -110,7 +113,7 @@
                     function _base(type) {
 
                         var valMax = 10000000;
-                        var valMin = 0;
+                        var valMin = 1;
 
                         var item = document.getElementById('quantity');
                         var val = parseInt(item.value);
@@ -126,7 +129,7 @@
                         if (type == 1) {
                             if (val < valMax) item.value = ++val;
                         } else {
-                            if (val - 1 <= valMin) {
+                            if (val - 1 < valMin) {
                                 item.value = valMin;
                                 return;
                             }
