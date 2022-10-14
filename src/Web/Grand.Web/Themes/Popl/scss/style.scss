@@ -88,12 +88,13 @@ a, a:visited, a span {
 
 
 
+
 .popl_container {
     max-width: 74.375rem;
     margin: 0 auto;
     padding: 0 25px;
     width: auto;
-    position:relative;
+    position: relative;
 }
 .popl_seciton{
     margin-top:100px;
@@ -133,6 +134,19 @@ $persianFont: IRANSans;
 html {
     $dir: null;
 
+    /*یک چیزی در بوت استرپ بود که مشکل ایجاد می کرد در فرم هایی که چک باکس دارن*/
+    .custom-control {
+        padding-left: 1.5rem;
+        padding-right: unset;
+
+        .custom-control-label {
+            &::after {
+                left: -1.5rem;
+                right: unset;
+            }
+        }
+    }
+
 
     .onlyEnglish {
         display: revert;
@@ -167,10 +181,30 @@ html {
     @import "pages/myCartSummaryPage.scss";
 
     @import "components/_myQuickProductView.scss";
+
+    @import "pages/myCheckoutPage.scss";
+    @import "pages/myOrderDetailPage.scss";
 }
 
 html[dir="rtl"] {
     $dir: rtl;
+
+    .custom-control {
+        padding-left: unset;
+        padding-right: 1.5rem;
+
+        .custom-control-label {
+            &::before {
+                left: unset;
+                right: -1.5rem;
+            }
+
+            &::after {
+                left: unset;
+                right: -1.5rem;
+            }
+        }
+    }
 
     .onlyEnglish {
         display: none !important;
@@ -207,6 +241,9 @@ html[dir="rtl"] {
     @import "pages/myCartSummaryPage.scss";
 
     @import "components/_myQuickProductView.scss";
+
+    @import "pages/myCheckoutPage.scss";
+    @import "pages/myOrderDetailPage.scss";
 }
 
 

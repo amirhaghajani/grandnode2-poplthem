@@ -1,6 +1,6 @@
 ﻿<div class="mb-3">
     <div class="card-group">
-        <div class="card" title="@Loc["Order.BillingAddress"]">
+        @*<div class="card" title="@Loc["Order.BillingAddress"]">
             <div class="card-body">
                 <ul class="billing-info pl-0">
                     <li class="name">
@@ -65,7 +65,7 @@
                     </template>
                 </ul>
             </div>
-        </div>
+        </div>*@
         <div class="card" v-if="vmorder.cart.OrderReviewData.IsShippable" title="@Loc["Order.ShippingAddress"]">
             <div class="card-body">
                 <ul class="shipping-info pl-0">

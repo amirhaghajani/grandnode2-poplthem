@@ -2,9 +2,10 @@
 
 @model CheckoutCompletedModel
 @{
-    Layout = "_SingleColumn";
+    //Layout = "_SingleColumn";
+    Layout = "_poplLayout";
 }
-<div class="page checkout-page order-completed-page text-xs-center">
+<div class="page checkout-completed-page">
     <div class="checkout-data mt-3">
         @await Component.InvokeAsync("Widget", new { widgetZone = "checkout_completed_top", additionalData = Model.OrderId })
         <b-card title="@Loc["Checkout.ThankYou"]" sub-title="@Loc["Checkout.YourOrderHasBeenSuccessfullyProcessed"]">

@@ -1,33 +1,35 @@
 ﻿@inject IPageHeadBuilder pagebuilder
 @model CheckoutModel
 @{
-    Layout = "_SingleColumn";
+    //Layout = "_SingleColumn";
+    Layout = "_poplLayout";
 
     <script asp-location="Footer" asp-src="/theme/script/public.checkout.js" asp-order="300"></script>
 
     <script asp-location="Footer" asp-order="301">
-                vmorder.vShipping.init('#co-shipping-form', '/checkout/SaveShipping/');
-                vmorder.vBilling.init('#co-billing-form', '/checkout/SaveBilling/');
-                vmorder.vShippingMethod.init('#co-shipping-method-form', '/checkout/SaveShippingMethod/');
-                vmorder.vPaymentMethod.init('#co-payment-method-form', '/checkout/SavePaymentMethod/');
-                vmorder.vPaymentInfo.init('#co-payment-info-form', '/checkout/SavePaymentInfo/');
-                vmorder.vConfirmOrder.init('/checkout/ConfirmOrder/', '@Url.RouteUrl("CheckoutCompleted")')
+                vmorder.vShipping.init('#co-shipping-form', '/mycheckout/SaveShipping/');
+        vmorder.vBilling.init('#co-billing-form', '/mycheckout/SaveBilling/');
+        vmorder.vShippingMethod.init('#co-shipping-method-form', '/mycheckout/SaveShippingMethod/');
+                vmorder.vPaymentMethod.init('#co-payment-method-form', '/mycheckout/SavePaymentMethod/');
+        vmorder.vPaymentInfo.init('#co-payment-info-form', '/mycheckout/SavePaymentInfo/');
+        vmorder.vConfirmOrder.init('/mycheckout/ConfirmOrder/', '@Url.RouteUrl("CheckoutCompleted")')
     </script>
 
     //title
     pagebuilder.AddTitleParts(Loc["Title.Checkout"]);
-                }
+}
+
 @{
     //step numbers
     int shippingAddressStepNumber = 1;
-                //int billingAddressStepNumber = 2;
-                int shippingMethodStepNumber = 2;
-                int paymentMethodStepNumber = 3;
-                int paymentInfoStepNumber = 4;
-                int confirmOrderStepNumber = 5;
+                int billingAddressStepNumber = 2;
+                int shippingMethodStepNumber = 3;
+                int paymentMethodStepNumber = 4;
+                int paymentInfoStepNumber = 5;
+                int confirmOrderStepNumber = 6;
     if (!Model.ShippingRequired)
     {
-        //billingAddressStepNumber = 1;
+        billingAddressStepNumber = 1;
         paymentMethodStepNumber = paymentMethodStepNumber - 1;
         paymentInfoStepNumber = paymentInfoStepNumber - 1;
         confirmOrderStepNumber = confirmOrderStepNumber - 1;
@@ -38,43 +40,49 @@
         confirmOrderStepNumber = confirmOrderStepNumber - 1;
     }
 
-        }
+}
+
 <div class="page checkout-page">
-    <h1 class="generalTitle h2 my-3">@Loc["Checkout"]</h1>
+    @*<h1 class="generalTitle h2 my-3">@Loc["Checkout"]</h1>*@
     @await Component.InvokeAsync("Widget", new { widgetZone = "checkout_content_before" })
     <div class="col-12 px-0">
-        <div class="opc-header">
-            @if (Model.ShippingRequired)
-            {
-                <div class="card-header" role="tab">
-                    <button block v-b-toggle.opc-shipping id="button-shipping" ref="buttonShipping" class="btn btn-info">@shippingAddressStepNumber. @Loc["Checkout.ShippingAddress"]</button>
-                </div>
-            }
-            @*<div class="card-header" role="tab">
-                <button block v-b-toggle.opc-billing id="button-billing" ref="buttonBilling" class="allow btn btn-info">@billingAddressStepNumber. @Loc["Checkout.BillingAddress"]</button>
-            </div>*@
-            @if (Model.ShippingRequired)
-            {
-                <div class="card-header" role="tab">
-                    <button block v-b-toggle.opc-shipping-method id="button-shipping-method" ref="buttonShippingMethod" class="btn btn-info">@shippingMethodStepNumber. @Loc["Checkout.ShippingMethod"]</button>
-                </div>
-            }
-
-            @if(!Model.HasSinglePaymentMethod){
-                <div class="card-header" role="tab">
-                    <button block v-b-toggle.opc-payment-method id="button-payment-method" ref="buttonPaymentMethod" class="btn btn-info">@paymentMethodStepNumber. @Loc["Checkout.PaymentMethod"]</button>
-                </div>
-            }
-            
-            <div class="card-header" role="tab">
-                <button block v-b-toggle.opc-payment-info id="button-payment-info" ref="buttonPaymentInfo" class="btn btn-info">@paymentInfoStepNumber. @Loc["Checkout.PaymentInfo"]</button>
-            </div>
-            <div class="card-header" role="tab">
-                <button block v-b-toggle.opc-confirm-order id="button-confirm-order" class="btn btn-info">@confirmOrderStepNumber. @Loc["Checkout.ConfirmOrder"]</button>
-            </div>
-        </div>
         <div class="form-row">
-            <div class="col-xl-7 col-12">
+            <div class="col-xl-7 col-12 form-side">
+                <div class="opc-header">
+                    @if (Model.ShippingRequired)
+                    {
+                        <div class="card-header" role="tab">
+                            @*<button block v-b-toggle.opc-shipping id="button-shipping" ref="buttonShipping" class="btn btn-info">@shippingAddressStepNumber. @Loc["Checkout.ShippingAddress"]</button>*@
+                            <button block v-b-toggle.opc-shipping id="button-shipping" ref="buttonShipping" class="btn btn-info">@Loc["Checkout.ShippingAddress"]</button>
+                        </div>
+                    }
+                    @*<div class="card-header" role="tab">
+                        <button block v-b-toggle.opc-billing id="button-billing" ref="buttonBilling" class="allow btn btn-info">@billingAddressStepNumber. @Loc["Checkout.BillingAddress"]</button>
+                    </div>*@
+                    @if (Model.ShippingRequired)
+                    {
+                        <div class="card-header" role="tab">
+                           @* <button block v-b-toggle.opc-shipping-method id="button-shipping-method" ref="buttonShippingMethod" class="btn btn-info">@shippingMethodStepNumber. @Loc["Checkout.ShippingMethod"]</button>*@
+                            <button block v-b-toggle.opc-shipping-method id="button-shipping-method" ref="buttonShippingMethod" class="btn btn-info">@Loc["Checkout.ShippingMethod"]</button>
+                        </div>
+                    }
+
+                    @if(!Model.HasSinglePaymentMethod){
+                        <div class="card-header" role="tab">
+                            @*<button block v-b-toggle.opc-payment-method id="button-payment-method" ref="buttonPaymentMethod" class="btn btn-info">@paymentMethodStepNumber. @Loc["Checkout.PaymentMethod"]</button>*@
+                            <button block v-b-toggle.opc-payment-method id="button-payment-method" ref="buttonPaymentMethod" class="btn btn-info">@Loc["Checkout.PaymentMethod"]</button>
+                        </div>
+                    }
+            
+                    <div class="card-header" role="tab">
+                        @*<button block v-b-toggle.opc-payment-info id="button-payment-info" ref="buttonPaymentInfo" class="btn btn-info">@paymentInfoStepNumber. @Loc["Checkout.PaymentInfo"]</button>*@
+                        <button block v-b-toggle.opc-payment-info id="button-payment-info" ref="buttonPaymentInfo" class="btn btn-info">@Loc["Checkout.PaymentInfo"]</button>
+                    </div>
+                    <div class="card-header" role="tab">
+                        @*<button block v-b-toggle.opc-confirm-order id="button-confirm-order" class="btn btn-info">@confirmOrderStepNumber. @Loc["Checkout.ConfirmOrder"]</button>*@
+                        <button block v-b-toggle.opc-confirm-order id="button-confirm-order" class="btn btn-info">@Loc["Checkout.ConfirmOrder"]</button>
+                    </div>
+                </div>
                 <template>
                     <div class="accordion opc" id="checkout-steps" role="tablist">
                         @if (Model.ShippingRequired)
@@ -90,7 +98,9 @@
                                                 <input type="submit" ref="shippingSubmit" id="opc-shipping-submit" class="d-none" />
                                             </form>
                                         <div class="col-12 buttons py-1 px-0 mt-3" id="shipping-buttons-container">
-                                            <input type="button" class="btn btn-info new-address-next-step-button" title="@Loc["Common.Continue"]" @if (Model.ShippingAddress.ExistingAddresses.Any()) { <text>@@click="vmorder.saveStep('vShipping', 'shippingSubmit', vm.$refs.shippingSelect.value === '')"</text> } else { <text>@@click="vmorder.saveStep('vShipping', 'shippingSubmit', true)"</text> } value="@Loc["Common.Continue"]" />
+                                            <input type="button" class="btn btn-info new-address-next-step-button" title="@Loc["Common.Continue"]" 
+                                                @if (Model.ShippingAddress.ExistingAddresses.Any()) { <text>@@click="vmorder.saveStep('vShipping', 'shippingSubmit', vm.$refs.shippingSelect.value === '')"</text> } 
+                                                else { <text>@@click="vmorder.saveStep('vShipping', 'shippingSubmit', true)"</text> } value="@Loc["Common.Continue"]" />
                                             <span id="shipping-please-wait" class="please-wait" style="display: none;"> @Loc["Common.LoadingNextStep"]</span>
                                         </div>
                                     </div>
@@ -203,7 +213,7 @@
                     </div>
                 </template>
             </div>
-            <div class="col-xl-5 col-12">
+            <div class="col-xl-5 col-12 summary-side">
                 <div class="opc-totals">
                     <partial name="_Summary" />
                 </div>

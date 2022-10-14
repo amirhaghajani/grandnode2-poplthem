@@ -65,6 +65,7 @@
     <Content Remove="Themes\Popl\Components\MyRecommendedProducts.cs" />
     <Content Remove="Themes\Popl\Components\MyRelatedProducts.cs" />
     <Content Remove="Themes\Popl\Components\MySimilarProducts.cs" />
+    <Content Remove="Themes\Popl\Controllers\MyCheckoutController.cs" />
     <None Remove="Themes\Popl\preview.jpg" />
     <None Remove="Themes\Popl\scripts\my.popl.app.js" />
     <None Remove="Themes\Popl\scripts\my.popl.public.axios.js" />
@@ -91,6 +92,8 @@
     <None Remove="Themes\Popl\scss\helpers\mixins\_flexbox.scss" />
     <None Remove="Themes\Popl\scss\pages\myCartSummaryPage.scss" />
     <None Remove="Themes\Popl\scss\pages\myCatalogPage.scss" />
+    <None Remove="Themes\Popl\scss\pages\myCheckoutPage.scss" />
+    <None Remove="Themes\Popl\scss\pages\myOrderDetailPage.scss" />
     <None Remove="Themes\Popl\scss\theme\_fonts.scss" />
     <None Remove="Themes\Popl\scss\theme\_icon.scss" />
     <None Remove="Themes\Popl\Views\MyCommon\learnzap.scss" />

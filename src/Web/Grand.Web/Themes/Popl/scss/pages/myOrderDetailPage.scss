@@ -1,0 +1,24 @@
+﻿$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
+
+.order-details-page {
+    padding: 1em;
+
+    .order-details-area {
+        .order-info {
+            text-align: $leftRight;
+        }
+
+        .shipping {
+            text-align: $leftRight;
+        }
+    }
+
+    .shopping-cart-page {
+        .generalTitle {
+            text-align: $leftRight;
+        }
+    }
+}
