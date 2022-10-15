@@ -8,16 +8,42 @@ $leftRightReverse: if($dir==rtl,left,right);
         font-family: if($dir==rtl,$persianFont,"Gilroy400");
         text-align: justify;
         padding: 5px 15px 22px 15px;
-        border-bottom: solid 1px gray;
-        margin-bottom: 20px;
-        margin-right: 5%;
-        margin-left: 5%;
+        border-bottom: solid 1px rgba(175,175,175,0.8);
+        margin-bottom: 8px;
+        margin-right: 1em;
+        margin-left: 1em;
     }
 
     .login-container {
         text-align: $leftRight;
+        padding: 0 1em;
+
         a {
-            display: block;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+
+            span {
+                display: inline-block;
+                flex: 1;
+                padding-#{$leftRight}: 5px;
+            }
+        }
+
+        .seprator {
+            border-bottom: solid 1px rgba(175,175,175,0.34);
+            margin: 10px 0;
+            margin-#{$leftRight}: 30px;
+            margin-#{$leftRightReverse}: 0;
+        }
+    }
+}
+
+.popl-languge-selection-container {
+    ul {
+
+        &.show {
+            display: unset !important;
         }
     }
 }

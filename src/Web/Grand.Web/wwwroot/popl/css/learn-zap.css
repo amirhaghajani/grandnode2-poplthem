@@ -435,14 +435,12 @@ main#MainContent {
 }
 
 .faq-plus-app-container {
-  width: 1100px;
   display: block;
   margin: 0 auto;
   padding-top: 30px;
 }
 
 .faq-plus-app-container-search {
-  width: 1100px;
   display: block;
   margin: 0 auto;
 }

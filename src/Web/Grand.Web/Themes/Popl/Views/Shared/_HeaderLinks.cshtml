@@ -9,6 +9,7 @@
     var isAdminAccess = await permissionService.Authorize(Grand.Business.Common.Services.Security.StandardPermission.AccessAdminPanel);
 }
 
+
 @await Component.InvokeAsync("Widget", new { widgetZone = "header_links_before" })
 <div class="popl-header-links">
     @if (isCustomerImpersonated)

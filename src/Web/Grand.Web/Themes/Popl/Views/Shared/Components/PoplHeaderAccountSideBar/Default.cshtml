@@ -1,6 +1,15 @@
-﻿@inject IWorkContext workContext
+﻿@inject Grand.Business.Common.Interfaces.Directory.IGroupService groupService
+@inject IWorkContext workContext
+@inject IPageHeadBuilder pagebuilder
+@inject Grand.Business.Common.Interfaces.Security.IPermissionService permissionService
+
 @{
     var supportRtl = workContext.WorkingLanguage.Rtl;
+
+    var registerUrl = Url.RouteUrl("Register", new { returnUrl = this.Context.Request.Query["returnUrl"] });
+    var isAuthenticated = await groupService.IsRegistered(workContext.CurrentCustomer);
+    var isCustomerImpersonated = workContext.OriginalCustomerIfImpersonated != null;
+    var isAdminAccess = await permissionService.Authorize(Grand.Business.Common.Services.Security.StandardPermission.AccessAdminPanel);
 }
 
 @model CustomerInfoModel
@@ -16,7 +25,7 @@
 }
 
 <template>
-    <li class="nav-item">
+    <div class="nav-item popl-header-links">
         <span class="nav-link">
             <b-icon icon="person-circle" :variant="[darkMode ? 'white' : 'dark']" v-b-toggle.sidebar-right></b-icon>
         </span>
@@ -44,15 +53,35 @@
                             <div class="mySideCol2">خروج</div>
                         </div>
                     </div>
+
                 }
                 else {
 
+                        <div class="txtForUser">
+                                    @Loc["Account.Login.NewCustomerText"]
+                        </div>
+
+                        <div class="login-container">
+                            <a class="" href="@Url.RouteUrl("Login")">
+                                    <img src="/popl/images/icon/header-side-links/login.png" style="width:20px;height:20px;">
+                                        @*<b-icon icon="shield-lock"></b-icon>*@
+                                <span class="">@Loc["Account.Login"]</span>
+                            </a>
+                            <div class="seprator"></div>
+                            <a class="" href="@registerUrl">
+                                        @*<b-icon icon="person"></b-icon>*@
+                                <img src="/popl/images/icon/header-side-links/registration.png" alt="Bootstrap" style="width:20px;height:20px;">
+                                <span class="">@Loc["Account.Register"]</span>
+                            </a>
+                        </div>
+
                 }
 
 
-                <partial name="_HeaderLinks" />
+               @* <partial name="_HeaderLinks" />*@
+                
 
             </b-sidebar>
         </template>
-    </li>
+    </div>
 </template>

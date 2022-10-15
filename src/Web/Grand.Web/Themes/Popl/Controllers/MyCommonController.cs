@@ -71,6 +71,20 @@ namespace Grand.Web.Themes.Popl.Controllers
             return View();
         }
 
+        [Route("representation-request")]
+        public IActionResult RepresentationRequest()
+        {
+            return View();
+        }
+
+
+        [Route("contact-us")]
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
+
+
 
         [HttpPost, ActionName("MyContactUsFromHome")]
         [AutoValidateAntiforgeryToken]

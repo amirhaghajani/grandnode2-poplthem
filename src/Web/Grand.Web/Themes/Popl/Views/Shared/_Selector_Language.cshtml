@@ -14,7 +14,7 @@
     var returnurl = Context?.Request?.GetEncodedPathAndQuery();
     if (availableLanguages.Count > 1)
     {
-        <div>
+        <div class="popl-languge-selection-container">
             <b-dropdown class="mr-2" text="@availableLanguages.FirstOrDefault(x => x.Id == workContext.WorkingLanguage.Id)?.Name">
                 @foreach (var lang in availableLanguages)
                 {
