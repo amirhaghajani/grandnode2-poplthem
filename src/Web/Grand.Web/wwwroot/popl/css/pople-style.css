@@ -1013,6 +1013,114 @@ html .header-logo-container img {
   width: 61.91px;
   margin: 0 auto;
 }
+html .popl-header-links {
+  /* هنوز لاگ این نکرده*/
+  /* لاک این کرده */
+}
+html .popl-header-links .seprator {
+  border-bottom: solid 1px rgba(175, 175, 175, 0.34);
+  margin: 10px 0;
+  margin-left: 30px;
+}
+html .popl-header-links .txtForUser {
+  font-family: "Gilroy400";
+  text-align: justify;
+  padding: 5px 15px 22px 15px;
+  border-bottom: solid 1px rgba(175, 175, 175, 0.8);
+  margin-bottom: 8px;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+html .popl-header-links .seprator {
+  margin-right: 0;
+}
+html .popl-header-links .login-container {
+  text-align: left;
+  padding: 0 1em;
+}
+html .popl-header-links .login-container a {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+html .popl-header-links .login-container a span {
+  display: inline-block;
+  flex: 1;
+  padding-right: 0;
+  padding-left: 10px;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+}
+html .popl-header-links .mySideAccoundContainer .seprator {
+  margin-right: 20px;
+}
+html .popl-header-links .mySideAccoundContainer .fullNameContainer {
+  display: flex;
+  align-items: center;
+  padding: 0 1em 2em 1em;
+  margin: 1em;
+  border-bottom: solid 1px grey;
+}
+html .popl-header-links .mySideAccoundContainer .fullNameContainer .profile {
+  width: 30px;
+  height: 30px;
+}
+html .popl-header-links .mySideAccoundContainer .fullNameContainer .mySideCol2 {
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 5px;
+  flex: 1;
+  text-align: left;
+}
+html .popl-header-links .mySideAccoundContainer .fullNameContainer .left-arrow {
+  width: 18px;
+  height: 18px;
+  transform: rotate(180deg);
+}
+html .popl-header-links .mySideAccoundContainer .mySideRow {
+  display: flex;
+  align-items: center;
+  padding: 0.6em;
+  color: black;
+}
+html .popl-header-links .mySideAccoundContainer .mySideRow .b-icon {
+  font-size: 22px;
+}
+html .popl-header-links .mySideAccoundContainer .mySideRow img {
+  width: 24px;
+  height: 24px;
+}
+html .popl-header-links .mySideAccoundContainer .mySideRow .mySideCol2 {
+  flex: 1;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+html .popl-header-links .mySideAccoundContainer .mySideRow .mySideCol3 {
+  padding-right: 2px;
+  padding-left: 0;
+}
+html .popl-header-links .mySideAccoundContainer .mySideRow .mySideCol3 .btn-secondary {
+  padding: 0 1em;
+  background-color: black;
+  border-radius: 10px;
+}
+html .popl-header-links .mySideAccoundContainer .popl-languge-selection-container ul {
+  display: none;
+  min-width: unset;
+}
+html .popl-header-links .mySideAccoundContainer .popl-languge-selection-container ul.show {
+  display: unset !important;
+}
+html .popl-header-links .mySideAccoundContainer .popl-languge-selection-container ul li {
+  width: 100%;
+}
+html .popl-header-links .mySideAccoundContainer .popl-languge-selection-container .dropdown-toggle:after {
+  margin-left: 0.255em;
+  margin-right: unset;
+}
 html .slide-fade-enter-active {
   animation: heartBeat;
   /* referring directly to the animation's @keyframe declaration */
@@ -3015,20 +3123,6 @@ html .popl_footer .footer_withsocial .contact__social div img {
   width: 24px !important;
   height: 24px;
 }
-html .b-dropdown ul {
-  display: none !important;
-}
-html .b-dropdown.show ul {
-  display: flex !important;
-}
-html .mySideAccoundContainer .mySideRow {
-  display: flex;
-}
-html .mySideAccoundContainer .mySideRow .mySideCol1 {
-  width: 50px;
-  text-align: center;
-  font-size: 24px;
-}
 html .myCatalogePageHeader {
   font-style: normal;
   font-weight: 700;
@@ -3039,38 +3133,6 @@ html .myCatalogePageHeader {
 }
 html .feature_divider {
   border-bottom: 1px solid #C9C9C9;
-}
-html .popl-header-links .txtForUser {
-  font-family: "Gilroy400";
-  text-align: justify;
-  padding: 5px 15px 22px 15px;
-  border-bottom: solid 1px rgba(175, 175, 175, 0.8);
-  margin-bottom: 8px;
-  margin-right: 1em;
-  margin-left: 1em;
-}
-html .popl-header-links .login-container {
-  text-align: left;
-  padding: 0 1em;
-}
-html .popl-header-links .login-container a {
-  padding: 5px;
-  display: flex;
-  align-items: center;
-}
-html .popl-header-links .login-container a span {
-  display: inline-block;
-  flex: 1;
-  padding-left: 5px;
-}
-html .popl-header-links .login-container .seprator {
-  border-bottom: solid 1px rgba(175, 175, 175, 0.34);
-  margin: 10px 0;
-  margin-left: 30px;
-  margin-right: 0;
-}
-html .popl-languge-selection-container ul.show {
-  display: unset !important;
 }
 html .product-details-page {
   max-width: 1440px;
@@ -4631,6 +4693,114 @@ html[dir=rtl] .header-logo-container a {
 html[dir=rtl] .header-logo-container img {
   width: 61.91px;
   margin: 0 auto;
+}
+html[dir=rtl] .popl-header-links {
+  /* هنوز لاگ این نکرده*/
+  /* لاک این کرده */
+}
+html[dir=rtl] .popl-header-links .seprator {
+  border-bottom: solid 1px rgba(175, 175, 175, 0.34);
+  margin: 10px 0;
+  margin-right: 30px;
+}
+html[dir=rtl] .popl-header-links .txtForUser {
+  font-family: IRANSans;
+  text-align: justify;
+  padding: 5px 15px 22px 15px;
+  border-bottom: solid 1px rgba(175, 175, 175, 0.8);
+  margin-bottom: 8px;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+html[dir=rtl] .popl-header-links .seprator {
+  margin-left: 0;
+}
+html[dir=rtl] .popl-header-links .login-container {
+  text-align: right;
+  padding: 0 1em;
+}
+html[dir=rtl] .popl-header-links .login-container a {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+html[dir=rtl] .popl-header-links .login-container a span {
+  display: inline-block;
+  flex: 1;
+  padding-left: 0;
+  padding-right: 10px;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .seprator {
+  margin-left: 20px;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .fullNameContainer {
+  display: flex;
+  align-items: center;
+  padding: 0 1em 2em 1em;
+  margin: 1em;
+  border-bottom: solid 1px grey;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .fullNameContainer .profile {
+  width: 30px;
+  height: 30px;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .fullNameContainer .mySideCol2 {
+  font-size: 16px;
+  font-weight: bold;
+  padding-right: 10px;
+  padding-left: 5px;
+  flex: 1;
+  text-align: right;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .fullNameContainer .left-arrow {
+  width: 18px;
+  height: 18px;
+  transform: unset;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .mySideRow {
+  display: flex;
+  align-items: center;
+  padding: 0.6em;
+  color: black;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .mySideRow .b-icon {
+  font-size: 22px;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .mySideRow img {
+  width: 24px;
+  height: 24px;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .mySideRow .mySideCol2 {
+  flex: 1;
+  text-align: right;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .mySideRow .mySideCol3 {
+  padding-left: 2px;
+  padding-right: 0;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .mySideRow .mySideCol3 .btn-secondary {
+  padding: 0 1em;
+  background-color: black;
+  border-radius: 10px;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .popl-languge-selection-container ul {
+  display: none;
+  min-width: unset;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .popl-languge-selection-container ul.show {
+  display: unset !important;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .popl-languge-selection-container ul li {
+  width: 100%;
+}
+html[dir=rtl] .popl-header-links .mySideAccoundContainer .popl-languge-selection-container .dropdown-toggle:after {
+  margin-right: 0.255em;
+  margin-left: unset;
 }
 html[dir=rtl] .slide-fade-enter-active {
   animation: heartBeat;
@@ -6634,20 +6804,6 @@ html[dir=rtl] .popl_footer .footer_withsocial .contact__social div img {
   width: 24px !important;
   height: 24px;
 }
-html[dir=rtl] .b-dropdown ul {
-  display: none !important;
-}
-html[dir=rtl] .b-dropdown.show ul {
-  display: flex !important;
-}
-html[dir=rtl] .mySideAccoundContainer .mySideRow {
-  display: flex;
-}
-html[dir=rtl] .mySideAccoundContainer .mySideRow .mySideCol1 {
-  width: 50px;
-  text-align: center;
-  font-size: 24px;
-}
 html[dir=rtl] .myCatalogePageHeader {
   font-style: normal;
   font-weight: 700;
@@ -6658,38 +6814,6 @@ html[dir=rtl] .myCatalogePageHeader {
 }
 html[dir=rtl] .feature_divider {
   border-bottom: 1px solid #C9C9C9;
-}
-html[dir=rtl] .popl-header-links .txtForUser {
-  font-family: IRANSans;
-  text-align: justify;
-  padding: 5px 15px 22px 15px;
-  border-bottom: solid 1px rgba(175, 175, 175, 0.8);
-  margin-bottom: 8px;
-  margin-right: 1em;
-  margin-left: 1em;
-}
-html[dir=rtl] .popl-header-links .login-container {
-  text-align: right;
-  padding: 0 1em;
-}
-html[dir=rtl] .popl-header-links .login-container a {
-  padding: 5px;
-  display: flex;
-  align-items: center;
-}
-html[dir=rtl] .popl-header-links .login-container a span {
-  display: inline-block;
-  flex: 1;
-  padding-right: 5px;
-}
-html[dir=rtl] .popl-header-links .login-container .seprator {
-  border-bottom: solid 1px rgba(175, 175, 175, 0.34);
-  margin: 10px 0;
-  margin-right: 30px;
-  margin-left: 0;
-}
-html[dir=rtl] .popl-languge-selection-container ul.show {
-  display: unset !important;
 }
 html[dir=rtl] .product-details-page {
   max-width: 1440px;

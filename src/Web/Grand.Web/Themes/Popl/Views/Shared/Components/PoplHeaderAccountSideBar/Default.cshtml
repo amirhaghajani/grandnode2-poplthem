@@ -34,24 +34,73 @@
                 @if (!supportRtl) { <text>right</text> } backdrop>
 
                 @if(userHasLogined){
+
+                    
+
                     <div class="mySideAccoundContainer">
-                        <div class="mySideRow">
-                                <div class="mySideCol1"><b-icon icon="person-circle"></div>
+                        <div class="fullNameContainer">
+                                <img class="profile" src="/popl/images/icon/header-side-links/profile-avatar.png">
                                 <div class="mySideCol2">@fullName</div>
+                                <img class="left-arrow" src="/popl/css/bootstrap-icons/chevron-left.svg">
                         </div>
+
+                        @if (isAdminAccess)
+                        {
+                            <a class="mySideRow" href="@Url.Content("~/Admin")">
+                                <div class="mySideCol1">
+                                    <b-icon icon="gear"></b-icon>
+                                </div> 
+                                <div class="mySideCol2">@Loc["admin"]</div>
+                            </a>
+                            <div class="seprator"></div>
+                        }
+                        @if (!string.IsNullOrEmpty(pagebuilder.EditPageUrl))
+                        {
+                            <a target="_blank"  class="mySideRow" href="@pagebuilder.EditPageUrl">
+                                <div class="mySideCol1">
+                                        <b-icon icon="wrench"></b-icon>
+                                </div>
+                                
+                                        <div class="mySideCol2">@Loc["edit"]</div>
+                            </a>
+                            <div class="seprator"></div>
+                        }
+
+                        <a class="mySideRow" href="@Url.RouteUrl("CustomerInfo")">
+                                <div class="mySideCol1">
+                                                <b-icon icon="person"></b-icon>
+                                    </div>
+                            
+                                <div class="mySideCol2">@Loc["Account.MyAccount"]</div>
+                        </a>
+
+                            <div class="seprator"></div>
+
                         <div class="mySideRow">
-                                    <div class="mySideCol1"><b-icon icon="person-circle"></div>
+                                    <div class="mySideCol1">
+                                            <img src="/popl/images/icon/header-side-links/language-select.png">
+                                    </div>
                                     <div class="mySideCol2">انتخاب زبان</div>
                                     <div class="mySideCol3"><partial name="_Selector_Language" /></div>
                         </div>
-                        <div class="mySideRow">
-                            <div class="mySideCol1"><b-icon icon="person-circle"></div>
-                            <div class="mySideCol2">سفارش ها</div>
-                        </div>
-                        <div class="mySideRow">
-                                <div class="mySideCol1"><b-icon icon="person-circle"></div>
-                            <div class="mySideCol2">خروج</div>
-                        </div>
+
+                            <div class="seprator"></div>
+
+                            <a class="mySideRow" href="@Url.RouteUrl("CustomerOrders")">
+                            <div class="mySideCol1">
+                                    <img src="/popl/images/icon/header-side-links/orders.png">
+                            </div>
+                                <div class="mySideCol2">@Loc["Account.CustomerOrders"]</div>
+                        </a>
+
+                        <div class="seprator"></div>
+
+                            <a class="mySideRow" href="@Url.RouteUrl("Logout")">
+                                <div class="mySideCol1">
+                                        <img src="/popl/images/icon/header-side-links/logout.png">
+                                </div>
+                            <div class="mySideCol2">@Loc["Account.Logout"]</div>
+                        </a>
                     </div>
 
                 }

@@ -69,7 +69,6 @@
     <None Remove="Themes\Popl\preview.jpg" />
     <None Remove="Themes\Popl\scripts\my.popl.app.js" />
     <None Remove="Themes\Popl\scripts\my.popl.public.axios.js" />
-    <None Remove="Themes\Popl\scss\components\_header-links.scss" />
     <None Remove="Themes\Popl\scss\components\_header.scss" />
     <None Remove="Themes\Popl\scss\components\_header\_action_items.scss" />
     <None Remove="Themes\Popl\scss\components\_header\_logo.scss" />
