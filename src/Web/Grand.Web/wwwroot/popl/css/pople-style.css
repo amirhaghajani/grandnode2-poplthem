@@ -1053,6 +1053,7 @@ html .popl-header-links .login-container a span {
   font-weight: bold;
 }
 html .popl-header-links .mySideAccoundContainer .seprator {
+  margin: 5px 0;
   margin-right: 20px;
 }
 html .popl-header-links .mySideAccoundContainer .fullNameContainer {
@@ -4734,6 +4735,7 @@ html[dir=rtl] .popl-header-links .login-container a span {
   font-weight: bold;
 }
 html[dir=rtl] .popl-header-links .mySideAccoundContainer .seprator {
+  margin: 5px 0;
   margin-left: 20px;
 }
 html[dir=rtl] .popl-header-links .mySideAccoundContainer .fullNameContainer {
