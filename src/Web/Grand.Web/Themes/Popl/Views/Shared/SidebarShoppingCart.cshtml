@@ -38,39 +38,54 @@
                         <div class="spinner-border text-info" role="status">
                         </div>
                     </div>
-                    <div v-for="item in flycartitems" class="item d-inline-flex no-wrap">
-                        <a :href="item.ProductUrl" :title="item.Picture.Title" v-if="item.Picture.ImageUrl">
-                            <b-img :alt="item.Picture.AlternateText" :src="item.Picture.ImageUrl" :title="item.Picture.Title" fluid></b-img>
-                        </a>
-                        <div class="col">
-                            <a :href="item.ProductUrl">{{item.ProductName}}</a>
-                            <div class="attributes p-2" v-if="item.AttributeInfo">
-                                <div v-html="item.AttributeInfo"></div>
+                    <div v-for="item in flycartitems" >
+
+                        <div class="item d-inline-flex no-wrap">
+                            <div class="col">
+                                <a :href="item.ProductUrl">{{item.ProductName}}</a>
+                                <div v-if="item.AttributeInfo">
+                                    <div v-html="item.AttributeInfo"></div>
+                                </div>
+                                <div class="price"><span>@Loc["ShoppingCart.Mini.UnitPrice"]:</span> <strong>{{item.UnitPrice}}</strong></div>
+                                <div class="quantity"><span>@Loc["ShoppingCart.Mini.Quantity"]:</span> <strong>{{item.Quantity}}</strong></div>
+
+                                 <a class="deleteitem" @@click="deletecartitem('@Url.RouteUrl("DeleteCartItem")/'+ item.Id)">
+                                        @*<b-icon icon="trash" class="deleteitem" variant="danger"></b-icon>*@
+                                    <span>حذف از سبد</span>
+                                </a>
                             </div>
-                            <div class="price"><span>@Loc["ShoppingCart.Mini.UnitPrice"]:</span> <strong>{{item.UnitPrice}}</strong></div>
-                            <div class="quantity"><span>@Loc["ShoppingCart.Mini.Quantity"]:</span> <strong>{{item.Quantity}}</strong></div>
-                        </div>
-                        <div>
-                            <a class="deleteitem" @@click="deletecartitem('@Url.RouteUrl("DeleteCartItem")/'+ item.Id)">
-                                <b-icon icon="trash" class="deleteitem" variant="danger"></b-icon>
+
+                            <a :href="item.ProductUrl" :title="item.Picture.Title" v-if="item.Picture.ImageUrl">
+                                <b-img :alt="item.Picture.AlternateText" :src="item.Picture.ImageUrl" :title="item.Picture.Title" fluid></b-img>
                             </a>
                         </div>
+                        
+
+                        <div class="divider"></div>
+
                     </div>
                     <template v-slot:footer v-if="flycartindicator > 0">
                         <div class="p-3 bg-dark col-12">
                             <div class="row">
-                                <div class="col-lg-6 col-5 text-center text-white d-flex flex-column">
-                                    <span class="h5 mb-0">@Loc["ShoppingCart.Totals.SubTotal"]:</span>
-                                    <span class="h4 mb-0">{{flycart.SubTotal}}</span>
+                                <div class="text-center text-white d-flex flex-column mySubTotalContainer">
+                                    <span class="subtotal">@Loc["ShoppingCart.Totals.SubTotal"]:</span>
+                                    <span class="">{{flycart.SubTotal}}</span>
                                 </div>
-                                <div class="col-lg-6 col-7 text-center d-flex justify-content-center align-items-center">
-                                    <a v-if="flycart.DisplayShoppingCartButton" class="btn btn-light cart-button w-100 h-100 d-flex align-items-center justify-content-center text-uppercase" @@click="location='@Url.RouteUrl("ShoppingCart")'">@Loc["ShoppingCart.Mini.ViewCart"]</a>
+                                <div class="text-center d-flex justify-content-center align-items-center myBtnViewCartContainer">
+
+                                    <a v-if="flycart.DisplayShoppingCartButton" 
+                                        class="btn btn-light cart-button d-flex align-items-center justify-content-center text-uppercase myBtnShoppingCart" 
+                                        @@click="location='@Url.RouteUrl("ShoppingCart")'">@Loc["zap.sidebar_shoppingcart.viewcart"]</a>
+
                                     <div v-if="flycart.DisplayCheckoutButton" class="w-100 h-100">
                                         <div v-if="flycart.CurrentCustomerIsGuest && flycart.CurrentCustomerIsGuest">
-                                            <a class="btn btn-light checkout-button w-100 h-100 d-flex align-items-center justify-content-center text-uppercase" onclick="location='@Url.RouteUrl("LoginCheckoutAsGuest", new { returnUrl = Url.RouteUrl("ShoppingCart") })'">@Loc["Checkout.Button"]</a>
+                                            <a class="btn btn-light checkout-button w-100 h-100 d-flex align-items-center justify-content-center text-uppercase" 
+                                                onclick="location='@Url.RouteUrl("LoginCheckoutAsGuest", new { returnUrl = Url.RouteUrl("ShoppingCart") })'">@Loc["Checkout.Button"]</a>
                                         </div>
                                         <div v-else>
-                                            <a class="btn btn-light checkout-button w-100 h-100 d-flex align-items-center justify-content-center text-uppercase" onclick="location='@Url.RouteUrl("Checkout")'">@Loc["Checkout.Button"]</a>
+                                            <a class="btn btn-light checkout-button w-100 h-100 d-flex align-items-center justify-content-center text-uppercase" 
+                                                onclick="location='@Url.RouteUrl("Checkout")'">@Loc["Checkout.Button"]</a>
+
                                         </div>
                                     </div>
                                 </div>

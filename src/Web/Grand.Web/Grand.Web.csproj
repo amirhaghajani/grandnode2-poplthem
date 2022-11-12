@@ -86,6 +86,7 @@
     <None Remove="Themes\Popl\scss\components\_myPoplFeatures.scss" />
     <None Remove="Themes\Popl\scss\components\_myPoplFooter.scss" />
     <None Remove="Themes\Popl\scss\components\_myQuickProductView.scss" />
+    <None Remove="Themes\Popl\scss\components\_mySidebarShoppingCart.scss" />
     <None Remove="Themes\Popl\scss\components\_poplHeaderAccountSideBar.scss" />
     <None Remove="Themes\Popl\scss\components\_product.scss" />
     <None Remove="Themes\Popl\scss\helpers\mixins\_flexbox.scss" />

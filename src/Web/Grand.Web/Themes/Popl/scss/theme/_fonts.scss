@@ -1,14 +1,28 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+﻿/*@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");*/
 
 $persianFont: IranianSan !default;
+
+@font-face {
+    font-family: "DM Sanse";
+    font-style: normal;
+    font-weight: normal;
+    src: url('/popl/font/en/DMSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    src: url('/popl/font/en/Inter-Regular.ttf') format('truetype');
+}
 
 @font-face {
     font-family: IRANSans;
     font-style: normal;
     font-weight: normal;
     src: url('/popl/font/per/IRANSansWeb.eot');
-    src: url('/popl/font/per//IRANSansWeb.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    src: url('/popl/font/per/IRANSansWeb.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
     url('/popl/font/per/IRANSansWeb.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/
     url('/popl/font/per/IRANSansWeb.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
     url('/popl/font/per/IRANSansWeb.ttf') format('truetype');
@@ -31,43 +45,14 @@ $persianFont: IranianSan !default;
 }
 
 @font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/90ae652f-1f2d-4369-aa4a-d4e12910747d.woff2") format("woff2"), url("/popl/font/d9faca11-0c4a-4754-ad0b-287c993e40fc.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/84f4f17d-9786-4c9a-a0b8-3dee0e4dfdae.woff2") format("woff2"), url("/popl/font/2f1cfe4e-e0a8-4527-9476-b841ff9bc45b.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/f131d041-ef14-4069-bb24-bdf1aaedcd8b.woff2") format("woff2"), url("/popl/font/01b27f53-50da-4f89-ba3c-83271c36570c.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/a6096205-61ed-4c16-b76c-a56dd651ad33.woff2") format("woff2"), url("/popl/font/18f98fc7-4ddd-4d5e-94c0-c9b74a2325bd.woff") format("woff");
-}
-
-@font-face {
     font-family: "Gilroy700";
     src: url("/popl/font/e62d07e6-5c21-45b8-8427-79c95511907d.woff2") format("woff2"), url("/popl/font/e667d70b-2326-4c62-8f38-200c31c3b08c.woff") format("woff");
 }
 
-@font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/4035d916-a72e-4505-bc18-f1939f52f091.woff2") format("woff2"), url("/popl/font/fc3914af-bf83-428b-a85a-5e183f83fad7.woff") format("woff");
-}
 
 @font-face {
     font-family: "Gilroy400";
     src: url("/popl/font/b261487c-2966-4089-8551-6555085406ad.woff2") format("woff2"), url("/popl/font/bf190033-35ff-42cf-b90c-f5321a94a3df.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/cbada697-da92-4235-a272-9319d2618daa.woff2") format("woff2"), url("/popl/font/e78b39dd-ae82-4ccb-9e7e-34eb65ed3795.woff") format("woff");
 }
 
 @font-face {
@@ -76,51 +61,11 @@ $persianFont: IranianSan !default;
 }
 
 @font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/f2bc628e-29ba-4027-8000-256934a88ce8.woff2") format("woff2"), url("/popl/font/ed4ec59a-7b58-4c50-a807-3243d5c76766.woff") format("woff");
-}
-
-@font-face {
     font-family: "Gilroy600";
     src: url("/popl/font/65e59d21-d1cb-42cb-85de-10af9afd2b38.woff2") format("woff2"), url("/popl/font/960a0830-33df-46c5-87bc-24fb52edfa4e.woff") format("woff");
 }
 
 @font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/853fa876-11b0-47b1-8b32-31bd9a44e3be.woff2") format("woff2"), url("/popl/font/6df6383a-df81-415a-a3ba-2a064098717d.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/59440bfe-8fae-4d2c-8fa5-f7a0bd33b83a.woff2") format("woff2"), url("/popl/font/e3a21507-45b4-403f-80d4-c3769bb8abb1.woff") format("woff");
-}
-
-@font-face {
     font-family: "Gilroy800";
     src: url("/popl/font/9aa3a833-f885-4df4-975c-c504bb6a7b67.woff2") format("woff2"), url("/popl/font/824bd825-cb90-45d8-ac5e-3997fd8632ac.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/27c90e4e-78f4-4f83-9638-f6b2fc7fdf8f.woff2") format("woff2"), url("/popl/font/6fb1468a-62b2-455f-892a-009f66a5e691.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/83cf0941-dd13-44b9-8dc0-b9161de3268e.woff2") format("woff2"), url("/popl/font/fae2b2de-865c-4574-8d42-33a62836725d.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/69c2e98d-c307-4340-9429-e55e26fce5d8.woff2") format("woff2"), url("/popl/font/2e798628-4050-4677-acfa-f6173d284482.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/a8f2e830-5298-4862-825d-7a786de544b9.woff2") format("woff2"), url("/popl/font/dd4078e7-4f8a-4c69-aeec-4b1659b2555d.woff") format("woff");
-}
-
-@font-face {
-    font-family: "Gilroy";
-    src: url("/popl/font/84f62042-f9d7-466e-817f-e98237995e38.woff2") format("woff2"), url("/popl/font/a1fde29f-46e7-4e45-a628-c3524a3bde0f.woff") format("woff");
 }

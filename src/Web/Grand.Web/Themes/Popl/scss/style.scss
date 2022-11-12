@@ -182,6 +182,8 @@ html {
 
     @import "pages/myCheckoutPage.scss";
     @import "pages/myOrderDetailPage.scss";
+
+    @import "components/_mySidebarShoppingCart.scss";
 }
 
 html[dir="rtl"] {
@@ -240,6 +242,8 @@ html[dir="rtl"] {
 
     @import "pages/myCheckoutPage.scss";
     @import "pages/myOrderDetailPage.scss";
+
+    @import "components/_mySidebarShoppingCart.scss";
 }
 
 
