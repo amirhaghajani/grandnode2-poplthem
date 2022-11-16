@@ -2868,6 +2868,15 @@ html .myHomeContact .formfield__wrapper {
   margin-bottom: 1.0625rem;
   justify-content: space-between;
 }
+html .myHomeContact .my_form_input {
+  position: relative;
+}
+html .myHomeContact .my_form_input .my_required_star {
+  color: red;
+  position: absolute;
+  left: -10px;
+  right: unset;
+}
 html .myHomeContact .input__wrapper {
   display: inline-flex;
   flex-direction: column;
@@ -6614,6 +6623,15 @@ html[dir=rtl] .myHomeContact .formfield__wrapper {
   flex-direction: column;
   margin-bottom: 1.0625rem;
   justify-content: space-between;
+}
+html[dir=rtl] .myHomeContact .my_form_input {
+  position: relative;
+}
+html[dir=rtl] .myHomeContact .my_form_input .my_required_star {
+  color: red;
+  position: absolute;
+  right: -10px;
+  left: unset;
 }
 html[dir=rtl] .myHomeContact .input__wrapper {
   display: inline-flex;

@@ -54,6 +54,17 @@ $leftRightReverse: if($dir==rtl,left,right);
         justify-content: space-between;
     }
 
+    .my_form_input {
+        position: relative;
+
+        .my_required_star {
+            color: red;
+            position: absolute;
+            #{$leftRight}: -10px;
+            #{$leftRightReverse}: unset;
+        }
+    }
+
     .input__wrapper {
         display: inline-flex;
         flex-direction: column;

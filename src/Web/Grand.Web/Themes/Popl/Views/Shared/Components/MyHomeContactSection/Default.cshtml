@@ -1,127 +1,96 @@
-﻿
-<div >
-    <form asp-route="MyContactUsFromHome" method="post" id="contactus-form" ref="form" class="contact-form">
-      <input type="hidden" name="utf8" value="✓">
-      <div class="myHomeContact">
-         <div class="popl_container">
-            <div class="contact__head">
-                    <h1 class="l-title">@Loc["zap.homepage.contact_form.header"]</h1>
-            </div>
-            <div class="contact__sub">
-                    <p>@Loc["zap.homepage.contact_form.sub_header"]</p>
-            </div>
-            <div class="contact__form" id="form_fields">
-               <div class="formfield__wrapper">
-                  <div class="input__wrapper">
-                            <input type="text" id="contactFormName" name="FullName"
-                                   placeholder="@Loc["zap.homepage.contact_form.name"]" 
-                                autocapitalize="words" value="" required="required">
+﻿@model ContactUsModel
+@if (Model!=null && Model.SuccessfullySent)
+{
+    <div class="alert alert-info">
+        @Model.Result
+    </div>
+}
+else
+{
+    <div>
+        <validation-observer v-slot="{ handleSubmit }">
+            <form asp-route="MyContactUsFromHome" method="post" id="contactus-form" ref="form" class="contact-form">
+                <div asp-validation-summary="ModelOnly" class="message-error"></div>
+              <input type="hidden" name="utf8" value="✓">
+              <div class="myHomeContact">
+                 <div class="popl_container">
+                    <div class="contact__head">
+                            <h1 class="l-title">@Loc["zap.homepage.contact_form.header"]</h1>
+                    </div>
+                    <div class="contact__sub">
+                            <p>@Loc["zap.homepage.contact_form.sub_header"]</p>
+                    </div>
+                    <div class="contact__form" id="form_fields">
+                       <div class="formfield__wrapper">
+                          <div class="input__wrapper">
 
-                            <input type="email" id="contactFormEmail"
-                                   name="Email" placeholder="@Loc["zap.homepage.contact_form.email"]"
-                                   autocorrect="off" autocapitalize="off" value="" required="required">
-                  </div>
-                        <textarea rows="5" id="contactFormMessage" name="Enquiry"
-                                  placeholder="@Loc["zap.homepage.contact_form.message"]" required="required"></textarea>
-               </div>
+                                    <div class="my_form_input">
+                                        <validation-provider tag="div" rules="required" name="FullName" v-slot="{ errors, classes }">
+                                            <span class="my_required_star">*</span>
+                                            <input asp-for="FullName" v-model="contactus.FullName" placeholder="@Loc["zap.homepage.contact_form.name"]" v-bind:class="[classes , 'form-control']" />
+                                            <span class="field-validation-error">{{ errors[0] }}</span>
+                                            <span asp-validation-for="FullName"></span>
+                                        </validation-provider>
 
-               <div >
-                        <div class="captcha-box">
-                            <captcha />
-                        </div>
+                                        @*<input type="text" id="contactFormName" name="FullName"
+                                           placeholder="@Loc["zap.homepage.contact_form.name"]" 
+                                            autocapitalize="words" value="" required="required">*@
+                                    </div>
+                                    
 
-                        <input type="submit"
-                            class="submit l-btn" id="customSubmit" value="@Loc["zap.homepage.contact_form.send"]">
-               </div>
+                                    
+
+
+                                    <div class="my_form_input">
+
+                                        <validation-provider tag="div" rules="required|email" name="Email" v-slot="{ errors, classes }">
+                                            <span class="my_required_star">*</span>
+                                            <input asp-for="Email" v-model="contactus.Email" placeholder="@Loc["zap.homepage.contact_form.email"]" v-bind:class="[classes , 'form-control']" />
+                                            <span class="field-validation-error">{{ errors[0] }}</span>
+                                            <span asp-validation-for="Email"></span>
+                                        </validation-provider>
+
+                                        @*<input type="email" id="contactFormEmail"
+                                               name="Email" placeholder="@Loc["zap.homepage.contact_form.email"]"
+                                               autocorrect="off" autocapitalize="off" value="" required="required">*@
+
+                                    </div>
+                          </div>
+                                <textarea rows="5" id="contactFormMessage" name="Enquiry"
+                                          placeholder="@Loc["zap.homepage.contact_form.message"]" required="required"></textarea>
+                       </div>
+
+                       <div >
+                                <div class="captcha-box">
+                                    <captcha />
+                                </div>
+
+                                <input type="submit"
+                                    class="submit l-btn" id="customSubmit" value="@Loc["zap.homepage.contact_form.send"]">
+                       </div>
                
 
                
-            </div>
-            <div class="thank-you-message" id="formStatus" style="display:none; text-align:center;"></div>
-         </div>
-      </div>
-   </form>
+                    </div>
+                    <div class="thank-you-message" id="formStatus" style="display:none; text-align:center;"></div>
+                 </div>
+              </div>
+           </form>
+        </validation-observer>
 
-   <script>
-      // $(function() {
-      //    $("#contactForm").submit(function(e) { alert();
-      //       e.preventDefault();
-      //       var form = jQuery(this);
-      //       var postURL = 'https://contact.poplme.co/?sAction=SendEmailTeamsCustomer&sToEmail=admin-popl@mailinator.com';
-      //       var name = $("#contactFormName").val();
-      //       var email = $("#contactFormEmail").val();
-      //       var message = $("#contactFormMessage").val();
-      //       var subject = "Website Form";                                       
-      
-      // //       jQuery.ajax({
-      // //              type: "POST",
-      // //              url: postURL + '&sFromName=' + email+'&sFromEmail='+email+'&sSubject='+subject+'&sContent='+message,
-      // //              data: form.serialize(),
-      // //              success: function(data)
-      // //              { 
-      // //                form.find('#thank_you').show();
-      // //              },
-      // //              error: function (xhr, ajaxOptions, thrownError) {
-      // //               alert(xhr.status);
-      // //               alert(thrownError);
-      // //              },
-      // //      });
-      //   });
-      // });
-
-      function postToContactUs(){
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "/MyContactUsFromHome");
-
-            xhr.setRequestHeader("Accept", "application/json");
-            xhr.setRequestHeader("Content-Type", "application/json");
-
-            xhr.onload = () => console.log(xhr.responseText);
-
-            let data = `{
-          "Id": 78912,
-          "Customer": "Jason Sweet",
-        }`;
-
-            xhr.send(data);
-      }
-
-      function sendData(event){
-          
-          postToContactUs();
-
-          event.preventDefault();
-          return false;
-
-            var inpObj = document.getElementById("contactFormName");
-            if (!inpObj.checkValidity()) {
-                document.getElementById("contactFormMessage")
-                    .innerHTML = inpObj.validationMessage;
-            } else {
-                document.getElementById("contactFormMessage")
-                    .innerHTML = "Input is ALL RIGHT";
+        <script asp-location="Footer" asp-order="300">
+            var contactus = new Vue({
+                data: () => ({
+            @{
+                <text>
+                    FullName: '@Html.Raw(Model==null ? "" : Model.FullName)',
+                    Email: '@Html.Raw(Model==null ? "" : Model.Email)',
+                    Subject: '@Html.Raw(Model==null ? "" : Model.Subject)',
+                    Enquiry: '@Html.Raw(Model==null ? "" : Model.Enquiry)',
+                </text>
             }
-      }
-      
-
-
-        processFormData = function() {
-          console.log('Submitting form…');
-          document.getElementById('form_fields').style.display = 'none';
-          document.getElementById('thank_you').style.display = 'block';
-          event.preventDefault();
-          
-            var form = document.getElementById("contactForm");
-            var submit = document.querySelector('#customSubmit');
-      
-      //   submit.addEventListener('click', function (e) {
-      //     e.preventDefault();
-      //     // Hide first view
-      // //     document.getElementById('contact_form').style.display = 'none';
-      
-      //     // Show thank you message element
-      //     document.getElementById('thank_you').style.display = 'block';
-      //   });
-      }
-   </script>
-</div>
+                                })
+                            });
+        </script>
+    </div>
+}

@@ -108,7 +108,7 @@ namespace Grand.Web.Themes.Popl.Controllers
                 ModelState.AddModelError("", _captchaSettings.GetWrongCaptchaMessage(_translationService));
             }
 
-            if (ModelState.IsValid)
+            if (false && ModelState.IsValid)
             {
                 var result = await _mediator.Send(new ContactUsSendCommand() {
                     CaptchaValid = captchaValid,

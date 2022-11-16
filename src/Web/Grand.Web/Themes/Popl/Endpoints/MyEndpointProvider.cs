@@ -50,5 +50,5 @@ namespace Grand.Web.Themes.Popl.Endpoints
         }
 
 
-        }
+    }
 }
