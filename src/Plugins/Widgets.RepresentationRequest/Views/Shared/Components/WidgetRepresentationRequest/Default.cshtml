@@ -1,0 +1,35 @@
+﻿@model Widgets.FAQs.Models.PublicInfoModel
+
+
+<div>
+    <div class="myHomeFAQSection">
+        <div class="popl_container">
+            <div class="faq__warp">
+                <div class="faq__head onlyEnglish">
+                    <h1 class="l-title _forDesk">@Loc["zap.homepage.faq.head"]</h1>
+                    <h1 class="l-title _forMob">@Loc["zap.homepage.faq.head"]</h1>                    
+                </div>
+                <div class="faq__head onlyPersian">
+                    <h1 class="l-title _forDesk">@Loc["zap.homepage.faq.head"]</h1>
+                    <h1 class="l-title _forMob">@Loc["zap.homepage.faq.head"]</h1>
+                </div>
+
+                <div class="faq__accordion">
+
+                    <div class="my_form_input">
+                        <validation-provider tag="div" rules="required" name="FullName" v-slot="{ errors, classes }">
+                            <span class="my_required_star">*</span>
+                            <input asp-for="FullName" v-model="contactus.FullName" 
+                                placeholder="@Loc["zap.homepage.contact_form.name"]" v-bind:class="[classes , 'form-control']" />
+                            <span class="field-validation-error">{{ errors[0] }}</span>
+                            <span asp-validation-for="FullName"></span>
+                        </validation-provider>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<partial name="Components/WidgetFAQs/MyHomeFAQSectionScript" />

@@ -40,7 +40,7 @@ namespace Widgets.FAQs.Models
 
         //IStoreLinkModel ----------
         //Store acl
-        [GrandResourceDisplayName("Widgets.Slider.LimitedToStores")]
+        [GrandResourceDisplayName("Widgets.FAQs.LimitedToStores")]
         [UIHint("Stores")]
         public string[] Stores { get; set; }
         //-------------------------
@@ -52,11 +52,9 @@ namespace Widgets.FAQs.Models
         public string LanguageId { get; set; }
 
         [GrandResourceDisplayName("Widgets.FAQs.Question")]
-
         public string Question { get; set; }
 
         [GrandResourceDisplayName("Widgets.FAQs.Answer")]
-
         public string Answer { get; set; }
 
     }

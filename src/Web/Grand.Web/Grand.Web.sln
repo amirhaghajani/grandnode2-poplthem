@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Widgets.Slider", "..\..\Plu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Payments.BahamtaIR", "..\..\Plugins\Payments.BahamtaIR\Payments.BahamtaIR.csproj", "{60FA8891-17F6-4531-81BD-7966137697B3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Widgets.RepresentationRequest", "..\..\Plugins\Widgets.RepresentationRequest\Widgets.RepresentationRequest.csproj", "{7DBB216A-796B-4612-B622-19BD8F27A737}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{60FA8891-17F6-4531-81BD-7966137697B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60FA8891-17F6-4531-81BD-7966137697B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60FA8891-17F6-4531-81BD-7966137697B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DBB216A-796B-4612-B622-19BD8F27A737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DBB216A-796B-4612-B622-19BD8F27A737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DBB216A-796B-4612-B622-19BD8F27A737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DBB216A-796B-4612-B622-19BD8F27A737}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 		{BB39D10D-A823-4CBA-9ED6-BDB16046EAF5} = {686125CE-EA79-440F-A503-B2665EAEC10D}
 		{D2956FED-5305-4A8F-A1C9-7D38AA7D33F7} = {686125CE-EA79-440F-A503-B2665EAEC10D}
 		{60FA8891-17F6-4531-81BD-7966137697B3} = {058D841F-3270-46AC-BBA0-93DB562C7099}
+		{7DBB216A-796B-4612-B622-19BD8F27A737} = {686125CE-EA79-440F-A503-B2665EAEC10D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FADD4C55-C357-47D1-9C04-3A0EE21348B2}

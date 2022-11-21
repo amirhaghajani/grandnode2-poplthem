@@ -78,14 +78,23 @@ $leftRightReverse: if($dir==rtl,left,right);
             font-size: 0.9375em;
             line-height: 1.21;
             padding: 19px 24px;
+            padding-#{$leftRight}: 30px;
             -webkit-appearance: none;
             border: 0;
             box-shadow: none;
-            margin-bottom: 1.0625rem;
+            margin-bottom: 1.1625rem;
             height: 3.5rem;
             border-radius: 0.75rem;
             font-family: "Inter";
             font-weight: 400;
+        }
+
+        .field-validation-error{
+            position:absolute;
+            bottom:0;
+            #{$leftRight}:5px;
+            text-align:$leftRight;
+            color:red;
         }
     }
 
