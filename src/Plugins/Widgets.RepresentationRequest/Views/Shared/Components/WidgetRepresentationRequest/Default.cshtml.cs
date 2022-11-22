@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Widgets.FAQs.Views.Shared.Components.WidgetRepresentationRequest
+namespace Widgets.RepresentationRequest.Views.Shared.Components.WidgetRepresentationRequest
 {
     public class DefaultModel : PageModel
     {

@@ -5,18 +5,18 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<OutputPath>..\..\Web\Grand.Web\Plugins\Widgets.Slider\</OutputPath>
+		<OutputPath>..\..\Web\Grand.Web\Plugins\Widgets.RepresentationRequest\</OutputPath>
 		<OutDir>$(OutputPath)</OutDir>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-		<OutputPath>..\..\Web\Grand.Web\Plugins\Widgets.Slider\</OutputPath>
+		<OutputPath>..\..\Web\Grand.Web\Plugins\Widgets.RepresentationRequest\</OutputPath>
 		<OutDir>$(OutputPath)</OutDir>
 	</PropertyGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<RemoveDir Directories="..\..\Web\Grand.Web\Plugins\Widgets.Slider\refs" />
-		<RemoveDir Directories="..\..\Web\Grand.Web\Plugins\Widgets.Slider\ref" />
+		<RemoveDir Directories="..\..\Web\Grand.Web\Plugins\Widgets.RepresentationRequest\refs" />
+		<RemoveDir Directories="..\..\Web\Grand.Web\Plugins\Widgets.RepresentationRequest\ref" />
 	</Target>
 
 	<ItemGroup>

@@ -6,10 +6,10 @@ using System;
 using Widgets.RepresentationRequest;
 
 [assembly: PluginInfo(
-    FriendlyName = "FAQ",
+    FriendlyName = "Representation Request",
     Group = "Widgets",
     SystemName = RepresentationRequestWidgetDefaults.ProviderSystemName,
     SupportedVersion = GrandVersion.SupportedPluginVersion,
     Author = "Amir Hosein Aghajani",
-    Version = "1.01"
+    Version = "1.02"
 )]

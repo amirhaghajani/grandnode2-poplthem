@@ -1,8 +1,8 @@
-﻿@model Widgets.FAQs.Models.PublicInfoModel
+﻿@model Widgets.RepresentationRequest.Models.RepresentationRequestModel
 
-
+<h1>representation reuqest componets</h1>
 <div>
-    <div class="myHomeFAQSection">
+    <div class="myRepresentationRequestContainer">
         <div class="popl_container">
             <div class="faq__warp">
                 <div class="faq__head onlyEnglish">
@@ -19,10 +19,10 @@
                     <div class="my_form_input">
                         <validation-provider tag="div" rules="required" name="FullName" v-slot="{ errors, classes }">
                             <span class="my_required_star">*</span>
-                            <input asp-for="FullName" v-model="contactus.FullName" 
+                            <input asp-for="Fullname" v-model="contactus.FullName" 
                                 placeholder="@Loc["zap.homepage.contact_form.name"]" v-bind:class="[classes , 'form-control']" />
                             <span class="field-validation-error">{{ errors[0] }}</span>
-                            <span asp-validation-for="FullName"></span>
+                            <span asp-validation-for="Fullname"></span>
                         </validation-provider>
                     </div>
                     
@@ -32,4 +32,4 @@
     </div>
 </div>
 
-<partial name="Components/WidgetFAQs/MyHomeFAQSectionScript" />
+<partial name="Components/WidgetRepresentationRequest/MyHomeFAQSectionScript" />

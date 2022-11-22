@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Widgets.RepresentationRequest.Services;
 
 namespace Widgets.RepresentationRequest
 {
@@ -11,8 +12,8 @@ namespace Widgets.RepresentationRequest
     {
         public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
-            //services.AddScoped<IWidgetProvider, SliderWidgetProvider>();
-            //services.AddScoped<ISliderService, SliderService>();
+            services.AddScoped<IWidgetProvider, RepresentationRequestWidgetProvider>();
+            services.AddScoped<IRepresentationRequestService, RepresentationRequestService>();
         }
 
         public int Priority => 10;
