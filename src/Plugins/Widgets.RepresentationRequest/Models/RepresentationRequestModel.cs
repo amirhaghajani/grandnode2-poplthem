@@ -20,8 +20,8 @@ namespace Widgets.RepresentationRequest.Models
 
 
         //-----------------------
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fullname")]
-        public string Fullname { get; set; }
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.FullName")]
+        public string FullName { get; set; }
 
         [GrandResourceDisplayName("Widgets.RepresentationRequest.Age")]
         public int Age { get; set; }

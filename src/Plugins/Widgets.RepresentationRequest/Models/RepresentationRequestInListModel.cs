@@ -9,7 +9,9 @@ namespace Widgets.RepresentationRequest.Models
 {
     public class RepresentationRequestInListModel: BaseModel
     {
-        public string Fullname { get; set; }
+        public string Id { get; set; }
+
+        public string FullName { get; set; }
 
         public int Age { get; set; }
 

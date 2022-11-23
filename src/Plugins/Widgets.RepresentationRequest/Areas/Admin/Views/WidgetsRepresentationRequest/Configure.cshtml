@@ -17,11 +17,11 @@
                     <i class="fa fa-sitemap"></i>
                     @Loc["Widgets.RepresentationRequest.Manage"]
                 </div>
-                <div class="actions btn-group btn-group-devided util-btn-margin-bottom-5">
+                @*<div class="actions btn-group btn-group-devided util-btn-margin-bottom-5">
                     <a href="@Url.Action("Create", "WidgetsRepresentationRequest")" class="btn green">
                         <i class="fa fa-plus"></i><span class="hidden-xs"> @Loc["Admin.Common.AddNew"] </span>
                     </a>
-                </div>
+                </div>*@
             </div>
             <div class="x_content">
                 <div id="faq-grid"></div>
@@ -76,27 +76,10 @@
             },
             scrollable: false,
             columns: [{
-                field: "Question",
-                title: "@Loc["Widgets.RepresentationRequest.Fields.Question"]",
+                field: "FullName",
+                title: "@Loc["Widgets.RepresentationRequest.Fields.FullName"]",
                 width: 300,
-                template: '<a class="k-link" href="Edit/#=Id#">#=Question#</a>'
-            }, {
-                field: "Answer",
-                title: "@Loc["Widgets.FAQs.Fields.Answer"]",
-                width: 300
-            }, {
-                field: "DisplayOrder",
-                title: "@Loc["Widgets.RepresentationRequest.Fields.DisplayOrder"]",
-                attributes: { style: "text-align:center" },
-                width: 100
-            }, {
-                field: "IsImportantQuestion",
-                title: "@Loc["Widgets.RepresentationRequest.Fields.IsImportantQuestion"]",
-                width: 100,
-                minScreenWidth: 500,
-                headerAttributes: { style: "text-align:center" },
-                attributes: { style: "text-align:center" },
-                template: '# if(IsImportantQuestion) {# <i class="fa fa-check" aria-hidden="true" style="color:green"></i> #} else {# <i class="fa fa-times" aria-hidden="true" style="color:red"></i> #} #'
+                template: '<a class="k-link" href="Edit/#=Id#">#=FullName#</a>'
             },
             {
                 command: [

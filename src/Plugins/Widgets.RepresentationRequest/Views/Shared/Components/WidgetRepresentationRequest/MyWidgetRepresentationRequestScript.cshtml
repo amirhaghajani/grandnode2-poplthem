@@ -1,0 +1,12 @@
+﻿<script asp-location="Footer" asp-order="300">
+    var vueRepresentationRequest = new Vue({
+        data: () => ({
+    @{
+        <text>
+            FullName: '@Html.Raw(Model==null ? "" : Model.FullName)',
+            
+        </text>
+    }
+                                    })
+                                });
+</script>

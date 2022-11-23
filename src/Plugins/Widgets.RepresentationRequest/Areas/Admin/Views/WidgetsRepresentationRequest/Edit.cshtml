@@ -5,7 +5,7 @@
     ViewBag.Title = Loc["Widgets.RepresentationRequest.Edit"];
     Layout = "_ConfigurePlugin";
 }
-<form asp-controller="WidgetsFAQs" asp-action="Edit" method="post" id="faqs-form">
+<form asp-controller="WidgetsRepresentationRequest" asp-action="Edit" method="post" id="faqs-form">
     
     <div class="row">
         <div class="col-md-12">
@@ -18,8 +18,8 @@
                     </div>
                     <div class="actions">
                         <div class="btn-group btn-group-devided util-btn-margin-bottom-5">
-                            <button class="btn btn-success" type="submit" name="save"><i class="fa fa-check"></i> @Loc["Admin.Common.Save"] </button>
-                            <button class="btn btn-success" type="submit" name="save-continue"><i class="fa fa-check-circle"></i> @Loc["Admin.Common.SaveContinue"] </button>
+                           @* <button class="btn btn-success" type="submit" name="save"><i class="fa fa-check"></i> @Loc["Admin.Common.Save"] </button>
+                            <button class="btn btn-success" type="submit" name="save-continue"><i class="fa fa-check-circle"></i> @Loc["Admin.Common.SaveContinue"] </button>*@
                         </div>
                     </div>
                 </div>
