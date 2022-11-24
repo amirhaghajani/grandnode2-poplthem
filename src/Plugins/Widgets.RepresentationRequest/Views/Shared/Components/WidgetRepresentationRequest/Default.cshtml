@@ -7,30 +7,28 @@
         <form asp-route="Plugin.Widgets.RepresentationRequest.Create" method="post" id="representation-request-form" ref="form" class="contact-form">
             <div class="myRepresentationRequestContainer">
                 <div class="popl_container">
-                    <div class="faq__warp">
-                        <div class="faq__head onlyEnglish">
-                            <h1 >@Loc["zap.homepage.faq.head"]</h1>
-                            <h1 class="l-title _forMob">@Loc["zap.homepage.faq.head"]</h1>                    
-                        </div>
-                        <div class="faq__head onlyPersian">
-                            <h1 class="l-title _forDesk">@Loc["zap.homepage.faq.head"]</h1>
-                            <h1 class="l-title _forMob">@Loc["zap.homepage.faq.head"]</h1>
-                        </div>
 
-                        <div class="faq__accordion">
-
-                            <div class="my_form_input">
-                                <validation-provider tag="div" rules="required" name="FullName" v-slot="{ errors, classes }">
-                                    <span class="my_required_star">*</span>
-                                    <input asp-for="FullName" v-model="vueRepresentationRequest.FullName"
-                                           placeholder="@Loc["zap.homepage.contact_form.name"]" v-bind:class="[classes , 'form-control']" />
-                                    <span class="field-validation-error">{{ errors[0] }}</span>
-                                    <span asp-validation-for="FullName"></span>
-                                </validation-provider>
-                            </div>
-                    
-                        </div>
+                    <div class="representationrequest__head onlyEnglish">
+                        <h1>@Loc["zap.homepage.faq.head"]</h1>                 
                     </div>
+                    <div class="representationrequest__head onlyPersian">
+                        <h1>@Loc["zap.homepage.faq.head"]</h1>
+                    </div>
+
+                    <div class="faq__accordion">
+
+                        <div class="my_form_input">
+                            <validation-provider tag="div" rules="required" name="FullName" v-slot="{ errors, classes }">
+                                <span class="my_required_star">*</span>
+                                <input asp-for="FullName" v-model="vueRepresentationRequest.FullName"
+                                        placeholder="@Loc["zap.homepage.contact_form.name"]" v-bind:class="[classes , 'form-control']" />
+                                <span class="field-validation-error">{{ errors[0] }}</span>
+                                <span asp-validation-for="FullName"></span>
+                            </validation-provider>
+                        </div>
+                    
+                    </div>
+
 
                     <input type="submit"
                            class="submit l-btn" id="customSubmit" value="@Loc["zap.homepage.contact_form.send"]">

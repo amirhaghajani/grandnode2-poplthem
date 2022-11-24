@@ -1,2 +1,9 @@
-﻿body {
+﻿
+.representationrequest__head{
+    text-align:left;
 }
+
+html[dir=rtl] .representationrequest__head {
+    text-align: right;
+}
+
