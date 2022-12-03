@@ -71,11 +71,13 @@ namespace Grand.Web.Themes.Popl.Controllers
             return View();
         }
 
-        [Route("representation-request")]
-        public IActionResult RepresentationRequest()
-        {
-            return View();
-        }
+
+        //این رفت توی ویدگت و اونجا براش روتینگ تعریف کردم
+        //[Route("representation-request")]
+        //public IActionResult RepresentationRequest()
+        //{
+        //    return View();
+        //}
 
 
         [Route("contact-us")]

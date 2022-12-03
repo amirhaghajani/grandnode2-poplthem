@@ -8,12 +8,15 @@ namespace Widgets.RepresentationRequest
     {
         public void RegisterEndpoint(IEndpointRouteBuilder endpointRouteBuilder)
         {
-            //PDT
             endpointRouteBuilder.MapControllerRoute("Plugin.Widgets.RepresentationRequest.Create",
                  "Plugins/MyRepresentationRequest/Create",
                  new { controller = "MyRepresentationRequest", action = "Create" }
             );
-            
+
+            endpointRouteBuilder.MapControllerRoute("Plugin.Widgets.RepresentationRequest.Create.small",
+                 "new-representation-request",
+                 new { controller = "MyRepresentationRequest", action = "Create" }
+            );
         }
         public int Priority => 0;
 

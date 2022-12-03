@@ -1,44 +1,7 @@
 ﻿@model RepresentationRequestModel
 
-@*@{Func<int, HelperResult> template = @<div class="form-horizontal">
-        <div class="form-body">
-            <div class="form-group">
-                <admin-label asp-for="@Model.Locales[item].Question" />
-                <div class="col-md-9 col-sm-9">
-                    <admin-input asp-for="@Model.Locales[item].Question" />
-                    <span asp-validation-for="@Model.Locales[item].Question"></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <admin-label asp-for="@Model.Locales[item].Answer" />
-                <div class="col-md-9 col-sm-9">
-                    <admin-input asp-for="@Model.Locales[item].Answer" />
-                    <span asp-validation-for="@Model.Locales[item].Answer"></span>
-                </div>
-            </div>
-            <input type="hidden" asp-for="@Model.Locales[item].LanguageId" />
-        </div>
-    </div>;
-}*@
 <div class="form-horizontal">
-    @*<localized-editor localized-template=@template name="slide-info-localized" language-ids=@Model.Locales.Select(c=>c.LanguageId).ToList()>
-        <div class="form-body">
-            <div class="form-group">
-                <admin-label asp-for="Question" />
-                <div class="col-md-9 col-sm-9">
-                    <admin-input asp-for="Question" />
-                    <span asp-validation-for="Question"></span>
-                </div>
-            </div>
-            <div class="form-group">
-                <admin-label asp-for="Answer" />
-                <div class="col-md-9 col-sm-9">
-                    <admin-input asp-for="Answer" />
-                    <span asp-validation-for="Answer"></span>
-                </div>
-            </div>
-        </div>
-    </localized-editor>*@
+
     <div class="form-body">
         <div class="form-group">
             <admin-label asp-for="FullName" />
@@ -49,19 +12,186 @@
                 <span asp-validation-for="Stores"></span>
             </div>
         </div>
-        @*<div class="form-group">
-            <admin-label asp-for="Stores" />
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="Age" />
             <div class="col-md-9 col-sm-9">
-                <admin-input asp-for="Stores" />
+
+                @Html.Label(Model.Age.ToString())
+
                 <span asp-validation-for="Stores"></span>
             </div>
         </div>
-        <div class="form-group">
-            <admin-label asp-for="DisplayOrder" />
-            <div class="col-md-9 col-sm-9">
-                <admin-input asp-for="DisplayOrder" />
-                <span asp-validation-for="DisplayOrder"></span>
-            </div>
-        </div>*@
     </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="LevelOfEducation" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.LevelOfEducation)
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="FieldOfStudy" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.FieldOfStudy)
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="Address" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.Address)
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="Job" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.Job)
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="JobExperience" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.JobExperience.ToString())
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="WorkAddress" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.WorkAddress)
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="WorkTel" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.WorkTel)
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="BusinessWebsite" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.BusinessWebsite)
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="InstagramChannel" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.InstagramChannel)
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="WhoDidYouGetToKnowZAP" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.WhoDidYouGetToKnowZAP)
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="StrengthAndWeakness" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.StrengthAndWeakness)
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="EstimateOfSell" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.EstimateOfSell.ToString())
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="SellPromotionalProgram" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.SellPromotionalProgram)
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-body">
+        <div class="form-group">
+            <admin-label asp-for="WantedCities" />
+            <div class="col-md-9 col-sm-9">
+
+                @Html.Label(Model.WantedCities)
+
+                <span asp-validation-for="Stores"></span>
+            </div>
+        </div>
+    </div>
+
 </div>

@@ -1,9 +1,91 @@
 ﻿
-.representationrequest__head{
-    text-align:left;
+.myRepresentationRequestContainer {
+    padding-bottom: 40px;
+}
+
+.representationrequest__head {
+    text-align: left;
 }
 
 html[dir=rtl] .representationrequest__head {
     text-align: right;
 }
 
+.representationrequest__head .representationrequest__head_item {
+    display: block;
+}
+
+.myRepresentationRequestContainer .form_fields_wrapper {
+    margin-top: 20px;
+}
+
+
+
+.myRepresentationRequestContainer .my_form_input {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+    .myRepresentationRequestContainer .my_form_input div {
+        flex: 1;
+    }
+
+    .myRepresentationRequestContainer .my_form_input .form-control {
+        max-width: 300px;
+        border-radius: 50%;
+        border-radius: 20px;
+    }
+
+    .myRepresentationRequestContainer .my_form_input .form-control-textarea {
+        max-width: 400px;
+        border-radius: 15px;
+    }
+
+    .myRepresentationRequestContainer .my_form_input .field-validation-error {
+        color: red;
+    }
+
+html[dir=rtl] .myRepresentationRequestContainer .my_form_input {
+    text-align: right;
+}
+
+
+
+.myRepresentationRequestContainer .representation-request-form-label {
+    width: 30%;
+    max-width: 200px;
+    margin-left: unset;
+    margin-right: 10px;
+    text-align: right;
+}
+
+html[dir=rtl] .myRepresentationRequestContainer .representation-request-form-label {
+    text-align: right;
+    margin-left: 10px;
+    margin-right: unset;
+    text-align: left;
+}
+
+
+
+.myRepresentationRequestContainer .my_required_star {
+    color: red;
+}
+
+
+
+.myRepresentationRequestContainer .submint-container {
+    max-width: 400px;
+    margin-left: 210px;
+    margin-right: unset;
+    text-align: right;
+}
+
+html[dir=rtl] .myRepresentationRequestContainer .submint-container {
+    margin-right: 210px;
+    margin-left: unset;
+    text-align: left;
+}

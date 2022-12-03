@@ -75,12 +75,33 @@
                 mode: "inline"
             },
             scrollable: false,
-            columns: [{
-                field: "FullName",
-                title: "@Loc["Widgets.RepresentationRequest.Fields.FullName"]",
-                width: 300,
-                template: '<a class="k-link" href="Edit/#=Id#">#=FullName#</a>'
-            },
+            columns: [
+                {
+                    field: "FullName",
+                    title: "@Loc["Widgets.RepresentationRequest.Fields.FullName"]",
+                    width: 300,
+                    template: '<a class="k-link" href="Edit/#=Id#">#=FullName#</a>'
+                },
+                {
+                    field: "Age",
+                    title: "@Loc["Widgets.RepresentationRequest.Fields.Age"]",
+                    width: 300,
+                },
+                {
+                    field: "LevelOfEducation",
+                    title: "@Loc["Widgets.RepresentationRequest.Fields.LevelOfEducation"]",
+                    width: 300,
+                },
+                {
+                    field: "Address",
+                    title: "@Loc["Widgets.RepresentationRequest.Fields.Address"]",
+                    width: 300,
+                },
+                {
+                    field: "WantedCities",
+                    title: "@Loc["Widgets.RepresentationRequest.Fields.WantedCities"]",
+                    width: 300,
+                },
             {
                 command: [
                     {

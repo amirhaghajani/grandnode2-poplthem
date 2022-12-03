@@ -20,99 +20,99 @@ namespace Widgets.RepresentationRequest.Models
 
 
         //-----------------------
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.FullName")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.FullName")]
         public string FullName { get; set; }
 
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.Age")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.Age")]
         public int Age { get; set; }
 
         /// <summary>
         /// سطح تحصیلات
         /// </summary>
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.LevelOfEducation")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.LevelOfEducation")]
         public string LevelOfEducation { get; set; }
 
         /// <summary>
         /// رشته تحصیلی
         /// </summary>
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.FieldOfStudy")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.FieldOfStudy")]
         public string FieldOfStudy { get; set; }
 
 
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.Address")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.Address")]
         public string Address { get; set; }
 
 
         /// <summary>
         /// شغل
         /// </summary>
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.Job")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.Job")]
         public string Job { get; set; }
 
 
         /// <summary>
         /// سابقه فعالیت در شغل چند سال است
         /// </summary>
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.JobExperience")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.JobExperience")]
         public int JobExperience { get; set; }
 
         /// <summary>
         /// آدرس محل کار
         /// </summary>
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.WorkAddress")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.WorkAddress")]
         public string WorkAddress { get; set; }
 
         /// <summary>
         /// تلفن محل کار
         /// </summary>
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.WorkTel")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.WorkTel")]
         public string WorkTel { get; set; }
 
 
         /// <summary>
         /// وب سایت کسب و کار
         /// </summary>
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.BusinessWebsite")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.BusinessWebsite")]
         public string BusinessWebsite { get; set; }
 
 
 
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.InstagramChannel")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.InstagramChannel")]
         public string InstagramChannel { get; set; }
 
 
         /// <summary>
         /// نحوه آشنایی با زپ
         /// </summary>
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.WhoDidYouGetToKnowZAP")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.WhoDidYouGetToKnowZAP")]
         public string WhoDidYouGetToKnowZAP { get; set; }
 
 
         /// <summary>
         /// نقاط ضعف و قوت زپ چه بوده
         /// </summary>
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.StrengthAndWeakness")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.StrengthAndWeakness")]
         public string StrengthAndWeakness { get; set; }
 
 
         /// <summary>
         /// پیش بینی تعداد فروش در سال
         /// </summary>
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.EstimateOfSell")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.EstimateOfSell")]
         public int EstimateOfSell { get; set; }
 
 
         /// <summary>
         /// برنامه تبلیغاتی برای فروش
         /// </summary>
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.SellPromotionalProgram")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.SellPromotionalProgram")]
         public string SellPromotionalProgram { get; set; }
 
 
         /// <summary>
         /// شهرهایی که درخواست نمایندگی دارید
         /// </summary>
-        [GrandResourceDisplayName("Widgets.RepresentationRequest.WantedCities")]
+        [GrandResourceDisplayName("Widgets.RepresentationRequest.Fields.WantedCities")]
         public string WantedCities { get; set; }
 
 

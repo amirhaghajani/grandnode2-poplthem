@@ -40,11 +40,6 @@ namespace Widgets.FAQs
 
 
 
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.FAQs.Fields.DisplayOrder", "Display order");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.FAQs.Fields.LimitedToGroups", "Limited to groups");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.FAQs.Fields.LimitedToStores", "Limited to stores");
-
-
             await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.FAQs.FriendlyName", "Widget FAQs");
             await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.FAQs.Added", "FAQs added");
             await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.FAQs.Addnew", "Add new faq");
@@ -73,6 +68,10 @@ namespace Widgets.FAQs
             await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.FAQs.Brand.Required", "Brand is required");
 
 
+            //------------------------
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.FAQs.Fields.DisplayOrder", "Display order");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.FAQs.Fields.LimitedToGroups", "Limited to groups");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.FAQs.Fields.LimitedToStores", "Limited to stores");
             //------------------------
             await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.FAQs.Fields.Displayorder", "Display Order");
             await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.FAQs.Fields.Answer", "Answer");

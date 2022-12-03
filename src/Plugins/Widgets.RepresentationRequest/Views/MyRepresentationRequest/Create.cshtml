@@ -9,8 +9,8 @@
 
 <div>
     <validation-observer v-slot="{ handleSubmit }">
-        <form asp-route="Plugin.Widgets.RepresentationRequest.Create" method="post" onsubmit="representation_request_form_stopMultipleSubmit()" 
-            id="representation-request-form" ref="form" class="contact-form">
+        <form asp-route="Plugin.Widgets.RepresentationRequest.Create" onsubmit="representation_request_form_stopMultipleSubmit()"
+                method="post" id="representation-request-form" ref="form" class="contact-form">
             <div class="myRepresentationRequestContainer">
                 <div class="popl_container">
 
@@ -30,12 +30,13 @@
                         <div class="my_form_input">
                             <label class="representation-request-form-label">
                                     @Loc["Widgets.RepresentationRequest.Fields.FullName"]
-                                    
+                                    <span class="my_required_star">*</span>
                             </label>
 
                             <validation-provider tag="div" rules="required" name="FullName" v-slot="{ errors, classes }">
                                 <input asp-for="FullName" v-model="vueRepresentationRequest.FullName"
-                                       placeholder="@Loc["Widgets.RepresentationRequest.Fields.FullName"]" v-bind:class="[classes , 'form-control']" />
+                                       placeholder="@Loc["Widgets.RepresentationRequest.Fields.FullName"]" 
+                                       v-bind:class="[classes , 'form-control']" />
 
                                 <span class="field-validation-error">{{ errors[0] }}</span>
 
@@ -46,7 +47,7 @@
                         <div class="my_form_input">
                             <label class="representation-request-form-label">
                                 @Loc["Widgets.RepresentationRequest.Fields.Age"]
-                                <span class="my_required_star">*</span>
+                                
                             </label>
 
                             <validation-provider tag="div" rules="required" name="Age" v-slot="{ errors, classes }">
@@ -62,7 +63,7 @@
                         <div class="my_form_input">
                             <label class="representation-request-form-label">
                                 @Loc["Widgets.RepresentationRequest.Fields.LevelOfEducation"]
-                                <span class="my_required_star">*</span>
+                                
                             </label>
 
                             <validation-provider tag="div" rules="required" name="LevelOfEducation" v-slot="{ errors, classes }">
@@ -78,7 +79,7 @@
                         <div class="my_form_input">
                             <label class="representation-request-form-label">
                                 @Loc["Widgets.RepresentationRequest.Fields.FieldOfStudy"]
-                                <span class="my_required_star">*</span>
+                                
                             </label>
 
                             <validation-provider tag="div" rules="required" name="FieldOfStudy" v-slot="{ errors, classes }">
@@ -146,7 +147,7 @@
                         <div class="my_form_input">
                             <label class="representation-request-form-label">
                                 @Loc["Widgets.RepresentationRequest.Fields.WorkAddress"]
-                                <span class="my_required_star">*</span>
+                                
                             </label>
 
                             <validation-provider tag="div" rules="required" name="WorkAddress" v-slot="{ errors, classes }">
@@ -162,7 +163,7 @@
                         <div class="my_form_input">
                             <label class="representation-request-form-label">
                                 @Loc["Widgets.RepresentationRequest.Fields.WorkTel"]
-                                <span class="my_required_star">*</span>
+                                
                             </label>
 
                             <validation-provider tag="div" rules="required" name="WorkTel" v-slot="{ errors, classes }">
@@ -178,7 +179,7 @@
                         <div class="my_form_input">
                             <label class="representation-request-form-label">
                                 @Loc["Widgets.RepresentationRequest.Fields.BusinessWebsite"]
-                                <span class="my_required_star">*</span>
+                                
                             </label>
 
                             <validation-provider tag="div" rules="required" name="BusinessWebsite" v-slot="{ errors, classes }">
@@ -194,7 +195,7 @@
                         <div class="my_form_input">
                             <label class="representation-request-form-label">
                                 @Loc["Widgets.RepresentationRequest.Fields.InstagramChannel"]
-                                <span class="my_required_star">*</span>
+                                
                             </label>
 
                             <validation-provider tag="div" rules="required" name="InstagramChannel" v-slot="{ errors, classes }">
@@ -226,12 +227,15 @@
                         <div class="my_form_input">
                             <label class="representation-request-form-label">
                                 @Loc["Widgets.RepresentationRequest.Fields.StrengthAndWeakness"]
-                                <span class="my_required_star">*</span>
+                                
                             </label>
 
                             <validation-provider tag="div" rules="required" name="StrengthAndWeakness" v-slot="{ errors, classes }">
-                                <input asp-for="StrengthAndWeakness" v-model="vueRepresentationRequest.StrengthAndWeakness"
-                                       placeholder="@Loc["Widgets.RepresentationRequest.Fields.StrengthAndWeakness"]" v-bind:class="[classes , 'form-control']" />
+                                
+
+                                <textarea asp-for="StrengthAndWeakness" v-model="vueRepresentationRequest.StrengthAndWeakness"
+                                          placeholder="@Loc["Widgets.RepresentationRequest.Fields.StrengthAndWeakness"]" 
+                                          v-bind:class="[classes , 'form-control','form-control-textarea']"></textarea>
 
                                 <span class="field-validation-error">{{ errors[0] }}</span>
 
@@ -262,8 +266,10 @@
                             </label>
 
                             <validation-provider tag="div" rules="required" name="SellPromotionalProgram" v-slot="{ errors, classes }">
-                                <input asp-for="SellPromotionalProgram" v-model="vueRepresentationRequest.SellPromotionalProgram"
-                                       placeholder="@Loc["Widgets.RepresentationRequest.Fields.SellPromotionalProgram"]" v-bind:class="[classes , 'form-control']" />
+                               
+                                <textarea asp-for="SellPromotionalProgram" v-model="vueRepresentationRequest.SellPromotionalProgram"
+                                          placeholder="@Loc["Widgets.RepresentationRequest.Fields.SellPromotionalProgram"]" 
+                                          v-bind:class="[classes , 'form-control', 'form-control-textarea']"></textarea>
 
                                 <span class="field-validation-error">{{ errors[0] }}</span>
 
@@ -278,8 +284,10 @@
                             </label>
 
                             <validation-provider tag="div" rules="required" name="WantedCities" v-slot="{ errors, classes }">
-                                <input asp-for="WantedCities" v-model="vueRepresentationRequest.WantedCities"
-                                       placeholder="@Loc["Widgets.RepresentationRequest.Fields.WantedCities"]" v-bind:class="[classes , 'form-control']" />
+                                
+                                <textarea asp-for="WantedCities" v-model="vueRepresentationRequest.WantedCities"
+                                          placeholder="@Loc["Widgets.RepresentationRequest.Fields.WantedCities"]" 
+                                          v-bind:class="[classes , 'form-control', 'form-control-textarea']"></textarea>
 
                                 <span class="field-validation-error">{{ errors[0] }}</span>
 
@@ -296,7 +304,7 @@
                         </div>
 
                         <input type="submit"
-                               class="submit l-btn" id="representation-request-form-submit-button" value="@Loc["zap.homepage.contact_form.send"]">
+                               class="submit l-btn" id="representation-request-form-submit-button" value="@Loc["Widgets.RepresentationRequest.SendButton"]">
 
                     </div>
                     
@@ -306,4 +314,48 @@
     </validation-observer>
 </div>
 
-<partial name="Components/WidgetRepresentationRequest/MyWidgetRepresentationRequestScript" />
+<script asp-location="Footer" asp-order="300">
+    var vueRepresentationRequest = new Vue({
+        data: () => ({
+    @{
+        <text>
+            FullName: '@Html.Raw(Model==null ? "" : Model.FullName)',
+            Age: '@Html.Raw(Model==null ? "" : Model.Age)',
+            LevelOfEducation: '@Html.Raw(Model==null ? "" : Model.LevelOfEducation)',
+            FieldOfStudy: '@Html.Raw(Model==null ? "" : Model.FieldOfStudy)',
+            Address: '@Html.Raw(Model==null ? "" : Model.Address)',
+            Job: '@Html.Raw(Model==null ? "" : Model.Job)',
+            JobExperience: '@Html.Raw(Model==null ? "" : Model.JobExperience)',
+            WorkAddress: '@Html.Raw(Model==null ? "" : Model.WorkAddress)',
+            WorkTel: '@Html.Raw(Model==null ? "" : Model.WorkTel)',
+            BusinessWebsite: '@Html.Raw(Model==null ? "" : Model.BusinessWebsite)',
+            InstagramChannel: '@Html.Raw(Model==null ? "" : Model.InstagramChannel)',
+            WhoDidYouGetToKnowZAP: '@Html.Raw(Model==null ? "" : Model.WhoDidYouGetToKnowZAP)',
+
+            StrengthAndWeakness: '@Html.Raw(Model==null ? "" : Model.StrengthAndWeakness)',
+            EstimateOfSell: '@Html.Raw(Model==null ? "" : Model.EstimateOfSell)',
+            SellPromotionalProgram: '@Html.Raw(Model==null ? "" : Model.SellPromotionalProgram)',
+            WantedCities: '@Html.Raw(Model==null ? "" : Model.WantedCities)',
+
+        </text>
+    }
+                                        })
+                                    });
+
+
+    var representation_form_isSubmitted = false;
+    function representation_request_form_stopMultipleSubmit() {
+        if (!representation_form_isSubmitted) {
+
+            //$('#btnSubmit').val('Submitting.. Please Wait..');
+            var btn = document.getElementById('representation-request-form-submit-button');
+            btn.setAttribute('disabled', '');
+
+            representation_form_isSubmitted = true;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>

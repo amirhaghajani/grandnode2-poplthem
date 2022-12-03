@@ -44,12 +44,6 @@ namespace Widgets.RepresentationRequest
                 .Ascending(x => x.Id), "RepresentationRequestId_DisplayOrder");
 
 
-
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.DisplayOrder", "Display order");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.LimitedToGroups", "Limited to groups");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.LimitedToStores", "Limited to stores");
-
-
             await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.FriendlyName", "Widget Representation Request");
             await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Added", "Representation Request added");
             await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Addnew", "Add new Representation Request");
@@ -79,28 +73,93 @@ namespace Widgets.RepresentationRequest
 
 
             //------------------------
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Displayorder", "Display Order");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Answer", "Answer");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Question", "Question");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.IsImportantQuestion", "IsImportantQuestion");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.DisplayOrder", "Display order");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.LimitedToGroups", "Limited to groups");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.LimitedToStores", "Limited to stores");
+
 
             //------------------------
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Question", "Question");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Question.Hint", "Enter the question of the faq");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Question.Required", "Question is required");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.inputform.head1", "head1");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.inputform.head2", "head2");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.inputform.head3", "head3");
+            //------------------------
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.FullName", "Full name");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.FullName.Hint", "Enter your full name");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.FullName.Required", "fullname is required");
 
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Answer", "Answer");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Answer.Hint", "Enter the answer of the faq");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Answer.Required", "answer is required");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Age", "Age");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Age.Hint", "Enter your age");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Age.Required", "fullname is required");
 
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.IsImportantQuestion", "IsImportantQuestion");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.IsImportantQuestion.Hint", "Specify it should be in homepage");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.LevelOfEducation", "Level Of education");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.LevelOfEducation.Hint", "Enter your level of education");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.LevelOfEducation.Required", "level of education is required");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.FieldOfStudy", "FieldOfStudy");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.FieldOfStudy.label", "Field of study");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.FieldOfStudy.Hint", "Enter your field of study");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.FieldOfStudy.Required", "Field of study of education is required");
+
+
+            //
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Address", "Address");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Address.Hint", "Enter your address");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Address.Required", "address is required");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Job", "Job");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Job.Hint", "Enter your job");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Job.Required", "job is required");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.JobExperience", "Job Experience (Year)");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.JobExperience.Hint", "Enter your job experience (year)");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.JobExperience.Required", "job experience is required");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.WorkAddress", "Work Address");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.WorkAddress.Hint", "Enter your work address");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.WorkAddress.Required", "work address is required");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.WorkTel", "Work Tel");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.WorkTel.Hint", "Enter your work tel");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.WorkTel.Required", "work tel is required");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.BusinessWebsite", "Business Website");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.BusinessWebsite.Hint", "Enter your business website");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.BusinessWebsite.Required", "business website is required");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.InstagramChannel", "Instagram Channel");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.InstagramChannel.Hint", "Enter your instagram channel");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.InstagramChannel.Required", "instagram channel is required");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.WhoDidYouGetToKnowZAP", "Who did you get to know ZAP");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.WhoDidYouGetToKnowZAP.Hint", "Enter who did you get to know ZAP");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.WhoDidYouGetToKnowZAP.Required", "Who did you get to know ZAP is required");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.StrengthAndWeakness", "Strength and weakness of ZAP");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.StrengthAndWeakness.Hint", "Enter Strength and weakness of ZAP");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.StrengthAndWeakness.Required", "Strength and weakness of ZAP is required");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.EstimateOfSell", "Estimate of sell");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.EstimateOfSell.Hint", "Enter your estimate of sell");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.EstimateOfSell.Required", "Estimate of sell is required");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.SellPromotionalProgram", "Sell promotional program");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.SellPromotionalProgram.Hint", "Enter your sell promotional program");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.SellPromotionalProgram.Required", "Sell promotional program is required");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.WantedCities", "Wanted cities");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.WantedCities.Hint", "Enter your wanted cities");
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.WantedCities.Required", "Wanted cities is required");
+
 
 
             await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.Stores", "Stores");
 
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.DisplayOrder", "Display Order");
-            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.DisplayOrder.Hint", "The representation request display order. 1 represents the first item in the list.");
+
+            await this.AddOrUpdatePluginTranslateResource(_translationService, _languageService, "Widgets.RepresentationRequest.SendButton", "Send Form");
+
+
+            
+
 
 
             await base.Install();
@@ -116,9 +175,7 @@ namespace Widgets.RepresentationRequest
             await _representationRequestRepository.DeleteAsync(_representationRequestRepository.Table.ToList());
 
             //locales
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.DisplayOrder");
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.LimitedToGroups");
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.LimitedToStores");
+            
 
 
             await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.FriendlyName");
@@ -150,28 +207,16 @@ namespace Widgets.RepresentationRequest
 
 
             //------------------------
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Displayorder");
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Answer");
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.Question");
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.IsImportantQuestion");
+            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.DisplayOrder");
+            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.LimitedToGroups");
+            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Fields.LimitedToStores");
 
             //------------------------
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Question");
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Question.Hint");
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Question.Required");
 
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Answer");
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Answer.Hint");
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Answer.Required");
-
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.IsImportantQuestion");
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.IsImportantQuestion.Hint");
 
 
             await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.Stores");
 
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.DisplayOrder");
-            await this.DeletePluginTranslationResource(_translationService, _languageService, "Widgets.RepresentationRequest.DisplayOrder.Hint");
 
 
             await base.Uninstall();

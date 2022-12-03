@@ -2,11 +2,44 @@
     var vueRepresentationRequest = new Vue({
         data: () => ({
     @{
-        <text>
-            FullName: '@Html.Raw(Model==null ? "" : Model.FullName)',
-            
-        </text>
+                <text>
+                    FullName: '@Html.Raw(Model==null ? "" : Model.FullName)',
+                    Age: '@Html.Raw(Model==null ? "" : Model.Age)',
+                    LevelOfEducation: '@Html.Raw(Model==null ? "" : Model.LevelOfEducation)',
+                    FieldOfStudy: '@Html.Raw(Model==null ? "" : Model.FieldOfStudy)',
+                    Address: '@Html.Raw(Model==null ? "" : Model.Address)',
+                    Job: '@Html.Raw(Model==null ? "" : Model.Job)',
+                    JobExperience: '@Html.Raw(Model==null ? "" : Model.JobExperience)',
+                    WorkAddress: '@Html.Raw(Model==null ? "" : Model.WorkAddress)',
+                    WorkTel: '@Html.Raw(Model==null ? "" : Model.WorkTel)',
+                    BusinessWebsite: '@Html.Raw(Model==null ? "" : Model.BusinessWebsite)',
+                    InstagramChannel: '@Html.Raw(Model==null ? "" : Model.InstagramChannel)',
+                    WhoDidYouGetToKnowZAP: '@Html.Raw(Model==null ? "" : Model.WhoDidYouGetToKnowZAP)',
+
+                    StrengthAndWeakness: '@Html.Raw(Model==null ? "" : Model.StrengthAndWeakness)',
+                    EstimateOfSell: '@Html.Raw(Model==null ? "" : Model.EstimateOfSell)',
+                    SellPromotionalProgram: '@Html.Raw(Model==null ? "" : Model.SellPromotionalProgram)',
+                    WantedCities: '@Html.Raw(Model==null ? "" : Model.WantedCities)',
+                    
+                </text>
     }
                                     })
                                 });
+
+
+    var representation_form_isSubmitted = false;
+    function representation_request_form_stopMultipleSubmit() {
+        if (!representation_form_isSubmitted) {
+
+            //$('#btnSubmit').val('Submitting.. Please Wait..');
+            var btn = document.getElementById('representation-request-form-submit-button');
+            btn.setAttribute('disabled','');
+           
+            representation_form_isSubmitted = true;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 </script>
