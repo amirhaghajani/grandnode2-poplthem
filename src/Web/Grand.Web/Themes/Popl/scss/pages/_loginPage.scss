@@ -1,0 +1,66 @@
+﻿$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
+
+.login-page-main-container{
+    padding:5px;
+}
+.login-page {
+    max-width: 40em;
+    margin: auto;
+    font-family: $persianFont;
+    padding: 10px;
+    border: solid 6px black;
+
+    .login-page-container {
+        border: solid 1px grey;
+        padding: 1em 4em;
+        border-radius: 10px;
+    }
+
+    .main-top-img-container {
+        text-align: center;
+        margin-top:20px;
+        margin-bottom:60px;
+    }
+
+    .main-top-img {
+        width: 100px;
+    }
+
+    .top-header {
+        text-align: $leftRight;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .remember-forget-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    .login-button-container {
+        padding: 15px;
+    }
+
+    .login-button {
+        width: 100%;
+        background-color: black;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .login-new-customer-container {
+        display: flex;
+        padding-#{$leftRight}: 30px;
+        padding-#{$leftRightReverse}: unset;
+
+        .text-login-newcustomer {
+            font-weight: bold;
+            margin-#{$leftRightReverse}: 5px;
+            margin-#{$leftRight}: unset;
+        }
+    }
+}

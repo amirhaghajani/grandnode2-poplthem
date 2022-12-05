@@ -4450,6 +4450,58 @@ html #sidebar-cart .b-sidebar-footer .myBtnViewCartContainer {
   margin-right: 10px;
   font-size: 14px;
 }
+html .login-page-main-container {
+  padding: 5px;
+}
+html .login-page {
+  max-width: 40em;
+  margin: auto;
+  font-family: IRANSans;
+  padding: 10px;
+  border: solid 6px black;
+}
+html .login-page .login-page-container {
+  border: solid 1px grey;
+  padding: 1em 4em;
+  border-radius: 10px;
+}
+html .login-page .main-top-img-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+html .login-page .main-top-img {
+  width: 100px;
+}
+html .login-page .top-header {
+  text-align: left;
+  font-size: 1em;
+  font-weight: bold;
+}
+html .login-page .remember-forget-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+html .login-page .login-button-container {
+  padding: 15px;
+}
+html .login-page .login-button {
+  width: 100%;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}
+html .login-page .login-new-customer-container {
+  display: flex;
+  padding-left: 30px;
+  padding-right: unset;
+}
+html .login-page .login-new-customer-container .text-login-newcustomer {
+  font-weight: bold;
+  margin-right: 5px;
+  margin-left: unset;
+}
 
 html[dir=rtl] {
   /* for andimation add to card button */
@@ -8213,6 +8265,58 @@ html[dir=rtl] #sidebar-cart .b-sidebar-footer .mySubTotalContainer {
 html[dir=rtl] #sidebar-cart .b-sidebar-footer .myBtnViewCartContainer {
   margin-left: 10px;
   font-size: 14px;
+}
+html[dir=rtl] .login-page-main-container {
+  padding: 5px;
+}
+html[dir=rtl] .login-page {
+  max-width: 40em;
+  margin: auto;
+  font-family: IRANSans;
+  padding: 10px;
+  border: solid 6px black;
+}
+html[dir=rtl] .login-page .login-page-container {
+  border: solid 1px grey;
+  padding: 1em 4em;
+  border-radius: 10px;
+}
+html[dir=rtl] .login-page .main-top-img-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+html[dir=rtl] .login-page .main-top-img {
+  width: 100px;
+}
+html[dir=rtl] .login-page .top-header {
+  text-align: right;
+  font-size: 1em;
+  font-weight: bold;
+}
+html[dir=rtl] .login-page .remember-forget-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+html[dir=rtl] .login-page .login-button-container {
+  padding: 15px;
+}
+html[dir=rtl] .login-page .login-button {
+  width: 100%;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}
+html[dir=rtl] .login-page .login-new-customer-container {
+  display: flex;
+  padding-right: 30px;
+  padding-left: unset;
+}
+html[dir=rtl] .login-page .login-new-customer-container .text-login-newcustomer {
+  font-weight: bold;
+  margin-left: 5px;
+  margin-right: unset;
 }
 
 /*==================================================
