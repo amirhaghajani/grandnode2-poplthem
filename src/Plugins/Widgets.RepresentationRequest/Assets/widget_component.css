@@ -89,3 +89,11 @@ html[dir=rtl] .myRepresentationRequestContainer .submint-container {
     margin-left: unset;
     text-align: left;
 }
+
+.myRepresentationRequestContainer .submint-container .submit {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    min-width: 130px;
+    font-weight: bold;
+}
