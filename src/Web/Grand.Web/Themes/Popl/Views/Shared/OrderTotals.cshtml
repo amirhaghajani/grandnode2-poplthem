@@ -20,7 +20,8 @@
             <tr class="col-12 px-0 shipping-cost d-flex justify-content-start">
                 <td class="col-6 cart-total-left">
                     <span>@Loc["ShoppingCart.Totals.Shipping"]:</span>
-                    <span v-if="vmorder.totals.RequiresShipping && vmorder.totals.SelectedShippingMethod !== null" class="selected-shipping-method">@Loc["ShoppingCart.Totals.Shipping.Method"].ToString().Replace("{0}", "{{vmorder.totals.SelectedShippingMethod}}")</span>
+                    <span v-if="vmorder.totals.RequiresShipping && vmorder.totals.SelectedShippingMethod !== null" 
+                                class="selected-shipping-method">@Loc["ShoppingCart.Totals.Shipping.Method"].ToString().Replace("{0}", "{{vmorder.totals.SelectedShippingMethod}}")</span>
                 </td>
                 <td class="col-6 cart-total-right  text-right">
                     <div v-if="vmorder.totals.RequiresShipping">
@@ -80,7 +81,8 @@
                 <td class="col-6 cart-total-right  text-right">
                     <span class="value-summary">{{gc.Amount}}</span>
 
-                    <b-button v-if="vmorder.cart.IsEditable" variant="danger" type="button" name="removegiftvoucher" id="remove-gift-card-button"  @@click="vmorder.removeGiftVoucher('@Url.RouteUrl("RemoveGiftVoucherCode")?giftVoucherId=' + gc.Id)">
+                    <b-button v-if="vmorder.cart.IsEditable" variant="danger" type="button" name="removegiftvoucher" 
+                            id="remove-gift-card-button"  @@click="vmorder.removeGiftVoucher('@Url.RouteUrl("RemoveGiftVoucherCode")?giftVoucherId=' + gc.Id)">
                         @Loc["Common.Remove"]
                     </b-button>
                 </td>

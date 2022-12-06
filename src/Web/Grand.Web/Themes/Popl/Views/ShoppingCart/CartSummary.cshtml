@@ -1,5 +1,6 @@
 ﻿@model ShoppingCartModel
 
+
 <div class="my-cart-summary-page" id="ordersummarypagecart" v-if="vmorder.cart">
     @await Component.InvokeAsync("Widget", new { widgetZone = "order_summary_content_before" })
     <div v-if="typeof vmorder.cart.Items !== 'undefined' && vmorder.cart.Items.length > 0">
@@ -103,7 +104,7 @@
 
                                 <div v-if="vmorder.cart.IsEditable" class="cart__remove-btn"
                                      @@click="vmorder.deleteitem('@Url.RouteUrl("DeleteCartItem")/'+ item.Id +'?shoppingcartpage=True')">
-                                    <span class="remove-text">Remove</span> 
+                                    <span class="remove-text">@Loc["ShoppingCart.RemoveItem"] </span>
                                     <span class="remove-icon"></span>
                                 </div>
                             </div>
@@ -129,7 +130,9 @@
                     </div>
                     <div class="col-lg-4 col-12 totals">
                         <div class="totals-inner">
+
                             <partial name="OrderTotals" />
+
                             <div class="cart-collaterals">
                                 <div class="deals">
                                     @*@if (Model.GiftVoucherBox.Display)

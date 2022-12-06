@@ -52,16 +52,12 @@
   <ItemGroup>
     <Content Remove="Plugins\**" />
     <Content Remove="wwwroot\myTheme\**" />
-    <Content Remove="wwwroot\popl\images\NewFolder\**" />
     <Compile Remove="Plugins\**" />
     <Compile Remove="wwwroot\myTheme\**" />
-    <Compile Remove="wwwroot\popl\images\NewFolder\**" />
     <EmbeddedResource Remove="Plugins\**" />
     <EmbeddedResource Remove="wwwroot\myTheme\**" />
-    <EmbeddedResource Remove="wwwroot\popl\images\NewFolder\**" />
     <None Remove="Plugins\**" />
     <None Remove="wwwroot\myTheme\**" />
-    <None Remove="wwwroot\popl\images\NewFolder\**" />
     
     <Content Remove="Themes\Popl\Components\MyRecommendedProducts.cs" />
     <Content Remove="Themes\Popl\Components\MyRelatedProducts.cs" />
@@ -96,6 +92,7 @@
     <None Remove="Themes\Popl\scss\pages\myCheckoutPage.scss" />
     <None Remove="Themes\Popl\scss\pages\myOrderDetailPage.scss" />
     <None Remove="Themes\Popl\scss\pages\_loginPage.scss" />
+    <None Remove="Themes\Popl\scss\pages\_what-is-zap-page.scss" />
     <None Remove="Themes\Popl\scss\theme\_fonts.scss" />
     <None Remove="Themes\Popl\scss\theme\_icon.scss" />
     <None Remove="Themes\Popl\Views\MyCommon\learnzap.scss" />
