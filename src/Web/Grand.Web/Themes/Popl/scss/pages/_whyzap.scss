@@ -1,2 +1,69 @@
-﻿body {
+﻿$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
+
+.why-zap-page {
+    text-align: right;
+    font-family: $persianFont;
+
+
+    .why-zap-page-container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .header {
+        height: 400px;
+        background-size: cover;
+        background-image: url('/popl/images/whyzap/1raw.jpg');
+        background-repeat: no-repeat;
+        background-position: right top;
+        padding: 30px 5%;
+
+        h1 {
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        a {
+            background-color: black;
+            color: white;
+            width: 170px;
+            border-radius: 10px;
+            display: block;
+            text-align: center;
+            padding: 3px;
+            margin-top: 200px;
+        }
+    }
+
+    .detail {
+        padding: 30px 10% 0;
+
+
+        h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+            font-weight: bold;
+        }
+
+        .arrow-left {
+            width: 0;
+            height: 0;
+            border: 7px solid transparent;
+            border-right: 10px solid black;
+            display: inline-block;
+        }
+    }
+
+
 }

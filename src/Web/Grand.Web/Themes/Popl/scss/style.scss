@@ -117,6 +117,7 @@ body {
         position:absolute;
         right:0;
         bottom:0;
+        visibility:hidden;
     }
 
 
@@ -192,6 +193,7 @@ html {
 
     @import "pages/_loginPage.scss";
     @import "pages/_what-is-zap-page.scss";
+    @import "pages/_whyzap.scss";
 
 }
 
@@ -256,6 +258,7 @@ html[dir="rtl"] {
 
     @import "pages/_loginPage.scss";
     @import "pages/_what-is-zap-page.scss";
+    @import "pages/_whyzap.scss";
 }
 
 
