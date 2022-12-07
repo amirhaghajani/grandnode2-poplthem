@@ -679,9 +679,14 @@ img {
 }
 
 body:after {
-  content: "is-moblie";
+  content: "is-mobile";
+  height: 0;
+  width: 0;
+  max-width: 0;
+  max-height: 0;
   position: absolute;
-  left: -100%;
+  right: 0;
+  bottom: 0;
 }
 @media (min-width: 768px) {
   body:after {
@@ -689,7 +694,7 @@ body:after {
   }
 }
 body[data-ismobile=true]:after {
-  content: "is-moblie";
+  content: "is-mobile";
 }
 
 html {
@@ -4509,107 +4514,47 @@ html .what-is-zap-page {
 }
 html .what-is-zap-page .what-is-zap-page-container {
   max-width: 60em;
-  min-width: 30em;
   margin: 0 auto;
 }
 html .what-is-zap-page .top-header {
   text-align: left;
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 20px;
 }
 html .what-is-zap-page .top-image-container {
   text-align: center;
+  margin: 50px 0;
 }
 html .what-is-zap-page .top-image {
-  max-width: 300px;
+  max-width: 400px;
+}
+html .what-is-zap-page .what-is-zap-detail-container {
+  margin: 30px 0;
 }
 html .what-is-zap-page .what-is-zap-detail {
   text-align: left;
+  font-size: 1.3em;
+  font-weight: bold;
+  max-width: 800px;
+  margin: 0 auto;
 }
 html .what-is-zap-page .what-is-zap-vidio {
   display: block;
   width: 100%;
 }
 html .what-is-zap-page .bottom-seciton {
-  position: relative;
-  padding-top: 20%;
-  margin-top: 50px;
+  padding-top: 20px;
 }
 html .what-is-zap-page .bottom-seciton img {
-  width: 40%;
+  width: 100%;
   display: block;
   margin: 0 auto;
 }
-html .what-is-zap-page .bottom-seciton .text-header {
-  text-align: left;
+html .what-is-zap-page .bottom-seciton h1 {
+  text-align: center;
   font-weight: bold;
-  font-size: 16px;
-}
-html .what-is-zap-page .bottom-seciton .text-detail {
-  text-align: justify;
-  font-size: 14px;
-}
-html .what-is-zap-page .bottom-seciton .text-top-right-container {
-  position: absolute;
-  width: 25%;
-  top: 0;
-  right: -5px;
-}
-html .what-is-zap-page .bottom-seciton .top-right-pointer-container {
-  margin-top: 20px;
-  width: 18%;
-  height: 30%;
-  border-left: solid 2px;
-  border-top: solid 2px;
-  border-radius: 10px 0 0 0;
-  position: absolute;
-  top: 25px;
-  right: 26%;
-}
-html .what-is-zap-page .bottom-seciton .text-top-left-container {
-  position: absolute;
-  width: 25%;
-  top: 0;
-  left: -5px;
-}
-html .what-is-zap-page .bottom-seciton .top-left-pointer-container {
-  margin-top: 20px;
-  width: 18%;
-  height: 30%;
-  border-left: solid 2px;
-  border-bottom: solid 2px;
-  border-radius: 0 0 0 10px;
-  position: absolute;
-  top: 25px;
-  left: 26%;
-}
-html .what-is-zap-page .bottom-seciton .point {
-  position: absolute;
-  border: 1px solid;
-  border-radius: 50%;
-  background-color: black;
-}
-html .what-is-zap-page .bottom-seciton .top-right-point {
-  top: -4px;
-  right: -4px;
-  width: 7px;
-  height: 7px;
-}
-html .what-is-zap-page .bottom-seciton .bottom-left-point {
-  bottom: -4px;
-  left: -4px;
-  width: 7px;
-  height: 7px;
-}
-html .what-is-zap-page .bottom-seciton .top-left-point {
-  top: -4px;
-  left: -4px;
-  width: 7px;
-  height: 7px;
-}
-html .what-is-zap-page .bottom-seciton .bottom-right-point {
-  bottom: -4px;
-  right: -4px;
-  width: 7px;
-  height: 7px;
+  margin: 60px 0;
 }
 
 html[dir=rtl] {
@@ -8434,107 +8379,47 @@ html[dir=rtl] .what-is-zap-page {
 }
 html[dir=rtl] .what-is-zap-page .what-is-zap-page-container {
   max-width: 60em;
-  min-width: 30em;
   margin: 0 auto;
 }
 html[dir=rtl] .what-is-zap-page .top-header {
   text-align: right;
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 20px;
 }
 html[dir=rtl] .what-is-zap-page .top-image-container {
   text-align: center;
+  margin: 50px 0;
 }
 html[dir=rtl] .what-is-zap-page .top-image {
-  max-width: 300px;
+  max-width: 400px;
+}
+html[dir=rtl] .what-is-zap-page .what-is-zap-detail-container {
+  margin: 30px 0;
 }
 html[dir=rtl] .what-is-zap-page .what-is-zap-detail {
   text-align: right;
+  font-size: 1.3em;
+  font-weight: bold;
+  max-width: 800px;
+  margin: 0 auto;
 }
 html[dir=rtl] .what-is-zap-page .what-is-zap-vidio {
   display: block;
   width: 100%;
 }
 html[dir=rtl] .what-is-zap-page .bottom-seciton {
-  position: relative;
-  padding-top: 20%;
-  margin-top: 50px;
+  padding-top: 20px;
 }
 html[dir=rtl] .what-is-zap-page .bottom-seciton img {
-  width: 40%;
+  width: 100%;
   display: block;
   margin: 0 auto;
 }
-html[dir=rtl] .what-is-zap-page .bottom-seciton .text-header {
-  text-align: right;
+html[dir=rtl] .what-is-zap-page .bottom-seciton h1 {
+  text-align: center;
   font-weight: bold;
-  font-size: 16px;
-}
-html[dir=rtl] .what-is-zap-page .bottom-seciton .text-detail {
-  text-align: justify;
-  font-size: 14px;
-}
-html[dir=rtl] .what-is-zap-page .bottom-seciton .text-top-right-container {
-  position: absolute;
-  width: 25%;
-  top: 0;
-  right: -5px;
-}
-html[dir=rtl] .what-is-zap-page .bottom-seciton .top-right-pointer-container {
-  margin-top: 20px;
-  width: 18%;
-  height: 30%;
-  border-left: solid 2px;
-  border-top: solid 2px;
-  border-radius: 10px 0 0 0;
-  position: absolute;
-  top: 25px;
-  right: 26%;
-}
-html[dir=rtl] .what-is-zap-page .bottom-seciton .text-top-left-container {
-  position: absolute;
-  width: 25%;
-  top: 0;
-  left: -5px;
-}
-html[dir=rtl] .what-is-zap-page .bottom-seciton .top-left-pointer-container {
-  margin-top: 20px;
-  width: 18%;
-  height: 30%;
-  border-left: solid 2px;
-  border-bottom: solid 2px;
-  border-radius: 0 0 0 10px;
-  position: absolute;
-  top: 25px;
-  left: 26%;
-}
-html[dir=rtl] .what-is-zap-page .bottom-seciton .point {
-  position: absolute;
-  border: 1px solid;
-  border-radius: 50%;
-  background-color: black;
-}
-html[dir=rtl] .what-is-zap-page .bottom-seciton .top-right-point {
-  top: -4px;
-  right: -4px;
-  width: 7px;
-  height: 7px;
-}
-html[dir=rtl] .what-is-zap-page .bottom-seciton .bottom-left-point {
-  bottom: -4px;
-  left: -4px;
-  width: 7px;
-  height: 7px;
-}
-html[dir=rtl] .what-is-zap-page .bottom-seciton .top-left-point {
-  top: -4px;
-  left: -4px;
-  width: 7px;
-  height: 7px;
-}
-html[dir=rtl] .what-is-zap-page .bottom-seciton .bottom-right-point {
-  bottom: -4px;
-  right: -4px;
-  width: 7px;
-  height: 7px;
+  margin: 60px 0;
 }
 
 /*==================================================

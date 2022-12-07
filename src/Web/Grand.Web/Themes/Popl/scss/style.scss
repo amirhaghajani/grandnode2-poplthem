@@ -109,9 +109,14 @@ body {
 
     &:after {
         //از این در جاوا اسکریپت استفاده کردم که ببینم حالت موبایل هست یا نه
-        content: "is-moblie";
-        position: absolute;
-        left: -100%;
+        content: "is-mobile";
+        height:0;
+        width:0;
+        max-width:0;
+        max-height:0;
+        position:absolute;
+        right:0;
+        bottom:0;
     }
 
 
@@ -124,7 +129,7 @@ body {
 
     &[data-ismobile='true'] {
         &:after {
-            content: "is-moblie";
+            content: "is-mobile";
         }
     }
 }

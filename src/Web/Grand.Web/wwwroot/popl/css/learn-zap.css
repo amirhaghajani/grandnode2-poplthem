@@ -428,6 +428,7 @@ main#MainContent {
 #faq-plus-app-template-three, .faq-plus-accordian {
   margin: 0 auto;
   max-width: 100%;
+  text-align: right;
 }
 
 #faq-plus-app {
@@ -594,7 +595,6 @@ main#MainContent {
   padding-top: 16px;
   padding-bottom: 6px;
   text-transform: capitalize;
-  text-align: left;
   font-style: unset;
   margin-top: 0;
   margin-bottom: 4px;
