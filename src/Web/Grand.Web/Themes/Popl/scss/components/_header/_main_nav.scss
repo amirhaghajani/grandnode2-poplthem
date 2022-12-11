@@ -14,11 +14,11 @@ $leftRight: if($dir==rtl,right,left);
     background-color: #fff;
 
     @include bp {
-        margin-#{$leftRight}: 50px;
+        padding-#{$leftRight}: 50px;
     }
 
     @include bps(1199) {
-        margin-#{$leftRight}: 110px;
+        padding-#{$leftRight}: 110px;
     }
 
     & > li {

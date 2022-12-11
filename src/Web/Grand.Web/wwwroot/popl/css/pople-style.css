@@ -769,6 +769,7 @@ html[dir=rtl] .main-nav, html[dir=rtl] body[data-ismobile=true] .main-nav-contai
   position: absolute;
   width: 100%;
   left: -100vw;
+  right: unset;
   transition: transform 350ms;
 }
 html body[data-ismobile=true] .main-nav-container .main-nav {
@@ -836,12 +837,12 @@ html .main-nav {
 }
 @media (min-width: 768px) {
   html .main-nav {
-    margin-left: 50px;
+    padding-left: 50px;
   }
 }
 @media (min-width: 1199px) {
   html .main-nav {
-    margin-left: 110px;
+    padding-left: 110px;
   }
 }
 html .main-nav > li {
@@ -4621,6 +4622,41 @@ html .contact-us-page-container .ContactUsMapTextAddress {
 html .contact-us-page-container .ContactUsMapTextContent {
   margin: 0 15px;
 }
+html register-page-main-container {
+  padding: 5px;
+}
+html .register-page {
+  text-align: left;
+  max-width: 40em;
+  margin: auto;
+  font-family: IRANSans;
+  padding: 10px;
+  border: solid 6px black;
+}
+html .register-page .register-page-container {
+  border: solid 1px grey;
+  padding: 1em 4em;
+  border-radius: 10px;
+}
+html .register-page .main-top-img-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+html .register-page .main-top-img {
+  width: 100px;
+}
+html .register-page .top-header {
+  text-align: left;
+  font-size: 1em;
+  font-weight: bold;
+}
+html .register-page .register-button-container {
+  text-align: left;
+}
+html .register-page .register-button-container input {
+  background-color: black;
+}
 
 html[dir=rtl] {
   /* for andimation add to card button */
@@ -4727,7 +4763,8 @@ html[dir=rtl] .menu {
 html[dir=rtl] .main-nav, html[dir=rtl] body[data-ismobile=true] .main-nav-container .main-nav, html[dir=rtl] .main-nav {
   position: absolute;
   width: 100%;
-  left: -100vw;
+  right: -100vw;
+  left: unset;
   transition: transform 350ms;
 }
 html[dir=rtl] body[data-ismobile=true] .main-nav-container .main-nav {
@@ -4743,7 +4780,7 @@ html[dir=rtl] body[data-ismobile=true] .main-nav-container .menu-toggler-button 
   display: flex;
 }
 html[dir=rtl] body[data-ismobile=true] .main-nav-container .menu-toggler-button[data-toggled=true] ~ .main-nav {
-  transform: translateX(100vw);
+  transform: translateX(-100vw);
 }
 html[dir=rtl] .main-nav li {
   display: block;
@@ -4795,12 +4832,12 @@ html[dir=rtl] .main-nav {
 }
 @media (min-width: 768px) {
   html[dir=rtl] .main-nav {
-    margin-right: 50px;
+    padding-right: 50px;
   }
 }
 @media (min-width: 1199px) {
   html[dir=rtl] .main-nav {
-    margin-right: 110px;
+    padding-right: 110px;
   }
 }
 html[dir=rtl] .main-nav > li {
@@ -8579,6 +8616,41 @@ html[dir=rtl] .contact-us-page-container .ContactUsMapTextAddress {
 }
 html[dir=rtl] .contact-us-page-container .ContactUsMapTextContent {
   margin: 0 15px;
+}
+html[dir=rtl] register-page-main-container {
+  padding: 5px;
+}
+html[dir=rtl] .register-page {
+  text-align: right;
+  max-width: 40em;
+  margin: auto;
+  font-family: IRANSans;
+  padding: 10px;
+  border: solid 6px black;
+}
+html[dir=rtl] .register-page .register-page-container {
+  border: solid 1px grey;
+  padding: 1em 4em;
+  border-radius: 10px;
+}
+html[dir=rtl] .register-page .main-top-img-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+html[dir=rtl] .register-page .main-top-img {
+  width: 100px;
+}
+html[dir=rtl] .register-page .top-header {
+  text-align: right;
+  font-size: 1em;
+  font-weight: bold;
+}
+html[dir=rtl] .register-page .register-button-container {
+  text-align: left;
+}
+html[dir=rtl] .register-page .register-button-container input {
+  background-color: black;
 }
 
 /*==================================================

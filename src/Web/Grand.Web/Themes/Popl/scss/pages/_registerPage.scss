@@ -1,0 +1,47 @@
+﻿$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
+
+register-page-main-container {
+    padding: 5px;
+}
+
+.register-page {
+    text-align: $leftRight;
+    max-width: 40em;
+    margin: auto;
+    font-family: $persianFont;
+    padding: 10px;
+    border: solid 6px black;
+
+    .register-page-container {
+        border: solid 1px grey;
+        padding: 1em 4em;
+        border-radius: 10px;
+    }
+
+    .main-top-img-container {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
+
+    .main-top-img {
+        width: 100px;
+    }
+
+    .top-header {
+        text-align: $leftRight;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .register-button-container {
+        text-align: left;
+
+        input {
+            background-color: black;
+        }
+    }
+}

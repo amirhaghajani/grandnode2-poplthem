@@ -1,8 +1,14 @@
-﻿%main-nav-absolute-left {
+﻿$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
+
+%main-nav-absolute-left {
     //پیش فرض که حالت موبایل است، سمت چپ مخفی باشه
     position: absolute;
     width: 100%;
-    left: -100vw;
+    #{$leftRight}: -100vw;
+    #{$leftRightReverse}: unset;
     transition: transform 350ms;
 }
 
@@ -32,7 +38,7 @@ body[data-ismobile='true'] .main-nav-container {
 
         &[data-toggled='true'] {
             ~ .main-nav {
-                transform: translateX(100vw);
+                transform: translateX(if($dir==rtl,-100vw,100vw));
             }
         }
     }
