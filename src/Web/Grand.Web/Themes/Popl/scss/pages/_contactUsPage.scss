@@ -1,0 +1,61 @@
+﻿$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
+
+.contact-us-page-container {
+    display: flex;
+
+    .contact-us-form-container {
+        flex: 1;
+    }
+
+    .contact-us-map-container {
+        flex: 1;
+        margin: 2% 1% 1% 1%;
+        background-color: black;
+        position:relative;
+
+        .map {
+            filter: invert(90%);
+        }
+    }
+
+
+    #ContactUsMainDivAddress {
+        max-width: 76%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        bottom: 6%;
+        transform: translateX(-50%);
+        left: 50%;
+        padding: 5px 10px;
+        border-radius: 19px;
+    }
+
+
+    .ContactUsMapTextAddress {
+        margin-top: 10px;
+        display: flex;
+
+        .ContactUsMapTextContentIcon svg {
+            width: 20px;
+        }
+    }
+
+    .ContactUsMapTextAddress {
+        margin-top: 10px;
+        display: flex;
+    }
+
+    .ContactUsMapTextAddress {
+        margin-top: 10px;
+        display: flex;
+    }
+
+    .ContactUsMapTextContent {
+        margin: 0 15px;
+    }
+}

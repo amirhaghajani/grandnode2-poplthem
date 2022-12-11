@@ -91,6 +91,7 @@
     <None Remove="Themes\Popl\scss\pages\myCatalogPage.scss" />
     <None Remove="Themes\Popl\scss\pages\myCheckoutPage.scss" />
     <None Remove="Themes\Popl\scss\pages\myOrderDetailPage.scss" />
+    <None Remove="Themes\Popl\scss\pages\_contactUsPage.scss" />
     <None Remove="Themes\Popl\scss\pages\_loginPage.scss" />
     <None Remove="Themes\Popl\scss\pages\_what-is-zap-page.scss" />
     <None Remove="Themes\Popl\scss\pages\_whyzap.scss" />
