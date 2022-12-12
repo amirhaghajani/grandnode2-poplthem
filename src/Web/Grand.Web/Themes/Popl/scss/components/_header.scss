@@ -1,7 +1,11 @@
-﻿
-$dir : null !default;
+﻿$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
 
 .header {
+    font-family:$persianFont;
+
     max-width: 100vw;
     width: 100vw;
     margin: auto;

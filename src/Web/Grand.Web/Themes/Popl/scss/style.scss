@@ -18,6 +18,7 @@
 html {
     min-width: 300px;
     overflow: visible;
+
 }
 html, body, #app {
     min-height: 100vh;
@@ -39,7 +40,7 @@ body #app {
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
     scroll-behavior: smooth;
-    font-family: DM Sans,sans-serif;
+    font-family: IRANSans;
     font-size: 16px;
     margin: auto;
     padding: 85px 0 0 0;
@@ -55,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h3, .h3 {
-    font-family: DM Sans,sans-serif;
+    font-family: IRANSans;
     font-weight: 700;
     font-style: normal;
     font-size: 32px;

@@ -582,7 +582,7 @@ body #app {
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
   scroll-behavior: smooth;
-  font-family: DM Sans, sans-serif;
+  font-family: IRANSans;
   font-size: 16px;
   margin: auto;
   padding: 85px 0 0 0;
@@ -599,7 +599,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h3, .h3 {
-  font-family: DM Sans, sans-serif;
+  font-family: IRANSans;
   font-weight: 700;
   font-style: normal;
   font-size: 32px;
@@ -707,6 +707,7 @@ html .onlyPersian {
   display: none;
 }
 html .header {
+  font-family: IRANSans;
   max-width: 100vw;
   width: 100vw;
   margin: auto;
@@ -763,6 +764,7 @@ html .header-actions-container {
   order: 4;
 }
 html .menu {
+  direction: ltr;
   background-color: black;
 }
 html[dir=rtl] .main-nav, html[dir=rtl] body[data-ismobile=true] .main-nav-container .main-nav, html .main-nav, html body[data-ismobile=true] .main-nav-container .main-nav {
@@ -1075,6 +1077,7 @@ html .myHomeCustomersSection .popl_container {
   padding: 0 3.125rem;
 }
 html .myHomeCustomersSection .customers__title {
+  font-family: IRANSans;
   margin-bottom: 2.8125rem;
 }
 html .myHomeCustomersSection .customers__title h1 {
@@ -1687,6 +1690,7 @@ html #mySlider a:hover, html #mySlider a:active, html #mySlider a:visited {
   color: #fff;
 }
 html #mySlider .btnBuyNowContainer {
+  font-family: IRANSans;
   text-align: center;
 }
 @media (min-width: 991px) {
@@ -2559,11 +2563,11 @@ html .myHomeUpgradeSection .upgrade__content {
   }
 }
 html .myHomeUpgradeSection .upgrade__content h1 {
-  font-size: 1.875em;
+  font-size: 1.7em;
   line-height: 1.25;
   letter-spacing: -0.56px;
   font-family: "Gilroy500";
-  font-weight: 500;
+  font-weight: bold;
   margin-bottom: 3.125rem;
   text-align: left;
   max-width: 279px;
@@ -2607,8 +2611,8 @@ html .myHomeMission .mission__head {
   margin-bottom: 0.8125rem;
 }
 html .myHomeMission .mission__head h1 {
-  font-size: 19.52px;
-  font-weight: 400;
+  font-size: 35px;
+  font-weight: bold;
   font-family: "Gilroy400";
   letter-spacing: 1.87px;
   line-height: 42.42px;
@@ -2635,7 +2639,7 @@ html .myHomeMission .mission__hero {
   }
 }
 html .myHomeMission .mission__hero h2 {
-  font-size: 30px;
+  font-size: 25px;
   letter-spacing: -0.56px;
   line-height: 37.5px;
   text-align: left;
@@ -2650,7 +2654,7 @@ html .myHomeMission .mission__hero h2 {
 }
 @media (min-width: 991px) {
   html .myHomeMission .mission__hero h2 {
-    font-size: 45px;
+    font-size: 25px;
     letter-spacing: -0.8px;
     line-height: 50px;
     max-width: 864px;
@@ -2678,7 +2682,7 @@ html .myHomeMission .mission__content {
   }
 }
 html .myHomeMission .mission__content p {
-  font-size: 22px;
+  font-size: 20px;
   letter-spacing: -0.25px;
   line-height: 30.36px;
   margin-bottom: 1.875rem;
@@ -2723,6 +2727,7 @@ html .myHomeMission .mission__gallery .mission__thumb {
   margin-bottom: 0.625rem;
 }
 html .myHomeFAQSection {
+  font-family: IRANSans;
   padding: 2.25rem 0 2.5rem;
   background: rgba(196, 196, 196, 0.1);
   border-radius: 16px;
@@ -2740,11 +2745,12 @@ html .myHomeFAQSection .faq__head {
 }
 html .myHomeFAQSection .faq__head h1 {
   font-size: 30px;
+  font-weight: bold;
   margin-left: 17px;
 }
 @media (min-width: 768px) {
   html .myHomeFAQSection .faq__head h1 {
-    font-size: 45px;
+    font-size: 35px;
   }
 }
 html .myHomeFAQSection .l-accordion {
@@ -2773,7 +2779,6 @@ html .myHomeFAQSection .l-accordion .l-accordion__title::after {
   background-image: url(/popl/images/icon/down-arrow.png);
 }
 html .myHomeFAQSection .l-accordion h3 {
-  font-family: "Gilroy700";
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
@@ -2781,7 +2786,6 @@ html .myHomeFAQSection .l-accordion h3 {
   text-align: justify;
 }
 html .myHomeFAQSection .l-accordion p {
-  font-family: "Gilroy400";
   font-weight: 400;
   font-size: 1.25em;
   line-height: 1.2;
@@ -2808,7 +2812,6 @@ html .myHomeContact .contact__head {
   margin-bottom: 26px;
 }
 html .myHomeContact .contact__head .l-title {
-  font-family: "Gilroy500";
   font-weight: 500;
   font-size: 1.96875em;
   line-height: 1.19048;
@@ -2819,7 +2822,6 @@ html .myHomeContact .contact__head .l-title {
 html .myHomeContact .contact__sub p {
   text-align: center;
   font-weight: 600;
-  font-family: "Gilroy600";
   color: #121212;
   font-size: 1.25em;
   line-height: 1.25;
@@ -2882,7 +2884,6 @@ html .myHomeContact .input__wrapper .field-validation-error {
   color: red;
 }
 html .myHomeContact textarea {
-  font-family: "Inter";
   font-weight: 400;
   color: #8c8c8c;
   background-color: #f6f6f6;
@@ -2899,7 +2900,6 @@ html .myHomeContact textarea {
 html .myHomeContact .l-btn {
   font-size: 0.9375em;
   line-height: 1.21;
-  font-family: "Inter";
   font-weight: 500;
   padding: 0 1.25rem;
   border-radius: 45rem;
@@ -4603,6 +4603,7 @@ html .contact-us-page-container #ContactUsMainDivAddress {
   left: 50%;
   padding: 5px 10px;
   border-radius: 19px;
+  text-align: left;
 }
 html .contact-us-page-container .ContactUsMapTextAddress {
   margin-top: 10px;
@@ -4701,6 +4702,7 @@ html[dir=rtl] .onlyPersian {
   font-family: IRANSans !important;
 }
 html[dir=rtl] .header {
+  font-family: IRANSans;
   max-width: 100vw;
   width: 100vw;
   margin: auto;
@@ -5070,6 +5072,7 @@ html[dir=rtl] .myHomeCustomersSection .popl_container {
   padding: 0 3.125rem;
 }
 html[dir=rtl] .myHomeCustomersSection .customers__title {
+  font-family: IRANSans;
   margin-bottom: 2.8125rem;
 }
 html[dir=rtl] .myHomeCustomersSection .customers__title h1 {
@@ -5682,6 +5685,7 @@ html[dir=rtl] #mySlider a:hover, html[dir=rtl] #mySlider a:active, html[dir=rtl]
   color: #fff;
 }
 html[dir=rtl] #mySlider .btnBuyNowContainer {
+  font-family: IRANSans;
   text-align: center;
 }
 @media (min-width: 991px) {
@@ -6554,11 +6558,11 @@ html[dir=rtl] .myHomeUpgradeSection .upgrade__content {
   }
 }
 html[dir=rtl] .myHomeUpgradeSection .upgrade__content h1 {
-  font-size: 1.875em;
+  font-size: 1.7em;
   line-height: 1.25;
   letter-spacing: -0.56px;
   font-family: IRANSans;
-  font-weight: 500;
+  font-weight: bold;
   margin-bottom: 3.125rem;
   text-align: right;
   max-width: 279px;
@@ -6602,8 +6606,8 @@ html[dir=rtl] .myHomeMission .mission__head {
   margin-bottom: 0.8125rem;
 }
 html[dir=rtl] .myHomeMission .mission__head h1 {
-  font-size: 19.52px;
-  font-weight: 400;
+  font-size: 35px;
+  font-weight: bold;
   font-family: IRANSans;
   letter-spacing: 1.87px;
   line-height: 42.42px;
@@ -6630,7 +6634,7 @@ html[dir=rtl] .myHomeMission .mission__hero {
   }
 }
 html[dir=rtl] .myHomeMission .mission__hero h2 {
-  font-size: 30px;
+  font-size: 25px;
   letter-spacing: -0.56px;
   line-height: 37.5px;
   text-align: right;
@@ -6645,7 +6649,7 @@ html[dir=rtl] .myHomeMission .mission__hero h2 {
 }
 @media (min-width: 991px) {
   html[dir=rtl] .myHomeMission .mission__hero h2 {
-    font-size: 45px;
+    font-size: 25px;
     letter-spacing: -0.8px;
     line-height: 50px;
     max-width: 864px;
@@ -6673,7 +6677,7 @@ html[dir=rtl] .myHomeMission .mission__content {
   }
 }
 html[dir=rtl] .myHomeMission .mission__content p {
-  font-size: 22px;
+  font-size: 20px;
   letter-spacing: -0.25px;
   line-height: 30.36px;
   margin-bottom: 1.875rem;
@@ -6718,6 +6722,7 @@ html[dir=rtl] .myHomeMission .mission__gallery .mission__thumb {
   margin-bottom: 0.625rem;
 }
 html[dir=rtl] .myHomeFAQSection {
+  font-family: IRANSans;
   padding: 2.25rem 0 2.5rem;
   background: rgba(196, 196, 196, 0.1);
   border-radius: 16px;
@@ -6735,11 +6740,12 @@ html[dir=rtl] .myHomeFAQSection .faq__head {
 }
 html[dir=rtl] .myHomeFAQSection .faq__head h1 {
   font-size: 30px;
+  font-weight: bold;
   margin-right: 17px;
 }
 @media (min-width: 768px) {
   html[dir=rtl] .myHomeFAQSection .faq__head h1 {
-    font-size: 45px;
+    font-size: 35px;
   }
 }
 html[dir=rtl] .myHomeFAQSection .l-accordion {
@@ -6768,7 +6774,6 @@ html[dir=rtl] .myHomeFAQSection .l-accordion .l-accordion__title::after {
   background-image: url(/popl/images/icon/down-arrow.png);
 }
 html[dir=rtl] .myHomeFAQSection .l-accordion h3 {
-  font-family: "Gilroy700";
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
@@ -6776,7 +6781,6 @@ html[dir=rtl] .myHomeFAQSection .l-accordion h3 {
   text-align: justify;
 }
 html[dir=rtl] .myHomeFAQSection .l-accordion p {
-  font-family: "Gilroy400";
   font-weight: 400;
   font-size: 1.25em;
   line-height: 1.2;
@@ -6803,7 +6807,6 @@ html[dir=rtl] .myHomeContact .contact__head {
   margin-bottom: 26px;
 }
 html[dir=rtl] .myHomeContact .contact__head .l-title {
-  font-family: "Gilroy500";
   font-weight: 500;
   font-size: 1.96875em;
   line-height: 1.19048;
@@ -6814,7 +6817,6 @@ html[dir=rtl] .myHomeContact .contact__head .l-title {
 html[dir=rtl] .myHomeContact .contact__sub p {
   text-align: center;
   font-weight: 600;
-  font-family: "Gilroy600";
   color: #121212;
   font-size: 1.25em;
   line-height: 1.25;
@@ -6877,7 +6879,6 @@ html[dir=rtl] .myHomeContact .input__wrapper .field-validation-error {
   color: red;
 }
 html[dir=rtl] .myHomeContact textarea {
-  font-family: "Inter";
   font-weight: 400;
   color: #8c8c8c;
   background-color: #f6f6f6;
@@ -6894,7 +6895,6 @@ html[dir=rtl] .myHomeContact textarea {
 html[dir=rtl] .myHomeContact .l-btn {
   font-size: 0.9375em;
   line-height: 1.21;
-  font-family: "Inter";
   font-weight: 500;
   padding: 0 1.25rem;
   border-radius: 45rem;
@@ -8598,6 +8598,7 @@ html[dir=rtl] .contact-us-page-container #ContactUsMainDivAddress {
   left: 50%;
   padding: 5px 10px;
   border-radius: 19px;
+  text-align: right;
 }
 html[dir=rtl] .contact-us-page-container .ContactUsMapTextAddress {
   margin-top: 10px;

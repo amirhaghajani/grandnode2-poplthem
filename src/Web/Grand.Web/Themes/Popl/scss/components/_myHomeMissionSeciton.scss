@@ -20,8 +20,8 @@ $leftRightReverse: if($dir==rtl,left,right);
         margin-bottom: 0.8125rem;
 
         h1 {
-            font-size: 19.52px;
-            font-weight: 400;
+            font-size: 35px;
+            font-weight: bold;
             font-family: if($dir==rtl,$persianFont,"Gilroy400");
             letter-spacing: 1.87px;
             line-height: 42.42px;
@@ -48,7 +48,7 @@ $leftRightReverse: if($dir==rtl,left,right);
         }
 
         h2 {
-            font-size: 30px;
+            font-size: 25px;
             letter-spacing: -0.56px;
             line-height: 37.5px;
             text-align: $leftRight;
@@ -61,7 +61,7 @@ $leftRightReverse: if($dir==rtl,left,right);
             }
 
             @include bps(991) {
-                font-size: 45px;
+                font-size: 25px;
                 letter-spacing: -.8px;
                 line-height: 50px;
                 max-width: 864px;
@@ -91,7 +91,7 @@ $leftRightReverse: if($dir==rtl,left,right);
 
 
         p {
-            font-size: 22px;
+            font-size: 20px;
             letter-spacing: -0.25px;
             line-height: 30.36px;
             margin-bottom: 1.875rem;

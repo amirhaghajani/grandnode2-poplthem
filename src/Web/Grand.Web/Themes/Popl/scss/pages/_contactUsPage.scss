@@ -33,6 +33,7 @@ $leftRightReverse: if($dir==rtl,left,right);
         left: 50%;
         padding: 5px 10px;
         border-radius: 19px;
+        text-align:$leftRight;
     }
 
 

@@ -74,11 +74,12 @@ $leftRightRevers: if($dir==rtl,left, right);
         }
 
         h1 {
-            font-size: 1.875em;
+
+            font-size: 1.7em;
             line-height: 1.25;
             letter-spacing: -0.56px;
             font-family: if($dir==rtl,$persianFont,"Gilroy500");
-            font-weight: 500;
+            font-weight: bold;
             margin-bottom: 3.125rem;
             text-align: $leftRight;
             max-width: 279px;
