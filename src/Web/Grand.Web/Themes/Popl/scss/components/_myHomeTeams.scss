@@ -23,7 +23,6 @@ $leftRightRevers: if($dir==rtl,left, right);
         padding-right: 20px;
 
         .l-title {
-            font-family: "Gilroy500";
             color: #121212;
             letter-spacing: -0.56px;
             font-size: 30px;
@@ -59,7 +58,6 @@ $leftRightRevers: if($dir==rtl,left, right);
             text-align: left;
             letter-spacing: -.72px;
             font-weight: 400;
-            font-family: "Inter";
 
             @include bp {
                 font-size: 1.25em;
@@ -130,7 +128,6 @@ $leftRightRevers: if($dir==rtl,left, right);
                 line-height: .78571;
                 margin-bottom: 1rem;
                 letter-spacing: -.16px;
-                font-family: "Gilroy400";
             }
         }
 

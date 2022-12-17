@@ -44,14 +44,29 @@ my_homeSlider_script._foundVedios= function(){
     var maxVideoHeight = 800;
     var videoContainerMaxHeight = 600;
     var mode = 'mobile';
-    
-    var videosS = document.querySelectorAll('#myVideos .mobile_mode video');
+
+        var videosS = document.querySelectorAll('#myVideos .mobile_mode.onlyEnglish video');
     var mobile_modeDiv = videosS[0].parentElement;
     var display = window.getComputedStyle(mobile_modeDiv).display;
 
     if(display == 'none'){
+            videosS = document.querySelectorAll('#myVideos .mobile_mode.onlyPersian video');
+            mobile_modeDiv = videosS[0].parentElement;
+            display = window.getComputedStyle(mobile_modeDiv).display;
+    }
 
-        videosS = document.querySelectorAll('#myVideos .desktop_mode video');
+    if(display == 'none'){
+
+            videosS = document.querySelectorAll('#myVideos .desktop_mode.onlyEnglish video');
+
+            mobile_modeDiv = videosS[0].parentElement;
+            display = window.getComputedStyle(mobile_modeDiv).display;
+
+
+            if (display == 'none') {
+                videosS = document.querySelectorAll('#myVideos .desktop_mode.onlyPersian video');
+            }
+
         videoDefaultWidth = 1920;
         videoDefaultHeight = 768;
         mode = 'desktop';

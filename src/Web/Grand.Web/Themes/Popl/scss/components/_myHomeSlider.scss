@@ -177,11 +177,19 @@ $leftRightReverse: if($dir==rtl,left,right);
 
 
     .btnBuyNowContainer {
+        color:white;
         font-family:$persianFont;
         text-align: center;
 
         @include bps(991) {
             text-align: $leftRight;
+        }
+
+        &:hover {
+            color:white;
+        }
+        &:visited {
+            color:white;
         }
     }
 
@@ -196,7 +204,6 @@ $leftRightReverse: if($dir==rtl,left,right);
         text-transform: uppercase;
         height: 3.75rem;
         line-height: 1.47059;
-        font-family: "Inter";
         font-weight: 600;
         margin: 0 auto;
         padding: 0 65px;

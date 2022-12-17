@@ -1081,7 +1081,6 @@ html .myHomeCustomersSection .customers__title {
   margin-bottom: 2.8125rem;
 }
 html .myHomeCustomersSection .customers__title h1 {
-  font-family: "Gilroy500";
   text-align: center;
   font-weight: 500;
   font-size: 1.3125em;
@@ -1206,7 +1205,6 @@ html .myHomePageProductContainer .btn-container {
   }
 }
 html .myHomePageProductContainer .btn-container a {
-  font-family: DM Sans, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -1690,6 +1688,7 @@ html #mySlider a:hover, html #mySlider a:active, html #mySlider a:visited {
   color: #fff;
 }
 html #mySlider .btnBuyNowContainer {
+  color: white;
   font-family: IRANSans;
   text-align: center;
 }
@@ -1697,6 +1696,12 @@ html #mySlider .btnBuyNowContainer {
   html #mySlider .btnBuyNowContainer {
     text-align: left;
   }
+}
+html #mySlider .btnBuyNowContainer:hover {
+  color: white;
+}
+html #mySlider .btnBuyNowContainer:visited {
+  color: white;
 }
 html #mySlider .btnBuyNow {
   background-color: #000;
@@ -1709,7 +1714,6 @@ html #mySlider .btnBuyNow {
   text-transform: uppercase;
   height: 3.75rem;
   line-height: 1.47059;
-  font-family: "Inter";
   font-weight: 600;
   margin: 0 auto;
   padding: 0 65px;
@@ -2076,7 +2080,6 @@ html .features__tabs .tabs-stage .tab__content-head h3 {
   line-height: 1.25;
   font-weight: 600;
   letter-spacing: -0.56px;
-  font-family: Gilroy600;
 }
 html .features__tabs .tabs-stage .tab__content-details {
   margin-bottom: 1.8125rem;
@@ -2135,7 +2138,6 @@ html .features__tabs .tabs-stage .tab__content-wrap .tab__right .tab__btn-wrap {
   text-align: center;
 }
 html .features__tabs .tabs-stage .l-btn {
-  font-family: Inter;
   height: 3.4375rem;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -2167,7 +2169,6 @@ html .features__tabs .tabs-stage .l-tag img {
   object-fit: contain;
 }
 html .features__tabs .tabs-stage .l-tag .l-tag__details h4 {
-  font-family: Inter;
   font-size: 1.125em;
   line-height: 1.38889;
   font-weight: 600;
@@ -2378,7 +2379,6 @@ html .myHomeTeams .teams__head {
   padding-right: 20px;
 }
 html .myHomeTeams .teams__head .l-title {
-  font-family: "Gilroy500";
   color: #121212;
   letter-spacing: -0.56px;
   font-size: 30px;
@@ -2412,7 +2412,6 @@ html .myHomeTeams .teams__collab p {
   text-align: left;
   letter-spacing: -0.72px;
   font-weight: 400;
-  font-family: "Inter";
 }
 @media (min-width: 768px) {
   html .myHomeTeams .teams__collab p {
@@ -2482,7 +2481,6 @@ html .myHomeTeams .teams__cards .teams__pro h2 {
   line-height: 0.78571;
   margin-bottom: 1rem;
   letter-spacing: -0.16px;
-  font-family: "Gilroy400";
 }
 html .myHomeTeams .teams__cards :nth-child(2) {
   margin-top: 31px;
@@ -2585,7 +2583,6 @@ html .myHomeUpgradeSection .upgrade__content .l-btn {
   background-color: #000000;
   color: #ffffff;
   font-weight: 600;
-  font-family: "Inter";
   font-size: 18px;
   line-height: 21.78px;
   letter-spacing: -0.02em;
@@ -2873,7 +2870,6 @@ html .myHomeContact .input__wrapper input {
   margin-bottom: 1.1625rem;
   height: 3.5rem;
   border-radius: 0.75rem;
-  font-family: "Inter";
   font-weight: 400;
 }
 html .myHomeContact .input__wrapper .field-validation-error {
@@ -2924,12 +2920,10 @@ html .popl_footer {
   background-color: #121212;
   padding: 4.25rem 0 4.6875rem;
   font-size: inherit;
-  font-family: Gilroy600;
   font-weight: 600;
   border-top: solid 1px #1b1f23;
   background-position: center center;
   color: #fff;
-  font-family: Gilroy600;
   font-weight: 600;
 }
 html .popl_footer a {
@@ -3022,7 +3016,6 @@ html .popl_footer .footer_copyright p.credits {
   color: #999;
   line-height: 24px;
   font-weight: 400;
-  font-family: Gilroy400;
   font-size: 16px;
   text-align: left;
   margin-bottom: 64px;
@@ -3030,7 +3023,6 @@ html .popl_footer .footer_copyright p.credits {
 }
 html .popl_footer .footer_copyright p.credits a {
   font-weight: 700;
-  font-family: Gilroy700;
   color: #999;
   font-size: 16px;
   line-height: 1.47059;
@@ -5076,7 +5068,6 @@ html[dir=rtl] .myHomeCustomersSection .customers__title {
   margin-bottom: 2.8125rem;
 }
 html[dir=rtl] .myHomeCustomersSection .customers__title h1 {
-  font-family: "Gilroy500";
   text-align: center;
   font-weight: 500;
   font-size: 1.3125em;
@@ -5201,7 +5192,6 @@ html[dir=rtl] .myHomePageProductContainer .btn-container {
   }
 }
 html[dir=rtl] .myHomePageProductContainer .btn-container a {
-  font-family: DM Sans, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -5685,6 +5675,7 @@ html[dir=rtl] #mySlider a:hover, html[dir=rtl] #mySlider a:active, html[dir=rtl]
   color: #fff;
 }
 html[dir=rtl] #mySlider .btnBuyNowContainer {
+  color: white;
   font-family: IRANSans;
   text-align: center;
 }
@@ -5692,6 +5683,12 @@ html[dir=rtl] #mySlider .btnBuyNowContainer {
   html[dir=rtl] #mySlider .btnBuyNowContainer {
     text-align: right;
   }
+}
+html[dir=rtl] #mySlider .btnBuyNowContainer:hover {
+  color: white;
+}
+html[dir=rtl] #mySlider .btnBuyNowContainer:visited {
+  color: white;
 }
 html[dir=rtl] #mySlider .btnBuyNow {
   background-color: #000;
@@ -5704,7 +5701,6 @@ html[dir=rtl] #mySlider .btnBuyNow {
   text-transform: uppercase;
   height: 3.75rem;
   line-height: 1.47059;
-  font-family: "Inter";
   font-weight: 600;
   margin: 0 auto;
   padding: 0 65px;
@@ -6071,7 +6067,6 @@ html[dir=rtl] .features__tabs .tabs-stage .tab__content-head h3 {
   line-height: 1.25;
   font-weight: 600;
   letter-spacing: -0.56px;
-  font-family: Gilroy600;
 }
 html[dir=rtl] .features__tabs .tabs-stage .tab__content-details {
   margin-bottom: 1.8125rem;
@@ -6130,7 +6125,6 @@ html[dir=rtl] .features__tabs .tabs-stage .tab__content-wrap .tab__right .tab__b
   text-align: center;
 }
 html[dir=rtl] .features__tabs .tabs-stage .l-btn {
-  font-family: Inter;
   height: 3.4375rem;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -6162,7 +6156,6 @@ html[dir=rtl] .features__tabs .tabs-stage .l-tag img {
   object-fit: contain;
 }
 html[dir=rtl] .features__tabs .tabs-stage .l-tag .l-tag__details h4 {
-  font-family: Inter;
   font-size: 1.125em;
   line-height: 1.38889;
   font-weight: 600;
@@ -6373,7 +6366,6 @@ html[dir=rtl] .myHomeTeams .teams__head {
   padding-right: 20px;
 }
 html[dir=rtl] .myHomeTeams .teams__head .l-title {
-  font-family: "Gilroy500";
   color: #121212;
   letter-spacing: -0.56px;
   font-size: 30px;
@@ -6407,7 +6399,6 @@ html[dir=rtl] .myHomeTeams .teams__collab p {
   text-align: left;
   letter-spacing: -0.72px;
   font-weight: 400;
-  font-family: "Inter";
 }
 @media (min-width: 768px) {
   html[dir=rtl] .myHomeTeams .teams__collab p {
@@ -6477,7 +6468,6 @@ html[dir=rtl] .myHomeTeams .teams__cards .teams__pro h2 {
   line-height: 0.78571;
   margin-bottom: 1rem;
   letter-spacing: -0.16px;
-  font-family: "Gilroy400";
 }
 html[dir=rtl] .myHomeTeams .teams__cards :nth-child(2) {
   margin-top: 31px;
@@ -6580,7 +6570,6 @@ html[dir=rtl] .myHomeUpgradeSection .upgrade__content .l-btn {
   background-color: #000000;
   color: #ffffff;
   font-weight: 600;
-  font-family: "Inter";
   font-size: 18px;
   line-height: 21.78px;
   letter-spacing: -0.02em;
@@ -6868,7 +6857,6 @@ html[dir=rtl] .myHomeContact .input__wrapper input {
   margin-bottom: 1.1625rem;
   height: 3.5rem;
   border-radius: 0.75rem;
-  font-family: "Inter";
   font-weight: 400;
 }
 html[dir=rtl] .myHomeContact .input__wrapper .field-validation-error {
@@ -6919,12 +6907,10 @@ html[dir=rtl] .popl_footer {
   background-color: #121212;
   padding: 4.25rem 0 4.6875rem;
   font-size: inherit;
-  font-family: Gilroy600;
   font-weight: 600;
   border-top: solid 1px #1b1f23;
   background-position: center center;
   color: #fff;
-  font-family: Gilroy600;
   font-weight: 600;
 }
 html[dir=rtl] .popl_footer a {
@@ -7017,7 +7003,6 @@ html[dir=rtl] .popl_footer .footer_copyright p.credits {
   color: #999;
   line-height: 24px;
   font-weight: 400;
-  font-family: Gilroy400;
   font-size: 16px;
   text-align: left;
   margin-bottom: 64px;
@@ -7025,7 +7010,6 @@ html[dir=rtl] .popl_footer .footer_copyright p.credits {
 }
 html[dir=rtl] .popl_footer .footer_copyright p.credits a {
   font-weight: 700;
-  font-family: Gilroy700;
   color: #999;
   font-size: 16px;
   line-height: 1.47059;

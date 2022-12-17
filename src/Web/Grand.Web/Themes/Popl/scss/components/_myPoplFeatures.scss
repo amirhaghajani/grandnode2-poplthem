@@ -208,7 +208,6 @@ $leftRightRevers: if($dir==rtl,left, right);
                 line-height: 1.25;
                 font-weight: 600;
                 letter-spacing: -.56px;
-                font-family: Gilroy600;
             }
         }
 
@@ -272,7 +271,6 @@ $leftRightRevers: if($dir==rtl,left, right);
         }
 
         .l-btn {
-            font-family: Inter;
             height: 3.4375rem;
             font-weight: 600;
             letter-spacing: -.02em;
@@ -307,7 +305,6 @@ $leftRightRevers: if($dir==rtl,left, right);
 
             .l-tag__details {
                 h4 {
-                    font-family: Inter;
                     font-size: 1.125em;
                     line-height: 1.38889;
                     font-weight: 600;
