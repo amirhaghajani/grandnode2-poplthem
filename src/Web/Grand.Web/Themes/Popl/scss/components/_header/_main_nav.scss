@@ -36,10 +36,10 @@ $leftRight: if($dir==rtl,right,left);
             color: #000;
             text-shadow: none;
             text-decoration: none;
+            padding-bottom: 3px;
 
             &:hover {
-                border-bottom: solid 3px #121212;
-                color: #4a9ef4;
+                border-bottom: solid 1px #121212;
             }
         }
 
@@ -76,16 +76,28 @@ $leftRight: if($dir==rtl,right,left);
                 border-radius: 10px;
                 background-color: #fff;
                 box-shadow: 0 2px 6px #00000080;
-                padding: 1.9375rem 1.875rem 1.3125rem;
+                padding: 1rem 1.875rem 1.3125rem;
                 text-align: $leftRight;
                 min-width: 100%;
 
                 .dropdown_title {
                     color: #8c8c8c;
-                    font-family: "DM Sans";
                     font-size: 17px;
                     line-height: 17px;
-                    margin-bottom: 0.9375rem;
+                    margin-bottom: 0.7375rem;
+                }
+
+                li {
+                    margin-bottom: 2px;
+
+                    a {
+                        padding-bottom: 1px;
+                        font-size: 13px;
+
+                        span {
+                            color: #000;
+                        }
+                    }
                 }
             }
         }

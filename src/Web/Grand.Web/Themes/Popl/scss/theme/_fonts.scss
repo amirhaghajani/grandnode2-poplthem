@@ -40,6 +40,14 @@ $persianFont: IranianSan !default;
 }
 
 @font-face {
+    font-family: 'yekan2';
+    src: url('/popl/font/per/Yekan.eot');
+    src: url('/popl/font/per/Yekan.eot?#iefix') format("embedded-opentype"), url('/popl/font/per/Yekan.woff2') format('woff2'), url('/popl/font/per/Yekan.woff') format('woff'), url('/popl/font/per/Yekan.ttf') format('truetype'), url('/popl/font/per/Yekan.otf') format('opentype'), url('/popl/font/per/Yekan.svg#Yekan') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: "Gilroy";
     src: url("/popl/font/a21f2416-e83c-44c4-88bf-a47ca6325a02.woff2") format("woff2"), url("/popl/font/25f5b6f4-855f-48e2-b53d-3d6ad49faae8.woff") format("woff");
 }

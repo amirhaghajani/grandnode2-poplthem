@@ -472,13 +472,16 @@ $leftRightReverse: if($dir==rtl,left,right);
 
 .form-row {
     .btn-info {
-        background-color: #1878b9;
-        padding: 0.9em 1.7em;
+        background-color: #000;
+        padding: 0.2em 1.7em;
+        border-radius: 50px;
     }
 
     .btn-secondary {
-        padding: 0.9em 1.7em;
-        color:white;
+        padding: 0.2em 1.7em;
+        color: #000;
+        background-color: white;
+        border-radius: 50px;
     }
 }
 
@@ -529,8 +532,9 @@ $leftRightReverse: if($dir==rtl,left,right);
         text-align: $leftRightReverse;
 
         .btn-info {
-            background-color: #1878b9;
-            padding: 0.9em 1.7em;
+            background-color: #000;
+            padding: 0.2em 1.7em;
+            border-radius: 50px;
         }
     }
     /* summary */

@@ -24,6 +24,7 @@ namespace Grand.Web.Themes.Popl.Endpoints
 
             RegisterAddToCartRoute(endpointRouteBuilder, pattern);
             RegisterCommonRoute(endpointRouteBuilder, pattern);
+            RegisterCartRoute(endpointRouteBuilder, pattern);
         }
 
         public int Priority => 1;
@@ -49,6 +50,15 @@ namespace Grand.Web.Themes.Popl.Endpoints
                             new { controller = "MyCommon", action = "MyContactUsFromHome" });
         }
 
+        private void RegisterCartRoute(IEndpointRouteBuilder endpointRouteBuilder, string pattern)
+        {
+            //Continue shopping
+            endpointRouteBuilder.MapControllerRoute("MyContinueShopping",
+                            $"{pattern}cart/continueshopping/",
+                            new { controller = "MyShoppingCart", action = "MyContinueShopping" });
 
-    }
+        }
+
+
+        }
 }

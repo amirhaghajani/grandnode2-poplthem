@@ -11,6 +11,9 @@
  main - structure
 ==================================================*/
 
+
+$persianFont: yekan2;
+
 *, :after, :before {
     box-sizing: border-box;
 }
@@ -40,7 +43,7 @@ body #app {
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
     scroll-behavior: smooth;
-    font-family: IRANSans;
+    font-family: $persianFont;
     font-size: 16px;
     margin: auto;
     padding: 85px 0 0 0;
@@ -56,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h3, .h3 {
-    font-family: IRANSans;
+    font-family: $persianFont;
     font-weight: 700;
     font-style: normal;
     font-size: 32px;
@@ -136,7 +139,7 @@ body {
     }
 }
 
-$persianFont: IRANSans;
+
 
 html {
     $dir: null;
@@ -197,6 +200,9 @@ html {
     @import "pages/_whyzap.scss";
     @import "pages/_contactUsPage.scss";
     @import "pages/_registerPage.scss";
+
+    @import "pages/_password_recovery_page.scss";
+    @import "pages/_search-page.scss";
 }
 
 html[dir="rtl"] {
@@ -225,7 +231,7 @@ html[dir="rtl"] {
 
     .onlyPersian {
         display: revert;
-        font-family: IRANSans !important;
+        font-family: $persianFont !important;
     }
 
     @import "components/_header.scss";
@@ -263,6 +269,9 @@ html[dir="rtl"] {
     @import "pages/_whyzap.scss";
     @import "pages/_contactUsPage.scss";
     @import "pages/_registerPage.scss";
+
+    @import "pages/_password_recovery_page.scss";
+    @import "pages/_search-page.scss";
 }
 
 

@@ -527,6 +527,13 @@ p, h1, h2, h3, h4, h5, h6 {
   src: url("/popl/font/per/IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype"), url("/popl/font/per/IRANSansWeb_Bold.woff2") format("woff2"), url("/popl/font/per/IRANSansWeb_Bold.woff") format("woff"), url("/popl/font/per/IRANSansWeb_Bold.ttf") format("truetype");
 }
 @font-face {
+  font-family: "yekan2";
+  src: url("/popl/font/per/Yekan.eot");
+  src: url("/popl/font/per/Yekan.eot?#iefix") format("embedded-opentype"), url("/popl/font/per/Yekan.woff2") format("woff2"), url("/popl/font/per/Yekan.woff") format("woff"), url("/popl/font/per/Yekan.ttf") format("truetype"), url("/popl/font/per/Yekan.otf") format("opentype"), url("/popl/font/per/Yekan.svg#Yekan") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: "Gilroy";
   src: url("/popl/font/a21f2416-e83c-44c4-88bf-a47ca6325a02.woff2") format("woff2"), url("/popl/font/25f5b6f4-855f-48e2-b53d-3d6ad49faae8.woff") format("woff");
 }
@@ -582,7 +589,7 @@ body #app {
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
   scroll-behavior: smooth;
-  font-family: IRANSans;
+  font-family: yekan2;
   font-size: 16px;
   margin: auto;
   padding: 85px 0 0 0;
@@ -599,7 +606,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h3, .h3 {
-  font-family: IRANSans;
+  font-family: yekan2;
   font-weight: 700;
   font-style: normal;
   font-size: 32px;
@@ -707,7 +714,7 @@ html .onlyPersian {
   display: none;
 }
 html .header {
-  font-family: IRANSans;
+  font-family: yekan2;
   max-width: 100vw;
   width: 100vw;
   margin: auto;
@@ -861,10 +868,10 @@ html .main-nav > li a {
   color: #000;
   text-shadow: none;
   text-decoration: none;
+  padding-bottom: 3px;
 }
 html .main-nav > li a:hover {
-  border-bottom: solid 3px #121212;
-  color: #4a9ef4;
+  border-bottom: solid 1px #121212;
 }
 html .main-nav > li .icon-down-arrow {
   font-size: 10px;
@@ -893,16 +900,25 @@ html .main-nav > li[data-toggled=true] ul {
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5019607843);
-  padding: 1.9375rem 1.875rem 1.3125rem;
+  padding: 1rem 1.875rem 1.3125rem;
   text-align: left;
   min-width: 100%;
 }
 html .main-nav > li[data-toggled=true] ul .dropdown_title {
   color: #8c8c8c;
-  font-family: "DM Sans";
   font-size: 17px;
   line-height: 17px;
-  margin-bottom: 0.9375rem;
+  margin-bottom: 0.7375rem;
+}
+html .main-nav > li[data-toggled=true] ul li {
+  margin-bottom: 2px;
+}
+html .main-nav > li[data-toggled=true] ul li a {
+  padding-bottom: 1px;
+  font-size: 13px;
+}
+html .main-nav > li[data-toggled=true] ul li a span {
+  color: #000;
 }
 html .header-actions-container ul {
   padding: 0;
@@ -1077,7 +1093,7 @@ html .myHomeCustomersSection .popl_container {
   padding: 0 3.125rem;
 }
 html .myHomeCustomersSection .customers__title {
-  font-family: IRANSans;
+  font-family: yekan2;
   margin-bottom: 2.8125rem;
 }
 html .myHomeCustomersSection .customers__title h1 {
@@ -1689,7 +1705,7 @@ html #mySlider a:hover, html #mySlider a:active, html #mySlider a:visited {
 }
 html #mySlider .btnBuyNowContainer {
   color: white;
-  font-family: IRANSans;
+  font-family: yekan2;
   text-align: center;
 }
 @media (min-width: 991px) {
@@ -2586,7 +2602,7 @@ html .myHomeUpgradeSection .upgrade__content .l-btn {
   font-size: 18px;
   line-height: 21.78px;
   letter-spacing: -0.02em;
-  padding: 16.5px 70px;
+  padding: 0;
   text-transform: capitalize;
   box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
   min-width: 14.375rem;
@@ -2608,7 +2624,8 @@ html .myHomeMission .mission__head {
   margin-bottom: 0.8125rem;
 }
 html .myHomeMission .mission__head h1 {
-  font-size: 35px;
+  color: black;
+  font-size: 36px;
   font-weight: bold;
   font-family: "Gilroy400";
   letter-spacing: 1.87px;
@@ -2619,7 +2636,7 @@ html .myHomeMission .mission__head h1 {
 }
 @media (min-width: 768px) {
   html .myHomeMission .mission__head h1 {
-    font-size: 25px;
+    font-size: 26px;
     letter-spacing: 2.2px;
     line-height: 50px;
     opacity: 0.7;
@@ -2636,7 +2653,7 @@ html .myHomeMission .mission__hero {
   }
 }
 html .myHomeMission .mission__hero h2 {
-  font-size: 25px;
+  font-size: 24px;
   letter-spacing: -0.56px;
   line-height: 37.5px;
   text-align: left;
@@ -2651,9 +2668,9 @@ html .myHomeMission .mission__hero h2 {
 }
 @media (min-width: 991px) {
   html .myHomeMission .mission__hero h2 {
-    font-size: 25px;
+    font-size: 24px;
     letter-spacing: -0.8px;
-    line-height: 50px;
+    line-height: 45px;
     max-width: 864px;
   }
 }
@@ -2724,7 +2741,7 @@ html .myHomeMission .mission__gallery .mission__thumb {
   margin-bottom: 0.625rem;
 }
 html .myHomeFAQSection {
-  font-family: IRANSans;
+  font-family: yekan2;
   padding: 2.25rem 0 2.5rem;
   background: rgba(196, 196, 196, 0.1);
   border-radius: 16px;
@@ -3427,12 +3444,16 @@ html .shopping-cart-page .feature_divider {
   height: 5px;
   max-width: 1440px;
 }
+html .shopping-cart-page #checkoutasguest, html .shopping-cart-page #checkout {
+  border-radius: 50px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
 html .shopping-cart-page .continue-shopping-container {
   cursor: pointer;
   text-align: center;
   color: #4a9ef4;
   text-align: center;
-  font-family: DM Sans, sans-serif, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
@@ -3864,7 +3885,6 @@ html .quick-view .quantity-container .product-plus {
   float: left;
 }
 html .quick-view .btn-add-to-card {
-  font-family: DM Sans, sans-serif;
   padding: 16px 25px 15px;
   font-style: normal;
   font-weight: 700;
@@ -4262,12 +4282,15 @@ html [dark-theme=true] .shopping-cart.table td {
   }
 }
 html .form-row .btn-info {
-  background-color: #1878b9;
-  padding: 0.9em 1.7em;
+  background-color: #000;
+  padding: 0.2em 1.7em;
+  border-radius: 50px;
 }
 html .form-row .btn-secondary {
-  padding: 0.9em 1.7em;
-  color: white;
+  padding: 0.2em 1.7em;
+  color: #000;
+  background-color: white;
+  border-radius: 50px;
 }
 html #shipping-method-buttons-container, html #payment-info-buttons-container, html .confirm-buttons {
   text-align: right;
@@ -4313,8 +4336,9 @@ html .checkout-page #shipping-buttons-container {
   text-align: right;
 }
 html .checkout-page #shipping-buttons-container .btn-info {
-  background-color: #1878b9;
-  padding: 0.9em 1.7em;
+  background-color: #000;
+  padding: 0.2em 1.7em;
+  border-radius: 50px;
 }
 html .checkout-page #ordersummarypagecart .product__image {
   position: relative;
@@ -4353,7 +4377,7 @@ html .order-details-page .shopping-cart-page .generalTitle {
 }
 html #sidebar-cart {
   text-align: left;
-  font-family: IRANSans;
+  font-family: yekan2;
   align-items: flex-start;
 }
 html #sidebar-cart button.close {
@@ -4422,7 +4446,7 @@ html .login-page-main-container {
 html .login-page {
   max-width: 40em;
   margin: auto;
-  font-family: IRANSans;
+  font-family: yekan2;
   padding: 10px;
   border: solid 6px black;
 }
@@ -4469,7 +4493,7 @@ html .login-page .login-new-customer-container .text-login-newcustomer {
   margin-left: unset;
 }
 html .what-is-zap-page {
-  font-family: IRANSans;
+  font-family: yekan2;
   padding: 10px;
   overflow-x: auto;
 }
@@ -4519,7 +4543,7 @@ html .what-is-zap-page .bottom-seciton h1 {
 }
 html .why-zap-page {
   text-align: right;
-  font-family: IRANSans;
+  font-family: yekan2;
 }
 html .why-zap-page .why-zap-page-container {
   max-width: 1200px;
@@ -4622,7 +4646,7 @@ html .register-page {
   text-align: left;
   max-width: 40em;
   margin: auto;
-  font-family: IRANSans;
+  font-family: yekan2;
   padding: 10px;
   border: solid 6px black;
 }
@@ -4649,6 +4673,12 @@ html .register-page .register-button-container {
 }
 html .register-page .register-button-container input {
   background-color: black;
+}
+html .password-recovery-page {
+  padding: 20px;
+}
+html .search-page {
+  padding: 20px;
 }
 
 html[dir=rtl] {
@@ -4691,10 +4721,10 @@ html[dir=rtl] .onlyEnglish {
 }
 html[dir=rtl] .onlyPersian {
   display: revert;
-  font-family: IRANSans !important;
+  font-family: yekan2 !important;
 }
 html[dir=rtl] .header {
-  font-family: IRANSans;
+  font-family: yekan2;
   max-width: 100vw;
   width: 100vw;
   margin: auto;
@@ -4848,10 +4878,10 @@ html[dir=rtl] .main-nav > li a {
   color: #000;
   text-shadow: none;
   text-decoration: none;
+  padding-bottom: 3px;
 }
 html[dir=rtl] .main-nav > li a:hover {
-  border-bottom: solid 3px #121212;
-  color: #4a9ef4;
+  border-bottom: solid 1px #121212;
 }
 html[dir=rtl] .main-nav > li .icon-down-arrow {
   font-size: 10px;
@@ -4880,16 +4910,25 @@ html[dir=rtl] .main-nav > li[data-toggled=true] ul {
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5019607843);
-  padding: 1.9375rem 1.875rem 1.3125rem;
+  padding: 1rem 1.875rem 1.3125rem;
   text-align: right;
   min-width: 100%;
 }
 html[dir=rtl] .main-nav > li[data-toggled=true] ul .dropdown_title {
   color: #8c8c8c;
-  font-family: "DM Sans";
   font-size: 17px;
   line-height: 17px;
-  margin-bottom: 0.9375rem;
+  margin-bottom: 0.7375rem;
+}
+html[dir=rtl] .main-nav > li[data-toggled=true] ul li {
+  margin-bottom: 2px;
+}
+html[dir=rtl] .main-nav > li[data-toggled=true] ul li a {
+  padding-bottom: 1px;
+  font-size: 13px;
+}
+html[dir=rtl] .main-nav > li[data-toggled=true] ul li a span {
+  color: #000;
 }
 html[dir=rtl] .header-actions-container ul {
   padding: 0;
@@ -4948,7 +4987,7 @@ html[dir=rtl] .popl-header-links .seprator {
   margin-right: 30px;
 }
 html[dir=rtl] .popl-header-links .txtForUser {
-  font-family: IRANSans;
+  font-family: yekan2;
   text-align: justify;
   padding: 5px 15px 22px 15px;
   border-bottom: solid 1px rgba(175, 175, 175, 0.8);
@@ -5064,7 +5103,7 @@ html[dir=rtl] .myHomeCustomersSection .popl_container {
   padding: 0 3.125rem;
 }
 html[dir=rtl] .myHomeCustomersSection .customers__title {
-  font-family: IRANSans;
+  font-family: yekan2;
   margin-bottom: 2.8125rem;
 }
 html[dir=rtl] .myHomeCustomersSection .customers__title h1 {
@@ -5541,7 +5580,7 @@ html[dir=rtl] #mySlider .banner__title {
 }
 html[dir=rtl] #mySlider .banner__title h1 {
   font-weight: 600;
-  font-family: IRANSans;
+  font-family: yekan2;
   letter-spacing: -0.4px;
   font-size: 1.75em;
   line-height: 1.25;
@@ -5571,7 +5610,7 @@ html[dir=rtl] #mySlider #mySliderTexts h2 {
   transition: all 0.3s ease-in-out;
   text-align: center;
   font-weight: 700;
-  font-family: IRANSans;
+  font-family: yekan2;
   margin-bottom: 0.4375rem;
   word-break: break-word;
 }
@@ -5610,7 +5649,7 @@ html[dir=rtl] #mySlider #mySliderTexts span {
   -webkit-font-smoothing: antialiased;
   color: #121212;
   font-weight: 700;
-  font-family: IRANSans;
+  font-family: yekan2;
   word-break: break-word;
   letter-spacing: -2px;
   box-sizing: border-box;
@@ -5632,7 +5671,7 @@ html[dir=rtl] #mySlider .banner__sub-title {
   text-align: center;
   width: 100%;
   font-weight: 500;
-  font-family: IRANSans;
+  font-family: yekan2;
 }
 @media (min-width: 414px) {
   html[dir=rtl] #mySlider .banner__sub-title {
@@ -5652,7 +5691,7 @@ html[dir=rtl] #mySlider .banner__sub-title {
 html[dir=rtl] #mySlider .banner__sub-title h2 {
   font-size: 0.92rem;
   font-weight: 500;
-  font-family: IRANSans;
+  font-family: yekan2;
   line-height: 1.2106;
   letter-spacing: -0.31px;
   margin: 0;
@@ -5676,7 +5715,7 @@ html[dir=rtl] #mySlider a:hover, html[dir=rtl] #mySlider a:active, html[dir=rtl]
 }
 html[dir=rtl] #mySlider .btnBuyNowContainer {
   color: white;
-  font-family: IRANSans;
+  font-family: yekan2;
   text-align: center;
 }
 @media (min-width: 991px) {
@@ -5816,7 +5855,7 @@ html[dir=rtl] .banner__advantages .banner__links-text h5 {
   color: #121212;
   font-weight: 600;
   font-size: 18px;
-  font-family: IRANSans;
+  font-family: yekan2;
   font-size: 1.125em;
   line-height: 1.21;
   margin-bottom: 0.25rem;
@@ -5828,7 +5867,7 @@ html[dir=rtl] .banner__advantages .banner__links-text h5 {
   }
 }
 html[dir=rtl] .banner__advantages .banner__links-text h3 {
-  font-family: IRANSans;
+  font-family: yekan2;
   font-weight: 400;
   font-size: 1em;
   line-height: 1.21;
@@ -5921,7 +5960,7 @@ html[dir=rtl] .features__head .features__title h2 {
   line-height: 1.25;
   text-transform: inherit;
   text-align: center;
-  font-family: IRANSans;
+  font-family: yekan2;
   margin: 0;
   color: #121212;
   padding: 0;
@@ -6023,7 +6062,7 @@ html[dir=rtl] .features__tabs .tabs-nav li .tab__thumbnail {
 html[dir=rtl] .features__tabs .tabs-nav li .tab__title {
   color: #121212;
   font-weight: 400;
-  font-family: IRANSans;
+  font-family: yekan2;
   letter-spacing: -0.4px;
   font-size: 12px;
   line-height: 14.12px;
@@ -6031,7 +6070,7 @@ html[dir=rtl] .features__tabs .tabs-nav li .tab__title {
 @media (min-width: 768px) {
   html[dir=rtl] .features__tabs .tabs-nav li .tab__title {
     font-weight: 600;
-    font-family: IRANSans;
+    font-family: yekan2;
     letter-spacing: -0.33px;
     font-size: 17.29px;
     line-height: 20.58px;
@@ -6215,7 +6254,7 @@ html[dir=rtl] .myHomWhoItWorkSection .work__head {
 html[dir=rtl] .myHomWhoItWorkSection .work__head .l-title {
   color: #121212;
   font-weight: 500;
-  font-family: IRANSans;
+  font-family: yekan2;
   font-size: 29.4px;
   line-height: 36.75px;
   letter-spacing: -0.56px;
@@ -6268,7 +6307,7 @@ html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__content h3 {
   font-size: 0.9375em;
   line-height: 1.21;
   font-weight: 600;
-  font-family: IRANSans;
+  font-family: yekan2;
   letter-spacing: -0.5px;
   margin: 0 auto;
   max-width: 56%;
@@ -6281,7 +6320,7 @@ html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__content h3 {
 }
 html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__content .work__link {
   font-weight: 500;
-  font-family: IRANSans;
+  font-family: yekan2;
   color: #767676;
   text-decoration: none;
   position: relative;
@@ -6293,7 +6332,7 @@ html[dir=rtl] .myHomWhoItWorkSection .work__cards .work__content .work__link {
   margin: 0 auto;
 }
 html[dir=rtl] .myHomWhoItWorkSection .work__numbers {
-  font-family: IRANSans;
+  font-family: yekan2;
   font-weight: 900;
   height: 53.14px;
   width: 53.14px;
@@ -6315,7 +6354,7 @@ html[dir=rtl] .myHomWhoItWorkSection .work__start {
 }
 html[dir=rtl] .myHomWhoItWorkSection .work__start .custom_download--label {
   color: #8c8c8c;
-  font-family: IRANSans;
+  font-family: yekan2;
   font-weight: 400;
   font-size: 17px;
   line-height: 25px;
@@ -6551,7 +6590,7 @@ html[dir=rtl] .myHomeUpgradeSection .upgrade__content h1 {
   font-size: 1.7em;
   line-height: 1.25;
   letter-spacing: -0.56px;
-  font-family: IRANSans;
+  font-family: yekan2;
   font-weight: bold;
   margin-bottom: 3.125rem;
   text-align: right;
@@ -6573,7 +6612,7 @@ html[dir=rtl] .myHomeUpgradeSection .upgrade__content .l-btn {
   font-size: 18px;
   line-height: 21.78px;
   letter-spacing: -0.02em;
-  padding: 16.5px 70px;
+  padding: 0;
   text-transform: capitalize;
   box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2);
   min-width: 14.375rem;
@@ -6595,9 +6634,10 @@ html[dir=rtl] .myHomeMission .mission__head {
   margin-bottom: 0.8125rem;
 }
 html[dir=rtl] .myHomeMission .mission__head h1 {
-  font-size: 35px;
+  color: black;
+  font-size: 36px;
   font-weight: bold;
-  font-family: IRANSans;
+  font-family: yekan2;
   letter-spacing: 1.87px;
   line-height: 42.42px;
   text-align: right;
@@ -6606,7 +6646,7 @@ html[dir=rtl] .myHomeMission .mission__head h1 {
 }
 @media (min-width: 768px) {
   html[dir=rtl] .myHomeMission .mission__head h1 {
-    font-size: 25px;
+    font-size: 26px;
     letter-spacing: 2.2px;
     line-height: 50px;
     opacity: 0.7;
@@ -6623,12 +6663,12 @@ html[dir=rtl] .myHomeMission .mission__hero {
   }
 }
 html[dir=rtl] .myHomeMission .mission__hero h2 {
-  font-size: 25px;
+  font-size: 24px;
   letter-spacing: -0.56px;
   line-height: 37.5px;
   text-align: right;
   font-weight: 500;
-  font-family: IRANSans;
+  font-family: yekan2;
   max-width: 316px;
 }
 @media (min-width: 768px) {
@@ -6638,9 +6678,9 @@ html[dir=rtl] .myHomeMission .mission__hero h2 {
 }
 @media (min-width: 991px) {
   html[dir=rtl] .myHomeMission .mission__hero h2 {
-    font-size: 25px;
+    font-size: 24px;
     letter-spacing: -0.8px;
-    line-height: 50px;
+    line-height: 45px;
     max-width: 864px;
   }
 }
@@ -6671,7 +6711,7 @@ html[dir=rtl] .myHomeMission .mission__content p {
   line-height: 30.36px;
   margin-bottom: 1.875rem;
   margin-top: 0;
-  font-family: IRANSans;
+  font-family: yekan2;
   text-align: right;
 }
 html[dir=rtl] .myHomeMission .mission__gallery {
@@ -6711,7 +6751,7 @@ html[dir=rtl] .myHomeMission .mission__gallery .mission__thumb {
   margin-bottom: 0.625rem;
 }
 html[dir=rtl] .myHomeFAQSection {
-  font-family: IRANSans;
+  font-family: yekan2;
   padding: 2.25rem 0 2.5rem;
   background: rgba(196, 196, 196, 0.1);
   border-radius: 16px;
@@ -7414,12 +7454,16 @@ html[dir=rtl] .shopping-cart-page .feature_divider {
   height: 5px;
   max-width: 1440px;
 }
+html[dir=rtl] .shopping-cart-page #checkoutasguest, html[dir=rtl] .shopping-cart-page #checkout {
+  border-radius: 50px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
 html[dir=rtl] .shopping-cart-page .continue-shopping-container {
   cursor: pointer;
   text-align: center;
   color: #4a9ef4;
   text-align: center;
-  font-family: DM Sans, sans-serif, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
@@ -7851,7 +7895,6 @@ html[dir=rtl] .quick-view .quantity-container .product-plus {
   float: left;
 }
 html[dir=rtl] .quick-view .btn-add-to-card {
-  font-family: DM Sans, sans-serif;
   padding: 16px 25px 15px;
   font-style: normal;
   font-weight: 700;
@@ -8249,12 +8292,15 @@ html[dir=rtl] [dark-theme=true] .shopping-cart.table td {
   }
 }
 html[dir=rtl] .form-row .btn-info {
-  background-color: #1878b9;
-  padding: 0.9em 1.7em;
+  background-color: #000;
+  padding: 0.2em 1.7em;
+  border-radius: 50px;
 }
 html[dir=rtl] .form-row .btn-secondary {
-  padding: 0.9em 1.7em;
-  color: white;
+  padding: 0.2em 1.7em;
+  color: #000;
+  background-color: white;
+  border-radius: 50px;
 }
 html[dir=rtl] #shipping-method-buttons-container, html[dir=rtl] #payment-info-buttons-container, html[dir=rtl] .confirm-buttons {
   text-align: left;
@@ -8300,8 +8346,9 @@ html[dir=rtl] .checkout-page #shipping-buttons-container {
   text-align: left;
 }
 html[dir=rtl] .checkout-page #shipping-buttons-container .btn-info {
-  background-color: #1878b9;
-  padding: 0.9em 1.7em;
+  background-color: #000;
+  padding: 0.2em 1.7em;
+  border-radius: 50px;
 }
 html[dir=rtl] .checkout-page #ordersummarypagecart .product__image {
   position: relative;
@@ -8340,7 +8387,7 @@ html[dir=rtl] .order-details-page .shopping-cart-page .generalTitle {
 }
 html[dir=rtl] #sidebar-cart {
   text-align: right;
-  font-family: IRANSans;
+  font-family: yekan2;
   align-items: flex-start;
 }
 html[dir=rtl] #sidebar-cart button.close {
@@ -8409,7 +8456,7 @@ html[dir=rtl] .login-page-main-container {
 html[dir=rtl] .login-page {
   max-width: 40em;
   margin: auto;
-  font-family: IRANSans;
+  font-family: yekan2;
   padding: 10px;
   border: solid 6px black;
 }
@@ -8456,7 +8503,7 @@ html[dir=rtl] .login-page .login-new-customer-container .text-login-newcustomer 
   margin-right: unset;
 }
 html[dir=rtl] .what-is-zap-page {
-  font-family: IRANSans;
+  font-family: yekan2;
   padding: 10px;
   overflow-x: auto;
 }
@@ -8506,7 +8553,7 @@ html[dir=rtl] .what-is-zap-page .bottom-seciton h1 {
 }
 html[dir=rtl] .why-zap-page {
   text-align: right;
-  font-family: IRANSans;
+  font-family: yekan2;
 }
 html[dir=rtl] .why-zap-page .why-zap-page-container {
   max-width: 1200px;
@@ -8609,7 +8656,7 @@ html[dir=rtl] .register-page {
   text-align: right;
   max-width: 40em;
   margin: auto;
-  font-family: IRANSans;
+  font-family: yekan2;
   padding: 10px;
   border: solid 6px black;
 }
@@ -8636,6 +8683,12 @@ html[dir=rtl] .register-page .register-button-container {
 }
 html[dir=rtl] .register-page .register-button-container input {
   background-color: black;
+}
+html[dir=rtl] .password-recovery-page {
+  padding: 20px;
+}
+html[dir=rtl] .search-page {
+  padding: 20px;
 }
 
 /*==================================================

@@ -26,12 +26,18 @@ $leftRightReverse: if($dir==rtl,left,right);
         max-width: 1440px;
     }
 
+    #checkoutasguest, #checkout {
+        border-radius: 50px;
+        padding:5px 10px;
+        font-size:14px;
+    }
+
+
     .continue-shopping-container {
         cursor: pointer;
         text-align: center;
         color: #4a9ef4;
         text-align: center;
-        font-family: DM Sans,sans-serif,sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 14px;
