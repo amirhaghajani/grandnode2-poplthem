@@ -1,7 +1,51 @@
 ﻿
 <footer class="popl_footer">
    <div class="popl_container">
-      <div class="footer__wrap">
+        <div class="logo">
+            <img src="/popl/images/zap-white.png" />
+        </div>
+
+       <div class="links_section_container">
+            <div>
+                <ul>
+                    <li class="section-header">@Loc["zap.header.products"]</li>
+                    @await Component.InvokeAsync("PoplMenu")
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li class="section-header">@Loc["zap.footer.termsAndConditions"]</li>
+                    
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li class="section-header">@Loc["zap.footer.cooperation"]</li>
+
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li class="section-header">@Loc["zap.footer.download_the_application"]</li>
+                    
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li class="section-header">@Loc["zap.footer.contact_us"]</li>
+
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li class="section-header">@Loc["zap.footer.azp_on_social_networks"]</li>
+
+                </ul>
+            </div>
+       </div>
+       
+
+      @*<div class="footer__wrap">
          <div class="footer__column footer__column--double">
             <div class="fooer__logo">
                <div class="footer__itemwrapper">
@@ -107,6 +151,6 @@
                </ul>
             </div>
          </div>
-      </div>
+      </div>*@
    </div>
 </footer>

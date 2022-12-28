@@ -1,5 +1,11 @@
 ﻿
+$dir: ltr !default;
+$persianFont: IRANSans !default;
+$leftRight: if($dir==rtl,right,left);
+$leftRightReverse: if($dir==rtl,left,right);
+
 .popl_footer {
+    direction: $dir;
     background-color: #121212;
     padding: 4.25rem 0 4.6875rem;
     font-size: inherit;
@@ -8,6 +14,7 @@
     background-position: center center;
     color: #fff;
     font-weight: 600;
+
 
     a {
         line-height: 1.47059;
@@ -18,11 +25,35 @@
         cursor: pointer;
     }
 
+    .logo {
+        text-align: center;
+
+        img {
+            width: 120px;
+        }
+    }
+
+    .links_section_container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        text-align: $leftRight;
+        max-width:900px;
+        margin:auto;
+
+
+        div {
+            flex: 1;
+            flex-basis: 33%;
+            min-width: 200px;
+        }
+    }
 
     .footer__wrap {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        text-align: $leftRight;
 
         .footer__column {
             width: 100%;
@@ -47,8 +78,8 @@
 
                 ul {
                     display: block;
-                    columns: 2;
-                    -webkit-columns: 2;
+                    columns: 3;
+                    -webkit-columns: 3;
                     height: auto;
                     float: left;
                     width: 100%;

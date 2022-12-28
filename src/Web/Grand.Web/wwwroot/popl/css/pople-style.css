@@ -2934,6 +2934,7 @@ html .myHomeContact .l-btn {
   letter-spacing: -0.02em;
 }
 html .popl_footer {
+  direction: ltr;
   background-color: #121212;
   padding: 4.25rem 0 4.6875rem;
   font-size: inherit;
@@ -2951,10 +2952,30 @@ html .popl_footer a {
   font-size: 16px;
   cursor: pointer;
 }
+html .popl_footer .logo {
+  text-align: center;
+}
+html .popl_footer .logo img {
+  width: 120px;
+}
+html .popl_footer .links_section_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left;
+  max-width: 900px;
+  margin: auto;
+}
+html .popl_footer .links_section_container div {
+  flex: 1;
+  flex-basis: 33%;
+  min-width: 200px;
+}
 html .popl_footer .footer__wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  text-align: left;
 }
 html .popl_footer .footer__wrap .footer__column {
   width: 100%;
@@ -2976,8 +2997,8 @@ html .popl_footer .footer__wrap .footer__column .footer__links {
 }
 html .popl_footer .footer__wrap .footer__column .footer__links ul {
   display: block;
-  columns: 2;
-  -webkit-columns: 2;
+  columns: 3;
+  -webkit-columns: 3;
   height: auto;
   float: left;
   width: 100%;
@@ -6944,6 +6965,7 @@ html[dir=rtl] .myHomeContact .l-btn {
   letter-spacing: -0.02em;
 }
 html[dir=rtl] .popl_footer {
+  direction: rtl;
   background-color: #121212;
   padding: 4.25rem 0 4.6875rem;
   font-size: inherit;
@@ -6961,10 +6983,30 @@ html[dir=rtl] .popl_footer a {
   font-size: 16px;
   cursor: pointer;
 }
+html[dir=rtl] .popl_footer .logo {
+  text-align: center;
+}
+html[dir=rtl] .popl_footer .logo img {
+  width: 120px;
+}
+html[dir=rtl] .popl_footer .links_section_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: right;
+  max-width: 900px;
+  margin: auto;
+}
+html[dir=rtl] .popl_footer .links_section_container div {
+  flex: 1;
+  flex-basis: 33%;
+  min-width: 200px;
+}
 html[dir=rtl] .popl_footer .footer__wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  text-align: right;
 }
 html[dir=rtl] .popl_footer .footer__wrap .footer__column {
   width: 100%;
@@ -6986,8 +7028,8 @@ html[dir=rtl] .popl_footer .footer__wrap .footer__column .footer__links {
 }
 html[dir=rtl] .popl_footer .footer__wrap .footer__column .footer__links ul {
   display: block;
-  columns: 2;
-  -webkit-columns: 2;
+  columns: 3;
+  -webkit-columns: 3;
   height: auto;
   float: left;
   width: 100%;
