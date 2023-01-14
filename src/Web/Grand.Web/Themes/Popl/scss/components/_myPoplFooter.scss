@@ -22,7 +22,7 @@ $leftRightReverse: if($dir==rtl,left,right);
         text-transform: capitalize;
         color: #fff;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 14px;
         cursor: pointer;
     }
 
@@ -60,7 +60,7 @@ $leftRightReverse: if($dir==rtl,left,right);
             @include bps(640) {
                 &:nth-child(3n+1) {
                     width: calc(50% - 50px);
-                    padding-right:10%;
+                    padding-right: 10%;
                 }
 
                 &:nth-child(3n+2) {
@@ -74,6 +74,11 @@ $leftRightReverse: if($dir==rtl,left,right);
 
             li {
                 font-size: 14px;
+
+                a {
+                    font-size: 14px;
+                    color:white;
+                }
 
                 span {
                     font-size: 14px;

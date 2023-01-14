@@ -22,12 +22,16 @@ my_header_script.checkNavIsOneLine=function(isCheckOnly) {
     var nav = document.getElementById('main_nav');
     //var item = document.getElementById('main-nav-container');
 
+    document.body.removeAttribute('data-ismobile');
+
     var isOverFlown = my_global.isOverFlown(nav);
 
     if (isCheckOnly) return !isOverFlown;
 
 
     //if(isOverFlown && my_global.isMoblieMode()) return !isOverFlown;
+
+     
 
     if(isOverFlown){
         document.body.setAttribute('data-ismobile', 'true');
