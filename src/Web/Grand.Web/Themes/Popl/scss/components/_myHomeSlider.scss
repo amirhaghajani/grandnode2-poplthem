@@ -209,6 +209,7 @@ $leftRightReverse: if($dir==rtl,left,right);
         padding: 0 65px;
         font-size: 1.275em;
         line-height: 1.47059;
+        color:white;
 
         @include bp {
             margin-top: 0;

@@ -13,7 +13,7 @@ $leftRightReverse: if($dir==rtl,left,right);
         margin: auto;
     }
 
-    .header {
+    .why-zap-header {
         height: 400px;
         background-size: cover;
         background-image: url('/popl/images/whyzap/1raw.jpg');
@@ -64,6 +64,4 @@ $leftRightReverse: if($dir==rtl,left,right);
             display: inline-block;
         }
     }
-
-
 }

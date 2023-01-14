@@ -96,6 +96,7 @@
 
                 currItem = subElement.getBoundingClientRect();
                 if (prevItem && prevItem.top < currItem.top) {
+                    
                     return true;
                 }
                 prevItem = currItem;

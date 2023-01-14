@@ -27,15 +27,16 @@ my_header_script.checkNavIsOneLine=function(isCheckOnly) {
     if (isCheckOnly) return !isOverFlown;
 
 
+    //if(isOverFlown && my_global.isMoblieMode()) return !isOverFlown;
 
-    //item.removeAttribute('data-ismobile');
-    document.body.removeAttribute('data-ismobile');
-    isOverFlown = my_global.isOverFlown(nav);
-
-    if (!my_global.isMoblieMode() && isOverFlown) {
-        //item.setAttribute('data-ismobile', 'true');
+    if(isOverFlown){
         document.body.setAttribute('data-ismobile', 'true');
+    }else{
+        document.body.removeAttribute('data-ismobile');
+        
     }
+
+    
 
     return !isOverFlown;
 }
