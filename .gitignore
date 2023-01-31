@@ -362,3 +362,5 @@ src/Web/Grand.Web/App_Data/Download/*
 !src/Web/Grand.Web/App_Data/Download/Index.htm
 src/Web/Grand.Web/App_Data/TempUploads/*
 !src/Web/Grand.Web/App_Data/TempUploads/Index.htm
+
+0doc-things/*
