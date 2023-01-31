@@ -1,5 +1,5 @@
 <h1>My custom theme for Grandnode2<h1>
-<p>Also I create some plugin for custom payment with IDpay.Ir and BaHamta.Ir</p>
+<p>Also I created some plugin for custom payment with IDpay.Ir and BaHamta.Ir</p>
 
 <p align="center">
   <a href="https://grandnode.com/">
