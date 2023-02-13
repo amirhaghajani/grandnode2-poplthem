@@ -2952,10 +2952,14 @@ html .popl_footer a {
 }
 html .popl_footer .logo {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 html .popl_footer .logo img {
   width: 120px;
+}
+html .popl_footer .logo a {
+  display: block;
+  margin-top: 10px;
 }
 html .popl_footer .links_section_container {
   display: flex;
@@ -6894,10 +6898,14 @@ html[dir=rtl] .popl_footer a {
 }
 html[dir=rtl] .popl_footer .logo {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 html[dir=rtl] .popl_footer .logo img {
   width: 120px;
+}
+html[dir=rtl] .popl_footer .logo a {
+  display: block;
+  margin-top: 10px;
 }
 html[dir=rtl] .popl_footer .links_section_container {
   display: flex;

@@ -28,10 +28,16 @@ $leftRightReverse: if($dir==rtl,left,right);
 
     .logo {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
 
         img {
             width: 120px;
+
+        }
+
+        a{
+            display:block;
+            margin-top:10px;
         }
     }
 
