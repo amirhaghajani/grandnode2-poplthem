@@ -16,10 +16,10 @@
 		<OutDir>$(OutputPath)</OutDir>
 	</PropertyGroup>
 
-	<!--<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<RemoveDir Directories="..\..\Web\Grand.Web\Plugins\Payments.IDPayIR\refs" />
 		<RemoveDir Directories="..\..\Web\Grand.Web\Plugins\Payments.IDPayIR\ref" />
-	</Target>-->
+	</Target>
 	
 
   <PropertyGroup>
